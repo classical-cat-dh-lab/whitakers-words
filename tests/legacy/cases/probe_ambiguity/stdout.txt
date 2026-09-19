@@ -1,0 +1,66 @@
+MDEV_FILE found - Using those MDEVs and parameters
+INFLECTION_ARRAY being loaded   --    1797 entries    --  Loaded correctly
+GENERAL Dictionary loading      --   62084 stems      --  Loaded correctly
+UNIQUES file loading            --      79 entries    --  Loaded correctly
+ADDONS loading 18+11 TACKONS 6+129 PREFIXES 179 SUFFIXES   --  Loaded correctly
+Copyright (c) 1993-2006 - Free for any use - Version 1.99.0
+For updates and latest version check http://www.erols.com/whitaker/words.htm
+Comments? William Whitaker, Box 51225  Midland  TX  79710  USA - whitaker@erols.com
+
+Input a word or line of Latin and ENTER to get the forms and meanings
+    Or Input @ and the name of a file containing words or lines
+    Or Input # to change parameters and mode of the program
+    Or Input ? to get help wherever available on individual parameters
+Two empty lines (just a RETURN/ENTER) from the keyboard exits the program
+English-to-Latin available
+~E changes to English-to-Latin, ~L changes back     [tilde E]
+
+=>
+arm.a                N      2 2 NOM P N                 
+arm.a                N      2 2 VOC P N                 
+arm.a                N      2 2 ACC P N                 
+armum, armi  N (2nd) N   [XWXAO]  
+arms (pl.), weapons, armor, shield; close fighting weapons; equipment; force;
+arm.a                V      1 1 PRES ACTIVE  IMP 2 S    
+armo, armare, armavi, armatus  V (1st) TRANS   [XWXAO]  
+equip, fit with armor; arm; strengthen; rouse, stir; incite war; rig (ship);
+
+am.are               V      1 1 PRES ACTIVE  INF 0 X    
+am.are               V      1 1 PRES PASSIVE IND 2 S      Early   
+am.are               V      1 1 PRES PASSIVE IMP 2 S    
+amo, amare, amavi, amatus  V (1st)   [XXXAO]  
+love, like; fall in love with; be fond of; have a tendency to;
+amar.e               ADJ    1 1 VOC S M POS             
+amarus, amara -um, amarior -or -us, amarissimus -a -um  ADJ   [XXXBO]  
+bitter, brackish, pungent; harsh, shrill; sad, calamitous; ill-natured, caustic
+amare                ADV    POS                         
+amare, amarius, amarissime  ADV   [XXXDO]    lesser
+with bitterness, acidly, spitefully, bitterly;
+Syncope   r => v.r   
+Syncopated perfect often drops the 'v' and contracts vowel
+amav.ere             V      1 1 PERF ACTIVE  IND 3 P    
+amo, amare, amavi, amatus  V (1st)   [XXXAO]  
+love, like; fall in love with; be fond of; have a tendency to;
+
+vir.i                N      2 1 GEN S N                 
+vir.i                N      2 1 LOC S N                 
+virus, viri  N (2nd) N   [XXXAO]  
+venom (sg.), poisonous secretion of snakes/creatures/plants; acrid element;
+vir.i                N      2 2 GEN S N                 
+vir.i                N      2 2 LOC S N                 
+virum, viri  N (2nd) N   [GBXEK]    NeoLatin  uncommon
+virus;
+vir.i                N      2 3 GEN S M                 
+vir.i                N      2 3 LOC S M                 
+vir.i                N      2 3 NOM P M                 
+vir.i                N      2 3 VOC P M                 
+vir, viri  N (2nd) M   [XXXAX]  
+man; husband; hero; person of courage, honor, and nobility;
+vir.i                N      3 3 LOC S F                   Early   
+vir.i                N      3 3 DAT S F                 
+vir.i                N      3 3 ABL S F                 
+vis, viris  N (3rd) F   [XXXAX]  
+strength (bodily) (pl.), force, power, might, violence; resources; large body;
+
+
+=>Blank exits =>

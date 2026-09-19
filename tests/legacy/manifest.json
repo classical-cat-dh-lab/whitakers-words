@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "snapshot": "words-mk270-1f2f0fb",
+  "profile": "upstream-tests-v1",
+  "configuration": {
+    "WORD.MOD": "absent; defaults from the pinned source",
+    "WORD.MDV": "256c9775d007bcaa7ed98b67bb0c2a55d795cfbf5b3470b82113978de3abbe50",
+    "locale": "C",
+    "process": "fresh per case; stdin bytes as captured"
+  },
+  "build": {
+    "snapshot": "words-mk270-1f2f0fb",
+    "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "versions": {
+      "gnatmake": "GNATMAKE 15.3.0",
+      "gprbuild": "GPRBUILD 25.0.0 (2025-05-16) (aarch64-apple-darwin23.6.0)"
+    },
+    "buildCommand": "make",
+    "sourceChanges": [],
+    "binarySha256": "ad10670238d1418a2f1ba757582dc8732e1e8712fdd3dd82861183dce1e276c9",
+    "generatedData": {
+      "DICTFILE.GEN": "3538ed556fe7315ffeff32355f80d039481b91dcfa54401efce69da8dc77b116",
+      "STEMFILE.GEN": "c1f1c456bbfdd0e5c2ca8769c7d44d6e7c8fe5307135fab84f7c1fe89adda6a2",
+      "INDXFILE.GEN": "a5f7fe2507f4e2df6e12c545ebebeb3b623175aa6009e5440fc67676131233bb",
+      "EWDSFILE.GEN": "034f46e5cd0125b2b01098d61bf3cb04fb690cbd9a00715e629a9fd1cf66b514",
+      "INFLECTS.SEC": "11f24eefa365cd5081743ac78c7a2c25bad63f7321afd2b95842f97fbfdbcee3",
+      "ADDONS.LAT": "7a7f40b3020913882e8bfa156ebe01ee3f640b4505ef2b79c8836ef6b8a948fb",
+      "UNIQUES.LAT": "ed81efca10ec23d96e992724a98538c820f489b6ea3658afb1356ce6d2f7c8e2"
+    }
+  },
+  "cases": [
+    {
+      "id": "05_multusque",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": true,
+      "files": {
+        "input.txt": "de7328d9b68d90068420ac926f0b64dcd9e24eca1ed53f5fb11763ab0152f016",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "ce620856af6cb8a7b60d5e66bc933b160be0912fd46c5b0c9aed14c5f526cd71",
+        "upstream-expected.txt": "a315fc6bb965ff6bfd54566df00fb5f534ca73c0e817d625bce7766b1176d3e3"
+      }
+    },
+    {
+      "id": "10_aeneid",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": true,
+      "files": {
+        "input.txt": "a40566790b7befccf24bfc7b98fc2d5ee96ff10618dce54e727ac690462b5ac6",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "314d68eebe848a486e109274e2d29d0df0762e7d03165b59471c4d55458344fc",
+        "upstream-expected.txt": "92db6208724e0b19f765c365aeba3b00dd2878c3defdb5295c300fc3153633cd"
+      }
+    },
+    {
+      "id": "20_ius",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": true,
+      "files": {
+        "input.txt": "d2d2510addb2c05e5ee46aab911ff0ddffeb078da9bcabd3faaca983f92b5089",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "49e351b1a9713564c36298c4f26648c9693ecb74a3564da8a912a7ef67ee30bb",
+        "upstream-expected.txt": "250ef9a1f837ed2168ca5995bff3b9e2e0a58859c57b74e0eae6e2985fd46b2c"
+      }
+    },
+    {
+      "id": "30_qualdupes",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": true,
+      "files": {
+        "input.txt": "91dee44ca6bd13eddad0827a4d867192e4ad596d726326abb72832a8a1a347c4",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "615a5a995770b0f1ac3a6423e73da4a440fbc23616357889953a48fe664124bb",
+        "upstream-expected.txt": "d9e41ebdc8900b0007f4aa4b9c71d8b7011b5fbd9cfb0370137f9e886b94d470"
+      }
+    },
+    {
+      "id": "40_english",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": true,
+      "files": {
+        "input.txt": "4ec12c8d2bddba9875310aba18af458b6544588ba25effc0ec65b587be21d122",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "95a6834dc0d8f72e255a3115deab76acbf5e90e0f28fb848ea4f700727d187ef",
+        "upstream-expected.txt": "a6e45e2acd556d44cce3ef341b095f31daeae3ee31e441b11093434bca404447"
+      }
+    },
+    {
+      "id": "probe_smoke",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "1028b6190bcb821bbe2da8cea09f7c0f2fd49f8cfa106539e7959047078b326b",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "8181019efe32716880a7e09fa06cfd9eddccc88e9fc2625f1eb4d1935b27785e"
+      }
+    },
+    {
+      "id": "probe_ambiguity",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "acf351e4866e2fc5cbf17750746f0fe7f00df0698c72d6ec704e7b2bfad6c63a",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "d72dd4e1d91f018f1a6ce945a3adec67aa2cdfef909533b57e03252918743e88"
+      }
+    },
+    {
+      "id": "probe_enclitics",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "52fb278ec5fc37e9a16ac94d3f179ddd4a9cfc8a06d183b2e98ff8a99a856eee",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "207133080a451782db0ec052820590eb7d9c159b830e552244c5918a8c165998"
+      }
+    },
+    {
+      "id": "probe_syncope",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "2b1b2e8f64f32b91fc082ce299bf4374e612d51cf537634b3393bf00d72515b3",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "6c08ff4d64c09da95def740509b8ffcaa8f2c9f759d5487899bb3b39603078f5"
+      }
+    },
+    {
+      "id": "probe_orthography",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "13bfed168d917453405d8a65fb9b5d3e7d202b9494d103ca0c7f05f18cca0427",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "0231f00e60b2fae075082ea4dc196d43114462c21daab749999a5c92652ed2f1"
+      }
+    },
+    {
+      "id": "probe_compounds",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "368978673a46cd736b012e15ad021a3b0f12ec1888c136385c7d7f8244f7b3c9",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "56b7bc4d6afc0cb1ba6da6a8ad8e9ff9c98d2947e3725046e15ce56343507f8d"
+      }
+    },
+    {
+      "id": "probe_numerals",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "89f000a7b3bb01cb6edd3eeeb05b47210dac027a1201deebe89e80997210fdb7",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "b375c696d8fda7d33fd1fcc6bd74c8d9b40e870a2ffb319c169900c814d34227"
+      }
+    },
+    {
+      "id": "probe_unknown",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "0608ebe058596dec9cf6fef36cd5edff93cdca176a30d0e871d9cb19c76dae9a",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "074fe4ec4e9026a5a207b87925b6400e5ecb5af31db58a10c212d61955c8fad2"
+      }
+    },
+    {
+      "id": "probe_macron",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "35637383bfc77a3da08d553d8c4ed3b3ac48fec7ddc1397097b0f6a8c69951d7",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "d3eaa0f66e9c91f53d595ed186f85a29db550bd1ed9cff4c9f0f0f7f47b6826f"
+      }
+    },
+    {
+      "id": "probe_nfd",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "90056406fe661dc65336b34b46fa7e1ba0be572c8663213ebd5777f3634ab864",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "b08c5ce7559d2b5c5795cee31a8dec881701a69021f8c8352373fedea28044e3"
+      }
+    },
+    {
+      "id": "probe_mixed_script",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "60da4ab91e582ea29210468f5ee3d3b89c3a038114cd6f92039710a5675c6911",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "d7cfd256ac885c5aaa6a4107e7d59533223806cb2b69614f61afb2c4e00a42e4"
+      }
+    },
+    {
+      "id": "probe_empty",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "6a3cf5192354f71615ac51034b3e97c20eda99643fcaf5bbe6d41ad59bd12167",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "1e2d4375e24942e7ce5ea98a63ee15674b77b87052fc91d2e2a7d60bd059db37"
+      }
+    },
+    {
+      "id": "probe_punctuation",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "ba99389723dcdb59614b85f0634060881cb0a3fe10a1cc2bae183423e400654d",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "07d26cfd561182e327362bd6d3191ad2278e38fd3a092cb8495d3866f12cffab"
+      }
+    },
+    {
+      "id": "probe_batch_a",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "dd69256645670eb0310e2f0fa7ae8e9e31c5aab6c353b7119d9257b59ed4fbc5",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "9e16cb01ab940296ff394cc42de97c3d795ae8df540b5de7a0d2e7ba462ae4f6"
+      }
+    },
+    {
+      "id": "probe_batch_b",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "d16e510efb799a40349f06649aaa3b22e04cf79ef3ef826265f591cfeb96a62e",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "68d42a325a358aab5c1898351780e538dac382e81f43d27fca2d61ff3d2690a6"
+      }
+    },
+    {
+      "id": "probe_long_input",
+      "exitCode": 0,
+      "timedOut": false,
+      "upstreamFixtureMatch": null,
+      "files": {
+        "input.txt": "c2179fd5034f49eed42fcb4b773ffa7c97c2d31abb3614e1a3824eb1016b0264",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "acc058b33624675c71817af8d887eb8af3fb0ac5d2bda7aa678cfbd0944da294"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "platform": "aarch64-darwin",
+  "packages": [
+    {
+      "name": "gnat",
+      "version": "gnat-15.3.0-1",
+      "url": "https://github.com/alire-project/GNAT-FSF-builds/releases/download/gnat-15.3.0-1/gnat-aarch64-darwin-15.3.0-1.tar.gz",
+      "sha256": "36dc731443de2b8fb00aa0a40edcb06369c6e677912ad3f045f98e1121276627",
+      "bytes": 140376611,
+      "archive_roots": [
+        "gnat-aarch64-darwin-15.3.0-1"
+      ]
+    },
+    {
+      "name": "gprbuild",
+      "version": "gprbuild-25.0.0-1",
+      "url": "https://github.com/alire-project/GNAT-FSF-builds/releases/download/gprbuild-25.0.0-1/gprbuild-aarch64-darwin-25.0.0-1.tar.gz",
+      "sha256": "c2b4ada4acaec18cb953beeef2153414399302a24b900befe8f90681e207350c",
+      "bytes": 43103707,
+      "archive_roots": [
+        "gprbuild-aarch64-darwin-25.0.0-1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Frozen upstream inputs and executable observations retain their exact bytes.
+data/legacy/** -text -whitespace
+licenses/** -text -whitespace
+tests/legacy/cases/** -text -whitespace
+tests/legacy/profile/** -text -whitespace

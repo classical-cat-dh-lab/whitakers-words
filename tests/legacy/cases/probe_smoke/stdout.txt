@@ -1,0 +1,32 @@
+MDEV_FILE found - Using those MDEVs and parameters
+INFLECTION_ARRAY being loaded   --    1797 entries    --  Loaded correctly
+GENERAL Dictionary loading      --   62084 stems      --  Loaded correctly
+UNIQUES file loading            --      79 entries    --  Loaded correctly
+ADDONS loading 18+11 TACKONS 6+129 PREFIXES 179 SUFFIXES   --  Loaded correctly
+Copyright (c) 1993-2006 - Free for any use - Version 1.99.0
+For updates and latest version check http://www.erols.com/whitaker/words.htm
+Comments? William Whitaker, Box 51225  Midland  TX  79710  USA - whitaker@erols.com
+
+Input a word or line of Latin and ENTER to get the forms and meanings
+    Or Input @ and the name of a file containing words or lines
+    Or Input # to change parameters and mode of the program
+    Or Input ? to get help wherever available on individual parameters
+Two empty lines (just a RETURN/ENTER) from the keyboard exits the program
+English-to-Latin available
+~E changes to English-to-Latin, ~L changes back     [tilde E]
+
+=>
+r.em                 N      5 1 ACC S F                 
+res, rei  N (5th) F   [XXXAX]  
+thing; event/affair/business; fact; cause; property; [~ familiaris => property]
+
+ac.u                 N      4 1 ABL S F                 
+acus, acus  N (4th) F   [XXXBO]  
+needle, pin; hair-pin; pipefish, needlefish; detail; husks/chaff (pl.);
+*
+tetig.isti           V      3 1 PERF ACTIVE  IND 2 S    
+tango, tangere, tetigi, tactus  V (3rd)   [XXXAX]  
+touch, strike; border on, influence; mention;
+
+
+=>Blank exits =>

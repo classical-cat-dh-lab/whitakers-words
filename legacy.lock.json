@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "words-mk270-1f2f0fb",
+  "upstreamRepository": "https://github.com/mk270/whitakers-words.git",
+  "upstreamCommit": "1f2f0fb0867a896d7b9284a03d615ed635d6f992",
+  "upstreamTree": "792b3debd4084ae61b2d38af18772b7d5381fa02",
+  "archive": {
+    "path": "vendor/legacy/words-mk270-1f2f0fb.tar.gz",
+    "sha256": "9fae6c316fb299bbb27f7512d405ee03edecaeb82867a8134a7804677c6c0182",
+    "bytes": 1757262
+  },
+  "sourceTrackedContentSha256": "25c01124ff597caa48cf93f8c20293a4ac71cf869f668a2ffe535d73f247f9e5",
+  "data": {
+    "ADDONS.LAT": {
+      "sha256": "7a7f40b3020913882e8bfa156ebe01ee3f640b4505ef2b79c8836ef6b8a948fb",
+      "bytes": 34697
+    },
+    "DICTLINE.GEN": {
+      "sha256": "8f6c0fc84d12859abc863eac84ddd49b7e039503855ca34c1d44a6e78abf7569",
+      "bytes": 6115855
+    },
+    "INFLECTS.LAT": {
+      "sha256": "dd0f019669719d820f690a6199286f6f54addfb06e959a7592699f8c7e6d2a9b",
+      "bytes": 129314
+    },
+    "LICENCE.txt": {
+      "sha256": "de533c3fb7c4a54b6d2deb5e56624947850bd2121c1de206ba5ee59b72c119a3",
+      "bytes": 696
+    },
+    "UNIQUES.LAT": {
+      "sha256": "ed81efca10ec23d96e992724a98538c820f489b6ea3658afb1356ce6d2f7c8e2",
+      "bytes": 9642
+    }
+  },
+  "behavior": "Observed legacy behavior, including errors; no linguistic corrections."
+}
