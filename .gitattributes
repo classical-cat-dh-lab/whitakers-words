@@ -1,5 +1,9 @@
 # Frozen upstream inputs and executable observations retain their exact bytes.
 data/legacy/** -text -whitespace
+data/*.tsv -text -whitespace
+*.ts text eol=lf
+*.mjs text eol=lf
 licenses/** -text -whitespace
+browser/resources/** -text -whitespace
 tests/legacy/cases/** -text -whitespace
 tests/legacy/profile/** -text -whitespace

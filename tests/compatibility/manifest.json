@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "snapshot": "words-mk270-1f2f0fb",
+  "profile": "upstream-tests-v1",
+  "cases": 3953,
+  "corpusSha256": "a8fcc83357ac88fdfa134d5c63a10970bbec788271899548cc1c5a4370014890",
+  "uncompressedSha256": "c8f06753a5f92d044d080490a57d8e86f41470f05f7ea5598b4105f2d045243e",
+  "origin": "Unmodified Ada reference; original Aeneid vocabulary, all unique records, available source-rule examples, and explicit feature probes.",
+  "normalization": "Strip console prompts and outer frame whitespace; trim each output line at its end. Preserve all internal line order, blank lines, text and morphology."
+}

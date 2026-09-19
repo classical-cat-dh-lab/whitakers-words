@@ -1,0 +1,21 @@
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ds-color-text-primary); background: var(--ds-color-surface-base); font-family: var(--ds-font-serif-editorial); font-size: var(--ds-text-body); line-height: var(--ds-leading-body); }
+main { max-width: 68rem; margin: auto; padding: 2.5rem 1.5rem; }
+h1 { color: var(--ds-color-brand-title); font-size: var(--ds-text-h1); line-height: var(--ds-leading-heading); margin: .3rem 0; }
+h2 { color: var(--ds-color-section-title); font-size: var(--ds-text-h3); }
+.eyebrow, label, button, select, summary, #status, footer { font-family: var(--ds-font-sans-ui); }
+.eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: var(--ds-text-small); }
+form { padding: 1.5rem; margin: 2rem 0; background: var(--ds-color-surface-raised); border-radius: .4rem; }
+label { display: block; font-size: var(--ds-text-small); }
+textarea { width: 100%; margin: .4rem 0 1rem; padding: .7rem; resize: vertical; font: 1.35rem/1.6 var(--ds-font-serif-classical); color: var(--ds-color-text-primary); background: var(--ds-color-surface-base); border: 1px solid var(--ds-color-text-primary); border-radius: .25rem; }
+.controls { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+button, select { font: 1rem/1.4 var(--ds-font-sans-ui); padding: .6rem .8rem; border-radius: .25rem; border: 1px solid var(--ds-color-text-primary); cursor: pointer; color: var(--ds-color-text-primary); background: var(--ds-color-surface-base); min-height: 2.75rem; }
+button[type="submit"], #analyze { background: var(--ds-color-action-primary); color: var(--ds-color-surface-base); }
+button:disabled { cursor: wait; }
+:focus-visible { outline: 3px solid var(--ds-color-link); outline-offset: 3px; }
+pre { white-space: pre; overflow-x: auto; max-height: 34rem; font: .9rem/1.6 var(--ds-font-mono); padding: 1rem; border: 1px solid var(--ds-color-border); background: var(--ds-color-surface-raised); }
+summary { cursor: pointer; padding: .6rem 0; }
+footer { font-size: var(--ds-text-small); margin-top: 3rem; border-top: 1px solid var(--ds-color-border); padding-top: 1rem; }
+a { color: var(--ds-color-link); text-decoration: underline; }
+.pass { color: var(--ds-color-success); } .fail { color: var(--ds-color-error); }
+@media (max-width: 40rem) { main { padding: 1.5rem .8rem; } form { padding: 1rem; } h1 { font-size: 2.25rem; } }

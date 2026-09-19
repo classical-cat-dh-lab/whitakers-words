@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "snapshot": "words-mk270-1f2f0fb",
+  "generator": "scripts/generate-data.py",
+  "tables": {
+    "dictionary-forms.tsv": {
+      "sha256": "3e6b20033e6cd894586f89e16352b071a1f3ef0e017de21d0d1c1d4eb0fbe218",
+      "bytes": 1664154,
+      "rows": 39336
+    },
+    "english-index.tsv": {
+      "sha256": "7750aad0435854489aa4374055b58a6db8c270bca7eab130ecf602633b5fa13d",
+      "bytes": 3927701,
+      "rows": 149326
+    }
+  }
+}

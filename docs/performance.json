@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "snapshot": "words-mk270-1f2f0fb",
+  "runtime": "v26.7.0",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "osRelease": "27.0.0",
+  "cpu": "Apple M1 Max",
+  "loadMilliseconds": 165.91108400000002,
+  "mixedInputSamples": 800,
+  "medianMilliseconds": 0.36400000000003274,
+  "p95Milliseconds": 5.50162499999999,
+  "aeneid": {
+    "inputBytes": 33318,
+    "tokens": 4538,
+    "milliseconds": 1018.665416
+  },
+  "memoryBytes": {
+    "rss": 267911168,
+    "heapTotal": 179093504,
+    "heapUsed": 115399536,
+    "external": 6186239,
+    "arrayBuffers": 4103895
+  },
+  "limitations": "One local process; warm filesystem; 800 mixed requests include phrases and unknowns. Memory sampled with the full Aeneid result retained. Not a cross-device browser benchmark."
+}

@@ -1,9 +1,32 @@
-# Build and Verify the Legacy Reference
+# Build, Verify and Reproduce Data
+
+## TypeScript product
+
+From this repository with Node.js 22+ and `tar`:
+
+```sh
+npm run verify
+node cli/main.mjs --legacy rem acu tetigisti
+npm run serve
+```
+
+The observed host runtime is Node 26.7.0. No installation or network connection is
+needed. The build verifies the vendored TypeScript 6.0.3 archive, restores the
+compiler under `.tools/`, verifies all data and selected design-resource hashes,
+then emits ESM and TypeScript declarations into `dist/`. Native Node tests verify
+the frozen Ada observations and the structured adapters. `npm run serve` binds
+the validation page to `127.0.0.1:4173`; `WORDS_PORT` can select another local port.
+
+`node scripts/benchmark.mjs` measures the local load/request/batch boundary;
+`--write` explicitly refreshes `docs/performance.json`. The existing result is one
+Apple M1 Max/macOS process with a warm filesystem, not a device-independent budget.
+
+## Optional Ada reference
 
 The qualified reference uses GNAT 15.3.0 and GPRBuild 25.0.0 on Apple Silicon
 macOS. Exact package URLs and SHA-256 values are in
 [toolchains.lock.json](../toolchains.lock.json). These are project-local compiler
-tools, not dependencies of the planned JavaScript runtime.
+tools, not dependencies of the JavaScript runtime.
 
 Requirements: Python 3.14 for the standard-library driver, `curl`, `tar`-compatible
 archives, `make`, and the macOS command-line developer tools. No package-manager
@@ -63,3 +86,26 @@ equivalence is inferred. Do not promote those native files to portable source da
 Other operating systems and compilers are not yet qualified. A different native
 build must retain its own build identity and pass the reference corpus before it
 is treated as the same behavioral profile.
+
+## Reproduce portable tables
+
+After building the reference with the commands above:
+
+```sh
+python3 scripts/generate-data.py --oracle .cache/oracle --toolchains .tools/ada
+python3 scripts/generate-tricks.py
+git diff --exit-code -- src/trick-tables.ts
+```
+
+The first command compiles separate exporters without changing any Ada reference
+source, then compares both complete tables with the committed bytes and lock.
+`--write` is reserved for an intentional data regeneration; it is not part of the
+normal build/test path. The second command extracts the ordered literal trick
+tables directly from the locked archive. Neither depends on another port.
+
+`scripts/differential.mjs --capture --aeneid --generated --oracle .cache/oracle`
+creates temporary additional reference observations under `.cache/differential/`.
+It does not update the committed compatibility corpus. The committed tests only
+read their fixtures. `update-browser-fixtures.mjs --write` can deliberately update
+Node-to-browser serialization hashes after compatibility tests pass; those hashes
+are adapter evidence, not a substitute for the independent Ada oracle.
