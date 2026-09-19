@@ -16,7 +16,7 @@
     <header>
       <p class="eyebrow">Preservation / resurrection</p>
       <h1>Whitaker’s Words</h1>
-      <p>A small validation workspace for the preserved dictionary and analyzer.</p>
+      <p>A preserved Latin dictionary and analyzer, with a reading view for students.</p>
     </header>
     <form id="analysis-form">
       <label for="input">Text to analyze</label>
@@ -30,10 +30,12 @@
       <p id="status" role="status" aria-live="polite">Loading and verifying local data…</p>
     </form>
     <section aria-labelledby="result-heading">
-      <h2 id="result-heading">Legacy output</h2>
-      <pre id="legacy-output" tabindex="0">The first result will appear here.</pre>
+      <div class="reader-heading"><h2 id="result-heading">Analysis</h2><a id="abbreviations-link" href="#abbreviations">Abbreviations</a></div>
+      <div id="reader-output"><p>The first result will appear here.</p></div>
+      <details><summary>Legacy output</summary><pre id="legacy-output" tabindex="0"></pre></details>
       <details><summary>Structured result</summary><pre id="json-output" tabindex="0"></pre></details>
     </section>
+    <details id="abbreviations"><summary>Abbreviations and terminology</summary><p>Compact dictionary notation for students. Meanings apply in the categories shown; the underlying WORDS analyses are preserved.</p><div id="abbreviation-table" class="table-scroll"></div></details>
     <details id="validation"><summary>Validation results</summary><ol id="validation-results"></ol></details>
     <footer><p>Snapshot <code>words-mk270-1f2f0fb</code> · WORDS 1.99.0 lineage</p><p>The legacy profile retains original behavior, including errors. No linguistic corrections are enabled. All analysis runs locally in a Worker.</p><p><a href="../docs/compatibility.md">Compatibility scope</a> · <a href="../licenses/whitaker.txt">Original program and data notice</a></p></footer>
   </main>

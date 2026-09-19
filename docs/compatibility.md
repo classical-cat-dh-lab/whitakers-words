@@ -14,8 +14,10 @@ maintained mk270 lineage, not a reconstruction of historical 1.97FC.
 | Runtime adapters | CLI/API equality tests; browser Worker matches eight complete Node JSON hashes |
 | Derived data reproducibility | Both complete tables match across two independent native build directories |
 | Robustness | Checksum corruption, invalid options, UTF-16 spans, legacy Unicode splitting, long input, compounds, corrected isolation and repeated calls pass |
+| Student reading view | All 3,953 inputs retain every candidate and explanatory row in order, without mutating the legacy result; all source class combinations and all 39,336 dictionary entries have display mappings |
 
-`npm run verify` runs the offline build and nine substantive test groups. The
+`npm run verify` runs the offline build and thirteen test groups: the original
+nine engine/adapter groups plus four student-display groups. The
 expanded corpus contains Aeneid vocabulary, all unique forms, available examples
 derived from the source inflection rules and explicit fallback probes. Repeated
 forms are deduplicated. This is broad feature coverage, not every possible stem,

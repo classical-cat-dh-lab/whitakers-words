@@ -10,7 +10,7 @@
   "files": ["src/", "dist/", "node/", "cli/", "browser/", "data/", "deviations/", "docs/", "licenses/", "scripts/", "tests/", "vendor/", "LICENSE", "CITATION.cff", "*.lock.json", "tsconfig.json"],
   "scripts": {
     "build": "node scripts/build.mjs",
-    "test": "node --test tests/*.test.mjs",
+    "test": "node scripts/abbreviations.mjs && node --test tests/*.test.mjs",
     "verify": "npm run build && npm test",
     "serve": "node scripts/serve.mjs"
   },

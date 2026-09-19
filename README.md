@@ -4,6 +4,8 @@ A working preservation/resurrection of William Whitaker's WORDS in TypeScript,
 compiled to JavaScript ESM. The first-stage implementation provides a Latin
 analysis library, a structured API, English gloss lookup, a CLI and a small
 browser validation harness. It has no runtime dependencies or external services.
+The browser presents compact dictionary notation for Latin students, with
+expandable original output and structured results.
 
 The canonical reference is **WORDS 1.99.0**, commit
 `1f2f0fb0867a896d7b9284a03d615ed635d6f992` of
@@ -32,6 +34,8 @@ or public release has been published.
 ## Verification and documentation
 
 - [API and CLI](docs/api.md): result types, spans, provenance, options and errors.
+- [Student abbreviations](docs/abbreviations.md): the implemented, reviewable
+  terminology table, also available inside the browser page.
 - [Compatibility report](docs/compatibility.md): 3,953 frozen reference inputs;
   all 21 legacy cases, including the five original upstream groups and 751 input
   fragments; browser parity and explicit qualification limits.

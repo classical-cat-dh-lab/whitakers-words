@@ -1,5 +1,9 @@
+import {presentAnalysis} from '../dist/reader.js';
+import {renderReader,renderAbbreviations} from './render-reader.mjs';
 const worker=new Worker(new URL('./worker.mjs',import.meta.url),{type:'module'});
 const $=selector=>document.querySelector(selector),pending=new Map();let sequence=0;
+renderAbbreviations($('#abbreviation-table'));
+$('#abbreviations-link').addEventListener('click',()=>{$('#abbreviations').open=true;});
 function query(input,mode='legacy'){return new Promise((resolve,reject)=>{const id=++sequence;pending.set(id,{resolve,reject});worker.postMessage({id,input,mode});});}
 worker.addEventListener('message',({data})=>{
   if(data.type==='ready'){$('#status').textContent=`Data verified. Ready (${Math.round(data.loadMilliseconds)} ms to load).`;$('#analyze').disabled=false;$('#validate').disabled=false;}
@@ -9,7 +13,7 @@ worker.addEventListener('message',({data})=>{
 worker.addEventListener('error',error=>{$('#status').textContent='Worker error: '+error.message;for(const p of pending.values())p.reject(error);pending.clear();});
 $('#analysis-form').addEventListener('submit',async event=>{
   event.preventDefault();$('#analyze').disabled=true;$('#status').textContent='Analyzing…';
-  try{const {result,milliseconds}=await query($('#input').value,$('#mode').value);$('#legacy-output').textContent=(result.corrected??result).legacyText||'No Latin tokens.';$('#json-output').textContent=JSON.stringify(result,null,2);$('#status').textContent=`Complete (${milliseconds.toFixed(1)} ms).`;}
+  try{const {result,milliseconds}=await query($('#input').value,$('#mode').value);const analysis=result.corrected??result;renderReader($('#reader-output'),presentAnalysis(analysis));$('#legacy-output').textContent=analysis.legacyText||'No Latin tokens.';$('#json-output').textContent=JSON.stringify(result,null,2);$('#status').textContent=`Complete (${milliseconds.toFixed(1)} ms).`;}
   catch(error){$('#status').textContent='Error: '+error.message;}finally{$('#analyze').disabled=false;}
 });
 $('#validate').addEventListener('click',async()=>{

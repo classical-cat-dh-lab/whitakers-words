@@ -73,6 +73,40 @@ and `corrected` values plus the selected layer ID. Currently the registry is emp
 the two values are equal and independently copied; nonempty selections are
 rejected. See [deviation requirements](../deviations/README.md).
 
+## Student reading view
+
+`presentAnalysis(result)` accepts an `Analysis` or `EnglishResult` and returns a
+separate `ReaderResult` with `version: student-v1`. Import it and `ABBREVIATIONS`
+from `dist/index.js`. The function is deterministic and has no DOM dependency;
+the browser renderer is a separate adapter.
+
+```js
+import { presentAnalysis } from './dist/index.js';
+const reading = presentAnalysis(words.analyze('tetigisti'));
+// tango, tangere, tetigi, tactus — verb · third conj.
+// perf. act. indic. 2nd sg.
+```
+
+The view contains ordered tokens, dictionary entries, form lines, explanatory
+items and expandable details. Every item retains `sourceIndices` into that token's
+original `parses` array (or the English `hits` array); each form also retains its
+`sourceIndex`. Only consecutive records for the same entry and part of speech are
+grouped. Compound form rows remain attached to their preceding participle or
+supine. Grouping does not discard or reorder the original alternatives.
+
+Each display term supplies `text`, `full`, `category` and an identifier. The shared
+[abbreviation registry](abbreviations.md) drives both hints and the review table.
+Inflection codes become contextual descriptions, such as `fourth conj.` or
+`irregular: sum-type`; unknown fields are written out. English lookup retains
+dictionary gender, comparison and governed-case labels without inventing form
+analyses. Original gloss prose remains inherited text.
+
+This layer changes presentation only. It leaves schema 1, native codes, candidate
+identity, the legacy formatter and corrected-layer selection unchanged. Pass
+`correctedResult.corrected` explicitly to display an independently selected
+corrected result. Unsupported future code values throw instead of guessing a
+student-facing interpretation.
+
 ## CLI
 
 ```sh

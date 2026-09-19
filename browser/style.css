@@ -18,4 +18,24 @@ summary { cursor: pointer; padding: .6rem 0; }
 footer { font-size: var(--ds-text-small); margin-top: 3rem; border-top: 1px solid var(--ds-color-border); padding-top: 1rem; }
 a { color: var(--ds-color-link); text-decoration: underline; }
 .pass { color: var(--ds-color-success); } .fail { color: var(--ds-color-error); }
+.reader-heading {display:flex;align-items:baseline;justify-content:space-between;gap:1rem;}
+.reader-heading a {font-family:var(--ds-font-sans-ui);font-size:var(--ds-text-small);}
+.reader-token {margin:1.5rem 0 2rem;}
+.reader-token h3 {font-size:var(--ds-text-h2);line-height:var(--ds-leading-heading);margin:.5rem 0;overflow-wrap:anywhere;}
+.reader-entry,.reader-explanation {padding:1rem 1.2rem;margin:.7rem 0;background:var(--ds-color-surface-raised);border-left:3px solid var(--ds-color-border);border-radius:.2rem;}
+.reader-entry h4,.reader-explanation h4 {font-size:var(--ds-text-h4);line-height:var(--ds-leading-heading);margin:0 0 .4rem;}
+.reader-labels,.reader-forms,.reader-profile-note,.reader-notice,.reader-unknown,.reader-explanation {font-family:var(--ds-font-sans-ui);font-size:var(--ds-text-small);}
+.reader-labels {margin:.4rem 0 .6rem;}
+.reader-forms {padding-left:1.2rem;margin:.5rem 0;}
+.reader-forms li {margin:.25rem 0;}
+.reader-meaning {margin:.7rem 0 .2rem;white-space:pre-wrap;}
+.reader-form-note {font-size:var(--ds-text-small);}
+.reader-entry details,.reader-explanation details {font-family:var(--ds-font-sans-ui);font-size:var(--ds-text-small);}
+.reader-entry dl,.reader-explanation dl {display:grid;grid-template-columns:minmax(8rem,1fr) 3fr;gap:.35rem 1rem;margin:.3rem 0;}
+.reader-entry dt,.reader-explanation dt {font-weight:600;}
+.reader-entry dd,.reader-explanation dd {margin:0;overflow-wrap:anywhere;}
+abbr[title] {text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:1px;text-underline-offset:.18em;}
+.table-scroll {overflow:auto;} table {border-collapse:collapse;width:100%;font-family:var(--ds-font-sans-ui);font-size:var(--ds-text-small);}
+th,td {text-align:left;border-bottom:1px solid var(--ds-color-border);padding:.6rem;vertical-align:top;}
+@media (max-width: 40rem) {.reader-entry,.reader-explanation {padding:.8rem;}.reader-entry dl,.reader-explanation dl {grid-template-columns:1fr;gap:.2rem;}.reader-entry dd,.reader-explanation dd {margin-bottom:.5rem;}}
 @media (max-width: 40rem) { main { padding: 1.5rem .8rem; } form { padding: 1rem; } h1 { font-size: 2.25rem; } }

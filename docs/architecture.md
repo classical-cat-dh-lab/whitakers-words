@@ -14,6 +14,8 @@ flowchart LR
   E --> G[CLI]
   E --> H[Browser Worker]
   E --> I[Explicit corrected layer]
+  E --> J[Student terminology view]
+  J --> K[Browser reading view]
 ```
 
 | Module | Responsibility |
@@ -25,6 +27,8 @@ flowchart LR
 | `src/sweep.ts`, `src/format.ts` | Native trimming, ordering, duplicate behavior and presentation |
 | `src/english.ts` | English index search, native ranking, tie order and display |
 | `src/index.ts`, `src/model.ts` | Source-loading API, typed morphology, spans and result identity |
+| `src/reader.ts`, `src/terminology.ts` | Pure student view, contextual class names and shared abbreviation registry |
+| `browser/render-reader.mjs` | DOM rendering of the reading view and terminology table |
 | `node/`, `cli/`, `browser/` | File loading, command-line IO and same-origin Worker transport |
 
 The core has no network, filesystem, terminal, database or ambient-configuration
@@ -57,8 +61,10 @@ row and preserve one-based source line numbers. Comments are not lexical records
 
 ## Product boundaries
 
-The browser page is a validation tool: input, legacy output, inspectable JSON and
-cross-runtime fixtures. It uses the immutable design-system 2.3.0 web resource
+The browser page is a validation tool with a student reading view: input, compact
+dictionary notation, expandable legacy output, inspectable JSON and cross-runtime
+fixtures. The display layer consumes structured records, with no parsing of the
+legacy terminal output. It uses the immutable design-system 2.3.0 web resource
 subset recorded in `browser/design-system.lock.json`. It has no persistence,
 telemetry, external fonts or complete dictionary UI. The server binds only to
 loopback and serves an explicit set of product directories.
