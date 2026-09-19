@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you cite this project, use the metadata below. No software release is available yet."
+type: software
+title: "Whitaker Words Modernization"
+authors:
+  - family-names: Fang
+    given-names: Xinjie
+    orcid: "https://orcid.org/0009-0001-0829-8898"
+    affiliation: "Classical Cat Digital Humanities Lab"
+  - name: "Classical Cat Digital Humanities Lab"
+    website: "https://github.com/classical-cat-dh-lab"
+keywords:
+  - Latin
+  - morphology
+  - dictionary
+  - digital humanities
