@@ -1,9 +1,8 @@
 import {readFile, writeFile, mkdir, readdir, rm, lstat} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {gzipSync, deflateSync} from 'node:zlib';
-import {execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
-import {resolve, dirname, relative} from 'node:path';
+import {resolve, dirname} from 'node:path';
 import {validateManifest} from '../browser/offline-core.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url)), site = resolve(root, 'site');
@@ -79,7 +78,16 @@ await writeFile(resolve(site, '_headers'), `/*\n  X-Content-Type-Options: nosnif
 // metadata, operator files, local usernames, absolute paths or compiler outputs.
 const approvedRoots = new Set(['src','node','cli','browser','data','docs','deviations','licenses','scripts','tests','vendor']);
 const approvedFiles = new Set(['README.md','LICENSE','CITATION.cff','package.json','tsconfig.json','wrangler.jsonc','legacy.lock.json','typescript.lock.json']);
-const sourcePaths = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], {cwd: root, encoding: 'utf8'}).split('\0').filter(Boolean).filter(path => approvedRoots.has(path.split('/')[0]) || approvedFiles.has(path)).sort();
+const sourcePaths = [];
+async function sourceFiles(path) {
+  const info = await lstat(resolve(root, path));
+  if (info.isSymbolicLink()) throw new Error('Source archive refuses symbolic links.');
+  if (info.isDirectory()) {
+    for (const child of (await readdir(resolve(root, path))).filter(name => !name.startsWith('.')).sort()) await sourceFiles(path + '/' + child);
+  } else if (info.isFile()) sourcePaths.push(path);
+}
+for (const path of [...approvedRoots, ...approvedFiles]) await sourceFiles(path);
+sourcePaths.sort();
 const tar = [];
 for (const path of sourcePaths) {
   if (!(await lstat(resolve(root, path))).isFile()) throw new Error('Source archive requires ordinary files.');
