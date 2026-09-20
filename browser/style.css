@@ -17,6 +17,12 @@ pre { white-space: pre; overflow-x: auto; max-height: 34rem; font: .9rem/1.6 var
 summary { cursor: pointer; padding: .6rem 0; }
 footer { font-size: var(--ds-text-small); margin-top: 3rem; border-top: 1px solid var(--ds-color-border); padding-top: 1rem; }
 a { color: var(--ds-color-link); text-decoration: underline; }
+[hidden] { display: none !important; }
+.release-note, #offline { font-family: var(--ds-font-sans-ui); font-size: var(--ds-text-small); }
+#offline { border: 1px solid var(--ds-color-border); border-radius: .4rem; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+#offline p { margin: .7rem 0; }
+#offline-progress { display: block; width: 100%; margin-top: .8rem; accent-color: var(--ds-color-action-primary); }
+footer a { overflow-wrap: anywhere; }
 .pass { color: var(--ds-color-success); } .fail { color: var(--ds-color-error); }
 .reader-heading {display:flex;align-items:baseline;justify-content:space-between;gap:1rem;}
 .reader-heading a {font-family:var(--ds-font-sans-ui);font-size:var(--ds-text-small);}

@@ -50,7 +50,7 @@ The CLI intentionally omits the startup banner and interactive command interpret
 
 ## Limits and next qualification work
 
-The first-stage deliverables are operational. This is a development candidate,
+The first-stage deliverables are operational. This is a 0.1 alpha,
 not a claim of complete equivalence for every possible WORDS input or philological
 correctness. The qualified profile uses only the canonical general dictionary;
 local/special dictionaries, editing modes, interactive menus, persistent option
@@ -63,5 +63,6 @@ silently presented as the frozen profile. Native file hash differences do not
 change the canonical portable data; see [reference boundaries](building.md).
 
 Future linguistic changes must use a reviewed deviation with evidence and tests.
-Public repository creation, publication, package naming and a release are separate
-decisions. No public release is implied by these local results.
+Full classical-author corpus comparison and stress testing remain future work.
+The website alpha does not establish those claims. No GitHub Release or Zenodo
+archive has been published for this version.

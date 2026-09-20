@@ -1,11 +1,20 @@
 # Whitaker's Words — TypeScript preservation
 
-A working preservation/resurrection of William Whitaker's WORDS in TypeScript,
-compiled to JavaScript ESM. The first-stage implementation provides a Latin
-analysis library, a structured API, English gloss lookup, a CLI and a small
-browser validation harness. It has no runtime dependencies or external services.
-The browser presents compact dictionary notation for Latin students, with
-expandable original output and structured results.
+**0.1.0-alpha.1 · Experimental** — [Open the dictionary](https://words.latingreek.org/).
+
+A preservation of William Whitaker's WORDS in TypeScript, compiled to JavaScript
+ESM: Latin analysis, English gloss lookup, a structured API, a CLI and a small
+browser application with dictionary notation for students. Analysis runs entirely
+on the user's device. There is no runtime service or database server.
+
+Choose **Save for offline use** on the website to download and verify the complete
+dictionary (about 14.5 MiB). It then works without a connection. App installation
+is optional; clearing the website's data removes its saved offline files.
+
+This alpha passes the frozen reference cases described in the
+[compatibility report](docs/compatibility.md). Full classical-author corpus
+comparison and stress testing have **not** been completed. It is not a stable
+release or a claim of universal equivalence.
 
 The canonical reference is **WORDS 1.99.0**, commit
 `1f2f0fb0867a896d7b9284a03d615ed635d6f992` of
@@ -28,8 +37,10 @@ npm run serve
 
 Open `http://127.0.0.1:4173/browser/` for the validation harness. Build and tests
 work offline: TypeScript 6.0.3 and all runtime data are vendored and hash-checked.
-No `npm install` is required. This is a local development candidate; no package
-or public release has been published.
+No `npm install` is required. Use `npm run site` then `npm run preview` to build
+and preview the offline website. Serve `site/` over HTTPS (or localhost); opening
+files directly does not support modules or Service Workers. No npm package,
+GitHub Release or DOI has been published for this alpha.
 
 ## Verification and documentation
 
@@ -42,7 +53,8 @@ or public release has been published.
 - [Build and data reproduction](docs/building.md): portable ESM build and optional
   independent Ada reference rebuild.
 - [Legacy contract](docs/legacy-contract.md) and [corrected layers](deviations/README.md).
-- [Architecture](docs/architecture.md) and [measured performance](docs/performance.json).
+- [Architecture](docs/architecture.md); historical local measurements in
+  [performance.json](docs/performance.json) are not full-corpus benchmarks.
 - [Original baseline](docs/baseline.md): raw executable observations and provenance.
 
 ## Attribution and licenses

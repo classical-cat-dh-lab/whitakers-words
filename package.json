@@ -1,6 +1,6 @@
 {
   "name": "@classical-cat/whitaker-words",
-  "version": "0.1.0-dev",
+  "version": "0.1.0-alpha.1",
   "private": true,
   "type": "module",
   "license": "AGPL-3.0-only",
@@ -12,7 +12,9 @@
     "build": "node scripts/build.mjs",
     "test": "node scripts/abbreviations.mjs && node --test tests/*.test.mjs",
     "verify": "npm run build && npm test",
-    "serve": "node scripts/serve.mjs"
+    "serve": "node scripts/serve.mjs",
+    "site": "npm run build && node scripts/export-site.mjs",
+    "preview": "node scripts/serve.mjs --site"
   },
   "engines": {"node": ">=22"}
 }

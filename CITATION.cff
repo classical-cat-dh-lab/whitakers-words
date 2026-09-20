@@ -1,7 +1,10 @@
 cff-version: 1.2.0
-message: "If you cite this project, use the metadata below. No software release is available yet."
+message: "If you cite this experimental website alpha, use the metadata below. No DOI has been assigned."
 type: software
 title: "Whitaker Words Modernization"
+version: "0.1.0-alpha.1"
+date-released: "2026-09-20"
+url: "https://words.latingreek.org/"
 authors:
   - family-names: Fang
     given-names: Xinjie

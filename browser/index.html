@@ -4,12 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>Whitaker’s Words · Validation</title>
-  <link rel="icon" href="data:,">
+  <title>Whitaker’s Words · Latin dictionary</title>
+  <meta name="description" content="A preserved Latin dictionary and analyzer with compact student notation and optional offline use.">
+  <meta name="theme-color" content="#F4F5F0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1A1C20" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="resources/design-system/2.3.0/dist/tokens.css">
   <link rel="stylesheet" href="resources/design-system/2.3.0/dist/fonts.css">
   <link rel="stylesheet" href="style.css">
   <script type="module" src="app.mjs"></script>
+  <script type="module" src="offline.mjs"></script>
 </head>
 <body>
   <main>
@@ -17,7 +23,19 @@
       <p class="eyebrow">Preservation / resurrection</p>
       <h1>Whitaker’s Words</h1>
       <p>A preserved Latin dictionary and analyzer, with a reading view for students.</p>
+      <p class="release-note">0.1 alpha · Experimental. Full classical-corpus compatibility and performance testing is pending.</p>
     </header>
+    <section id="offline" aria-label="Offline use" hidden>
+      <div class="controls">
+        <button type="button" id="offline-save" disabled>Save for offline use</button>
+        <button type="button" id="offline-cancel" hidden>Cancel download</button>
+        <button type="button" id="offline-reload" hidden>Reload with update</button>
+        <button type="button" id="install-app" hidden>Install app</button>
+      </div>
+      <progress id="offline-progress" aria-label="Offline download progress" hidden></progress>
+      <p id="offline-status" role="status" aria-live="polite">Checking offline availability…</p>
+      <details><summary>Offline use and installation</summary><p>Save the files here before disconnecting. You can also use your browser’s Install app or Add to Home Screen command. Installing an icon alone does not save the dictionary. Clearing this website’s data removes its offline files; reconnect and save them again.</p></details>
+    </section>
     <form id="analysis-form">
       <label for="input">Text to analyze</label>
       <textarea id="input" name="input" rows="3" spellcheck="false" lang="la">rem acu tetigisti</textarea>
@@ -37,7 +55,7 @@
     </section>
     <details id="abbreviations"><summary>Abbreviations and terminology</summary><p>Compact dictionary notation for students. Meanings apply in the categories shown; the underlying WORDS analyses are preserved.</p><div id="abbreviation-table" class="table-scroll"></div></details>
     <details id="validation"><summary>Validation results</summary><ol id="validation-results"></ol></details>
-    <footer><p>Snapshot <code>words-mk270-1f2f0fb</code> · WORDS 1.99.0 lineage</p><p>The legacy profile retains original behavior, including errors. No linguistic corrections are enabled. All analysis runs locally in a Worker.</p><p><a href="../docs/compatibility.md">Compatibility scope</a> · <a href="../licenses/whitaker.txt">Original program and data notice</a></p></footer>
+    <footer><p>Snapshot <code>words-mk270-1f2f0fb</code> · WORDS 1.99.0 lineage</p><p>The legacy profile retains original behavior, including errors. No linguistic corrections are enabled. All analysis runs on your device; entered text is not sent to a server.</p><p>WORDS and its dictionary: William Whitaker. TypeScript preservation: © 2026 Xinjie Fang / Classical Cat Digital Humanities Lab. This is an independent project.</p><p><a href="../docs/compatibility.md">Compatibility scope</a> · <a href="../licenses/whitaker.txt">Original notice</a> · <a href="../LICENSE">AGPL-3.0-only · No warranty</a> · <a href="/downloads/whitakers-words-0.1.0-alpha.1-source.tar.gz">Corresponding source</a></p></footer>
   </main>
 </body>
 </html>
