@@ -23,6 +23,10 @@ This is an independent preservation project, separate from designing a new Latin
 analyzer. Original linguistic errors and observed quirks remain legacy behavior.
 The explicit corrected layer is initially empty.
 
+Archived release: [0.1.0-alpha.1 — DOI: 10.5281/zenodo.22857976](https://doi.org/10.5281/zenodo.22857976).
+The archive preserves the exact release files; citation metadata is also available
+in [CITATION.cff](CITATION.cff).
+
 ## Run locally
 
 With Node.js 22 or later (verified locally on 26.7.0):
