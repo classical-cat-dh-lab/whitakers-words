@@ -1,10 +1,12 @@
 cff-version: 1.2.0
-message: "If you cite this experimental website alpha, use the metadata below. No DOI has been assigned."
+message: "If you cite this experimental software, use the metadata below."
 type: software
-title: "Whitaker Words Modernization"
+title: "Whitaker's Words — TypeScript preservation"
 version: "0.1.0-alpha.1"
 date-released: "2026-09-20"
 url: "https://words.latingreek.org/"
+repository-code: "https://github.com/classical-cat-dh-lab/whitakers-words"
+license: AGPL-3.0-only
 authors:
   - family-names: Fang
     given-names: Xinjie

@@ -16,8 +16,11 @@ maintained mk270 lineage, not a reconstruction of historical 1.97FC.
 | Robustness | Checksum corruption, invalid options, UTF-16 spans, legacy Unicode splitting, long input, compounds, corrected isolation and repeated calls pass |
 | Student reading view | All 3,953 inputs retain every candidate and explanatory row in order, without mutating the legacy result; all source class combinations and all 39,336 dictionary entries have display mappings |
 
-`npm run verify` runs the offline build and thirteen test groups: the original
-nine engine/adapter groups plus four student-display groups. The
+`npm run verify` runs the offline build and sixteen test groups: the original
+nine engine/adapter groups, four student-display groups and three offline-storage
+groups. The website also passes bounded Chromium/WebKit offline checks and eight
+complete browser-to-Node JSON comparisons. Physical mobile-device installation
+and full classical-author corpora remain outside this qualification. The
 expanded corpus contains Aeneid vocabulary, all unique forms, available examples
 derived from the source inflection rules and explicit fallback probes. Repeated
 forms are deduplicated. This is broad feature coverage, not every possible stem,
@@ -64,5 +67,5 @@ change the canonical portable data; see [reference boundaries](building.md).
 
 Future linguistic changes must use a reviewed deviation with evidence and tests.
 Full classical-author corpus comparison and stress testing remain future work.
-The website alpha does not establish those claims. No GitHub Release or Zenodo
-archive has been published for this version.
+The website alpha does not establish those claims. Release citation metadata is
+maintained in [CITATION.cff](../CITATION.cff).

@@ -39,8 +39,10 @@ Open `http://127.0.0.1:4173/browser/` for the validation harness. Build and test
 work offline: TypeScript 6.0.3 and all runtime data are vendored and hash-checked.
 No `npm install` is required. Use `npm run site` then `npm run preview` to build
 and preview the offline website. Serve `site/` over HTTPS (or localhost); opening
-files directly does not support modules or Service Workers. No npm package,
-GitHub Release or DOI has been published for this alpha.
+files directly does not support modules or Service Workers. Download the frozen
+source and ready-to-host website from the
+[0.1.0-alpha.1 release](https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v0.1.0-alpha.1).
+No npm package is published.
 
 ## Verification and documentation
 
