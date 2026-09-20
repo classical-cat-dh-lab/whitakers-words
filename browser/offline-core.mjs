@@ -22,3 +22,12 @@ export async function verifyResponse(response, file) {
   if (bytes.byteLength !== file.bytes || await digest(bytes) !== file.sha256) throw new Error('An offline file failed its integrity check.');
   return response;
 }
+
+export function localResponse(response) {
+  // A followed HTML canonicalization redirect cannot be returned to a navigation
+  // whose redirect mode is manual. Cache the verified decoded body as a fresh
+  // response, and remove headers describing the original wire representation.
+  const headers = new Headers(response.headers);
+  for (const name of ['content-encoding', 'content-length', 'transfer-encoding']) headers.delete(name);
+  return new Response(response.body, {status: response.status, statusText: response.statusText, headers});
+}

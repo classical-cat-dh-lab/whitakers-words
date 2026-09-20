@@ -1,4 +1,4 @@
-import {CACHE_PREFIX, DATABASE, validateManifest, verifyResponse} from './offline-core.mjs';
+import {CACHE_PREFIX, DATABASE, validateManifest, verifyResponse, localResponse} from './offline-core.mjs';
 
 // No automatic skipWaiting: a new worker never replaces an open application.
 self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));
@@ -53,7 +53,7 @@ async function save(send) {
       if (job.abort.signal.aborted) throw new DOMException('Cancelled', 'AbortError');
       const incoming = await fetch(file.url, {cache: 'no-store', signal: job.abort.signal});
       await verifyResponse(incoming, file);
-      await cache.put(file.url, incoming);
+      await cache.put(file.url, localResponse(incoming));
       bytes += file.bytes;
       send({progress: {bytes, total: manifest.bytes}});
     }
@@ -122,7 +122,7 @@ async function offlineResponse(request) {
     if (!saved || !pathname.startsWith(saved.manifest.base)) continue;
     if (request.mode === 'navigate' && !await healthy(saved)) continue;
     const cache = await caches.open(saved.cache), cached = await cache.match(pathname);
-    if (cached) return cached;
+    if (cached) return localResponse(cached);
   }
   // Older tabs retain their immutable assets even after a newer release is
   // selected. Complete caches are not deleted by an update in this alpha.
@@ -130,7 +130,7 @@ async function offlineResponse(request) {
     for (const name of await caches.keys()) {
       if (!name.startsWith(CACHE_PREFIX)) continue;
       const cached = await (await caches.open(name)).match(pathname);
-      if (cached) return cached;
+      if (cached) return localResponse(cached);
     }
   }
   try { return await fetch(request); }
