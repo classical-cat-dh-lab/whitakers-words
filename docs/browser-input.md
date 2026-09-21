@@ -2,7 +2,10 @@
 
 The default **Latin lookup** accepts a word, phrase or sentence. Press Enter or
 Return to look it up; Shift+Enter inserts a newline. A **Look up** button supports
-touch input. Composition events do not submit unfinished input.
+touch input. Composition events do not submit unfinished input. On a narrow touch
+screen, a completed lookup dismisses the input keyboard and moves to the results.
+New lookup returns to and selects the input. Desktop keyboard focus stays in the
+input for repeated queries.
 
 ## Macron adaptation
 

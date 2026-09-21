@@ -3,6 +3,15 @@ import {presentAnalysis} from '../dist/reader.js';
 import {renderReader,renderAbbreviations} from './render-reader.mjs';
 const worker=new Worker(new URL('./worker.mjs',import.meta.url),{type:'module'});
 const $=selector=>document.querySelector(selector),pending=new Map();let sequence=0;
+function updateInputPrompt(){
+  const mode=$('#mode').value,english=mode==='english';
+  $('label[for="input"]').textContent=english?'English word':'Latin word, phrase or sentence';
+  $('#input').lang=english?'en':'la';
+  $('#input').placeholder=english?'Type an English word, then press Enter / Return.':'Type Latin here, then press Enter / Return.';
+  $('#input-help').textContent=english?'Enter / Return to look up an English word.':mode==='latin'?'Enter / Return to look up · Shift + Enter for a new line. Macrons are welcome.':'Enter / Return to look up · Shift + Enter for a new line. This mode uses original WORDS input without macron folding.';
+}
+$('#mode').addEventListener('change',updateInputPrompt);updateInputPrompt();
+$('#new-lookup').addEventListener('click',event=>{event.preventDefault();$('#input').focus();$('#input').select();$('#input').scrollIntoView({block:'center'});});
 renderAbbreviations($('#abbreviation-table'));
 $('#abbreviations-link').addEventListener('click',()=>{$('#abbreviations').open=true;});
 function query(input,mode='legacy'){return new Promise((resolve,reject)=>{const id=++sequence;pending.set(id,{resolve,reject});worker.postMessage({id,input,mode});});}
@@ -17,7 +26,7 @@ $('#input').addEventListener('keydown',event=>{
 });
 $('#analysis-form').addEventListener('submit',async event=>{
   event.preventDefault();if($('#analyze').disabled||!$('#input').value.trim())return;$('#analyze').disabled=true;$('#status').textContent='Analyzing…';
-  try{const {result,milliseconds,inputAdapter}=await query($('#input').value,$('#mode').value);const analysis=result.corrected??result;const view=presentAnalysis(analysis);if(inputAdapter){view.tokens.forEach((token,i)=>token.surface=originalSurface(inputAdapter,analysis.tokens[i].span));if(inputAdapter.lookup!==inputAdapter.original)view.notes.unshift('Macrons are ignored for lookup; your original spelling is shown below.');}renderReader($('#reader-output'),view);$('#legacy-output').textContent=analysis.legacyText||'No Latin tokens.';$('#json-output').textContent=JSON.stringify(inputAdapter?{inputAdapter,result}:result,null,2);$('#status').textContent=`Complete (${milliseconds.toFixed(1)} ms).`;}
+  try{const {result,milliseconds,inputAdapter}=await query($('#input').value,$('#mode').value);const analysis=result.corrected??result;const view=presentAnalysis(analysis);if(inputAdapter){view.tokens.forEach((token,i)=>token.surface=originalSurface(inputAdapter,analysis.tokens[i].span));if(inputAdapter.lookup!==inputAdapter.original)view.notes.unshift('Macrons are ignored for lookup; your original spelling is shown below.');}renderReader($('#reader-output'),view);$('#legacy-output').textContent=analysis.legacyText||'No Latin tokens.';$('#json-output').textContent=JSON.stringify(inputAdapter?{inputAdapter,result}:result,null,2);$('#status').textContent=`Complete (${milliseconds.toFixed(1)} ms).`;if(matchMedia('(max-width: 48rem) and (pointer: coarse)').matches){$('#input').blur();$('#result-heading').focus({preventScroll:true});$('#result-heading').scrollIntoView({block:'start'});}}
   catch(error){$('#status').textContent='Error: '+error.message;}finally{$('#analyze').disabled=false;}
 });
 $('#validate').addEventListener('click',async()=>{

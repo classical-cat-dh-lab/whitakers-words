@@ -1,6 +1,6 @@
 # Whitaker's Words — TypeScript preservation
 
-**0.2.0-alpha.1 · Experimental candidate** — [Open the dictionary](https://words.latingreek.org/).
+**0.2.0-alpha.1 · Experimental** — [Open the dictionary](https://words.latingreek.org/).
 
 A preservation of William Whitaker's WORDS in TypeScript, compiled to JavaScript
 ESM: Latin analysis, English gloss lookup, a structured API, a CLI and a small
@@ -23,8 +23,9 @@ The canonical reference is **WORDS 1.99.0**, commit
 `1f2f0fb0867a896d7b9284a03d615ed635d6f992` of
 [mk270/whitakers-words](https://github.com/mk270/whitakers-words).
 This is an independent preservation project, separate from designing a new Latin
-analyzer. Original linguistic errors and observed quirks remain legacy behavior.
-The explicit corrected layer is initially empty.
+analyzer. The legacy profile targets original behavior, including linguistic
+errors and quirks; [known compatibility differences](docs/acceptance.md) are
+recorded explicitly. The corrected layer is empty.
 
 Archived release: [0.1.0-alpha.1 — DOI: 10.5281/zenodo.22857976](https://doi.org/10.5281/zenodo.22857976).
 The archive preserves the exact release files; citation metadata is also available

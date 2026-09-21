@@ -89,7 +89,11 @@ cancelButton.addEventListener('click', () => call('cancel').catch(error => { mes
 reloadButton.addEventListener('click', async () => {
   reloadButton.disabled = true;
   try { await call('activate', {id: update.id}); location.assign('/'); }
-  catch (error) { message.textContent = error.message; reloadButton.disabled = false; }
+  catch (error) {
+    await refresh().catch(() => {});
+    panel.classList.add('offline-notice'); message.textContent = error.message;
+    saveButton.hidden = false; reloadButton.disabled = false;
+  }
 });
 
 window.addEventListener('beforeinstallprompt', event => {

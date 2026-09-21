@@ -38,7 +38,7 @@
     </section>
     <form id="analysis-form">
       <label for="input">Latin word, phrase or sentence</label>
-      <textarea id="input" name="input" rows="2" spellcheck="false" autocapitalize="none" autocorrect="off" enterkeyhint="search" aria-describedby="input-help" lang="la" placeholder="Enter a word, phrase or sentence, then press Enter / Return."></textarea>
+      <textarea id="input" name="input" rows="2" spellcheck="false" autocapitalize="none" autocorrect="off" enterkeyhint="search" aria-describedby="input-help" lang="la" placeholder="Type Latin here, then press Enter / Return."></textarea>
       <p id="input-help">Enter / Return to look up · Shift + Enter for a new line. Macrons are welcome.</p>
       <div class="controls">
         <label for="mode">Mode</label>
@@ -48,14 +48,14 @@
       <p id="status" role="status" aria-live="polite">Loading and verifying local data…</p>
     </form>
     <section aria-labelledby="result-heading">
-      <div class="reader-heading"><h2 id="result-heading">Analysis</h2><a id="abbreviations-link" href="#abbreviations">Abbreviations</a></div>
+      <div class="reader-heading"><h2 id="result-heading" tabindex="-1">Analysis</h2><div class="reader-links"><a id="new-lookup" href="#input">New lookup</a><a id="abbreviations-link" href="#abbreviations">Abbreviations</a></div></div>
       <div id="reader-output"><p>The first result will appear here.</p></div>
       <details><summary>Legacy output</summary><pre id="legacy-output" tabindex="0"></pre></details>
       <details><summary>Structured result</summary><pre id="json-output" tabindex="0"></pre></details>
     </section>
     <details id="abbreviations"><summary>Abbreviations and terminology</summary><p>Compact dictionary notation for students. Meanings apply in the categories shown; the underlying WORDS analyses are preserved.</p><div id="abbreviation-table" class="table-scroll" tabindex="0" role="region" aria-label="Abbreviations table"></div></details>
     <details id="validation"><summary>Validation</summary><button type="button" id="validate" disabled>Run validation cases</button><ol id="validation-results"></ol></details>
-    <footer><p>Snapshot <code>words-mk270-1f2f0fb</code> · WORDS 1.99.0 lineage</p><p>The legacy profile retains original behavior, including errors. No linguistic corrections are enabled. All analysis runs on your device; entered text is not sent to a server.</p><p>WORDS and its dictionary: William Whitaker. TypeScript preservation: © 2026 Xinjie Fang / Classical Cat Digital Humanities Lab. This is an independent project.</p><p><a href="../docs/compatibility.md">Compatibility scope</a> · <a href="../licenses/whitaker.txt">Original notice</a> · <a href="../LICENSE">AGPL-3.0-only · No warranty</a> · <a href="/downloads/whitakers-words-0.2.0-alpha.1-source.tar.gz">Corresponding source</a></p></footer>
+    <footer><p>Snapshot <code>words-mk270-1f2f0fb</code> · WORDS 1.99.0 lineage</p><p>The legacy profile targets original behavior, including errors; see the compatibility scope for known differences. No linguistic corrections are enabled. All analysis runs on your device; entered text is not sent to a server.</p><p>WORDS and its dictionary: William Whitaker. TypeScript preservation: © 2026 Xinjie Fang / Classical Cat Digital Humanities Lab. This is an independent project.</p><p><a href="../docs/compatibility.md">Compatibility scope</a> · <a href="../licenses/whitaker.txt">Original notice</a> · <a href="../LICENSE">AGPL-3.0-only · No warranty</a> · <a href="/downloads/whitakers-words-0.2.0-alpha.1-source.tar.gz">Corresponding source</a></p></footer>
   </main>
 </body>
 </html>

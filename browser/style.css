@@ -68,3 +68,8 @@ main { padding-left: max(1.5rem, env(safe-area-inset-left)); padding-right: max(
   .reader-token h3 { font-size: 1.7rem; }
   .reader-entry h4, .reader-explanation h4 { overflow-wrap: anywhere; }
 }
+
+.reader-heading { flex-wrap: wrap; }
+.reader-links { display: flex; flex-wrap: wrap; gap: .8rem; }
+#result-heading { scroll-margin-top: 1rem; }
+textarea::placeholder { color: var(--ds-color-text-muted); opacity: 1; }

@@ -22,7 +22,8 @@ for (const file of ['index.html', 'app.mjs', 'input.mjs', 'worker.mjs', 'render-
 await add('browser/resources');
 for (const file of (await readdir(resolve(root, 'dist'))).filter(f => f.endsWith('.js')).sort()) await add('dist/' + file);
 for (const file of ['legacy/DICTLINE.GEN', 'legacy/INFLECTS.LAT', 'legacy/ADDONS.LAT', 'legacy/UNIQUES.LAT', 'dictionary-forms.tsv', 'english-index.tsv']) await add('data/' + file);
-for (const file of ['docs/compatibility.md', 'docs/abbreviations.md', 'licenses/whitaker.txt', 'LICENSE']) await add(file);
+await add('docs');
+for (const file of ['licenses/whitaker.txt', 'LICENSE']) await add(file);
 
 // A small native vector mark, rasterized without an image library or web font.
 const polygon = [[100,136],[154,136],[189,326],[239,163],[274,163],[322,326],[359,136],[413,136],[353,376],[301,376],[256,231],[212,376],[159,376]];
@@ -77,7 +78,7 @@ await writeFile(resolve(site, '_headers'), `/*\n  X-Content-Type-Options: nosnif
 // Deterministic corresponding-source archive: explicit product allowlist, no Git
 // metadata, operator files, local usernames, absolute paths or compiler outputs.
 const approvedRoots = new Set(['src','node','cli','browser','data','docs','deviations','licenses','scripts','tests','vendor']);
-const approvedFiles = new Set(['README.md','LICENSE','CITATION.cff','package.json','tsconfig.json','wrangler.jsonc','legacy.lock.json','typescript.lock.json']);
+const approvedFiles = new Set(['README.md','LICENSE','CITATION.cff','package.json','tsconfig.json','wrangler.jsonc','legacy.lock.json','toolchains.lock.json','typescript.lock.json']);
 const sourcePaths = [];
 async function sourceFiles(path) {
   const info = await lstat(resolve(root, path));
