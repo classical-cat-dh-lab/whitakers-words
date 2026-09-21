@@ -3,48 +3,48 @@
     "label": "Basic morphology",
     "input": "rem acu tetigisti",
     "mode": "legacy",
-    "sha256": "7aba46dc4ed972edb82d4e5cf29a5ca49cb88b287dee43d6278b95a3b5627ce0"
+    "sha256": "a26029a1fd2512c872c8c892f6d25e71732104411a4ad1540166c5450943f1b7"
   },
   {
     "label": "Enclitics and PACK",
     "input": "multusque quidam mecum",
     "mode": "legacy",
-    "sha256": "5bed92d1106e0a0cd3bbdf221e3d353d601c271d99656f653a1a292e473acd86"
+    "sha256": "6ebdb8575e99c87cd697921a881c0bc640a053b6bfcc6cd4c7a0e5cb6ed22c5d"
   },
   {
     "label": "Syncope",
     "input": "amasti audierunt",
     "mode": "legacy",
-    "sha256": "959d78c826ce810e6c55eedf2e7ae9433a35aba4c531fc85c758301ad84414dc"
+    "sha256": "54e42c8c00dde0fe7277835dd468baf4f1e4076b2882e0dfcdf0d783ef1cd775"
   },
   {
     "label": "Compounds",
     "input": "amatus est amatum iri",
     "mode": "legacy",
-    "sha256": "451f8afc768a1efa930d4ec3abc25462bbfe62f978d66ffa101cca3f63dae26f"
+    "sha256": "23b892d12b6e0813d8e2cd83d6fa1f24c70fac2087802db3a1c9245ded190c4e"
   },
   {
     "label": "Legacy Unicode handling",
     "input": "amāre amāre 拉丁語 😀",
     "mode": "legacy",
-    "sha256": "e511b8a1ed0141810e0ea7ba306f104c8213dc1797ff26fded9a85dd87e08ad1"
+    "sha256": "d924f92fc5e012ea7f35e8a577fc3db9a0761be0e5303fa834a99cc26d23dfa4"
   },
   {
     "label": "Numerals and abbreviation",
     "input": "XIV MCMXCIX C.",
     "mode": "legacy",
-    "sha256": "d1f37e39e67c98c697bd3ebda7c8e16ee7e8a0cba0adc56ccbd7c6fcf9fe2710"
+    "sha256": "bd73a36f3d63f39e0c9bbb9ae61728e4df07c04ed3ca9690165b0f535ab03e4c"
   },
   {
     "label": "English lookup",
     "input": "wild",
     "mode": "english",
-    "sha256": "cba846be60c900f5eb5ec03da79cbc3aff6d485ce08e5843ec56805dfeee9545"
+    "sha256": "d49cf9edd5341c375bbefe905d82e1a9fde3fa94c1c44bd4afc2468eee044db7"
   },
   {
     "label": "Empty corrected layer",
     "input": "amāre",
     "mode": "corrected",
-    "sha256": "38894208f1f05c1a7205200bf7383f3d42ef60bc562b011c8bccdac874cdc225"
+    "sha256": "ecd91f15bfa63b68095928b0532560fedac0a4cb8cce42abacb6d7bb68ca9eaa"
   }
 ]

@@ -1,6 +1,6 @@
 # Whitaker's Words — TypeScript preservation
 
-**0.1.0-alpha.1 · Experimental** — [Open the dictionary](https://words.latingreek.org/).
+**0.2.0-alpha.1 · Experimental candidate** — [Open the dictionary](https://words.latingreek.org/).
 
 A preservation of William Whitaker's WORDS in TypeScript, compiled to JavaScript
 ESM: Latin analysis, English gloss lookup, a structured API, a CLI and a small
@@ -9,7 +9,10 @@ on the user's device. There is no runtime service or database server.
 
 Choose **Save for offline use** on the website to download and verify the complete
 dictionary (about 14.5 MiB). It then works without a connection. App installation
-is optional; clearing the website's data removes its saved offline files.
+is optional; clearing the website's data removes its saved offline files. After
+saving, the download panel becomes a compact Update control. Enter a word, phrase
+or sentence and press Enter / Return; macrons are ignored for lookup while your
+original spelling remains visible. [Browser and mobile guide](docs/browser-input.md).
 
 This alpha passes the frozen reference cases described in the
 [compatibility report](docs/compatibility.md). Full classical-author corpus
@@ -50,6 +53,8 @@ No npm package is published.
 
 ## Verification and documentation
 
+- [Full fixed-wordlist acceptance](docs/acceptance.md): reproducible Ada/TypeScript
+  comparison, corpus identity, complete counts and known differences.
 - [API and CLI](docs/api.md): result types, spans, provenance, options and errors.
 - [Student abbreviations](docs/abbreviations.md): the implemented, reviewable
   terminology table, also available inside the browser page.

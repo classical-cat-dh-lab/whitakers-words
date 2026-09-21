@@ -47,13 +47,20 @@ async function sample(candidate) {
 async function refresh() {
   const status = await call('status');
   update = status.pending;
+  panel.classList.toggle('offline-ready', Boolean(status.ready));
+  panel.classList.remove('offline-notice');
+  document.querySelector('#offline-help').hidden = Boolean(status.ready);
+  document.querySelector('#install-app').hidden = Boolean(status.ready) || !installPrompt;
   reloadButton.hidden = !update;
   if (status.ready) {
     message.textContent = `Ready offline · ${status.active.version}. ${persistence}`;
-    saveButton.textContent = manifest && manifest.id !== status.active.id ? `Download update (${megabytes(manifest.bytes)})` : 'Check / repair saved files';
+    saveButton.textContent = 'Update';
+    saveButton.title = 'Check for updates and verify saved files';
+    saveButton.hidden = Boolean(update);
     if (update) message.textContent += ' An update is verified and ready. Reload when convenient.';
     else if (manifest && manifest.id !== status.active.id) message.textContent += ' An update is available.';
   } else {
+    saveButton.hidden = false;
     message.textContent = status.active ? 'Saved files are incomplete. Reconnect and save again to repair them.' : 'Save the complete dictionary to use it without an internet connection.';
     saveButton.textContent = manifest ? `Save for offline use (${megabytes(manifest.bytes)})` : 'Save for offline use';
   }
@@ -61,6 +68,7 @@ async function refresh() {
 }
 
 saveButton.addEventListener('click', async () => {
+  panel.classList.add('offline-notice');
   saveButton.disabled = true; cancelButton.hidden = false; progress.hidden = false; progress.value = 0;
   try {
     const persistent = await navigator.storage?.persist?.().catch(() => false);
@@ -74,7 +82,7 @@ saveButton.addEventListener('click', async () => {
     await call('confirm', {id: result.candidate.id});
     manifest = result.candidate;
     await refresh();
-  } catch (error) { message.textContent = error.message; }
+  } catch (error) { panel.classList.add('offline-notice'); message.textContent = error.message; }
   finally { saveButton.disabled = false; cancelButton.hidden = true; progress.hidden = true; }
 });
 cancelButton.addEventListener('click', () => call('cancel').catch(error => { message.textContent = error.message; }));
@@ -86,7 +94,7 @@ reloadButton.addEventListener('click', async () => {
 
 window.addEventListener('beforeinstallprompt', event => {
   event.preventDefault(); installPrompt = event;
-  document.querySelector('#install-app').hidden = false;
+  document.querySelector('#install-app').hidden = panel.classList.contains('offline-ready');
 });
 document.querySelector('#install-app').addEventListener('click', async () => {
   await installPrompt?.prompt(); installPrompt = null;

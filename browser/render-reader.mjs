@@ -1,3 +1,4 @@
+import {meaningLines} from './input.mjs';
 import {ABBREVIATIONS} from '../dist/terminology.js';
 const element=(name,text,className)=>{const node=document.createElement(name);if(text!==undefined)node.textContent=text;if(className)node.className=className;return node;};
 function terms(tokens,compact=false){
@@ -19,7 +20,7 @@ export function renderReader(root,result){
         const list=element('ul',undefined,'reader-forms');
         for(const form of item.forms){const row=element('li');row.append(terms(form.terms,true));for(const note of form.notes)row.append(element('span',' — '+note,'reader-form-note'));list.append(row);}article.append(list);
       }
-      if(item.meaning)article.append(element('p',item.meaning,'reader-meaning'));
+      if(item.meaning){const meaning=element('p',undefined,'reader-meaning');meaningLines(item.meaning).forEach((line,i)=>{if(i)meaning.append(document.createElement('br'));meaning.append(document.createTextNode(line));});article.append(meaning);}
       if(item.details.length){const details=element('details');details.append(element('summary',item.kind==='entry'?'Word details':'Original note'));const definition=element('dl');for(const detail of item.details){definition.append(element('dt',detail.label),element('dd',detail.value));}details.append(definition);article.append(details);}
       section.append(article);
     }

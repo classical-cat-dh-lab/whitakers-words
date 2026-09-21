@@ -1,3 +1,4 @@
+import {originalSurface} from './input.mjs';
 import {presentAnalysis} from '../dist/reader.js';
 import {renderReader,renderAbbreviations} from './render-reader.mjs';
 const worker=new Worker(new URL('./worker.mjs',import.meta.url),{type:'module'});
@@ -11,9 +12,12 @@ worker.addEventListener('message',({data})=>{
   if(data.type==='result'){pending.get(data.id)?.resolve(data);pending.delete(data.id);}
 });
 worker.addEventListener('error',error=>{$('#status').textContent='Worker error: '+error.message;for(const p of pending.values())p.reject(error);pending.clear();});
+$('#input').addEventListener('keydown',event=>{
+  if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing&&event.keyCode!==229){event.preventDefault();if(!$('#analyze').disabled&&$('#input').value.trim())$('#analysis-form').requestSubmit();}
+});
 $('#analysis-form').addEventListener('submit',async event=>{
-  event.preventDefault();$('#analyze').disabled=true;$('#status').textContent='Analyzing…';
-  try{const {result,milliseconds}=await query($('#input').value,$('#mode').value);const analysis=result.corrected??result;renderReader($('#reader-output'),presentAnalysis(analysis));$('#legacy-output').textContent=analysis.legacyText||'No Latin tokens.';$('#json-output').textContent=JSON.stringify(result,null,2);$('#status').textContent=`Complete (${milliseconds.toFixed(1)} ms).`;}
+  event.preventDefault();if($('#analyze').disabled||!$('#input').value.trim())return;$('#analyze').disabled=true;$('#status').textContent='Analyzing…';
+  try{const {result,milliseconds,inputAdapter}=await query($('#input').value,$('#mode').value);const analysis=result.corrected??result;const view=presentAnalysis(analysis);if(inputAdapter){view.tokens.forEach((token,i)=>token.surface=originalSurface(inputAdapter,analysis.tokens[i].span));if(inputAdapter.lookup!==inputAdapter.original)view.notes.unshift('Macrons are ignored for lookup; your original spelling is shown below.');}renderReader($('#reader-output'),view);$('#legacy-output').textContent=analysis.legacyText||'No Latin tokens.';$('#json-output').textContent=JSON.stringify(inputAdapter?{inputAdapter,result}:result,null,2);$('#status').textContent=`Complete (${milliseconds.toFixed(1)} ms).`;}
   catch(error){$('#status').textContent='Error: '+error.message;}finally{$('#analyze').disabled=false;}
 });
 $('#validate').addEventListener('click',async()=>{

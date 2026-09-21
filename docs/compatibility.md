@@ -36,6 +36,13 @@ candidate multiplicity, order, morphology, flags, citations, meanings, explanato
 text, unknown results and trimming markers. It never compares an unordered set.
 The CLI intentionally omits the startup banner and interactive command interpreter.
 
+## Expanded qualification
+
+The 0.2 candidate includes [full fixed-wordlist acceptance](acceptance.md), which
+extends the frozen baseline and records newly exposed compatibility differences.
+The old finite baseline remains passing; its success is not universal equivalence.
+[Browser macron adaptation](browser-input.md) is separate from the legacy profile.
+
 ## Observed legacy behavior retained
 
 - Unique entries retain the original null part initialization (`X`), even when
@@ -53,7 +60,7 @@ The CLI intentionally omits the startup banner and interactive command interpret
 
 ## Limits and next qualification work
 
-The first-stage deliverables are operational. This is a 0.1 alpha,
+The first-stage deliverables are operational. This is an experimental alpha,
 not a claim of complete equivalence for every possible WORDS input or philological
 correctness. The qualified profile uses only the canonical general dictionary;
 local/special dictionaries, editing modes, interactive menus, persistent option
