@@ -1,5 +1,7 @@
 # 0.2.0-alpha.1
 
+The full 4,144,877-query Ada comparison found 4,035,872 exact matches (97.370%), 109,001 output differences, two Ada exceptions and two console limitations, with no TypeScript runtime exceptions; known analysis and explanatory-output differences are scheduled for 0.3 alpha.
+
 - Latin browser lookup accepts precomposed and decomposed macrons without splitting
   words. Original spelling remains visible; the legacy engine/API/CLI are unchanged.
 - Saved offline installations show a compact Update control. Download progress,

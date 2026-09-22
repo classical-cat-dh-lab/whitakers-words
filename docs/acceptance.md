@@ -90,10 +90,11 @@ unresolved departures. Examples include alternate fallback analyses for `abare`,
 additional suffix candidates for `colucula`, and lost explanation-only output for
 `ebit`. The input adapter and browser repairs do not resolve these engine issues.
 
-The recommendation is to repair the compatibility differences and rerun this fixed
-suite before publishing the candidate. No linguistic correction has been activated;
-original dictionary bytes remain fixed. This report does not qualify full classical
-prose, every option combination, or physical mobile installation.
+Version 0.2 alpha releases the verified browser improvements with these known
+engine differences; compatibility repairs and a full rerun are scheduled for
+0.3 alpha. No linguistic correction has been activated; original dictionary bytes
+remain fixed. This report does not qualify full classical prose, every option
+combination, or physical mobile installation.
 
 ## Reproduction identity and performance boundary
 
