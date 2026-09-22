@@ -3,7 +3,8 @@ message: "If you cite this experimental software, use the metadata below."
 type: software
 title: "Whitaker's Words — TypeScript preservation"
 version: "0.2.0-alpha.1"
-doi: "10.5281/zenodo.22857975"
+doi: "10.5281/zenodo.22885831"
+date-released: "2026-09-22"
 url: "https://words.latingreek.org/"
 repository-code: "https://github.com/classical-cat-dh-lab/whitakers-words"
 license: AGPL-3.0-only

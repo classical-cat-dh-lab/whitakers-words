@@ -27,7 +27,7 @@ analyzer. The legacy profile targets original behavior, including linguistic
 errors and quirks; [known compatibility differences](docs/acceptance.md) are
 recorded explicitly. The corrected layer is empty.
 
-Archived release: [0.1.0-alpha.1 — DOI: 10.5281/zenodo.22857976](https://doi.org/10.5281/zenodo.22857976).
+Archived release: [0.2.0-alpha.1 — DOI: 10.5281/zenodo.22885831](https://doi.org/10.5281/zenodo.22885831).
 The archive preserves the exact release files; citation metadata is also available
 in [CITATION.cff](CITATION.cff).
 
