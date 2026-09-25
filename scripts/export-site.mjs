@@ -4,6 +4,7 @@ import {gzipSync, deflateSync} from 'node:zlib';
 import {fileURLToPath} from 'node:url';
 import {resolve, dirname} from 'node:path';
 import {validateManifest} from '../browser/offline-core.mjs';
+import {documentPages} from './document-pages.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url)), site = resolve(root, 'site');
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -18,12 +19,13 @@ async function add(path) {
     for (const name of (await readdir(full)).sort()) await add(path + '/' + name);
   } else files.set(path, await readFile(full));
 }
-for (const file of ['index.html', 'app.mjs', 'input.mjs', 'worker.mjs', 'render-reader.mjs', 'offline.mjs', 'offline-core.mjs', 'style.css', 'validation-cases.json', 'icon.svg', 'manifest.webmanifest']) await add('browser/' + file);
+for (const file of ['index.html', 'app.mjs', 'input.mjs', 'worker.mjs', 'render-reader.mjs', 'offline.mjs', 'offline-core.mjs', 'theme.mjs', 'style.css', 'validation-cases.json', 'icon.svg', 'manifest.webmanifest']) await add('browser/' + file);
 await add('browser/resources');
 for (const file of (await readdir(resolve(root, 'dist'))).filter(f => f.endsWith('.js')).sort()) await add('dist/' + file);
 for (const file of ['legacy/DICTLINE.GEN', 'legacy/INFLECTS.LAT', 'legacy/ADDONS.LAT', 'legacy/UNIQUES.LAT', 'dictionary-forms.tsv', 'english-index.tsv']) await add('data/' + file);
 await add('docs');
 for (const file of ['licenses/whitaker.txt', 'LICENSE']) await add(file);
+for (const [path, bytes] of await documentPages(root, pkg.version)) files.set(path, bytes);
 
 // A small native vector mark, rasterized without an image library or web font.
 const polygon = [[100,136],[154,136],[189,326],[239,163],[274,163],[322,326],[359,136],[413,136],[353,376],[301,376],[256,231],[212,376],[159,376]];
@@ -84,7 +86,7 @@ async function sourceFiles(path) {
   const info = await lstat(resolve(root, path));
   if (info.isSymbolicLink()) throw new Error('Source archive refuses symbolic links.');
   if (info.isDirectory()) {
-    for (const child of (await readdir(resolve(root, path))).filter(name => !name.startsWith('.')).sort()) await sourceFiles(path + '/' + child);
+    for (const child of (await readdir(resolve(root, path))).filter(name => !name.startsWith('.') && name !== '__pycache__').sort()) await sourceFiles(path + '/' + child);
   } else if (info.isFile()) sourcePaths.push(path);
 }
 for (const path of [...approvedRoots, ...approvedFiles]) await sourceFiles(path);

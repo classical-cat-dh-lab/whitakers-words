@@ -22,7 +22,7 @@ structured browser result includes the named adapter, original input, lookup inp
 and UTF-16 span mapping alongside the unchanged engine result. Engine spans and
 legacy output refer to the lookup input, not the original marked text.
 
-**Exact legacy input**, the analysis library and CLI keep the original ASCII-byte
+**Latin (original input rules)**, the analysis library and CLI keep the original ASCII-byte
 behavior, including macron splitting. This lets callers reproduce the reference
 program. English lookup and the explicitly empty corrected layer do not activate
 the browser adapter. This input convenience is not a linguistic correction.
@@ -38,15 +38,29 @@ This display does not assign new sense numbers or claim editorial correction.
 
 **Save for offline use** downloads the complete application and dictionary, checks
 every file and starts a fresh saved analyzer before declaring success. Only then
-does the download panel collapse to **Update**. A newly verified version offers
+does the download panel disappear and **Update** move into the header beside
+**Night mode**. A newly verified version offers
 **Reload with update**. Errors or progress remain visible when attention is needed.
 A missing or incomplete cache restores the save/repair invitation.
 
 On iPhone or iPad, Safari's Share menu provides Add to Home Screen. Open the saved
 Home Screen app and save its dictionary there as well; an installed icon alone
 is not evidence that all resources are cached. Clearing site data removes the
-saved dictionary. The interface supports system light/dark themes, safe-area
+saved dictionary and theme preference. The interface supports safe-area
 insets, keyboard input and touch controls without page-wide horizontal scrolling.
 
 All lookups run on the device. Hosting serves application/data files; the offline
 bundle reduces repeated transfers. Entered text is not sent to the host.
+
+## Appearance and documentation
+
+The default is light mode, independently of the operating system. **Night mode**
+switches the theme manually; IndexedDB saves the choice on this browser/device.
+The same setting applies to the dictionary and its documentation, survives a
+restart, and works offline. If browser storage is unavailable, the switch still
+works for the open page and explains that the choice could not be saved.
+
+Footer links open formatted HTML pages with return navigation. These documents,
+including the original WORDS notice and full AGPL license, are included in the
+saved offline bundle. The source introduction page offers the complete source
+archive as an explicit download; that archive requires a connection.

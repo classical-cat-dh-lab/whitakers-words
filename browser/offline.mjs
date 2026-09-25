@@ -49,6 +49,10 @@ async function refresh() {
   update = status.pending;
   panel.classList.toggle('offline-ready', Boolean(status.ready));
   panel.classList.remove('offline-notice');
+  const controls = document.querySelector('#offline-controls');
+  if (status.ready) document.querySelector('#header-tools').prepend(controls);
+  else panel.prepend(controls);
+  panel.hidden = Boolean(status.ready) && !update;
   document.querySelector('#offline-help').hidden = Boolean(status.ready);
   document.querySelector('#install-app').hidden = Boolean(status.ready) || !installPrompt;
   reloadButton.hidden = !update;
@@ -68,6 +72,7 @@ async function refresh() {
 }
 
 saveButton.addEventListener('click', async () => {
+  panel.hidden = false;
   panel.classList.add('offline-notice');
   saveButton.disabled = true; cancelButton.hidden = false; progress.hidden = false; progress.value = 0;
   try {
@@ -92,6 +97,7 @@ reloadButton.addEventListener('click', async () => {
   catch (error) {
     await refresh().catch(() => {});
     panel.classList.add('offline-notice'); message.textContent = error.message;
+    panel.hidden = false;
     saveButton.hidden = false; reloadButton.disabled = false;
   }
 });

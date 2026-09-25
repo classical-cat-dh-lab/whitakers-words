@@ -1,6 +1,10 @@
 # Whitaker's Words — TypeScript preservation
 
-**0.2.0-alpha.1 · Experimental** — [Open the dictionary](https://words.latingreek.org/).
+**0.2.1-alpha.1 · Release candidate** — [Open the published dictionary](https://words.latingreek.org/).
+
+The [0.2.1 frontend patch](docs/release-0.2.1.md) adds manual, locally saved night
+mode, moves Update into the header and publishes readable HTML documentation.
+The currently published release remains 0.2.0-alpha.1 until this candidate is accepted.
 
 A preservation of William Whitaker's WORDS in TypeScript, compiled to JavaScript
 ESM: Latin analysis, English gloss lookup, a structured API, a CLI and a small
