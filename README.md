@@ -1,10 +1,9 @@
 # Whitaker's Words — TypeScript preservation
 
-**0.2.1-alpha.1 · Release candidate** — [Open the published dictionary](https://words.latingreek.org/).
+**0.2.1-alpha.1 · Experimental** — [Open the dictionary](https://words.latingreek.org/).
 
 The [0.2.1 frontend patch](docs/release-0.2.1.md) adds manual, locally saved night
 mode, moves Update into the header and publishes readable HTML documentation.
-The currently published release remains 0.2.0-alpha.1 until this candidate is accepted.
 
 A preservation of William Whitaker's WORDS in TypeScript, compiled to JavaScript
 ESM: Latin analysis, English gloss lookup, a structured API, a CLI and a small
@@ -53,7 +52,7 @@ No `npm install` is required. Use `npm run site` then `npm run preview` to build
 and preview the offline website. Serve `site/` over HTTPS (or localhost); opening
 files directly does not support modules or Service Workers. Download the frozen
 source and ready-to-host website from the
-[0.2.0-alpha.1 release](https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v0.2.0-alpha.1).
+[0.2.1-alpha.1 release](https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v0.2.1-alpha.1).
 No npm package is published.
 
 ## Verification and documentation

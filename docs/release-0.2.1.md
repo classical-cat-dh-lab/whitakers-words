@@ -19,3 +19,7 @@ This frontend patch retains the 0.2 engine: its full 4,144,877-query Ada compari
 
 The dictionary, rules and analysis algorithms are unchanged. Original notices are
 reflowed for reading without changing their text; their raw files remain included.
+
+Online and offline lookups both run on the user's device without sending queries
+to the host. Network download protection does not impose a lookup limit or add
+an online authorization step to saved offline installations.
