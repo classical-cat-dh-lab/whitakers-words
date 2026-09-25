@@ -1,0 +1,878 @@
+{
+  "snapshot": "words-mk270-1f2f0fb",
+  "profile": "upstream-tests-v1",
+  "oracleBinarySha256": "c77d4f09b82585897b25252e0613a3d0edb058d00c95ad0605458135b7c9cef8",
+  "comparison": "Ordered lines with trailing whitespace removed and frame boundaries trimmed",
+  "cases": [
+    {
+      "input": "abare",
+      "expected": "abar.e               N      2 1 VOC S M\nabavus, abavi  N (2nd) M   [XXXCO]\nancestor, forefather; great-great grandfather, grandfather's grandfather;",
+      "rawStdoutSha256": "938510a101b99d7f90bc5d9d5527919bd07620ba21a0d07b272084bbb54859ab"
+    },
+    {
+      "input": "abaris",
+      "expected": "abar.is              N      2 1 LOC P M\nabar.is              N      2 1 DAT P M\nabar.is              N      2 1 ABL P M\nabavus, abavi  N (2nd) M   [XXXCO]\nancestor, forefather; great-great grandfather, grandfather's grandfather;",
+      "rawStdoutSha256": "9bd8315e17b4161a47aaf36b0393646ca23b6a803d316534b1520dec84eef976"
+    },
+    {
+      "input": "abarjs",
+      "expected": "abar.is              N      2 1 LOC P M\nabar.is              N      2 1 DAT P M\nabar.is              N      2 1 ABL P M\nabavus, abavi  N (2nd) M   [XXXCO]\nancestor, forefather; great-great grandfather, grandfather's grandfather;",
+      "rawStdoutSha256": "9bd8315e17b4161a47aaf36b0393646ca23b6a803d316534b1520dec84eef976"
+    },
+    {
+      "input": "adripare",
+      "expected": "ar                   SUFFIX\nmeans/instrument/place for special purpose of N/V (calco/calcar - tread/spur);\nadripar.e            N      3 4 LOC S N\nadripar.e            N      3 4 DAT S N                   Early\nadripio, adripere, adripui, adreptus  V (3rd) TRANS   [XXXAO]\ntake hold of; seize (hand/tooth/claw), snatch; arrest; assail; pick up, absorb;",
+      "rawStdoutSha256": "9f115ad6bc6c94b4bc25464caed1b76fff100d30852e0845c1076ee810827cd8"
+    },
+    {
+      "input": "adriparem",
+      "expected": "Two words\nMay be 2 words combined (adrip+arem) If not obvious, probably incorrect\nar.em                V      1 1 PRES ACTIVE  SUB 1 S\naro, arare, aravi, aratus  V (1st) TRANS   [XAXBO]\nplow, till, cultivate; produce by plowing, grow; furrow, wrinkle;\n*",
+      "rawStdoutSha256": "48c9dac5ea61269cdacb9233048a4da4c596569bf1df20293e8485d8e1e7a39e"
+    },
+    {
+      "input": "adriparis",
+      "expected": "ar                   SUFFIX\nmeans/instrument/place for special purpose of N/V (calco/calcar - tread/spur);\nadripar.is           N      3 4 GEN S N\nadripio, adripere, adripui, adreptus  V (3rd) TRANS   [XXXAO]\ntake hold of; seize (hand/tooth/claw), snatch; arrest; assail; pick up, absorb;",
+      "rawStdoutSha256": "adb83386d6780cfed92a20e20b79b7e7658a3e6f202562cecb01f97c7235aa50"
+    },
+    {
+      "input": "colucula",
+      "expected": "co                   PREFIX\n- together; completely, strongly, forcibly, violently;\nul                   SUFFIX\nlittle, small, -let (Diminutive) target is of gender of root => decl;\nlucul.a              N      1 1 NOM S F\nlucul.a              N      1 1 VOC S F\nlucul.a              N      1 1 ABL S F\nLucas, Lucae  N M   [EEXDX]    Later  lesser\nLuke;\nlucus, luci  N (2nd) M   [XXXAX]\ngrove; sacred grove;\nlux, lucis  N (3rd) F   [XXXAX]\nlight, daylight, light of day; life; world; day; [prima luce => at daybreak];\nco                   PREFIX\n- together; completely, strongly, forcibly, violently;\nul                   SUFFIX\nlittle, small, -let (Diminutive) target is of gender of root => decl;\nlucul.a              N      2 2 NOM P N\nlucul.a              N      2 2 VOC P N\nlucul.a              N      2 2 ACC P N\nLucas, Lucae  N M   [EEXDX]    Later  lesser\nLuke;\nlucus, luci  N (2nd) M   [XXXAX]\ngrove; sacred grove;\nlux, lucis  N (3rd) F   [XXXAX]\nlight, daylight, light of day; life; world; day; [prima luce => at daybreak];\nco                   PREFIX\n- together; completely, strongly, forcibly, violently;\nul                   SUFFIX\n-ulus; of a, pertaining to a, in a condition of, in a state of;\nlucul.a              ADJ    1 1 NOM S F POS\nlucul.a              ADJ    1 1 VOC S F POS\nlucul.a              ADJ    1 1 ABL S F POS\nlucul.a              ADJ    1 1 NOM P N POS\nlucul.a              ADJ    1 1 VOC P N POS\nlucul.a              ADJ    1 1 ACC P N POS\nLucas, Lucae  N M   [EEXDX]    Later  lesser\nLuke;\nlucus, luci  N (2nd) M   [XXXAX]\ngrove; sacred grove;\nlux, lucis  N (3rd) F   [XXXAX]\nlight, daylight, light of day; life; world; day; [prima luce => at daybreak];",
+      "rawStdoutSha256": "01513748eb5cb46e84ca1f6bf8cb3c05d2ecb37f42081bf01d4f50f2d2c94465"
+    },
+    {
+      "input": "colvcvla",
+      "expected": "co                   PREFIX\n- together; completely, strongly, forcibly, violently;\nul                   SUFFIX\nlittle, small, -let (Diminutive) target is of gender of root => decl;\nlvcvl.a              N      1 1 NOM S F\nlvcvl.a              N      1 1 VOC S F\nlvcvl.a              N      1 1 ABL S F\nLucas, Lucae  N M   [EEXDX]    Later  lesser\nLuke;\nlucus, luci  N (2nd) M   [XXXAX]\ngrove; sacred grove;\nlux, lucis  N (3rd) F   [XXXAX]\nlight, daylight, light of day; life; world; day; [prima luce => at daybreak];\nco                   PREFIX\n- together; completely, strongly, forcibly, violently;\nul                   SUFFIX\nlittle, small, -let (Diminutive) target is of gender of root => decl;\nlvcvl.a              N      2 2 NOM P N\nlvcvl.a              N      2 2 VOC P N\nlvcvl.a              N      2 2 ACC P N\nLucas, Lucae  N M   [EEXDX]    Later  lesser\nLuke;\nlucus, luci  N (2nd) M   [XXXAX]\ngrove; sacred grove;\nlux, lucis  N (3rd) F   [XXXAX]\nlight, daylight, light of day; life; world; day; [prima luce => at daybreak];\nco                   PREFIX\n- together; completely, strongly, forcibly, violently;\nul                   SUFFIX\n-ulus; of a, pertaining to a, in a condition of, in a state of;\nlvcvl.a              ADJ    1 1 NOM S F POS\nlvcvl.a              ADJ    1 1 VOC S F POS\nlvcvl.a              ADJ    1 1 ABL S F POS\nlvcvl.a              ADJ    1 1 NOM P N POS\nlvcvl.a              ADJ    1 1 VOC P N POS\nlvcvl.a              ADJ    1 1 ACC P N POS\nLucas, Lucae  N M   [EEXDX]    Later  lesser\nLuke;\nlucus, luci  N (2nd) M   [XXXAX]\ngrove; sacred grove;\nlux, lucis  N (3rd) F   [XXXAX]\nlight, daylight, light of day; life; world; day; [prima luce => at daybreak];",
+      "rawStdoutSha256": "c24646a5a63f5466d53be309152c8e7b77af9112a5be34ca110c632cd385c907"
+    },
+    {
+      "input": "abare abaris",
+      "expected": "abar.e               N      2 1 VOC S M\nabavus, abavi  N (2nd) M   [XXXCO]\nancestor, forefather; great-great grandfather, grandfather's grandfather;\n\nabar.is              N      2 1 LOC P M\nabar.is              N      2 1 DAT P M\nabar.is              N      2 1 ABL P M\nabavus, abavi  N (2nd) M   [XXXCO]\nancestor, forefather; great-great grandfather, grandfather's grandfather;",
+      "rawStdoutSha256": "70ee9759fa665844409ed2aa5ba1927de3bd35432e9c9e795913275a1495b2e1"
+    },
+    {
+      "input": "abaris abare",
+      "expected": "abar.is              N      2 1 LOC P M\nabar.is              N      2 1 DAT P M\nabar.is              N      2 1 ABL P M\nabavus, abavi  N (2nd) M   [XXXCO]\nancestor, forefather; great-great grandfather, grandfather's grandfather;\n\nabar.e               N      2 1 VOC S M\nabavus, abavi  N (2nd) M   [XXXCO]\nancestor, forefather; great-great grandfather, grandfather's grandfather;",
+      "rawStdoutSha256": "7df10d61a25981e4682c2c10ddf36f942a6b9b1ef352d1e285a9f82e8f1e6208"
+    },
+    {
+      "input": "-acjo",
+      "expected": "a                    PREFIX\n- away, off; - aside;\ncj.o                 V      6 1 PRES ACTIVE  IND 1 S\ncio, cire, civi(ii), citus  V TRANS   [XXXAO]\nmove, set in motion; excite/rouse/stir up; urge on; summon/muster/call up;\ndisturb, shake; provoke (war); invoke, call on by name; cite; raise/produce;",
+      "rawStdoutSha256": "71789452dcbb5722cefd6edd8dada2df9b616ae3f2b0827c40ce8c555848140c"
+    },
+    {
+      "input": "Amantjae",
+      "expected": "am                   PREFIX\naround, round about; having two;\nantj.ae              N      1 1 GEN S F\nantj.ae              N      1 1 LOC S F\nantj.ae              N      1 1 DAT S F\nantj.ae              N      1 1 NOM P F\nantj.ae              N      1 1 VOC P F\nantia, antiae  N (1st) F   [XXXFO]    veryrare\nlocks (pl.) of hair that hang down in front, forelock;",
+      "rawStdoutSha256": "c02f48e229f94afbb6801baa51367e9d3a1892ef3294622c0903f54ddbbc4d7a"
+    },
+    {
+      "input": "Amantjam",
+      "expected": "am                   PREFIX\naround, round about; having two;\nantj.am              V      6 1 FUT  ACTIVE  IND 1 S      Late\nanteo, antire, antivi(ii), antitus  V   [XXXAO]\ngo before, go ahead, precede; surpass; anticipate; prevent; (anteeo drop e);\nantj.am              N      1 1 ACC S F\nantia, antiae  N (1st) F   [XXXFO]    veryrare\nlocks (pl.) of hair that hang down in front, forelock;",
+      "rawStdoutSha256": "93fa1d2473d9d279a8c7e39d0f4eb083b1245f21d9047b17d69bc7f92777863e"
+    },
+    {
+      "input": "Amjle",
+      "expected": "am                   PREFIX\naround, round about; having two;\njle                  N      3 4 NOM S N\njle                  N      3 4 VOC S N\njl.e                 N      3 4 LOC S N\njl.e                 N      3 4 DAT S N                   Early\njle                  N      3 4 ACC S N\nile, ilis  N (3rd) N   [XXXDX]    lesser\ngroin, private parts; side of body from hips to groin (pl.), loin; guts;",
+      "rawStdoutSha256": "e61198560ec89bc5fea8cd13e15a2b708e1854956a9b4e0fbd37bf6335795f08"
+    },
+    {
+      "input": "Amnjse",
+      "expected": "am                   PREFIX\naround, round about; having two;\nnjs.e                VPAR   3 1 VOC S M PERF         PPL\nnitor, niti, nisus sum  V (3rd) DEP   [XXXBX]\npress/lean upon; struggle; advance; depend on (with abl.); strive, labor;",
+      "rawStdoutSha256": "46b72f99771e40a13f1b9c53cbc6c4b5be568ae953795909660162f88e0198ca"
+    },
+    {
+      "input": "Anjse",
+      "expected": "a                    PREFIX\n- away, off; - aside;\nnjs.e                VPAR   3 1 VOC S M PERF         PPL\nnitor, niti, nisus sum  V (3rd) DEP   [XXXBX]\npress/lean upon; struggle; advance; depend on (with abl.); strive, labor;",
+      "rawStdoutSha256": "82128f436eec11bf797b2e3909bdf3a9ad90855c5b50a52e15af579c0a3bc189"
+    },
+    {
+      "input": "Collatja",
+      "expected": "col                  PREFIX\n- together, completely, forcibly, strongly;\nlatj.a               ADJ    1 1 NOM S F POS\nlatj.a               ADJ    1 1 VOC S F POS\nlatj.a               ADJ    1 1 ABL S F POS\nlatj.a               ADJ    1 1 NOM P N POS\nlatj.a               ADJ    1 1 VOC P N POS\nlatj.a               ADJ    1 1 ACC P N POS\nLatius, Latia, Latium  ADJ   [XXICO]\nLatin; of Latium (central Italy including Rome/Italy); Roman; Italian;",
+      "rawStdoutSha256": "5ce05373dd0324e414e76c988570f82c6eb825fee88abc5d0a2f5f05176167fa"
+    },
+    {
+      "input": "Decembrjas",
+      "expected": "decem                PREFIX\nten (numerical prefix);\nbrj.as               N      1 1 ACC P F\nbria, briae  N (1st) F   [DXXFS]    Late  veryrare\nwine vessel;",
+      "rawStdoutSha256": "e0768665babbc90d94bb3ee4a749760e25feab614140bf6f3038fea531fa94de"
+    },
+    {
+      "input": "Decembrjjs",
+      "expected": "decem                PREFIX\nten (numerical prefix);\nbrj.is               N      1 1 LOC P F\nbrj.is               N      1 1 DAT P F\nbrj.is               N      1 1 ABL P F\nbria, briae  N (1st) F   [DXXFS]    Late  veryrare\nwine vessel;",
+      "rawStdoutSha256": "183f1be2a807aa13861ed2d04dea53a36df5473a2adb4b7688c162b4d2d4e5ef"
+    },
+    {
+      "input": "abjtjte",
+      "expected": "a                    PREFIX\n- away, off; - aside;\nbjt.ite              V      3 1 PRES ACTIVE  IMP 2 P\nbito, bitere, -, -  V (3rd) INTRANS   [BXXCO]    Early\ngo;",
+      "rawStdoutSha256": "c684d6494ffaadfbb8e72b8d7a644f8298a6cd10f39b49fadfd252e9487a0597"
+    },
+    {
+      "input": "abjtjtjs",
+      "expected": "a                    PREFIX\n- away, off; - aside;\nbjt.itis             V      3 1 PRES ACTIVE  IND 2 P\nbito, bitere, -, -  V (3rd) INTRANS   [BXXCO]    Early\ngo;",
+      "rawStdoutSha256": "e2d22c6a48482956a2839b66505cd0ed860ff4fcc7da993e75b495e25d3d7288"
+    },
+    {
+      "input": "abjtjto",
+      "expected": "a                    PREFIX\n- away, off; - aside;\nbjt.ito              V      3 1 FUT  ACTIVE  IMP 2 S\nbjt.ito              V      3 1 FUT  ACTIVE  IMP 3 S\nbito, bitere, -, -  V (3rd) INTRANS   [BXXCO]    Early\ngo;",
+      "rawStdoutSha256": "5144bf87a6df15dd114bb21efc2839b6bbce68827864c84cae6e3b0628b5bb5e"
+    },
+    {
+      "input": "absjte",
+      "expected": "abs                  PREFIX\n- away, off; - aside;\nj.te                 V      6 1 PRES ACTIVE  IMP 2 P\neo, ire, ivi(ii), itus  V   [XXXAX]\njt.e                 VPAR   6 1 VOC S M PERF PASSIVE PPL\ngo, walk; march, advance; pass; flow; pass (time); ride; sail;",
+      "rawStdoutSha256": "14ceb71cef1485f03b55ba70fb432395eda65efd00e15730b7a0a6413fbe0739"
+    },
+    {
+      "input": "accapjtum",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncapjt.um             N      2 2 NOM S N\ncapjt.um             N      2 2 VOC S N\ncapjt.um             N      2 2 ACC S N\ncapitum, capiti  N (2nd) N   [DAXES]    Late  uncommon\nfodder for cattle;\ncapjt.um             N      3 2 GEN P N\ncaput, capitis  N (3rd) N   [XXXAO]\nhead; person; life; leader; top; source/mouth (river); capital (punishment);\nheading; chapter, principal division; [~ super pedibus => head over heels];\n*",
+      "rawStdoutSha256": "f09a2f232f014422c6e583aa33d028d84837658cca5a131231dfdd9bd0ffc170"
+    },
+    {
+      "input": "accapjtvm",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncapjt.um             N      2 2 NOM S N\ncapjt.um             N      2 2 VOC S N\ncapjt.um             N      2 2 ACC S N\ncapitum, capiti  N (2nd) N   [DAXES]    Late  uncommon\nfodder for cattle;\ncapjt.um             N      3 2 GEN P N\ncaput, capitis  N (3rd) N   [XXXAO]\nhead; person; life; leader; top; source/mouth (river); capital (punishment);\nheading; chapter, principal division; [~ super pedibus => head over heels];\n*",
+      "rawStdoutSha256": "f09a2f232f014422c6e583aa33d028d84837658cca5a131231dfdd9bd0ffc170"
+    },
+    {
+      "input": "accommodjus",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncommodj.us           ADJ    1 1 NOM S N COMP\ncommodj.us           ADJ    1 1 VOC S N COMP\ncommodj.us           ADJ    1 1 ACC S N COMP\ncommodus, commoda -um, commodior -or -us, commodissimus -a -um  ADJ   [XXXAO]\nsuitable, convenient, obliging; opportune/timely; favorable/lucky; advantageous\nstandard, full weight/size/measure; desirable, agreeable; good (health/news);\ncommodjus            ADV    COMP\ncommode, commodius, commodissime  ADV   [XXXBO]\nconveniently/neatly/tidily; aptly/well; suitably/properly/fittingly; tastefully\nagreeably, helpfully; comfortably/pleasantly; at a good time/right moment;",
+      "rawStdoutSha256": "ffcc769e3c702606857277a9707bcf8b2ebd618e878eabc33fd78259cbbe030d"
+    },
+    {
+      "input": "accommodjvs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncommodj.us           ADJ    1 1 NOM S N COMP\ncommodj.us           ADJ    1 1 VOC S N COMP\ncommodj.us           ADJ    1 1 ACC S N COMP\ncommodus, commoda -um, commodior -or -us, commodissimus -a -um  ADJ   [XXXAO]\nsuitable, convenient, obliging; opportune/timely; favorable/lucky; advantageous\nstandard, full weight/size/measure; desirable, agreeable; good (health/news);\ncommodjvs            ADV    COMP\ncommode, commodius, commodissime  ADV   [XXXBO]\nconveniently/neatly/tidily; aptly/well; suitably/properly/fittingly; tastefully\nagreeably, helpfully; comfortably/pleasantly; at a good time/right moment;",
+      "rawStdoutSha256": "5e99c7391af957228f3eb8197a0478fc015f2c39720b521def2cfc087ab23b33"
+    },
+    {
+      "input": "accubjtabam",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abam           V      1 1 IMPF ACTIVE  IND 1 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "b6f9119fbaddb7b3538c0e198727585e13100258cf9397d5be41cf96e8f40f18"
+    },
+    {
+      "input": "accubjtabamur",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abamur         V      1 1 IMPF PASSIVE IND 1 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "dbd8ef7795547a542f0ee79c4c124a4655e931f10ab8a552a3e8b1f5d1df244e"
+    },
+    {
+      "input": "accubjtabamus",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abamus         V      1 1 IMPF ACTIVE  IND 1 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "29972bdcf2c4e8633b8a9d436cf1d1838add389d047de3fad209bd5e40785aa3"
+    },
+    {
+      "input": "accubjtabant",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abant          V      1 1 IMPF ACTIVE  IND 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "38c7da6133e608d04924c845fafc95c9803231845f0b29eaa9a09dee31b4e91b"
+    },
+    {
+      "input": "accubjtabantur",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abantur        V      1 1 IMPF PASSIVE IND 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "d1d0829a87bbe75b2b822df57e7b7c193120b09b606afc7b2f40382b7f00dc03"
+    },
+    {
+      "input": "accubjtabar",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abar           V      1 1 IMPF PASSIVE IND 1 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "ec0e4f1e1ab08c32810a4fdaa3e7d49aa6016260871022ce10abcdaefa25fe97"
+    },
+    {
+      "input": "accubjtabas",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abas           V      1 1 IMPF ACTIVE  IND 2 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "a88f98db602691fe46a39cdf83f24c80f9f0114738e4a4fe063a5259abc59dd1"
+    },
+    {
+      "input": "accubjtabat",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abat           V      1 1 IMPF ACTIVE  IND 3 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "fcc339e5e37224ee748f6040cffe048a61d36f6d2f3150928100fda8ea124011"
+    },
+    {
+      "input": "accubjtabatjs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abatis         V      1 1 IMPF ACTIVE  IND 2 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "9d69137caff622fb765f79aef1e51d62402028c1a0b1f6c17fccc69a15166a79"
+    },
+    {
+      "input": "accubjtabatur",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abatur         V      1 1 IMPF PASSIVE IND 3 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "b6eb3e642d5ed7ba407d24362c2cbe08d2e56089c61559dbc8e4a691bef2e431"
+    },
+    {
+      "input": "accubjtabjmur",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abimur         V      1 1 FUT  PASSIVE IND 1 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "9fb40e3446883181de72a43130ee28dc0bc373791417ead8c91ebbe31f4bcd4d"
+    },
+    {
+      "input": "accubjtabjmus",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abimus         V      1 1 FUT  ACTIVE  IND 1 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "0d0e1c93efd8da74e936dd41e2ecea4c1ced0224c27b18e99c845ea9069d0eb2"
+    },
+    {
+      "input": "accubjtabjs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abis           V      1 1 FUT  ACTIVE  IND 2 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "b9eaddcfc3da9f65c1c98a54378110ef97918bc05e9fa1b0b43b76bd7432c9a6"
+    },
+    {
+      "input": "accubjtabjt",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abit           V      1 1 FUT  ACTIVE  IND 3 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "576072ddc7a87d4f1c224f87316ad6ff220bbf8f8635eef609ee0f193a78a1db"
+    },
+    {
+      "input": "accubjtabjtjs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abitis         V      1 1 FUT  ACTIVE  IND 2 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "337232d24d451a7f5232515e2504b88c5edb4f1ac86325a9be7401959c131bb2"
+    },
+    {
+      "input": "accubjtabjtur",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abitur         V      1 1 FUT  PASSIVE IND 3 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "00318bacb683e6c72b61425fdfe5649944bcd81ff780369a7db7836bb497cc12"
+    },
+    {
+      "input": "accubjtabo",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abo            V      1 1 FUT  ACTIVE  IND 1 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "d7336939da7ffd92fcd3c58b5f81310c904b1fdfc63a3adff2273032c80b456e"
+    },
+    {
+      "input": "accubjtabor",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abor           V      1 1 FUT  PASSIVE IND 1 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "e3943241838ea3b6e8b00015c0dfc53e686ea41445505d5c667a744931d18dd1"
+    },
+    {
+      "input": "accubjtabunt",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abunt          V      1 1 FUT  ACTIVE  IND 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "60ab3aae35af09f26e181b1d258492afd07edfeed456f889a52e58ef82823e64"
+    },
+    {
+      "input": "accubjtabuntur",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.abuntur        V      1 1 FUT  PASSIVE IND 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "a61030f9d3a110be92f738f106a7afca5cb9c4ee9b93d518c1d48d2be8931c48"
+    },
+    {
+      "input": "accubjtanda",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.anda           VPAR   1 1 NOM S F FUT  PASSIVE PPL\ncubjt.anda           VPAR   1 1 VOC S F FUT  PASSIVE PPL\ncubjt.anda           VPAR   1 1 ABL S F FUT  PASSIVE PPL\ncubjt.anda           VPAR   1 1 NOM P N FUT  PASSIVE PPL\ncubjt.anda           VPAR   1 1 VOC P N FUT  PASSIVE PPL\ncubjt.anda           VPAR   1 1 ACC P N FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "e8abbeeea9bb9ef829e434455c22059ebce38915253c3826200ff016c374db5c"
+    },
+    {
+      "input": "accubjtandae",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.andae          VPAR   1 1 GEN S F FUT  PASSIVE PPL\ncubjt.andae          VPAR   1 1 DAT S F FUT  PASSIVE PPL\ncubjt.andae          VPAR   1 1 NOM P F FUT  PASSIVE PPL\ncubjt.andae          VPAR   1 1 VOC P F FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "860fe21e47db16a043c1516c09933faaedbf30a782ab41e78e2a999bedb244ca"
+    },
+    {
+      "input": "accubjtandas",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.andas          VPAR   1 1 ACC P F FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "946d1b0e07b21312d0e16af3b40fa6c32f9a0314657b6b9942e4f0e0c72b4a15"
+    },
+    {
+      "input": "accubjtande",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.ande           VPAR   1 1 VOC S M FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "ed6ce6ccc705d649968745426f7ec006b286e8a4aafba3bb395148030b9bcdf5"
+    },
+    {
+      "input": "accubjtandjs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.andis          VPAR   1 1 DAT P X FUT  PASSIVE PPL\ncubjt.andis          VPAR   1 1 ABL P X FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "219e906203877edf326d88936fb26448610c248cb482d6162fb6137deb4e0811"
+    },
+    {
+      "input": "accubjtando",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.ando           VPAR   1 1 DAT S M FUT  PASSIVE PPL\ncubjt.ando           VPAR   1 1 DAT S N FUT  PASSIVE PPL\ncubjt.ando           VPAR   1 1 ABL S M FUT  PASSIVE PPL\ncubjt.ando           VPAR   1 1 ABL S N FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "b6fdf81fd62d053d499d3218274eb3ba506933d86dfe3dcde2367eebbc681e55"
+    },
+    {
+      "input": "accubjtandos",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.andos          VPAR   1 1 ACC P M FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "320035f97c3497b1f6c29ab0814fb2444572bae27e642910878d6fd61e04179f"
+    },
+    {
+      "input": "accubjtandum",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.andum          VPAR   1 1 NOM S N FUT  PASSIVE PPL\ncubjt.andum          VPAR   1 1 VOC S N FUT  PASSIVE PPL\ncubjt.andum          VPAR   1 1 ACC S M FUT  PASSIVE PPL\ncubjt.andum          VPAR   1 1 ACC S N FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "b47846ac9192624dd776282e8e459a6270364747d0f231219b35cf67dbd06329"
+    },
+    {
+      "input": "accubjtandus",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.andus          VPAR   1 1 NOM S M FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "05b3ad61fa5ad7cf4ba38d0feb8a330e64f08020a937497174fdd50c40744431"
+    },
+    {
+      "input": "accubjtans",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.ans            VPAR   1 1 NOM S X PRES ACTIVE  PPL\ncubjt.ans            VPAR   1 1 VOC S X PRES ACTIVE  PPL\ncubjt.ans            VPAR   1 1 ACC S N PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "13bec27131dc8de831fcf43376c506c9de84b4cfd0773cc04ae5f508d9d401a2"
+    },
+    {
+      "input": "accubjtant",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.ant            V      1 1 PRES ACTIVE  IND 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "00c7db86c431c961431acd0b4d6c3895e0001dabd0d8626528a3c3d647a34fac"
+    },
+    {
+      "input": "accubjtante",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.ante           VPAR   1 1 ABL S X PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "8788cea88412421ef1ea315cd8f6148f4fc935bc872177b7809eb48170632a6a"
+    },
+    {
+      "input": "accubjtantem",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.antem          VPAR   1 1 ACC S C PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "2351a79020eccdd18dd80632e6389fa6341fd0903e1528199905ccb78187367d"
+    },
+    {
+      "input": "accubjtantes",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.antes          VPAR   1 1 NOM P C PRES ACTIVE  PPL\ncubjt.antes          VPAR   1 1 VOC P C PRES ACTIVE  PPL\ncubjt.antes          VPAR   1 1 ACC P C PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "b707a68d37f5555b592f9fa877e63f77de4bc41177ce875759e5b917178eb6ad"
+    },
+    {
+      "input": "accubjtantja",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.antia          VPAR   1 1 NOM P N PRES ACTIVE  PPL\ncubjt.antia          VPAR   1 1 VOC P N PRES ACTIVE  PPL\ncubjt.antia          VPAR   1 1 ACC P N PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "361caffae32343345c41d67f6d3c18901a5093515d4b763e006ab02e18f9ad60"
+    },
+    {
+      "input": "accubjtantjbus",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.antibus        VPAR   1 1 DAT P X PRES ACTIVE  PPL\ncubjt.antibus        VPAR   1 1 ABL P X PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "06de7fd96233df0713b8ead784e564e78aab6ac2a1ed115bdc02f759558f1716"
+    },
+    {
+      "input": "accubjtantjs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.antis          VPAR   1 1 GEN S X PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "09fde483c60dafa92c96ba0b5f72a0a0574343ce9570ffd54131f8de6f8871e0"
+    },
+    {
+      "input": "accubjtantjum",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.antium         VPAR   1 1 GEN P X PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "c09cd5815375abdf69f8234871e741ccf631fd1254094cb9e0a7d0cf71d9667d"
+    },
+    {
+      "input": "accubjtantur",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.antur          V      1 1 PRES PASSIVE IND 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "0447b393b99b5c350a5ba78d10dd84526f1c65bcaabfea0fdbc9a935e78eb5a5"
+    },
+    {
+      "input": "accubjtem",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.em             V      1 1 PRES ACTIVE  SUB 1 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "ad266ea84b58630a8d9837b00b6fa5317e0387c97c339eb0be110faa3c322a7c"
+    },
+    {
+      "input": "accubjtemur",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.emur           V      1 1 PRES PASSIVE SUB 1 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "a6a8a39e49d75909388870623b67ae5eab51e5f8b849f6bcd000f6170ec916a4"
+    },
+    {
+      "input": "accubjtemus",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.emus           V      1 1 PRES ACTIVE  SUB 1 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "059da565867d8bb0c219f9afd13b5d333e4ef8843385c2cc48c3f19ad684b2fd"
+    },
+    {
+      "input": "accubjtent",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.ent            V      1 1 PRES ACTIVE  SUB 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "0647791cea7aa45aefbb2e1017752df25358ef64d7ca3981c9672f6e473a2ae1"
+    },
+    {
+      "input": "accubjtentur",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.entur          V      1 1 PRES PASSIVE SUB 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "38afd571f123e5b4b7598d936aaa98c5e4559f7b69d4ef9d7eff134c85a61ca5"
+    },
+    {
+      "input": "accubjter",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.er             V      1 1 PRES PASSIVE SUB 1 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "19a99cfdf8ae0c8c256d77058d7368ddb1d17dd796566a2b19ad2a8f5ae871b1"
+    },
+    {
+      "input": "accubjtet",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.et             V      1 1 PRES ACTIVE  SUB 3 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "028e7fe0668f51ab7a62425b5327f6dfde5e43f3cd06f603b0d1ead0866a36f7"
+    },
+    {
+      "input": "accubjtetjs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.etis           V      1 1 PRES ACTIVE  SUB 2 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "12aca6e69de00b801d1c3a64ce2a52158721a62ee7a43a95f9b16d737a27c543"
+    },
+    {
+      "input": "accubjtetur",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncubjt.etur           V      1 1 PRES PASSIVE SUB 3 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "1167d8ff1afe32bf606736494efc50b28411748f7271c3120f0ac550aa14332f"
+    },
+    {
+      "input": "accvbjtabam",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abam           V      1 1 IMPF ACTIVE  IND 1 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "d3308210aabffc63afc4d0e3712923839aaf7894d498401be7887d451e0982fe"
+    },
+    {
+      "input": "accvbjtabamvr",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abamur         V      1 1 IMPF PASSIVE IND 1 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "9739b224582a18bebe5390850d3babe6a67d4141bb61dece163d10c742ba0d17"
+    },
+    {
+      "input": "accvbjtabamvs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abamus         V      1 1 IMPF ACTIVE  IND 1 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "c96dda56a2030dc7060779a04b37fcd2fdee68e3b6e0fda113bbcff55223053b"
+    },
+    {
+      "input": "accvbjtabant",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abant          V      1 1 IMPF ACTIVE  IND 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "9e40878660d2f6df9e86ea516640e800a680ac830e4abb07d5c867e03c87f9d5"
+    },
+    {
+      "input": "accvbjtabantvr",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abantur        V      1 1 IMPF PASSIVE IND 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "d846930fc306cae51346c0c39e88cfe2a378bc981e057b5f053c8135a3d16f86"
+    },
+    {
+      "input": "accvbjtabar",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abar           V      1 1 IMPF PASSIVE IND 1 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "7b9909a5b3cf5aa36dc6fe54e248d2bc13c4225302c4b5e830acd8b17b7b878c"
+    },
+    {
+      "input": "accvbjtabas",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abas           V      1 1 IMPF ACTIVE  IND 2 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "76dfebf6a3a3264133edb2f034ee3e4a09a2d724149dd83f263cad2bf2c26143"
+    },
+    {
+      "input": "accvbjtabat",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abat           V      1 1 IMPF ACTIVE  IND 3 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "ce0892bc4c5f275be43bc88dbbe799d8aa07cd93012df65e7608acff7e63c764"
+    },
+    {
+      "input": "accvbjtabatjs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abatis         V      1 1 IMPF ACTIVE  IND 2 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "ee31639defdf080e411d96fdb1ae7dbbd94ef539d48bd73207f6539d010ddbaa"
+    },
+    {
+      "input": "accvbjtabatvr",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abatur         V      1 1 IMPF PASSIVE IND 3 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "4bd31c89568698e4342426f815c75b497cd3e8ff82efbfb80fb89374c5f93dc1"
+    },
+    {
+      "input": "accvbjtabjmvr",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abimur         V      1 1 FUT  PASSIVE IND 1 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "87095bc1586b3ae5ebafe25f45af10dc6632cc8ad46b21bce9487de0b86a03e2"
+    },
+    {
+      "input": "accvbjtabjmvs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abimus         V      1 1 FUT  ACTIVE  IND 1 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "844476f4d4501e7debe8974fb1fe94af47f4a36ad788d77aef6e2201fcc9a2eb"
+    },
+    {
+      "input": "accvbjtabjs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abis           V      1 1 FUT  ACTIVE  IND 2 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "fec77bd2d37dfb55cf2b30bbe922f7ecb686cd88e9269670ede5b90988109a5b"
+    },
+    {
+      "input": "accvbjtabjt",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abit           V      1 1 FUT  ACTIVE  IND 3 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "b5cf3458e0d92e037d1897ff8f7ae4b98f6ea0cab85fcba714ef952bd7a1f1f6"
+    },
+    {
+      "input": "accvbjtabjtjs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abitis         V      1 1 FUT  ACTIVE  IND 2 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "23bdbd8239e679a7ca21b0f87115b90e8dbc34824a8a080d88c05167d8e8e6e3"
+    },
+    {
+      "input": "accvbjtabjtvr",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abitur         V      1 1 FUT  PASSIVE IND 3 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "78b087624afe43eab3c8f7a148154868f0a192c082ad538e10f076aa85f84321"
+    },
+    {
+      "input": "accvbjtabo",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abo            V      1 1 FUT  ACTIVE  IND 1 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "6a1fd6562243e6bdb09fcb0a968848ae6abff58e2fb434a8d40b1540df983baa"
+    },
+    {
+      "input": "accvbjtabor",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abor           V      1 1 FUT  PASSIVE IND 1 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "db6c9cf37fb0947f32832d7c2309a3af7a5a216660313340a395b6db414981a7"
+    },
+    {
+      "input": "accvbjtabvnt",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abunt          V      1 1 FUT  ACTIVE  IND 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "718a9349bf5d77f984ecc74f980ae3d1a69cd625a1a8e0be6398d8f8869b2389"
+    },
+    {
+      "input": "accvbjtabvntvr",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.abuntur        V      1 1 FUT  PASSIVE IND 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "56322efe9943c8f9e90570be04e0a47aa313d87fd044cbbb256c753e2882580c"
+    },
+    {
+      "input": "accvbjtanda",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.anda           VPAR   1 1 NOM S F FUT  PASSIVE PPL\ncvbjt.anda           VPAR   1 1 VOC S F FUT  PASSIVE PPL\ncvbjt.anda           VPAR   1 1 ABL S F FUT  PASSIVE PPL\ncvbjt.anda           VPAR   1 1 NOM P N FUT  PASSIVE PPL\ncvbjt.anda           VPAR   1 1 VOC P N FUT  PASSIVE PPL\ncvbjt.anda           VPAR   1 1 ACC P N FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "e5aca2420ed1c1a0b0c7b5fe8a4f1c0ad847ed046ad556eee4f3384d084611bb"
+    },
+    {
+      "input": "accvbjtandae",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.andae          VPAR   1 1 GEN S F FUT  PASSIVE PPL\ncvbjt.andae          VPAR   1 1 DAT S F FUT  PASSIVE PPL\ncvbjt.andae          VPAR   1 1 NOM P F FUT  PASSIVE PPL\ncvbjt.andae          VPAR   1 1 VOC P F FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "6d0facb47ac9a39bc0699452b839238010de784196c1c2740746776f24102a52"
+    },
+    {
+      "input": "accvbjtandas",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.andas          VPAR   1 1 ACC P F FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "eb7f392b0f9d8e195d61b1d079d274f6ca88f10b5e3d565858b08c006b9b810e"
+    },
+    {
+      "input": "accvbjtande",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.ande           VPAR   1 1 VOC S M FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "71e053d6da46602734bf29b3784aa3de4d7e12ab8982e5ed778a265364ac8698"
+    },
+    {
+      "input": "accvbjtandjs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.andis          VPAR   1 1 DAT P X FUT  PASSIVE PPL\ncvbjt.andis          VPAR   1 1 ABL P X FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "d382dba7eadac7610e09e8fa3401fcc97df8fd0206e089f2e138d5d14623f6c9"
+    },
+    {
+      "input": "accvbjtando",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.ando           VPAR   1 1 DAT S M FUT  PASSIVE PPL\ncvbjt.ando           VPAR   1 1 DAT S N FUT  PASSIVE PPL\ncvbjt.ando           VPAR   1 1 ABL S M FUT  PASSIVE PPL\ncvbjt.ando           VPAR   1 1 ABL S N FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "063cf1072157cc9935429a6781edd1d53aac6c4b5cf577ccfd05364c8275f9a9"
+    },
+    {
+      "input": "accvbjtandos",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.andos          VPAR   1 1 ACC P M FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "8338300e24b573b9a22787722e5ce1f0a674ee1192f536897f33d29846c0df39"
+    },
+    {
+      "input": "accvbjtandvm",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.andum          VPAR   1 1 NOM S N FUT  PASSIVE PPL\ncvbjt.andum          VPAR   1 1 VOC S N FUT  PASSIVE PPL\ncvbjt.andum          VPAR   1 1 ACC S M FUT  PASSIVE PPL\ncvbjt.andum          VPAR   1 1 ACC S N FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "8acd5aaa1d01d4290119d5f9184ad1fa472f7404ffdb8f70eb613b6752785568"
+    },
+    {
+      "input": "accvbjtandvs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.andus          VPAR   1 1 NOM S M FUT  PASSIVE PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "90429a3a2e727c2c7075c5b514787d26793e56434a627ba3c8b31e38a5420b27"
+    },
+    {
+      "input": "accvbjtans",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.ans            VPAR   1 1 NOM S X PRES ACTIVE  PPL\ncvbjt.ans            VPAR   1 1 VOC S X PRES ACTIVE  PPL\ncvbjt.ans            VPAR   1 1 ACC S N PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "cbbfb7fc061a564ebd469246d152b1a31c81456e1c375493a74e7d6a95adea7e"
+    },
+    {
+      "input": "accvbjtant",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.ant            V      1 1 PRES ACTIVE  IND 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "bde4dac66c127b4459a4e849980369992e6a00af48cc53a8814a2d140a82838e"
+    },
+    {
+      "input": "accvbjtante",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.ante           VPAR   1 1 ABL S X PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "7026e3581c1f7c558600656073de35261537ebdcb6404b445e803ab45a1cc607"
+    },
+    {
+      "input": "accvbjtantem",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.antem          VPAR   1 1 ACC S C PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "87c1fa60b8446a7d47167544c5b5f57fa9cdefeeb8365a4ad5be2cb646fd0ac0"
+    },
+    {
+      "input": "accvbjtantes",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.antes          VPAR   1 1 NOM P C PRES ACTIVE  PPL\ncvbjt.antes          VPAR   1 1 VOC P C PRES ACTIVE  PPL\ncvbjt.antes          VPAR   1 1 ACC P C PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "1cd231627b2e65ee9a57b137d43bf5cb42d30b22629c7c9ec01ac9aa04ae1cd9"
+    },
+    {
+      "input": "accvbjtantja",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.antia          VPAR   1 1 NOM P N PRES ACTIVE  PPL\ncvbjt.antia          VPAR   1 1 VOC P N PRES ACTIVE  PPL\ncvbjt.antia          VPAR   1 1 ACC P N PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "cc84e12ea9e84d043075382bc1b7d78b15ccebbe364271966cd605bffffb0a75"
+    },
+    {
+      "input": "accvbjtantjbvs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.antibus        VPAR   1 1 DAT P X PRES ACTIVE  PPL\ncvbjt.antibus        VPAR   1 1 ABL P X PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "aa2edf76aa7e8286175992bc3fc325ec5f6b7be376ddaa1cca6f572c753fb633"
+    },
+    {
+      "input": "accvbjtantjs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.antis          VPAR   1 1 GEN S X PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "8ee0fbc79fc7c40776de540cff8f3a0218764c43c96fed7d163626fd05fac031"
+    },
+    {
+      "input": "accvbjtantjvm",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.antium         VPAR   1 1 GEN P X PRES ACTIVE  PPL\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "67c5bb055598c750b0ecb1afb195d5cfbc48f1dd0faa0c7770b4af8724720e5c"
+    },
+    {
+      "input": "accvbjtantvr",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.antur          V      1 1 PRES PASSIVE IND 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "25b37f9d729e3a9d9932fd23bb87ba47eda031ab5c0b127e8fe65ee9f620c87c"
+    },
+    {
+      "input": "accvbjtem",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.em             V      1 1 PRES ACTIVE  SUB 1 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "09bf646e4c37a588f63e41026f1280cd5252ec413f7e49c718e8898e056e06a4"
+    },
+    {
+      "input": "accvbjtemvr",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.emur           V      1 1 PRES PASSIVE SUB 1 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "e3d839fcac3c4585bf8d86931eb08c0a4a5f235b98874eb40bb36d7cd5abfdea"
+    },
+    {
+      "input": "accvbjtemvs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.emus           V      1 1 PRES ACTIVE  SUB 1 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "2ff5d0e24309af38b606797575a76276b0435c80c3aa2b8e63038e42b3eb0d9b"
+    },
+    {
+      "input": "accvbjtent",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.ent            V      1 1 PRES ACTIVE  SUB 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "ff1b1e26dd9b014154da95a856be12abe813825ab98e6abddd94118b2c32772e"
+    },
+    {
+      "input": "accvbjtentvr",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.entur          V      1 1 PRES PASSIVE SUB 3 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "eea7739ba8ff73fafb57d68de90b5dabcd2667c9459bd292d9c8f523ac4ca194"
+    },
+    {
+      "input": "accvbjter",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.er             V      1 1 PRES PASSIVE SUB 1 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "5297adbf74988d99eb795ec87ac2cdad54a7fe863613937491660c8cf207a861"
+    },
+    {
+      "input": "accvbjtet",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.et             V      1 1 PRES ACTIVE  SUB 3 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "45d6c9d98de2753c1a90517e3ef7803a3d591745a1612d2e4c2f3bb981e03914"
+    },
+    {
+      "input": "accvbjtetjs",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.etis           V      1 1 PRES ACTIVE  SUB 2 P\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "b78b82ecc370ece04a7eb0ad481673bc03890d92f3b2ae7a8c2a5ca71e992ec5"
+    },
+    {
+      "input": "accvbjtetvr",
+      "expected": "ac                   PREFIX\n- to, towards, near, for, together (adeo => go to);\ncvbjt.etur           V      1 1 PRES PASSIVE SUB 3 S\ncubito, cubitare, cubitavi, cubitatus  V (1st) INTRANS   [XXXCO]\nrecline, lie down, take rest, sleep; lie down often; lie/sleep (sexual);",
+      "rawStdoutSha256": "3870b1576979ff5f387ed38081ef290d1906d8149bcd8bcaa48a1512ac8f93b9"
+    },
+    {
+      "input": "acjo",
+      "expected": "a                    PREFIX\n- away, off; - aside;\ncj.o                 V      6 1 PRES ACTIVE  IND 1 S\ncio, cire, civi(ii), citus  V TRANS   [XXXAO]\nmove, set in motion; excite/rouse/stir up; urge on; summon/muster/call up;\ndisturb, shake; provoke (war); invoke, call on by name; cite; raise/produce;",
+      "rawStdoutSha256": "71789452dcbb5722cefd6edd8dada2df9b616ae3f2b0827c40ce8c555848140c"
+    },
+    {
+      "input": "adflectjto",
+      "expected": "ad                   PREFIX\n- to, towards, near, for, together (adeo => go to);\nflect.ito            V      3 1 FUT  ACTIVE  IMP 2 S\nflect.ito            V      3 1 FUT  ACTIVE  IMP 3 S\nflecto, flectere, flexi, flexus  V (3rd)   [XXXBX]\nbend, curve, bow; turn, curl; persuade, prevail on, soften;",
+      "rawStdoutSha256": "b06b6768e1aa607b691a8839168486ecc220526ae634d374a76ce3d818bd3cef"
+    },
+    {
+      "input": "adflectjtor",
+      "expected": "ad                   PREFIX\n- to, towards, near, for, together (adeo => go to);\nflect.itor           V      3 1 FUT  PASSIVE IMP 2 S\nflect.itor           V      3 1 FUT  PASSIVE IMP 3 S\nflecto, flectere, flexi, flexus  V (3rd)   [XXXBX]\nbend, curve, bow; turn, curl; persuade, prevail on, soften;",
+      "rawStdoutSha256": "420a505a83355d20ce9487475c5e804db652180f39b97dc84f33637490341f7b"
+    },
+    {
+      "input": "admjrabjljus",
+      "expected": "ad                   PREFIX\n- to, towards, near, for, together (adeo => go to);\nmjrabjljus           ADV    COMP\nmirabiliter, mirabilius, mirabilissime  ADV   [XXXCO]\nmarvelously, amazingly/remarkably/extraordinarily; to an extraordinary degree;",
+      "rawStdoutSha256": "ae51ccfca4399f0f001c925ff8d5c3aadd861571938975438f2b85bbc81308e4"
+    },
+    {
+      "input": "admjrabjljvs",
+      "expected": "ad                   PREFIX\n- to, towards, near, for, together (adeo => go to);\nmjrabjljvs           ADV    COMP\nmirabiliter, mirabilius, mirabilissime  ADV   [XXXCO]\nmarvelously, amazingly/remarkably/extraordinarily; to an extraordinary degree;",
+      "rawStdoutSha256": "f5a3fe7b4a43cffc985aa0a814cb358787604941b66e2890f924bc7b13722900"
+    },
+    {
+      "input": "acio",
+      "expected": "i                    SUFFIX\nmakes abstract noun of the verb; place/instrument/result of verb action;\naci.o                N      2 2 DAT S N\naci.o                N      2 2 ABL S N\naceo, acere, -, -  V (2nd) INTRANS   [XXXFO]    veryrare\nbe sour;\nio                   SUFFIX\n-ing, -ion, -ery; the action or result of the action of the verb;\nacio                 N      3 1 NOM S F\nacio                 N      3 1 VOC S F\naceo, acere, -, -  V (2nd) INTRANS   [XXXFO]    veryrare\nbe sour;\na                    PREFIX\n- away, off; - aside;\nci.o                 V      6 1 PRES ACTIVE  IND 1 S\ncio, cire, civi(ii), citus  V TRANS   [XXXAO]\nmove, set in motion; excite/rouse/stir up; urge on; summon/muster/call up;\ndisturb, shake; provoke (war); invoke, call on by name; cite; raise/produce;",
+      "rawStdoutSha256": "47b9f9f9aeaef4bc4ac53be3fd2afb59890fc3af2ce58a5abde7bd196ae99291"
+    },
+    {
+      "input": "amantiae",
+      "expected": "anti                 SUFFIX\n-ance; state of; quality of; act of; (with 1st conj verbs);\namanti.ae            N      1 1 GEN S F\namanti.ae            N      1 1 LOC S F\namanti.ae            N      1 1 DAT S F\namanti.ae            N      1 1 NOM P F\namanti.ae            N      1 1 VOC P F\namo, amare, additional, forms  V   [BXXEO]    Early  uncommon\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;\nam                   PREFIX\naround, round about; having two;\nti                   SUFFIX\n-ness, makes abstract noun;\nanti.ae              N      1 1 GEN S F\nanti.ae              N      1 1 LOC S F\nanti.ae              N      1 1 DAT S F\nanti.ae              N      1 1 NOM P F\nanti.ae              N      1 1 VOC P F\nanus, ana, anum  ADJ   [XXXBO]\nold (of female persons and things), aged;\ni                    SUFFIX\n-ness, -es, makes abstract noun;\namanti.ae            N      1 1 GEN S F\namanti.ae            N      1 1 LOC S F\namanti.ae            N      1 1 DAT S F\namanti.ae            N      1 1 NOM P F\namanti.ae            N      1 1 VOC P F\namans, amantis (gen.), amantior -or -us, amantissimus -a -um  ADJ   [XXXCO]\nloving/fond/affectionate; beloved/dear to; friendly/kind; having love/affection\ni                    SUFFIX\nart or craft done by the person (abstract noun of person); office of, -ship;\namanti.ae            N      1 1 GEN S F\namanti.ae            N      1 1 LOC S F\namanti.ae            N      1 1 DAT S F\namanti.ae            N      1 1 NOM P F\namanti.ae            N      1 1 VOC P F\namans, amantis  N (3rd) C   [XXXCO]\nlover, sweetheart; mistress; one who is fond/affectionate;\nam                   PREFIX\naround, round about; having two;\nanti.ae              N      1 1 GEN S F\nanti.ae              N      1 1 LOC S F\nanti.ae              N      1 1 DAT S F\nanti.ae              N      1 1 NOM P F\nanti.ae              N      1 1 VOC P F\nantia, antiae  N (1st) F   [XXXFO]    veryrare\nlocks (pl.) of hair that hang down in front, forelock;",
+      "rawStdoutSha256": "f93ec9f3a8acad6f68e4527afea969624768fdc60bc204284b5ca8bf34bb5e6e"
+    },
+    {
+      "input": "amantjae",
+      "expected": "am                   PREFIX\naround, round about; having two;\nantj.ae              N      1 1 GEN S F\nantj.ae              N      1 1 LOC S F\nantj.ae              N      1 1 DAT S F\nantj.ae              N      1 1 NOM P F\nantj.ae              N      1 1 VOC P F\nantia, antiae  N (1st) F   [XXXFO]    veryrare\nlocks (pl.) of hair that hang down in front, forelock;",
+      "rawStdoutSha256": "c02f48e229f94afbb6801baa51367e9d3a1892ef3294622c0903f54ddbbc4d7a"
+    },
+    {
+      "input": "amile",
+      "expected": "il                   SUFFIX\n-able, -ble; having the passive quality, able to, able to be;\namil.e               ADJ    3 2 NOM S N POS\namil.e               ADJ    3 2 VOC S N POS\namil.e               ADJ    3 2 ABL S X POS\namil.e               ADJ    3 2 ACC S N POS\namo, amare, additional, forms  V   [BXXEO]    Early  uncommon\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;\nil                   SUFFIX\n-il; of a ~, pertaining to a ~, in a condition of ~, in a state of ~;\namil.e               ADJ    3 2 NOM S N POS\namil.e               ADJ    3 2 VOC S N POS\namil.e               ADJ    3 2 ABL S X POS\namil.e               ADJ    3 2 ACC S N POS\nama, amae  N (1st) F   [XXXDO]    lesser\nbucket; water bucket; (esp. fireman's bucket);",
+      "rawStdoutSha256": "ac5f129bf0b867032e6afe4abe1e4fa5300387c0c5173fd8c55e642484d575ae"
+    },
+    {
+      "input": "amjle",
+      "expected": "am                   PREFIX\naround, round about; having two;\njle                  N      3 4 NOM S N\njle                  N      3 4 VOC S N\njl.e                 N      3 4 LOC S N\njl.e                 N      3 4 DAT S N                   Early\njle                  N      3 4 ACC S N\nile, ilis  N (3rd) N   [XXXDX]    lesser\ngroin, private parts; side of body from hips to groin (pl.), loin; guts;",
+      "rawStdoutSha256": "e61198560ec89bc5fea8cd13e15a2b708e1854956a9b4e0fbd37bf6335795f08"
+    },
+    {
+      "input": "abbattor",
+      "expected": "ab                   PREFIX\n- away, off; - aside;\nbatt.or              V      3 1 PRES PASSIVE IND 1 S\nbatto, battere, -, -  V (3rd)   [XXFDO]    lesser\npound, beat, hit, strike; fence (with swords);",
+      "rawStdoutSha256": "7d433b8f0cb22bd0d89cf0b0e8f0c8a8f608fb7ceb82f5f098bc8a7034686aec"
+    },
+    {
+      "input": "alabar",
+      "expected": "a                    PREFIX\n- away, off; - aside;\nlab.ar               V      3 1 PRES         SUB 1 S\nlab.ar               V      3 1 FUT          IND 1 S\nlabor, labi, lapsus sum  V (3rd) DEP   [XXXBX]\nslip, slip and fall; slide, glide, drop; perish, go wrong;",
+      "rawStdoutSha256": "5da8b1f9dfcb172b7890f631e1fa58b8746e6755185075c5b67d4fc4d82850b4"
+    },
+    {
+      "input": "alabor",
+      "expected": "a                    PREFIX\n- away, off; - aside;\nlab.or               V      1 1 PRES PASSIVE IND 1 S\nlabo, labare, labavi, labatus  V (1st)   [XXXAX]\ntotter, be ready to fall; begin to sink; give way; waver, decline, sink; err;\nlab.or               V      3 1 PRES         IND 1 S\nlabor, labi, lapsus sum  V (3rd) DEP   [XXXBX]\nslip, slip and fall; slide, glide, drop; perish, go wrong;",
+      "rawStdoutSha256": "01b313e480d11920fd7559689cbc19e6858412a226dfc8a922beb9932ff5d397"
+    },
+    {
+      "input": "beneolentiā",
+      "expected": "bene                 PREFIX\nwell, good\nol.enti              VPAR   2 1 DAT S X PRES ACTIVE  PPL\nol.enti              VPAR   2 1 ABL S X PRES ACTIVE  PPL\noleo, olere, olui, -  V (2nd)   [XXXDX]    lesser\nsmell of, smell like;",
+      "rawStdoutSha256": "5cce5e37b18952956846d2ec1c6158efc3bf12c4fa9d31914f4a36ea91d0b823"
+    },
+    {
+      "input": "beneolentiārum",
+      "expected": "bene                 PREFIX\nwell, good\nol.enti              VPAR   2 1 DAT S X PRES ACTIVE  PPL\nol.enti              VPAR   2 1 ABL S X PRES ACTIVE  PPL\noleo, olere, olui, -  V (2nd)   [XXXDX]    lesser\nsmell of, smell like;\n\nrum                              ========   UNKNOWN",
+      "rawStdoutSha256": "b9931bfbcd6b0e65d501274d217e535eb20e81b347042eaffbb464ba7575562b"
+    },
+    {
+      "input": "beneolentiās",
+      "expected": "bene                 PREFIX\nwell, good\nol.enti              VPAR   2 1 DAT S X PRES ACTIVE  PPL\nol.enti              VPAR   2 1 ABL S X PRES ACTIVE  PPL\noleo, olere, olui, -  V (2nd)   [XXXDX]    lesser\nsmell of, smell like;\n\ns                                ========   UNKNOWN",
+      "rawStdoutSha256": "909962522644fc2de7ff0165ab9bc2eff60b8df757e50b8a8eb46be775991d82"
+    },
+    {
+      "input": "beneolentiīs",
+      "expected": "bene                 PREFIX\nwell, good\nol.enti              VPAR   2 1 DAT S X PRES ACTIVE  PPL\nol.enti              VPAR   2 1 ABL S X PRES ACTIVE  PPL\noleo, olere, olui, -  V (2nd)   [XXXDX]    lesser\nsmell of, smell like;\n\ns                                ========   UNKNOWN",
+      "rawStdoutSha256": "909962522644fc2de7ff0165ab9bc2eff60b8df757e50b8a8eb46be775991d82"
+    },
+    {
+      "input": "contrādeicundus",
+      "expected": "contr                          ========   UNKNOWN\n\nde                   PREFIX\n- down, off, away, from; not; removal, reversal; utterly/completely (intensive)\nic.undus             VPAR   3 1 NOM S M FUT  PASSIVE PPL  Early\nico, icere, ici, ictus  V (3rd)   [XXXDX]    lesser\nhit, strike; smite, stab, sting; [foedus ~ => conclude/make a treaty, league]);",
+      "rawStdoutSha256": "7774cf0be903c5b570c8f79782a430c9f10acc42b1618ffdadba9bbafebfbdeb"
+    },
+    {
+      "input": "decalceor",
+      "expected": "de                   PREFIX\n- down, off, away, from; not; removal, reversal; utterly/completely (intensive)\ncalce.or             V      1 1 PRES PASSIVE IND 1 S\ncalceo, calceare, calceavi, calceatus  V (1st) TRANS   [XXXCO]\nput shoes on, furnish with shoes; shoe (horses); put feet in something;",
+      "rawStdoutSha256": "a470aaa1b4d7ab061d8934cb2b55bd984ea223662a44cc454857a9c44e8c77fa"
+    },
+    {
+      "input": "deicundus",
+      "expected": "de                   PREFIX\n- down, off, away, from; not; removal, reversal; utterly/completely (intensive)\nic.undus             VPAR   3 1 NOM S M FUT  PASSIVE PPL  Early\nico, icere, ici, ictus  V (3rd)   [XXXDX]    lesser\nhit, strike; smite, stab, sting; [foedus ~ => conclude/make a treaty, league]);",
+      "rawStdoutSha256": "67b0ab17b4810eef78e58b41f1cca5369a880dcc9dd9fa643e3d2c66205b6a12"
+    },
+    {
+      "input": "deicvndvs",
+      "expected": "de                   PREFIX\n- down, off, away, from; not; removal, reversal; utterly/completely (intensive)\nic.undus             VPAR   3 1 NOM S M FUT  PASSIVE PPL  Early\nico, icere, ici, ictus  V (3rd)   [XXXDX]    lesser\nhit, strike; smite, stab, sting; [foedus ~ => conclude/make a treaty, league]);",
+      "rawStdoutSha256": "67b0ab17b4810eef78e58b41f1cca5369a880dcc9dd9fa643e3d2c66205b6a12"
+    },
+    {
+      "input": "dejcundus",
+      "expected": "de                   PREFIX\n- down, off, away, from; not; removal, reversal; utterly/completely (intensive)\njc.undus             VPAR   3 1 NOM S M FUT  PASSIVE PPL  Early\nico, icere, ici, ictus  V (3rd)   [XXXDX]    lesser\nhit, strike; smite, stab, sting; [foedus ~ => conclude/make a treaty, league]);",
+      "rawStdoutSha256": "786e0b19e244234b1c4755d2f1b65ddb6aca49bbfc459e32d0bc823b2db42c8e"
+    },
+    {
+      "input": "dejcvndvs",
+      "expected": "de                   PREFIX\n- down, off, away, from; not; removal, reversal; utterly/completely (intensive)\njc.undus             VPAR   3 1 NOM S M FUT  PASSIVE PPL  Early\nico, icere, ici, ictus  V (3rd)   [XXXDX]    lesser\nhit, strike; smite, stab, sting; [foedus ~ => conclude/make a treaty, league]);",
+      "rawStdoutSha256": "786e0b19e244234b1c4755d2f1b65ddb6aca49bbfc459e32d0bc823b2db42c8e"
+    },
+    {
+      "input": "edictator",
+      "expected": "e                    PREFIX\n- out, away from; beyond; completely;\ndict.ator            V      1 1 FUT  PASSIVE IMP 2 S\ndict.ator            V      1 1 FUT  PASSIVE IMP 3 S\ndicto, dictare, dictavi, dictatus  V (1st) TRANS   [XXXBO]\ndictate (for writing/speaking); compose; draw up; order/prescribe; fix (survey)\nsay/declare/assert repeatedly/habitually/often/frequently; reiterate; recite;",
+      "rawStdoutSha256": "00eb8b695432769e16a2cdb06965f2510acfc70d2ea67c4c50dedd60f1b6d157"
+    },
+    {
+      "input": "edjctator",
+      "expected": "e                    PREFIX\n- out, away from; beyond; completely;\ndjct.ator            V      1 1 FUT  PASSIVE IMP 2 S\ndjct.ator            V      1 1 FUT  PASSIVE IMP 3 S\ndicto, dictare, dictavi, dictatus  V (1st) TRANS   [XXXBO]\ndictate (for writing/speaking); compose; draw up; order/prescribe; fix (survey)\nsay/declare/assert repeatedly/habitually/often/frequently; reiterate; recite;",
+      "rawStdoutSha256": "e613a193fd8c743803c7658c45f2021b60ab29dbb5e35bd646c3ba90eb8aa6fd"
+    },
+    {
+      "input": "effetator",
+      "expected": "ef                   PREFIX\n- out, away from; beyond; completely;\nfet.ator             V      1 1 FUT  PASSIVE IMP 2 S\nfet.ator             V      1 1 FUT  PASSIVE IMP 3 S\nfeto, fetare, fetavi, fetatus  V (1st) INTRANS   [XXXFO]    veryrare\nbreed/spawn; hatch/bring forth offspring/young; impregnate, make fruitful (L+S)",
+      "rawStdoutSha256": "c125e3826270df0ee469a471d3662722b4544ceb21b96c725773eec28410e154"
+    },
+    {
+      "input": "effletor",
+      "expected": "ef                   PREFIX\n- out, away from; beyond; completely;\nfl.etor              V      2 1 FUT  PASSIVE IMP 2 S\nfl.etor              V      2 1 FUT  PASSIVE IMP 3 S\nfleo, flere, flevi, fletus  V (2nd)   [XXXAX]\ncry for; cry, weep;",
+      "rawStdoutSha256": "eb171a0972ec9d7f383e4d9811a8196e2778555f70776ff5b994d74d7c8b9135"
+    },
+    {
+      "input": "elegator",
+      "expected": "e                    PREFIX\n- out, away from; beyond; completely;\nleg.ator             V      1 1 FUT  PASSIVE IMP 2 S\nleg.ator             V      1 1 FUT  PASSIVE IMP 3 S\nlego, legare, legavi, legatus  V (1st)   [XXXBX]\nbequeath, will; entrust, send as an envoy, choose as a deputy;",
+      "rawStdoutSha256": "b90edc9c0622353dd6d31e1bf4dc4cd170d42351a73bafbc8e1c28a5f6908c78"
+    },
+    {
+      "input": "-dideras",
+      "expected": "di                   PREFIX\n- apart/asunder, in different directions; separation/dispersal/process reversal\nd.eras               V      5 1 IMPF ACTIVE  IND 2 S\ndesum, desse, defui, defuturus  V   [BPXDO]    Early  lesser\nbe wanting/lacking; fail/miss; abandon/desert, neglect; be away/absent/missing;\nSyncope   r => v.r\nSyncopated perfect often drops the 'v' and contracts vowel\ndidev.eras           V      3 1 PLUP ACTIVE  IND 2 S\nderado, deradere, derasi, derasus  V (3rd) TRANS   [XXXCO]\nscrape/rub/smooth off/away (surface of); graze; shave/cut off (hair/head);",
+      "rawStdoutSha256": "3f4c7fd5dad32039156817616f4a7023f8b5fea703b1601ce5ffed2ef134a4aa"
+    },
+    {
+      "input": "dideras",
+      "expected": "di                   PREFIX\n- apart/asunder, in different directions; separation/dispersal/process reversal\nd.eras               V      5 1 IMPF ACTIVE  IND 2 S\ndesum, desse, defui, defuturus  V   [BPXDO]    Early  lesser\nbe wanting/lacking; fail/miss; abandon/desert, neglect; be away/absent/missing;\nSyncope   r => v.r\nSyncopated perfect often drops the 'v' and contracts vowel\ndidev.eras           V      3 1 PLUP ACTIVE  IND 2 S\nderado, deradere, derasi, derasus  V (3rd) TRANS   [XXXCO]\nscrape/rub/smooth off/away (surface of); graze; shave/cut off (hair/head);",
+      "rawStdoutSha256": "3f4c7fd5dad32039156817616f4a7023f8b5fea703b1601ce5ffed2ef134a4aa"
+    },
+    {
+      "input": "diderat",
+      "expected": "di                   PREFIX\n- apart/asunder, in different directions; separation/dispersal/process reversal\nd.erat               V      5 1 IMPF ACTIVE  IND 3 S\ndesum, desse, defui, defuturus  V   [BPXDO]    Early  lesser\nbe wanting/lacking; fail/miss; abandon/desert, neglect; be away/absent/missing;",
+      "rawStdoutSha256": "7e04c27f99e42dd8b682a720d34fb17909d0634cb49a8ca9a14dfa5f690ba6ab"
+    },
+    {
+      "input": "diderant",
+      "expected": "di                   PREFIX\n- apart/asunder, in different directions; separation/dispersal/process reversal\nd.erant              V      5 1 IMPF ACTIVE  IND 3 P\ndesum, desse, defui, defuturus  V   [BPXDO]    Early  lesser\nbe wanting/lacking; fail/miss; abandon/desert, neglect; be away/absent/missing;",
+      "rawStdoutSha256": "8c5e2647b8d10bb4fca1b43143c776abb86f7bdcbae2b752b5dca5d64c685b52"
+    },
+    {
+      "input": "dideratis",
+      "expected": "di                   PREFIX\n- apart/asunder, in different directions; separation/dispersal/process reversal\nd.eratis             V      5 1 IMPF ACTIVE  IND 2 P\ndesum, desse, defui, defuturus  V   [BPXDO]    Early  lesser\nbe wanting/lacking; fail/miss; abandon/desert, neglect; be away/absent/missing;",
+      "rawStdoutSha256": "9331cb53c31801042f81f04b86661a6ab883235f4d493a85215bb1169739e06d"
+    },
+    {
+      "input": "dideram",
+      "expected": "di                   PREFIX\n- apart/asunder, in different directions; separation/dispersal/process reversal\nd.eram               V      5 1 IMPF ACTIVE  IND 1 S\ndesum, desse, defui, defuturus  V   [BPXDO]    Early  lesser\nbe wanting/lacking; fail/miss; abandon/desert, neglect; be away/absent/missing;",
+      "rawStdoutSha256": "26bdeaa6965b0aca1e9c9fd31d9533efc019c885ca995730ee9496352128e2b6"
+    },
+    {
+      "input": "diderunt",
+      "expected": "di                   PREFIX\n- apart/asunder, in different directions; separation/dispersal/process reversal\nd.erunt              V      5 1 FUT  ACTIVE  IND 3 P\ndesum, desse, defui, defuturus  V   [BPXDO]    Early  lesser\nbe wanting/lacking; fail/miss; abandon/desert, neglect; be away/absent/missing;",
+      "rawStdoutSha256": "68a8739d5b441f65bbf9237e257fde86de13aa48290c4305743c836f8785889d"
+    },
+    {
+      "input": "deras",
+      "expected": "d.eras               V      5 1 IMPF ACTIVE  IND 2 S\ndesum, desse, defui, defuturus  V   [BPXDO]    Early  lesser\nbe wanting/lacking; fail/miss; abandon/desert, neglect; be away/absent/missing;",
+      "rawStdoutSha256": "2f29e0a93fbb522538e609dd12400ea77ddab25794c5da755fbb7dff784cf188"
+    },
+    {
+      "input": "abesseque",
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nab.esse              V      5 1 PRES ACTIVE  INF 0 X\nabsum, abesse, abfui, abfuturus  V   [XXXDS]    lesser\nabsum, abesse, afui, afuturus  V   [XXXAO]\nbe away/absent/distant/missing; be free/removed from; be lacking; be distinct;",
+      "rawStdoutSha256": "bad3b8f97aad85327cfcdbb7c19a01f26e82655cea5b67b74be65a171372482b"
+    },
+    {
+      "input": "adesseque",
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nades.se              V      7 3 PRES ACTIVE  INF 0 X      Early\nadedo, adesse, -, -  V TRANS   [XXXCO]\neat up, eat into/away at, nibble, squander; wear down, exhaust; erode;\nad.esse              V      5 1 PRES ACTIVE  INF 0 X\nadsum, adesse, adfui, adfuturus  V   [XXXAO]\nadsum, adesse, arfui, arfuturus  V   [BXXCS]    Early\nassum, adesse, affui, affuturus  V   [XXXAO]\nbe near, be present, be in attendance, arrive, appear; aid (w/DAT);",
+      "rawStdoutSha256": "bb8e1b57f4a8aeb25ddc4b921955ca927c087725de22dee48e503a01fc0eab15"
+    },
+    {
+      "input": "fuitque",
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nfu.it                V      5 1 PERF ACTIVE  IND 3 S\nsum, esse, fui, futurus  V   [XXXAX]\nbe; exist; (also used to form verb perfect passive tenses) with NOM PERF PPL",
+      "rawStdoutSha256": "f7cb489865c829b128e8788932f502a3f196f29cc15d87ebc457a800af49fd23"
+    },
+    {
+      "input": "abeoque",
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nabe.o                V      6 1 PRES ACTIVE  IND 1 S\nabeo, abire, abivi(ii), abitus  V INTRANS   [XXXAO]\ndepart, go away; go off, go forth; pass away, die, disappear; be changed;",
+      "rawStdoutSha256": "5f0149ce1c985fe9800a6c92942bd3b38506b276b0bf8bb144e23d7f4ed40f10"
+    },
+    {
+      "input": "maledjctjtor",
+      "expected": "male                 PREFIX\nill, bad;\ndjctjt.or            V      1 1 PRES PASSIVE IND 1 S\ndictito, dictitare, dictitavi, dictitatus  V (1st) TRANS   [XXXCO]\nrepeat; persist in saying, keep on saying/speaking of; say/plead/call often;",
+      "rawStdoutSha256": "b9abf585630505dd3869b6f4d9d79215fd3df93fe2c4034a63dc9de3b9993f2c"
+    },
+    {
+      "input": "obforēmus",
+      "expected": "ob                   PREFIX\n- towards, to meet, in opposition;\nf.or                 V      1 1 PRES         IND 1 S\nfor, fari, fatus sum  V (1st) DEP   [XXXBX]\nspeak, talk; say;\n\nmus                  N      3 3 NOM S C\nmus                  N      3 3 VOC S C\nmus, muris  N (3rd) C   [XXXBX]\nmouse;",
+      "rawStdoutSha256": "2a9cb62110d22dd0fb2f620628e953b22015237daa0beff57370853be1f221a9"
+    },
+    {
+      "input": "obforēs",
+      "expected": "ob                   PREFIX\n- towards, to meet, in opposition;\nf.or                 V      1 1 PRES         IND 1 S\nfor, fari, fatus sum  V (1st) DEP   [XXXBX]\nspeak, talk; say;\n\ns                                ========   UNKNOWN",
+      "rawStdoutSha256": "cdc0dfd06620ee490d5646b7c9f13c432bc77dd6021b0d80728dc8709cbc4c1d"
+    },
+    {
+      "input": "obforētis",
+      "expected": "ob                   PREFIX\n- towards, to meet, in opposition;\nf.or                 V      1 1 PRES         IND 1 S\nfor, fari, fatus sum  V (1st) DEP   [XXXBX]\nspeak, talk; say;\n\nt.is                 PRON   5 2 GEN S C                   Early     uncommon\n [XXXAX]\nyou (sing.); thou/thine/thee/thy (PERS); yourself/thyself (REFLEX);",
+      "rawStdoutSha256": "8d03698808eb73702898500157c2fc403206fcc10b9a0fdbf372b6acc4de8f8a"
+    },
+    {
+      "input": "probjto",
+      "expected": "pro                  PREFIX\n- forward; before; in front of; forth [pro-cedo => go forth, proceed, continue]\nbjt.o                V      3 1 PRES ACTIVE  IND 1 S\nbito, bitere, -, -  V (3rd) INTRANS   [BXXCO]    Early\ngo;",
+      "rawStdoutSha256": "51cf96cdf7ae854ff28dd272faf163dcc30c05446b15024a6c38ed5c8587c423"
+    },
+    {
+      "input": "prolimini",
+      "expected": "pro                  PREFIX\nbefore -, in front of -;\nlimin.i              N      3 2 LOC S N                   Early\nlimin.i              N      3 2 DAT S N\nlimen, liminis  N (3rd) N   [XXXAX]\nthreshold, entrance; lintel; house;",
+      "rawStdoutSha256": "114eb366da92877f18285ae0e3860607092d2f41f84e1d6be046b9ff271adadc"
+    },
+    {
+      "input": "quotcumque",
+      "expected": "quotcumque           ADJ    9 9 X   X X POS\nquotcumque, undeclined  ADJ   [XXXEO]    uncommon\nwhatever number of; as many as; however many;",
+      "rawStdoutSha256": "6df78fcc52987e3bf51cef32a36b413d288cb2ce0ffeba3eb9fde9317b32354e"
+    },
+    {
+      "input": "qvotcvmqve",
+      "expected": "quotcvmque           ADJ    9 9 X   X X POS\nquotcumque, undeclined  ADJ   [XXXEO]    uncommon\nwhatever number of; as many as; however many;",
+      "rawStdoutSha256": "57123ce0d42eb903e2848afaae4339b3fd6a28ca238933a56bfdd9a4e5ae39bc"
+    },
+    {
+      "input": "tramittor",
+      "expected": "tra                  PREFIX\n- across, - over;\nmitt.or              V      3 1 PRES PASSIVE IND 1 S\nmitto, mittere, misi, missus  V (3rd)   [XXXAX]\nsend, throw, hurl, cast; let out, release, dismiss; disregard;",
+      "rawStdoutSha256": "08e2c7a9f603e72aaf2dac20154c3d4b8cfa97607fae125b3cdafc343cd96a55"
+    },
+    {
+      "input": "tramjttor",
+      "expected": "tra                  PREFIX\n- across, - over;\nmjtt.or              V      3 1 PRES PASSIVE IND 1 S\nmitto, mittere, misi, missus  V (3rd)   [XXXAX]\nsend, throw, hurl, cast; let out, release, dismiss; disregard;",
+      "rawStdoutSha256": "03d28e5b682b66e08faae0f32033094fa0667793402ee0ba5083e28278b83d29"
+    },
+    {
+      "input": "tranatator",
+      "expected": "tra                  PREFIX\n- across, - over;\nnat.ator             V      1 1 FUT  PASSIVE IMP 2 S\nnat.ator             V      1 1 FUT  PASSIVE IMP 3 S\nnato, natare, natavi, natatus  V (1st)   [XXXBX]\nswim; float;",
+      "rawStdoutSha256": "b5b5dc78323bb69dc9d4549858b2484b0ee23825b74346bc14ea91e449c3a4f4"
+    }
+  ]
+}

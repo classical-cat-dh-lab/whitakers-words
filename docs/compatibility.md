@@ -16,10 +16,13 @@ maintained mk270 lineage, not a reconstruction of historical 1.97FC.
 | Robustness | Checksum corruption, invalid options, UTF-16 spans, legacy Unicode splitting, long input, compounds, corrected isolation and repeated calls pass |
 | Student reading view | All 3,953 inputs retain every candidate and explanatory row in order, without mutating the legacy result; all source class combinations and all 39,336 dictionary entries have display mappings |
 
-`npm run verify` runs the offline build and twenty test groups: the original
+`npm run verify` runs the offline build and twenty-two test groups: the original
 nine engine/adapter groups, four student-display groups and three offline-storage
 groups, plus two browser-input/comparison-contract groups and two documentation
-rendering/preservation groups. The website also passes bounded Chromium/WebKit offline checks and eight
+rendering/preservation groups, plus two search-state and request-isolation groups.
+The search-state fixtures preserve fresh native observations for failed attempts,
+affix fallback, distinct dictionary/affix spelling comparisons and transformed
+part-of-speech checks. The website also passes bounded Chromium/WebKit offline checks and eight
 complete browser-to-Node JSON comparisons. Physical mobile-device installation
 and full classical-author corpora remain outside this qualification. The
 expanded corpus contains Aeneid vocabulary, all unique forms, available examples
@@ -54,6 +57,13 @@ The old finite baseline remains passing; its success is not universal equivalenc
   survives. Reading the text in the opposite order changes visible results.
 - Explanatory rows affect fallback control: inserting a trick/syncope marker can
   suppress further affix searches. This is reproduced, including unknown results.
+- Rejected attempts can leave dictionary candidates for the subsequent
+  `Do_Only_Fixes` pass. That state and the shared reduced stem are request-local
+  and retained at native pass boundaries, including the original stem-length
+  reduction and empty QU/PACK search behavior. Syncope suppression is scoped to
+  the native stages. Affix
+  comparison folds u/v only; dictionary matching also folds i/j. Prefix checks
+  use the part of speech after any suffix transformation.
 - PACK/enclitic duplicate groups, the adjective-to-adverb fallback, period-sensitive
   abbreviations and compound display behavior retain their original irregularities.
 - Original data, meanings, frequency labels and heuristic suggestions are retained

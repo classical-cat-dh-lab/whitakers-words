@@ -7,6 +7,8 @@ export function decn(left: readonly string[], right: readonly string[]): boolean
     return left[0] === right[0] && left[1] === right[1] || right[0] === '0' && right[1] === '0' && left[0] !== '9' || left[0] === right[0] && right[1] === '0';
 }
 const grade = (key: number, adverb = false) => adverb ? (['X', 'POS', 'COMP', 'SUPER'][key] ?? 'X') : (['POS', 'POS', 'POS', 'COMP', 'SUPER'][key] ?? 'X');
+// Addons_Package.Equ folds u/v only; dictionary matching also folds i/j.
+const affixEq = (a: string, b: string) => a.toLowerCase().replaceAll('v', 'u') === b.toLowerCase().replaceAll('v', 'u');
 export function resolveRule(rule: Rule, part: Part, key: number): Rule | null {
     if (part.pos !== effective(rule.quality.pos))
         return null;
@@ -103,6 +105,12 @@ export function marker(affix: Affix, kind: Trace['kind'], input: string, output:
     return { stem: affix.fix, rule: { ...emptyRule, quality: { pos: affix.kind, codes: [] } }, entry: { ...emptyEntry, id: affix.id, meaning: affix.meaning }, dictionary: 'ADDONS', traces: [trace] };
 }
 export class LegacyCore {
+    // Native PDL survives rejected attempts. It belongs to this request, not the dataset.
+    private candidates: Stem[] = [];
+    // QU/PACK searches still consume SSA(1) when no new inflection replaces it.
+    private reducedStem = 'x'.repeat(18);
+    onlyFixes = false;
+    usePrefixes = true;
     readonly options: LegacyOptions;
     readonly prefixes: Affix[];
     readonly suffixes: Affix[];
@@ -144,10 +152,37 @@ export class LegacyCore {
         }
         return out;
     }
-    basic(word: string, restriction: 'regular' | 'qu' | 'pack' = 'regular'): Parse[] {
+    private search(stems: string[], restriction: 'regular' | 'qu' | 'pack' = 'regular'): void {
+        this.candidates = [];
+        for (const stem of [...new Set(stems)].sort((a, b) => a.length - b.length)) {
+            for (const item of this.data.stems.get(norm(stem)) ?? []) {
+                const p = item.entry.part;
+                if (stem.length > 1 && (restriction === 'regular' && (p.pos === 'PACK' || p.pos === 'PRON' && p.codes[0] === '1') || restriction === 'qu' && !(p.pos === 'PRON' && p.codes[0] === '1') || restriction === 'pack' && p.pos !== 'PACK'))
+                    continue;
+                this.candidates.push(item);
+            }
+        }
+    }
+    basic(word: string, restriction: 'regular' | 'qu' | 'pack' = 'regular', retained = false): Parse[] {
         const out: Parse[] = [];
-        for (const pair of this.pairs(word, restriction !== 'regular')) {
-            for (const item of this.data.stems.get(norm(pair.stem)) ?? []) {
+        const pairs = this.pairs(word, restriction !== 'regular').filter(pair => restriction !== 'qu' || pair.rule.key === (word.startsWith('qu') || word.startsWith('aliqu') ? 1 : 2) && pair.rule.ending.length <= 4);
+        if (restriction === 'regular') {
+            if (!pairs.length)
+                return out;
+            this.reducedStem = pairs.reduce((a, b) => a.stem.length < b.stem.length ? a : b).stem;
+            if (!retained)
+                this.search(pairs.map(p => p.stem), restriction);
+        }
+        else {
+            if (pairs.length)
+                this.reducedStem = pairs.at(-1)!.stem;
+            this.search([this.reducedStem], restriction);
+        }
+        for (const pair of pairs) {
+            for (const item of this.candidates) {
+                // Reduce_Stem_List joins the retained PDL by stem length, not spelling.
+                if (item.stem.length !== pair.stem.length)
+                    continue;
                 const e = item.entry, p = e.part;
                 if (restriction === 'regular' && (p.pos === 'PACK' || p.pos === 'PRON' && p.codes[0] === '1'))
                     continue;
@@ -158,8 +193,6 @@ export class LegacyCore {
                 let rule: Rule | null;
                 if (restriction === 'qu' || restriction === 'pack') {
                     if (p.codes[0] !== pair.rule.quality.codes[0] || p.codes[1] !== pair.rule.quality.codes[1])
-                        continue;
-                    if (restriction === 'qu' && (pair.rule.key !== (word.startsWith('qu') || word.startsWith('aliqu') ? 1 : 2) || pair.rule.ending.length > 4))
                         continue;
                     rule = { ...pair.rule, quality: { pos: 'PRON', codes: [...pair.rule.quality.codes] } };
                 }
@@ -176,11 +209,11 @@ export class LegacyCore {
         if (word.length <= fix.fix.length)
             return null;
         if (prefix) {
-            if (!eq(word.slice(0, fix.fix.length), fix.fix) || fix.connect && word[fix.fix.length] !== fix.connect)
+            if (!affixEq(word.slice(0, fix.fix.length), fix.fix) || fix.connect && word[fix.fix.length] !== fix.connect)
                 return null;
             return word.slice(fix.fix.length);
         }
-        if (!eq(word.slice(-fix.fix.length), fix.fix) || fix.kind === 'SUFFIX' && fix.connect && word[word.length - fix.fix.length - 1] !== fix.connect)
+        if (!affixEq(word.slice(-fix.fix.length), fix.fix) || fix.kind === 'SUFFIX' && fix.connect && word[word.length - fix.fix.length - 1] !== fix.connect)
             return null;
         return word.slice(0, -fix.fix.length);
     }
@@ -213,12 +246,13 @@ export class LegacyCore {
         }
         return [];
     }
-    fixed(word: string): Parse[] {
+    fixed(word: string, prefixesFirst = true): Parse[] {
         const pairs = this.pairs(word);
         const out: Parse[] = [];
-        const prefixes = this.prefixes.filter(p => word[0] === p.fix[0] && word.length > p.fix.length && eq(word.slice(0, p.fix.length), p.fix));
+        const prefixes = this.usePrefixes ? this.prefixes.filter(p => word[0] === p.fix[0] && word.length > p.fix.length && eq(word.slice(0, p.fix.length), p.fix)) : [];
         const match = (prefix: Affix | null, suffix: Affix | null): Parse[] => {
             const hits: Parse[] = [];
+            const roots: string[] = [];
             for (const pair of pairs) {
                 let root = pair.stem;
                 if (suffix) {
@@ -233,9 +267,16 @@ export class LegacyCore {
                         continue;
                     root = less;
                 }
-                for (const item of this.data.stems.get(norm(root)) ?? []) {
+                roots.push(root);
+            }
+            if (!roots.length)
+                return hits;
+            this.search(roots);
+            for (const pair of pairs) {
+                for (const item of this.candidates) {
+                    if (Math.min(18, item.stem.length + (prefix?.fix.length ?? 0) + (suffix?.fix.length ?? 0)) !== pair.stem.length)
+                        continue;
                     let part = item.entry.part, key = item.key;
-                    const original = part;
                     if (part.pos === 'PACK' || part.pos === 'PRON' && part.codes[0] === '1')
                         continue;
                     if (['N', 'ADJ'].includes(part.pos) && part.codes[0] === '9' && part.codes[1] === '8')
@@ -250,7 +291,8 @@ export class LegacyCore {
                             part = { pos: s[2] as Part['pos'], codes: s.slice(3, -1) };
                         key = +s.at(-1)!;
                     }
-                    if (prefix && (part.pos === 'INTERJ' || part.pos === 'CONJ' || !(prefix.codes[0] === 'X' || prefix.codes[0] === part.pos || prefix.codes[0] === original.pos)))
+                    // Reduce_Stem_List tests the suffix-transformed part for a prefix.
+                    if (prefix && (part.pos === 'INTERJ' || part.pos === 'CONJ' || !(prefix.codes[0] === 'X' || prefix.codes[0] === part.pos)))
                         continue;
                     const rule = resolveRule(pair.rule, part, key);
                     if (!rule)
@@ -260,17 +302,28 @@ export class LegacyCore {
             }
             return sorted(hits);
         };
-        for (const prefix of prefixes) {
-            const hit = match(prefix, null);
-            if (hit.length) {
-                const m = marker(prefix, 'prefix', word, word.slice(prefix.fix.length));
-                return [m, ...hit.map(p => ({ ...p, traces: m.traces }))];
+        const tryPrefixes = (): Parse[] => {
+            for (const prefix of prefixes) {
+                const hit = match(prefix, null);
+                if (hit.length) {
+                    const m = marker(prefix, 'prefix', word, word.slice(prefix.fix.length));
+                    return [m, ...hit.map(p => ({ ...p, traces: m.traces }))];
+                }
             }
+            return [];
+        };
+        if (prefixesFirst) {
+            const hit = tryPrefixes();
+            if (hit.length)
+                return hit;
         }
+        let lastReduction: Parse[] = [];
         for (const suffix of this.suffixes) {
+            if (!pairs.some(p => this.subtract(p.stem, suffix) !== null))
+                continue;
             let hit = match(null, suffix);
             let prefixMarker: Parse | null = null;
-            if (!hit.length)
+            if (!this.candidates.length)
                 for (const prefix of prefixes) {
                     hit = match(prefix, suffix);
                     if (hit.length) {
@@ -278,29 +331,32 @@ export class LegacyCore {
                         break;
                     }
                 }
+            lastReduction = hit;
             if (hit.length) {
                 const m = marker(suffix, 'suffix', word, word);
                 const traces = [...(prefixMarker?.traces ?? []), ...m.traces];
                 out.push(...(prefixMarker ? [prefixMarker] : []), m, ...hit.map(p => ({ ...p, traces })));
             }
         }
-        return out;
+        // Prune_Stems tests the last SXX, not whether any earlier suffix succeeded.
+        const tail = lastReduction.length ? [] : tryPrefixes();
+        return [...out, ...tail];
     }
-    word(raw: string, fixes = false, depth = 0): Parse[] {
+    word(raw: string, fixes = false, depth = 0, entering = 0): Parse[] {
         if (depth > 24)
             throw new Error('Legacy recursion limit');
         const word = raw.toLowerCase();
         if (!word)
             return [];
-        let result = [...this.uniques(word), ...this.qu(word), ...this.basic(word)];
-        if (!result.length && fixes)
-            result = this.fixed(word);
+        let result = [...this.uniques(word), ...this.qu(word), ...this.basic(word, 'regular', this.onlyFixes)];
+        if (!entering && !result.length && fixes)
+            result = this.fixed(word, !this.candidates.length);
         if (!result.length)
             for (const tack of this.tackons.slice(4)) {
                 const less = this.subtract(word, tack);
                 if (less === null)
                     continue;
-                let hit = this.word(less, fixes, depth + 1);
+                let hit = this.word(less, fixes, depth + 1, entering);
                 const p = tack.codes[0];
                 if (p !== 'X')
                     hit = hit.filter(x => x.rule.quality.pos === p && (p === 'ADJ' || decn(x.rule.quality.codes, tack.codes.slice(1))));

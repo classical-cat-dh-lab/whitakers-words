@@ -11,7 +11,7 @@ const acceptable = (p: Parse[]) => p.length > 0 && p.at(-2)?.rule.quality.pos !=
 const vowel = (c: string) => 'aeiouy'.includes(c);
 export class Heuristics {
     constructor(readonly core: LegacyCore) { }
-    syncope(word: string, fixes = false): Parse[] {
+    syncope(word: string, fixes = false, entering = 0): Parse[] {
         const s = word.toLowerCase();
         const tests = [
             { fragments: ['ii'], last: s.length - 2, first: 0, insert: 'v', stem: 'Syncope  ii => ivi', meaning: "Syncopated perfect ivi can drop 'v' without contracting vowel ", strict: true },
@@ -24,7 +24,7 @@ export class Heuristics {
             for (let i = test.last; i >= test.first; i--) {
                 if (!test.fragments.some(f => s.startsWith(f, i)))
                     continue;
-                const modified = s.slice(0, i + 1) + test.insert + s.slice(i + 1), p = this.core.word(modified, false);
+                const modified = s.slice(0, i + 1) + test.insert + s.slice(i + 1), p = this.core.word(modified, fixes, 0, entering + 1);
                 if (!p.length)
                     continue;
                 const perfect = p.at(-1)!.rule.quality.pos === 'V' && p.at(-1)!.rule.key === 3;
@@ -34,7 +34,10 @@ export class Heuristics {
             }
         return [];
     }
-    tword(word: string, fixes: boolean): Parse[] { return [...this.core.word(word, false), ...this.syncope(word, false)]; }
+    tword(word: string, fixes: boolean): Parse[] {
+        const p = this.core.word(word, fixes, 0, 1);
+        return [...p, ...this.syncope(word, fixes, p.length + 1)];
+    }
     table(word: string, tables: Trick[], fixes: boolean, slury = false): Parse[] {
         const s = word;
         for (const [op, a, b] of tables) {
@@ -72,18 +75,23 @@ export class Heuristics {
         }
         return [];
     }
-    slury(word: string, fixes = false): Parse[] { return this.table(word, TABLES[word[0]?.toUpperCase() + '_Slur_Tricks'] ?? [], fixes, true); }
+    slury(word: string, fixes = false): Parse[] {
+        const saved = this.core.usePrefixes;
+        this.core.usePrefixes = false;
+        try { return this.table(word, TABLES[word[0]?.toUpperCase() + '_Slur_Tricks'] ?? [], fixes, true); }
+        finally { this.core.usePrefixes = saved; }
+    }
     split(word: string, fixes: boolean): Parse[] {
         let num1 = false, num2 = false;
         for (let i = 2; i < word.length - 2; i++) {
             const first = word.slice(0, i), second = word.slice(i);
             if (['dis', 'ex', 'in', 'per', 'prae', 'pro', 're', 'si', 'sub', 'super', 'trans'].includes(first))
                 continue;
-            let a = this.core.word(first, false);
+            let a = this.core.word(first, fixes, 0, 1);
             if (!a.length)
                 continue;
             num1 ||= a.some(p => p.rule.quality.pos === 'NUM');
-            let b = this.core.word(second, false);
+            let b = this.core.word(second, fixes, 0, a.length + 1);
             if (!acceptable(b))
                 continue;
             num2 ||= b.some(p => p.rule.quality.pos === 'NUM');
@@ -143,7 +151,10 @@ export class Heuristics {
         const o = this.core.options;
         let p = [...romanParse(word), ...this.core.word(word)];
         let doneEnclitic = false;
-        const sync = (w: string, fixes: boolean) => o.syncope && !p.some(x => x.rule.quality.pos === 'V' && x.rule.quality.codes[0] === '5' && x.rule.quality.codes[1] === '1') ? this.syncope(w, fixes) : [];
+        const hasToBe = (parses: Parse[]) => parses.some(x => x.rule.quality.pos === 'V' && x.rule.quality.codes[0] === '5' && x.rule.quality.codes[1] === '1');
+        // Native No_Syncope is set before the first pass and enclitic syncope,
+        // then cleared by Perform_Syncope. The fixes-only pass does not set it.
+        const sync = (w: string, fixes: boolean, suppressed = false) => o.syncope && !suppressed ? this.syncope(w, fixes) : [];
         const enclitic = (fixes: boolean) => {
             if (doneEnclitic)
                 return;
@@ -151,13 +162,14 @@ export class Heuristics {
                 const less = this.core.subtract(word, tack);
                 if (less === null)
                     continue;
-                let hit = this.core.word(less, fixes);
+                let hit = this.core.word(less, fixes, 0, p.length);
                 if (!p.length && !hit.length)
                     hit = this.slury(less, fixes);
-                hit.push(...sync(word, fixes));
-                hit.push(...this.core.uniques(word), ...this.core.qu(word));
-                if (fixes && !p.length && !hit.length)
-                    hit.push(...this.core.fixed(word));
+                hit.push(...sync(word, fixes, hasToBe([...p, ...hit])));
+                const saved = this.core.onlyFixes;
+                this.core.onlyFixes = true;
+                try { hit.push(...this.core.word(word, fixes, 0, p.length + hit.length)); }
+                finally { this.core.onlyFixes = saved; }
                 if (hit.length) {
                     p.push(...withExplanation(marker(tack, 'tackon', word, less), hit));
                     doneEnclitic = true;
@@ -167,12 +179,16 @@ export class Heuristics {
         };
         if (!p.length)
             p = this.slury(word);
-        p.push(...sync(word, false));
+        p.push(...sync(word, false, hasToBe(p)));
         enclitic(false);
         if (!p.length && o.fixes) {
-            p = this.core.word(word, true);
-            p.push(...sync(word, true));
-            enclitic(true);
+            this.core.onlyFixes = true;
+            try {
+                p = this.core.word(word, true);
+                p.push(...sync(word, true));
+                enclitic(true);
+            }
+            finally { this.core.onlyFixes = false; }
         }
         if (!p.length && o.tricks && !(capitalized && o.ignoreUnknownNames)) {
             p = this.tricks(word, o.fixes);
