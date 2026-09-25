@@ -114,7 +114,7 @@ export interface Parse {
     stem: string;
     rule: Rule;
     entry: Entry;
-    dictionary: 'GEN' | 'UNI' | 'ADDONS' | 'XXX' | 'YYY' | 'PPP' | 'RRR';
+    dictionary: 'X' | 'GEN' | 'UNI' | 'ADDONS' | 'XXX' | 'YYY' | 'PPP' | 'RRR';
     traces: Trace[];
     literal?: string;
 }

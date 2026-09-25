@@ -1,4 +1,5 @@
 import type { Entry, Parse, Quality } from './model.js';
+import { emptyEntry, emptyRule, sameRule, LegacyConstraintError } from './core.js';
 const pad = (s: string, n: number) => s.padEnd(n, ' ');
 export function qualityText(q: Quality, entry: Entry, dictionary: Parse['dictionary']): string {
     const c = [...q.codes];
@@ -40,7 +41,7 @@ const infFreq: Record<string, string> = { X: '', A: 'mostfreq', B: 'sometime', C
 const dictAge: Record<string, string> = { X: '', A: 'Archaic', B: 'Early', C: 'Classic', D: 'Late', E: 'Later', F: 'Medieval', G: 'NeoLatin', H: 'Modern' };
 const dictFreq: Record<string, string> = { X: '', A: 'veryfreq', B: 'frequent', C: 'common', D: 'lesser', E: 'uncommon', F: 'veryrare', I: 'inscript', M: 'graffiti', N: 'Pliny' };
 const trimSpaces = (s: string) => s.replace(/^ +| +$/g, '');
-export function meaningText(s: string): string { return trimSpaces(trimSpaces(s).replace(/^\|+|\|+$/g, '').slice(0, 79)); }
+export function meaningText(s: string): string { return trimSpaces(trimSpaces(s.replace(/^\|+/, '')).slice(0, 79)); }
 export function dictionaryText(e: Entry): string {
     let s = e.citation ? e.citation + '  ' : '';
     s += ' [' + e.flags + ']  ';
@@ -70,9 +71,10 @@ export function inflectionText(p: Parse): string {
     if (p.literal !== undefined)
         return p.literal;
     const stem = p.stem + (p.rule.ending ? '.' + p.rule.ending : '');
-    if (p.rule.quality.pos === 'X')
-        return pad(stem, 21);
-    let s = (stem.length >= 21 ? stem + '\n' : pad(stem, 21)) + qualityText(p.rule.quality, p.entry, p.dictionary);
+    const prefix = stem.length > 21 ? stem + '\n' + ' '.repeat(21) : pad(stem, 21);
+    if (sameRule(p.rule, emptyRule))
+        return prefix;
+    let s = prefix + qualityText(p.rule.quality, p.entry, p.dictionary);
     if (p.rule.age !== 'X' && infAge[p.rule.age])
         s += '  ' + pad(infAge[p.rule.age], 8);
     if ('CDEFIMN'.includes(p.rule.frequency) && infFreq[p.rule.frequency])
@@ -81,15 +83,41 @@ export function inflectionText(p: Parse): string {
 }
 export function formatParses(parses: Parse[], trimmed: boolean): string {
     const groups: Parse[][] = [];
-    for (const p of parses) {
-        const previous = groups.at(-1);
-        if (previous && p.dictionary === 'PPP' && p.rule.quality.pos === 'V')
-            previous.push(p);
-        else if (previous && previous[0].dictionary === p.dictionary && previous[0].entry.id === p.entry.id && previous[0].rule.quality.pos === p.rule.quality.pos && p.dictionary !== 'UNI' && !['TACKON', 'PREFIX', 'SUFFIX', 'X'].includes(p.rule.quality.pos))
-            previous.push(p);
-        else
-            groups.push([p]);
+    // Cycle_Over_Pa resets ODM at each POS run, but retains the previous group
+    // and dictionary entry when a PPP verb is appended to a participle/supine.
+    for (let i = 0; i < parses.length;) {
+        const initial = parses[i];
+        if (initial.dictionary === 'UNI') {
+            groups.push([initial]);
+            i++;
+            continue;
+        }
+        const pos = initial.rule.quality.pos;
+        let previousId = 0, previousDictionary: Parse['dictionary'] = 'X';
+        while (i < parses.length && parses[i].rule.quality.pos === pos) {
+            const p = parses[i];
+            const nominal = ['N', 'PRON', 'PACK', 'ADJ', 'NUM'].includes(pos);
+            const verbal = ['V', 'VPAR', 'SUPINE'].includes(pos);
+            if (nominal || verbal) {
+                if (pos === 'NUM' && p.dictionary === 'RRR' || p.entry.id !== previousId && (!verbal || p.dictionary !== 'PPP')) {
+                    groups.push([p]);
+                    previousId = p.entry.id;
+                    previousDictionary = p.dictionary;
+                }
+                else if (groups.length)
+                    groups.at(-1)!.push(p);
+            }
+            else {
+                if (p.dictionary !== previousDictionary || p.entry.id !== previousId)
+                    groups.push([p]);
+                i++;
+                break;
+            }
+            i++;
+        }
     }
+    if (groups.length > 40 || groups.some(g => g.length > 12))
+        throw new LegacyConstraintError('Legacy CYCLE_OVER_PA output buffer overflow');
     let previousIR = '', previousCitation = '';
     let output = '';
     const used = new Set<string>();
@@ -97,20 +125,21 @@ export function formatParses(parses: Parse[], trimmed: boolean): string {
         const group = groups[i], p = group[0], e = p.entry;
         const ir = JSON.stringify(group.map(p => [p.stem, p.rule.quality, p.rule.key, p.rule.ending, p.rule.age, p.rule.frequency]));
         if (ir !== previousIR) {
-            output += group.map(p => inflectionText(p.dictionary === 'PPP' && p.rule.quality.pos === 'V' ? { ...p, entry: e, dictionary: group[0].dictionary } : p) + (p.stem.startsWith('PPL') ? '\n' + p.entry.meaning.padEnd(76, ' ').slice(0, 76) : '')).join('\n') + '\n';
+            output += group.map(p => inflectionText({ ...p, entry: e, dictionary: group[0].dictionary }) + (p.stem.startsWith('PPL') ? '\n' + p.entry.meaning.padEnd(79, ' ').slice(0, 79) : '')).join('\n') + '\n';
             previousIR = ir;
         }
         if (['GEN', 'UNI'].includes(p.dictionary)) {
             if (i === 0 || e.citation !== previousCitation)
                 output += dictionaryText(e) + '\n';
-            if (i === groups.length - 1 || e.meaning !== groups[i + 1][0].entry.meaning)
-                output += (numeralMeaning(p) ?? meaningText(e.meaning)) + '\n';
+            const next = groups[i + 1]?.[0];
+            if (e.meaning !== (next && ['GEN', 'UNI'].includes(next.dictionary) ? next.entry.meaning : ''))
+                output += (numeralMeaning(p) ?? meaningText(trimSpaces(e.meaning.replace(/^\|+/, '')))) + '\n';
         }
         else if (p.dictionary === 'ADDONS' || !used.has(p.dictionary)) {
             output += meaningText(e.meaning) + '\n';
             used.add(p.dictionary);
         }
-        previousCitation = e.citation;
+        previousCitation = ['GEN', 'UNI'].includes(p.dictionary) ? e.citation : emptyEntry.citation;
     }
     return output + (trimmed ? '*' : '') + '\n';
 }

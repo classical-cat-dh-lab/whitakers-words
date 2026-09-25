@@ -21,7 +21,7 @@
     "label": "Compounds",
     "input": "amatus est amatum iri",
     "mode": "legacy",
-    "sha256": "25249b5d9863bbbf5a79b8fe4f483b6cd4d210b1d23a59158dd0cacdf33a5e20"
+    "sha256": "1f7af6903dd3be1d319d1b4c631f33ac75e54417c353a0e903227bc465d227d3"
   },
   {
     "label": "Legacy Unicode handling",

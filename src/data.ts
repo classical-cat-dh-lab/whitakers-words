@@ -5,6 +5,12 @@ export interface Dataset {
     affixes: Affix[];
     uniques: Unique[];
     stems: Map<string, Stem[]>;
+    orderedStems: Stem[];
+    stemKeys: string[];
+    stemRanges: Map<string, [
+        number,
+        number
+    ]>;
     endings: Map<string, Rule[]>;
     stemCount: number;
     english: EnglishIndexRow[];
@@ -16,6 +22,30 @@ function pos(s: string): PartOfSpeech {
     return s as PartOfSpeech;
 }
 const words = (s: string) => s.trim().split(/\s+/);
+const lexical = (a: string, b: string) => a < b ? -1 : a > b ? 1 : 0;
+// Dictionary_Package."<", followed by the remaining stemlist-sort fields.
+function partKey(p: Part): number[] {
+    const c = p.codes, at = (value: string, set: string) => set.split(' ').indexOf(value);
+    const grade = 'X POS COMP SUPER';
+    const k = [POS.indexOf(p.pos)];
+    if (['N', 'PRON', 'PACK', 'ADJ', 'NUM', 'V'].includes(p.pos))
+        k.push(+c[0], +c[1]);
+    if (p.pos === 'N')
+        k.push(at(c[2], 'X M F N C'), at(c[3], 'X S M A G N P T L W'));
+    if (p.pos === 'PRON' || p.pos === 'PACK')
+        k.push(at(c[2], 'X PERS REL REFLEX DEMONS INTERR INDEF ADJECT'));
+    if (p.pos === 'ADJ')
+        k.push(at(c[2], grade));
+    if (p.pos === 'NUM')
+        k.push(at(c[2], 'X CARD ORD DIST ADVERB'), +c[3]);
+    if (p.pos === 'ADV')
+        k.push(at(c[0], grade));
+    if (p.pos === 'V')
+        k.push(at(c[2], 'X TO_BE TO_BEING GEN DAT ABL TRANS INTRANS IMPERS DEP SEMIDEP PERFDEF'));
+    if (p.pos === 'PREP')
+        k.push(at(c[0], 'X NOM VOC GEN LOC DAT ABL ACC'));
+    return k;
+}
 function lines(s: string): {
     text: string;
     line: number;
@@ -117,6 +147,29 @@ export function parseDataset(data: SourceData): Dataset {
     }
     if (stemCount !== 62084)
         throw new Error(`Canonical stem accounting failed: ${stemCount}`);
+    const partKeys = entries.map(e => partKey(e.part));
+    const orderedStems = [...stems.values()].flat().sort((a, b) => {
+        let d = lexical(norm(a.stem), norm(b.stem));
+        const l = partKeys[a.entry.id - 1], r = partKeys[b.entry.id - 1];
+        for (let i = 0; !d && i < l.length; i++)
+            d = l[i] - r[i];
+        return d || lexical(a.stem.toLowerCase(), b.stem.toLowerCase()) || lexical(a.stem, b.stem) || a.key - b.key || a.entry.id - b.entry.id;
+    });
+    const stemKeys = orderedStems.map(s => norm(s.stem));
+    const stemRanges = new Map<string, [
+        number,
+        number
+    ]>();
+    stemKeys.forEach((s, i) => {
+        const key = s.slice(0, 2), range = stemRanges.get(key);
+        if (range)
+            range[1] = i;
+        else
+            stemRanges.set(key, [i, i]);
+    });
+    const positions = new Map(orderedStems.map((s, i) => [s, i]));
+    for (const list of stems.values())
+        list.sort((a, b) => positions.get(a)! - positions.get(b)!);
     const endings = new Map<string, Rule[]>();
     for (const rule of [...rules].reverse()) {
         const k = rule.ending.length + ':' + (rule.ending.at(-1) ?? '');
@@ -132,5 +185,5 @@ export function parseDataset(data: SourceData): Dataset {
     });
     if (english.length !== 149326 || english.some(r => !Number.isInteger(r.entryId) || r.entryId < 0 || r.entryId > 39336))
         throw new Error('English index accounting failed');
-    return { entries, rules, affixes, uniques, stems, endings, stemCount, english };
+    return { entries, rules, affixes, uniques, stems, orderedStems, stemKeys, stemRanges, endings, stemCount, english };
 }

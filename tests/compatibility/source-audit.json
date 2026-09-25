@@ -1,0 +1,1718 @@
+{
+  "snapshot": "words-mk270-1f2f0fb",
+  "comparison": "Remove console framing and trailing whitespace per line; preserve internal order and multiplicity.",
+  "source": "Fresh observations from two independently built, hash-verified native executables.",
+  "reportSha256": "de09f17864d5f34a3bdb997a2d13b08fcb38cec76a7335fc17ff5eace4d5ccb8",
+  "cases": [
+    {
+      "input": "bone",
+      "options": {},
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nbon.e                ADV    POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;"
+    },
+    {
+      "input": "pulcherrime",
+      "options": {},
+      "expected": "pulcherri.me         ADJ    1 2 VOC S M SUPER\npulcher, pulchra -um, pulchrior -or -us, pulcherrimus -a -um  ADJ   [XXXAX]\npretty; beautiful; handsome; noble, illustrious;\npulcherrime          ADV    SUPER\npulchre, pulchrius, pulcherrime  ADV   [XXXDX]    lesser\nfine, beautifully;"
+    },
+    {
+      "input": "maxime",
+      "options": {},
+      "expected": "maxi.me              ADJ    1 1 VOC S M SUPER\nmagnus, magna -um, major -or -us, maximus -a -um  ADJ   [XXXAO]\nlarge/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;\ngreat (achievement); mighty; distinguished; skilled; bold/confident; proud;\nfull/complete/utter/pure; intense; loud; at high price; notable/famous; old;\nmaxi.me              ADJ    0 0 VOC S M SUPER\nmaximus, maxima, maximum  ADJ   [XXXAO]\ngreatest/biggest/largest; longest; oldest; highest, utmost; leading, chief;\nmaxime               ADV    SUPER\nmaxime  ADV   [XXXAO]\nespecially, chiefly; certainly; most, very much; (forms SUPER w/ADJ/ADV);"
+    },
+    {
+      "input": "amasti",
+      "options": {},
+      "expected": "Syncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\namav.isti            V      1 1 PERF ACTIVE  IND 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "audierunt",
+      "options": {},
+      "expected": "Syncope  ier=>iver\nSyncopated perfect often drops the 'v' and contracts vowel\naudiv.erunt          V      4 1 PERF ACTIVE  IND 3 P\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;"
+    },
+    {
+      "input": "amatus est",
+      "options": {},
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amaturus esse",
+      "options": {},
+      "expected": "amat.urus            VPAR   1 1 NOM S M FUT  ACTIVE  PPL\nPPL+esse             V      1 1 FUT  ACTIVE  INF 0 X\nFUT ACTIVE PPL + esse => PRES Periphastic/FUT ACTIVE INF - be about/going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amandum fuisse",
+      "options": {},
+      "expected": "am.andum             VPAR   1 1 NOM S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 VOC S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S M FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S N FUT  PASSIVE PPL\nPPL+fuisse           V      1 1 PERF PASSIVE INF 0 X\nFUT PASSIVE PPL + fuisse => PERF PASSIVE INF Periphrastic - about to, going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amatum iri",
+      "options": {},
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "quicumque",
+      "options": {},
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;"
+    },
+    {
+      "input": "cuiusque",
+      "options": {},
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncui.us               ADJ    1 1 NOM S M POS\ncujus, cuja, cujum  ADJ   [XXXCO]\nof whom?, whose?; (interrogative); of/to whom, whose (relative);\ncu.jus               PRON   1 0 GEN S X\n [XXXAO]\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;"
+    },
+    {
+      "input": "aliquid",
+      "options": {},
+      "expected": "aliqu.id             PRON   1 0 NOM S N\naliqu.id             PRON   1 0 ACC S N\n [XXXAO]\nanyone/anybody/anything; someone; some/few; some (particular) thing;\nsome; any; a few; a particular/certain ~; some other; about/like (NUM);\naliquid              ADV    POS\naliquid  ADV   [XXXCO]\nto some degree/extent; somewhat;"
+    },
+    {
+      "input": "semifer",
+      "options": {},
+      "expected": "semifer              ADJ    1 2 NOM S M POS\nsemifer              ADJ    1 2 VOC S M POS\nsemifer, semifera, semiferum  ADJ   [XXXDX]    lesser\nhalf-wild; half-monster;"
+    },
+    {
+      "input": "permagnus",
+      "options": {},
+      "expected": "permagn.us           ADJ    1 1 NOM S M POS\npermagnus, permagna, permagnum  ADJ   [XXXDX]    lesser\nvery great;"
+    },
+    {
+      "input": "plurimi",
+      "options": {},
+      "expected": "pluri.mi             ADJ    1 1 GEN S M SUPER\npluri.mi             ADJ    1 1 GEN S N SUPER\npluri.mi             ADJ    1 1 NOM P M SUPER\npluri.mi             ADJ    1 1 VOC P M SUPER\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;\nplurim.i             N      2 1 GEN S M\nplurim.i             N      2 1 LOC S M\nplurim.i             N      2 1 NOM P M\nplurim.i             N      2 1 VOC P M\nplurimus, plurimi  N (2nd) M   [XXXDX]    lesser\nvery many, many a one; the most people, very many/great number of people;\nplurim.i             N      2 2 GEN S N\nplurim.i             N      2 2 LOC S N\nplurimum, plurimi  N (2nd) N   [XXXDX]    lesser\nmost/great number of things; greatest amount; very much; the most possible;\nplurim.i             ADJ    1 1 GEN S M POS\nplurim.i             ADJ    1 1 GEN S N POS\nplurim.i             ADJ    1 1 NOM P M POS\nplurim.i             ADJ    1 1 VOC P M POS\nplurimus, plurima, plurimum  ADJ   [XXXAX]\nmost, greatest number/amount; very many; most frequent; highest price/value;"
+    },
+    {
+      "input": "respublica",
+      "options": {},
+      "expected": "Two words\nMay be 2 words combined (res+publica) If not obvious, probably incorrect\npublic.a             ADJ    1 1 NOM S F POS\npublic.a             ADJ    1 1 VOC S F POS\npublic.a             ADJ    1 1 ABL S F POS\npublic.a             ADJ    1 1 NOM P N POS\npublic.a             ADJ    1 1 VOC P N POS\npublic.a             ADJ    1 1 ACC P N POS\npublicus, publica, publicum  ADJ   [XXXAX]\npublic; common, of the people/state; official; [res publica => the state];\npublic.a             V      1 1 PRES ACTIVE  IMP 2 S\npublico, publicare, publicavi, publicatus  V (1st)   [XXXDX]    lesser\nconfiscate; make public property; publish;\nr.es                 N      5 1 NOM S F\nr.es                 N      5 1 VOC S F\nr.es                 N      5 1 NOM P F\nr.es                 N      5 1 VOC P F\nr.es                 N      5 1 ACC P F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\nres                  N      9 9 X   X N\nres, undeclined  N N   [DEQEW]    Late  uncommon\nres; (20th letter of Hebrew alphabet); (transliterate as R);\n*"
+    },
+    {
+      "input": "xviiii",
+      "options": {},
+      "expected": "xviiii               NUM    2 0 X   X X CARD\n19  as a ROMAN NUMERAL;"
+    },
+    {
+      "input": "IIX",
+      "options": {},
+      "expected": "Bad Roman Numeral?\n\nIIX                  NUM    2 0 X   X X CARD              infreq\n8  as ill-formed ROMAN NUMERAL?;"
+    },
+    {
+      "input": "C.",
+      "options": {},
+      "expected": "c                    N      9 8 X   X M\nC., abb.  N M   [XXXCO]\nGaius (Roman praenomen); (abb. C.); (abb. for) centum/100;\n*"
+    },
+    {
+      "input": "AMO",
+      "options": {},
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "Amo",
+      "options": {},
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "uirtus",
+      "options": {},
+      "expected": "uirtus               N      3 1 NOM S F\nuirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "virtus",
+      "options": {},
+      "expected": "virtus               N      3 1 NOM S F\nvirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "justus",
+      "options": {},
+      "expected": "just.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "iustus",
+      "options": {},
+      "expected": "iust.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "amāre",
+      "options": {},
+      "expected": "am                             ========   UNKNOWN\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "amāre",
+      "options": {},
+      "expected": "am.a                 N      1 1 NOM S F\nam.a                 N      1 1 VOC S F\nam.a                 N      1 1 ABL S F\nama, amae  N (1st) F   [XXXDO]    lesser\nbucket; water bucket; (esp. fireman's bucket);\nam.a                 V      1 1 PRES ACTIVE  IMP 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "\"amo\"--est",
+      "options": {},
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaa",
+      "options": {},
+      "expected": "aaaaaaaaaaaaaaaaaaa            ========   UNKNOWN"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {},
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN"
+    },
+    {
+      "input": "bone",
+      "options": {
+        "trim": false
+      },
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nbon.e                ADV    POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;"
+    },
+    {
+      "input": "pulcherrime",
+      "options": {
+        "trim": false
+      },
+      "expected": "pulcherri.me         ADJ    1 2 VOC S M SUPER\npulcher, pulchra -um, pulchrior -or -us, pulcherrimus -a -um  ADJ   [XXXAX]\npretty; beautiful; handsome; noble, illustrious;\npulcherrime          ADV    SUPER\npulchre, pulchrius, pulcherrime  ADV   [XXXDX]    lesser\nfine, beautifully;"
+    },
+    {
+      "input": "maxime",
+      "options": {
+        "trim": false
+      },
+      "expected": "maxi.me              ADJ    1 1 VOC S M SUPER\nmagnus, magna -um, major -or -us, maximus -a -um  ADJ   [XXXAO]\nlarge/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;\ngreat (achievement); mighty; distinguished; skilled; bold/confident; proud;\nfull/complete/utter/pure; intense; loud; at high price; notable/famous; old;\nmaxi.me              ADJ    0 0 VOC S M SUPER\nmaximus, maxima, maximum  ADJ   [XXXAO]\ngreatest/biggest/largest; longest; oldest; highest, utmost; leading, chief;\nmaxime               ADV    SUPER\nmaxime  ADV   [XXXAO]\nespecially, chiefly; certainly; most, very much; (forms SUPER w/ADJ/ADV);"
+    },
+    {
+      "input": "amasti",
+      "options": {
+        "trim": false
+      },
+      "expected": "Syncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\namav.isti            V      1 1 PERF ACTIVE  IND 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "audierunt",
+      "options": {
+        "trim": false
+      },
+      "expected": "Syncope  ier=>iver\nSyncopated perfect often drops the 'v' and contracts vowel\naudiv.erunt          V      4 1 PERF ACTIVE  IND 3 P\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;"
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "trim": false
+      },
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amaturus esse",
+      "options": {
+        "trim": false
+      },
+      "expected": "amat.urus            VPAR   1 1 NOM S M FUT  ACTIVE  PPL\nPPL+esse             V      1 1 FUT  ACTIVE  INF 0 X\nFUT ACTIVE PPL + esse => PRES Periphastic/FUT ACTIVE INF - be about/going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amandum fuisse",
+      "options": {
+        "trim": false
+      },
+      "expected": "am.andum             VPAR   1 1 NOM S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 VOC S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S M FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S N FUT  PASSIVE PPL\nPPL+fuisse           V      1 1 PERF PASSIVE INF 0 X\nFUT PASSIVE PPL + fuisse => PERF PASSIVE INF Periphrastic - about to, going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amatum iri",
+      "options": {
+        "trim": false
+      },
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "quicumque",
+      "options": {
+        "trim": false
+      },
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;"
+    },
+    {
+      "input": "cuiusque",
+      "options": {
+        "trim": false
+      },
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncui.us               ADJ    1 1 NOM S M POS\ncujus, cuja, cujum  ADJ   [XXXCO]\nof whom?, whose?; (interrogative); of/to whom, whose (relative);\ncu.jus               PRON   1 0 GEN S X\n [XXXAO]\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;"
+    },
+    {
+      "input": "aliquid",
+      "options": {
+        "trim": false
+      },
+      "expected": "aliqu.id             PRON   1 0 NOM S N\naliqu.id             PRON   1 0 ACC S N\n [XXXAO]\nanyone/anybody/anything; someone; some/few; some (particular) thing;\nsome; any; a few; a particular/certain ~; some other; about/like (NUM);\naliquid              ADV    POS\naliquid  ADV   [XXXCO]\nto some degree/extent; somewhat;"
+    },
+    {
+      "input": "semifer",
+      "options": {
+        "trim": false
+      },
+      "expected": "semifer              ADJ    1 2 NOM S M POS\nsemifer              ADJ    1 2 VOC S M POS\nsemifer, semifera, semiferum  ADJ   [XXXDX]    lesser\nhalf-wild; half-monster;"
+    },
+    {
+      "input": "permagnus",
+      "options": {
+        "trim": false
+      },
+      "expected": "permagn.us           ADJ    1 1 NOM S M POS\npermagnus, permagna, permagnum  ADJ   [XXXDX]    lesser\nvery great;"
+    },
+    {
+      "input": "plurimi",
+      "options": {
+        "trim": false
+      },
+      "expected": "pluri.mi             ADJ    1 1 GEN S M SUPER\npluri.mi             ADJ    1 1 GEN S N SUPER\npluri.mi             ADJ    1 1 NOM P M SUPER\npluri.mi             ADJ    1 1 VOC P M SUPER\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;\nplurim.i             N      2 1 GEN S M\nplurim.i             N      2 1 LOC S M\nplurim.i             N      2 1 NOM P M\nplurim.i             N      2 1 VOC P M\nplurimus, plurimi  N (2nd) M   [XXXDX]    lesser\nvery many, many a one; the most people, very many/great number of people;\nplurim.i             N      2 2 GEN S N\nplurim.i             N      2 2 LOC S N\nplurimum, plurimi  N (2nd) N   [XXXDX]    lesser\nmost/great number of things; greatest amount; very much; the most possible;\nplurim.i             ADJ    1 1 GEN S M POS\nplurim.i             ADJ    1 1 GEN S N POS\nplurim.i             ADJ    1 1 NOM P M POS\nplurim.i             ADJ    1 1 VOC P M POS\nplurimus, plurima, plurimum  ADJ   [XXXAX]\nmost, greatest number/amount; very many; most frequent; highest price/value;"
+    },
+    {
+      "input": "respublica",
+      "options": {
+        "trim": false
+      },
+      "expected": "Two words\nMay be 2 words combined (res+publica) If not obvious, probably incorrect\npublic.a             ADJ    1 1 NOM S F POS\npublic.a             ADJ    1 1 VOC S F POS\npublic.a             ADJ    1 1 ABL S F POS\npublic.a             ADJ    1 1 NOM P N POS\npublic.a             ADJ    1 1 VOC P N POS\npublic.a             ADJ    1 1 ACC P N POS\npublicus, publica, publicum  ADJ   [XXXAX]\npublic; common, of the people/state; official; [res publica => the state];\npublic.a             V      1 1 PRES ACTIVE  IMP 2 S\npublico, publicare, publicavi, publicatus  V (1st)   [XXXDX]    lesser\nconfiscate; make public property; publish;\nr.es                 N      5 1 NOM S F\nr.es                 N      5 1 VOC S F\nr.es                 N      5 1 NOM P F\nr.es                 N      5 1 VOC P F\nr.es                 N      5 1 ACC P F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\nr.es                 V      2 1 PRES         IND 2 S\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;\nres                  N      9 9 X   X N\nres, undeclined  N N   [DEQEW]    Late  uncommon\nres; (20th letter of Hebrew alphabet); (transliterate as R);"
+    },
+    {
+      "input": "xviiii",
+      "options": {
+        "trim": false
+      },
+      "expected": "xviiii               NUM    2 0 X   X X CARD\n19  as a ROMAN NUMERAL;"
+    },
+    {
+      "input": "IIX",
+      "options": {
+        "trim": false
+      },
+      "expected": "Bad Roman Numeral?\n\nIIX                  NUM    2 0 X   X X CARD              infreq\n8  as ill-formed ROMAN NUMERAL?;"
+    },
+    {
+      "input": "C.",
+      "options": {
+        "trim": false
+      },
+      "expected": "c                    N      9 8 X   X M\nC., abb.  N M   [XXXCO]\nGaius (Roman praenomen); (abb. C.); (abb. for) centum/100;\nC                    NUM    2 0 X   X X CARD\n100  as a ROMAN NUMERAL;"
+    },
+    {
+      "input": "AMO",
+      "options": {
+        "trim": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "Amo",
+      "options": {
+        "trim": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "uirtus",
+      "options": {
+        "trim": false
+      },
+      "expected": "uirtus               N      3 1 NOM S F\nuirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "virtus",
+      "options": {
+        "trim": false
+      },
+      "expected": "virtus               N      3 1 NOM S F\nvirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "justus",
+      "options": {
+        "trim": false
+      },
+      "expected": "just.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "iustus",
+      "options": {
+        "trim": false
+      },
+      "expected": "iust.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "trim": false
+      },
+      "expected": "am                             ========   UNKNOWN\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 DAT S F                   Early     uncommon\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\nr.e                  V      2 1 PRES         IMP 2 S\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "trim": false
+      },
+      "expected": "am.a                 N      1 1 NOM S F\nam.a                 N      1 1 VOC S F\nam.a                 N      1 1 ABL S F\nama, amae  N (1st) F   [XXXDO]    lesser\nbucket; water bucket; (esp. fireman's bucket);\nam.a                 V      1 1 PRES ACTIVE  IMP 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 DAT S F                   Early     uncommon\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\nr.e                  V      2 1 PRES         IMP 2 S\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;"
+    },
+    {
+      "input": "\"amo\"--est",
+      "options": {
+        "trim": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "trim": false
+      },
+      "expected": "aaaaaaaaaaaaaaaaaaa            ========   UNKNOWN"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "trim": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN"
+    },
+    {
+      "input": "bone",
+      "options": {
+        "fixes": false
+      },
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;"
+    },
+    {
+      "input": "pulcherrime",
+      "options": {
+        "fixes": false
+      },
+      "expected": "pulcherri.me         ADJ    1 2 VOC S M SUPER\npulcher, pulchra -um, pulchrior -or -us, pulcherrimus -a -um  ADJ   [XXXAX]\npretty; beautiful; handsome; noble, illustrious;\npulcherrime          ADV    SUPER\npulchre, pulchrius, pulcherrime  ADV   [XXXDX]    lesser\nfine, beautifully;"
+    },
+    {
+      "input": "maxime",
+      "options": {
+        "fixes": false
+      },
+      "expected": "maxi.me              ADJ    1 1 VOC S M SUPER\nmagnus, magna -um, major -or -us, maximus -a -um  ADJ   [XXXAO]\nlarge/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;\ngreat (achievement); mighty; distinguished; skilled; bold/confident; proud;\nfull/complete/utter/pure; intense; loud; at high price; notable/famous; old;\nmaxi.me              ADJ    0 0 VOC S M SUPER\nmaximus, maxima, maximum  ADJ   [XXXAO]\ngreatest/biggest/largest; longest; oldest; highest, utmost; leading, chief;\nmaxime               ADV    SUPER\nmaxime  ADV   [XXXAO]\nespecially, chiefly; certainly; most, very much; (forms SUPER w/ADJ/ADV);"
+    },
+    {
+      "input": "amasti",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Syncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\namav.isti            V      1 1 PERF ACTIVE  IND 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "audierunt",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Syncope  ier=>iver\nSyncopated perfect often drops the 'v' and contracts vowel\naudiv.erunt          V      4 1 PERF ACTIVE  IND 3 P\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;"
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "fixes": false
+      },
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amaturus esse",
+      "options": {
+        "fixes": false
+      },
+      "expected": "amat.urus            VPAR   1 1 NOM S M FUT  ACTIVE  PPL\nPPL+esse             V      1 1 FUT  ACTIVE  INF 0 X\nFUT ACTIVE PPL + esse => PRES Periphastic/FUT ACTIVE INF - be about/going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amandum fuisse",
+      "options": {
+        "fixes": false
+      },
+      "expected": "am.andum             VPAR   1 1 NOM S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 VOC S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S M FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S N FUT  PASSIVE PPL\nPPL+fuisse           V      1 1 PERF PASSIVE INF 0 X\nFUT PASSIVE PPL + fuisse => PERF PASSIVE INF Periphrastic - about to, going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amatum iri",
+      "options": {
+        "fixes": false
+      },
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "quicumque",
+      "options": {
+        "fixes": false
+      },
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;"
+    },
+    {
+      "input": "cuiusque",
+      "options": {
+        "fixes": false
+      },
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncui.us               ADJ    1 1 NOM S M POS\ncujus, cuja, cujum  ADJ   [XXXCO]\nof whom?, whose?; (interrogative); of/to whom, whose (relative);\ncu.jus               PRON   1 0 GEN S X\n [XXXAO]\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;"
+    },
+    {
+      "input": "aliquid",
+      "options": {
+        "fixes": false
+      },
+      "expected": "aliqu.id             PRON   1 0 NOM S N\naliqu.id             PRON   1 0 ACC S N\n [XXXAO]\nanyone/anybody/anything; someone; some/few; some (particular) thing;\nsome; any; a few; a particular/certain ~; some other; about/like (NUM);\naliquid              ADV    POS\naliquid  ADV   [XXXCO]\nto some degree/extent; somewhat;"
+    },
+    {
+      "input": "semifer",
+      "options": {
+        "fixes": false
+      },
+      "expected": "semifer              ADJ    1 2 NOM S M POS\nsemifer              ADJ    1 2 VOC S M POS\nsemifer, semifera, semiferum  ADJ   [XXXDX]    lesser\nhalf-wild; half-monster;"
+    },
+    {
+      "input": "permagnus",
+      "options": {
+        "fixes": false
+      },
+      "expected": "permagn.us           ADJ    1 1 NOM S M POS\npermagnus, permagna, permagnum  ADJ   [XXXDX]    lesser\nvery great;"
+    },
+    {
+      "input": "plurimi",
+      "options": {
+        "fixes": false
+      },
+      "expected": "pluri.mi             ADJ    1 1 GEN S M SUPER\npluri.mi             ADJ    1 1 GEN S N SUPER\npluri.mi             ADJ    1 1 NOM P M SUPER\npluri.mi             ADJ    1 1 VOC P M SUPER\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;\nplurim.i             N      2 1 GEN S M\nplurim.i             N      2 1 LOC S M\nplurim.i             N      2 1 NOM P M\nplurim.i             N      2 1 VOC P M\nplurimus, plurimi  N (2nd) M   [XXXDX]    lesser\nvery many, many a one; the most people, very many/great number of people;\nplurim.i             N      2 2 GEN S N\nplurim.i             N      2 2 LOC S N\nplurimum, plurimi  N (2nd) N   [XXXDX]    lesser\nmost/great number of things; greatest amount; very much; the most possible;\nplurim.i             ADJ    1 1 GEN S M POS\nplurim.i             ADJ    1 1 GEN S N POS\nplurim.i             ADJ    1 1 NOM P M POS\nplurim.i             ADJ    1 1 VOC P M POS\nplurimus, plurima, plurimum  ADJ   [XXXAX]\nmost, greatest number/amount; very many; most frequent; highest price/value;"
+    },
+    {
+      "input": "respublica",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Two words\nMay be 2 words combined (res+publica) If not obvious, probably incorrect\npublic.a             ADJ    1 1 NOM S F POS\npublic.a             ADJ    1 1 VOC S F POS\npublic.a             ADJ    1 1 ABL S F POS\npublic.a             ADJ    1 1 NOM P N POS\npublic.a             ADJ    1 1 VOC P N POS\npublic.a             ADJ    1 1 ACC P N POS\npublicus, publica, publicum  ADJ   [XXXAX]\npublic; common, of the people/state; official; [res publica => the state];\npublic.a             V      1 1 PRES ACTIVE  IMP 2 S\npublico, publicare, publicavi, publicatus  V (1st)   [XXXDX]    lesser\nconfiscate; make public property; publish;\nr.es                 N      5 1 NOM S F\nr.es                 N      5 1 VOC S F\nr.es                 N      5 1 NOM P F\nr.es                 N      5 1 VOC P F\nr.es                 N      5 1 ACC P F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\nres                  N      9 9 X   X N\nres, undeclined  N N   [DEQEW]    Late  uncommon\nres; (20th letter of Hebrew alphabet); (transliterate as R);\n*"
+    },
+    {
+      "input": "xviiii",
+      "options": {
+        "fixes": false
+      },
+      "expected": "xviiii               NUM    2 0 X   X X CARD\n19  as a ROMAN NUMERAL;"
+    },
+    {
+      "input": "IIX",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Bad Roman Numeral?\n\nIIX                  NUM    2 0 X   X X CARD              infreq\n8  as ill-formed ROMAN NUMERAL?;"
+    },
+    {
+      "input": "C.",
+      "options": {
+        "fixes": false
+      },
+      "expected": "c                    N      9 8 X   X M\nC., abb.  N M   [XXXCO]\nGaius (Roman praenomen); (abb. C.); (abb. for) centum/100;\n*"
+    },
+    {
+      "input": "AMO",
+      "options": {
+        "fixes": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "Amo",
+      "options": {
+        "fixes": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "uirtus",
+      "options": {
+        "fixes": false
+      },
+      "expected": "uirtus               N      3 1 NOM S F\nuirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "virtus",
+      "options": {
+        "fixes": false
+      },
+      "expected": "virtus               N      3 1 NOM S F\nvirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "justus",
+      "options": {
+        "fixes": false
+      },
+      "expected": "just.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "iustus",
+      "options": {
+        "fixes": false
+      },
+      "expected": "iust.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "fixes": false
+      },
+      "expected": "am                             ========   UNKNOWN\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "fixes": false
+      },
+      "expected": "am.a                 N      1 1 NOM S F\nam.a                 N      1 1 VOC S F\nam.a                 N      1 1 ABL S F\nama, amae  N (1st) F   [XXXDO]    lesser\nbucket; water bucket; (esp. fireman's bucket);\nam.a                 V      1 1 PRES ACTIVE  IMP 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "\"amo\"--est",
+      "options": {
+        "fixes": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "fixes": false
+      },
+      "expected": "aaaaaaaaaaaaaaaaaaa            ========   UNKNOWN"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "fixes": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN"
+    },
+    {
+      "input": "bone",
+      "options": {
+        "syncope": false
+      },
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nbon.e                ADV    POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;"
+    },
+    {
+      "input": "pulcherrime",
+      "options": {
+        "syncope": false
+      },
+      "expected": "pulcherri.me         ADJ    1 2 VOC S M SUPER\npulcher, pulchra -um, pulchrior -or -us, pulcherrimus -a -um  ADJ   [XXXAX]\npretty; beautiful; handsome; noble, illustrious;\npulcherrime          ADV    SUPER\npulchre, pulchrius, pulcherrime  ADV   [XXXDX]    lesser\nfine, beautifully;"
+    },
+    {
+      "input": "maxime",
+      "options": {
+        "syncope": false
+      },
+      "expected": "maxi.me              ADJ    1 1 VOC S M SUPER\nmagnus, magna -um, major -or -us, maximus -a -um  ADJ   [XXXAO]\nlarge/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;\ngreat (achievement); mighty; distinguished; skilled; bold/confident; proud;\nfull/complete/utter/pure; intense; loud; at high price; notable/famous; old;\nmaxi.me              ADJ    0 0 VOC S M SUPER\nmaximus, maxima, maximum  ADJ   [XXXAO]\ngreatest/biggest/largest; longest; oldest; highest, utmost; leading, chief;\nmaxime               ADV    SUPER\nmaxime  ADV   [XXXAO]\nespecially, chiefly; certainly; most, very much; (forms SUPER w/ADJ/ADV);"
+    },
+    {
+      "input": "amasti",
+      "options": {
+        "syncope": false
+      },
+      "expected": "am                   PREFIX\naround, round about; having two;\nast.i                N      4 1 GEN S M                   Archaic\nastus, astus  N (4th) M   [XXXCO]\ncraft, cunning, guile; cunning procedure/method, trick, stratagem;"
+    },
+    {
+      "input": "audierunt",
+      "options": {
+        "syncope": false
+      },
+      "expected": "Two words\nMay be 2 words combined (audi+erunt) If not obvious, probably incorrect\naud.i                V      4 1 PRES ACTIVE  IMP 2 S\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;\n.erunt               V      5 1 FUT  ACTIVE  IND 3 P\nsum, esse, fui, futurus  V   [XXXAX]\nbe; exist; (also used to form verb perfect passive tenses) with NOM PERF PPL\n*"
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "syncope": false
+      },
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amaturus esse",
+      "options": {
+        "syncope": false
+      },
+      "expected": "amat.urus            VPAR   1 1 NOM S M FUT  ACTIVE  PPL\nPPL+esse             V      1 1 FUT  ACTIVE  INF 0 X\nFUT ACTIVE PPL + esse => PRES Periphastic/FUT ACTIVE INF - be about/going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amandum fuisse",
+      "options": {
+        "syncope": false
+      },
+      "expected": "am.andum             VPAR   1 1 NOM S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 VOC S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S M FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S N FUT  PASSIVE PPL\nPPL+fuisse           V      1 1 PERF PASSIVE INF 0 X\nFUT PASSIVE PPL + fuisse => PERF PASSIVE INF Periphrastic - about to, going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amatum iri",
+      "options": {
+        "syncope": false
+      },
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "quicumque",
+      "options": {
+        "syncope": false
+      },
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;"
+    },
+    {
+      "input": "cuiusque",
+      "options": {
+        "syncope": false
+      },
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncui.us               ADJ    1 1 NOM S M POS\ncujus, cuja, cujum  ADJ   [XXXCO]\nof whom?, whose?; (interrogative); of/to whom, whose (relative);\ncu.jus               PRON   1 0 GEN S X\n [XXXAO]\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;"
+    },
+    {
+      "input": "aliquid",
+      "options": {
+        "syncope": false
+      },
+      "expected": "aliqu.id             PRON   1 0 NOM S N\naliqu.id             PRON   1 0 ACC S N\n [XXXAO]\nanyone/anybody/anything; someone; some/few; some (particular) thing;\nsome; any; a few; a particular/certain ~; some other; about/like (NUM);\naliquid              ADV    POS\naliquid  ADV   [XXXCO]\nto some degree/extent; somewhat;"
+    },
+    {
+      "input": "semifer",
+      "options": {
+        "syncope": false
+      },
+      "expected": "semifer              ADJ    1 2 NOM S M POS\nsemifer              ADJ    1 2 VOC S M POS\nsemifer, semifera, semiferum  ADJ   [XXXDX]    lesser\nhalf-wild; half-monster;"
+    },
+    {
+      "input": "permagnus",
+      "options": {
+        "syncope": false
+      },
+      "expected": "permagn.us           ADJ    1 1 NOM S M POS\npermagnus, permagna, permagnum  ADJ   [XXXDX]    lesser\nvery great;"
+    },
+    {
+      "input": "plurimi",
+      "options": {
+        "syncope": false
+      },
+      "expected": "pluri.mi             ADJ    1 1 GEN S M SUPER\npluri.mi             ADJ    1 1 GEN S N SUPER\npluri.mi             ADJ    1 1 NOM P M SUPER\npluri.mi             ADJ    1 1 VOC P M SUPER\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;\nplurim.i             N      2 1 GEN S M\nplurim.i             N      2 1 LOC S M\nplurim.i             N      2 1 NOM P M\nplurim.i             N      2 1 VOC P M\nplurimus, plurimi  N (2nd) M   [XXXDX]    lesser\nvery many, many a one; the most people, very many/great number of people;\nplurim.i             N      2 2 GEN S N\nplurim.i             N      2 2 LOC S N\nplurimum, plurimi  N (2nd) N   [XXXDX]    lesser\nmost/great number of things; greatest amount; very much; the most possible;\nplurim.i             ADJ    1 1 GEN S M POS\nplurim.i             ADJ    1 1 GEN S N POS\nplurim.i             ADJ    1 1 NOM P M POS\nplurim.i             ADJ    1 1 VOC P M POS\nplurimus, plurima, plurimum  ADJ   [XXXAX]\nmost, greatest number/amount; very many; most frequent; highest price/value;"
+    },
+    {
+      "input": "respublica",
+      "options": {
+        "syncope": false
+      },
+      "expected": "Two words\nMay be 2 words combined (res+publica) If not obvious, probably incorrect\npublic.a             ADJ    1 1 NOM S F POS\npublic.a             ADJ    1 1 VOC S F POS\npublic.a             ADJ    1 1 ABL S F POS\npublic.a             ADJ    1 1 NOM P N POS\npublic.a             ADJ    1 1 VOC P N POS\npublic.a             ADJ    1 1 ACC P N POS\npublicus, publica, publicum  ADJ   [XXXAX]\npublic; common, of the people/state; official; [res publica => the state];\npublic.a             V      1 1 PRES ACTIVE  IMP 2 S\npublico, publicare, publicavi, publicatus  V (1st)   [XXXDX]    lesser\nconfiscate; make public property; publish;\nr.es                 N      5 1 NOM S F\nr.es                 N      5 1 VOC S F\nr.es                 N      5 1 NOM P F\nr.es                 N      5 1 VOC P F\nr.es                 N      5 1 ACC P F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\nres                  N      9 9 X   X N\nres, undeclined  N N   [DEQEW]    Late  uncommon\nres; (20th letter of Hebrew alphabet); (transliterate as R);\n*"
+    },
+    {
+      "input": "xviiii",
+      "options": {
+        "syncope": false
+      },
+      "expected": "xviiii               NUM    2 0 X   X X CARD\n19  as a ROMAN NUMERAL;"
+    },
+    {
+      "input": "IIX",
+      "options": {
+        "syncope": false
+      },
+      "expected": "Bad Roman Numeral?\n\nIIX                  NUM    2 0 X   X X CARD              infreq\n8  as ill-formed ROMAN NUMERAL?;"
+    },
+    {
+      "input": "C.",
+      "options": {
+        "syncope": false
+      },
+      "expected": "c                    N      9 8 X   X M\nC., abb.  N M   [XXXCO]\nGaius (Roman praenomen); (abb. C.); (abb. for) centum/100;\n*"
+    },
+    {
+      "input": "AMO",
+      "options": {
+        "syncope": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "Amo",
+      "options": {
+        "syncope": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "uirtus",
+      "options": {
+        "syncope": false
+      },
+      "expected": "uirtus               N      3 1 NOM S F\nuirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "virtus",
+      "options": {
+        "syncope": false
+      },
+      "expected": "virtus               N      3 1 NOM S F\nvirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "justus",
+      "options": {
+        "syncope": false
+      },
+      "expected": "just.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "iustus",
+      "options": {
+        "syncope": false
+      },
+      "expected": "iust.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "syncope": false
+      },
+      "expected": "am                             ========   UNKNOWN\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "syncope": false
+      },
+      "expected": "am.a                 N      1 1 NOM S F\nam.a                 N      1 1 VOC S F\nam.a                 N      1 1 ABL S F\nama, amae  N (1st) F   [XXXDO]    lesser\nbucket; water bucket; (esp. fireman's bucket);\nam.a                 V      1 1 PRES ACTIVE  IMP 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "\"amo\"--est",
+      "options": {
+        "syncope": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "syncope": false
+      },
+      "expected": "aaaaaaaaaaaaaaaaaaa            ========   UNKNOWN"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "syncope": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN"
+    },
+    {
+      "input": "bone",
+      "options": {
+        "tricks": false
+      },
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nbon.e                ADV    POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;"
+    },
+    {
+      "input": "pulcherrime",
+      "options": {
+        "tricks": false
+      },
+      "expected": "pulcherri.me         ADJ    1 2 VOC S M SUPER\npulcher, pulchra -um, pulchrior -or -us, pulcherrimus -a -um  ADJ   [XXXAX]\npretty; beautiful; handsome; noble, illustrious;\npulcherrime          ADV    SUPER\npulchre, pulchrius, pulcherrime  ADV   [XXXDX]    lesser\nfine, beautifully;"
+    },
+    {
+      "input": "maxime",
+      "options": {
+        "tricks": false
+      },
+      "expected": "maxi.me              ADJ    1 1 VOC S M SUPER\nmagnus, magna -um, major -or -us, maximus -a -um  ADJ   [XXXAO]\nlarge/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;\ngreat (achievement); mighty; distinguished; skilled; bold/confident; proud;\nfull/complete/utter/pure; intense; loud; at high price; notable/famous; old;\nmaxi.me              ADJ    0 0 VOC S M SUPER\nmaximus, maxima, maximum  ADJ   [XXXAO]\ngreatest/biggest/largest; longest; oldest; highest, utmost; leading, chief;\nmaxime               ADV    SUPER\nmaxime  ADV   [XXXAO]\nespecially, chiefly; certainly; most, very much; (forms SUPER w/ADJ/ADV);"
+    },
+    {
+      "input": "amasti",
+      "options": {
+        "tricks": false
+      },
+      "expected": "Syncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\namav.isti            V      1 1 PERF ACTIVE  IND 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "audierunt",
+      "options": {
+        "tricks": false
+      },
+      "expected": "Syncope  ier=>iver\nSyncopated perfect often drops the 'v' and contracts vowel\naudiv.erunt          V      4 1 PERF ACTIVE  IND 3 P\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;"
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "tricks": false
+      },
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amaturus esse",
+      "options": {
+        "tricks": false
+      },
+      "expected": "amat.urus            VPAR   1 1 NOM S M FUT  ACTIVE  PPL\nPPL+esse             V      1 1 FUT  ACTIVE  INF 0 X\nFUT ACTIVE PPL + esse => PRES Periphastic/FUT ACTIVE INF - be about/going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amandum fuisse",
+      "options": {
+        "tricks": false
+      },
+      "expected": "am.andum             VPAR   1 1 NOM S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 VOC S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S M FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S N FUT  PASSIVE PPL\nPPL+fuisse           V      1 1 PERF PASSIVE INF 0 X\nFUT PASSIVE PPL + fuisse => PERF PASSIVE INF Periphrastic - about to, going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amatum iri",
+      "options": {
+        "tricks": false
+      },
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "quicumque",
+      "options": {
+        "tricks": false
+      },
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;"
+    },
+    {
+      "input": "cuiusque",
+      "options": {
+        "tricks": false
+      },
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncui.us               ADJ    1 1 NOM S M POS\ncujus, cuja, cujum  ADJ   [XXXCO]\nof whom?, whose?; (interrogative); of/to whom, whose (relative);\ncu.jus               PRON   1 0 GEN S X\n [XXXAO]\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;"
+    },
+    {
+      "input": "aliquid",
+      "options": {
+        "tricks": false
+      },
+      "expected": "aliqu.id             PRON   1 0 NOM S N\naliqu.id             PRON   1 0 ACC S N\n [XXXAO]\nanyone/anybody/anything; someone; some/few; some (particular) thing;\nsome; any; a few; a particular/certain ~; some other; about/like (NUM);\naliquid              ADV    POS\naliquid  ADV   [XXXCO]\nto some degree/extent; somewhat;"
+    },
+    {
+      "input": "semifer",
+      "options": {
+        "tricks": false
+      },
+      "expected": "semifer              ADJ    1 2 NOM S M POS\nsemifer              ADJ    1 2 VOC S M POS\nsemifer, semifera, semiferum  ADJ   [XXXDX]    lesser\nhalf-wild; half-monster;"
+    },
+    {
+      "input": "permagnus",
+      "options": {
+        "tricks": false
+      },
+      "expected": "permagn.us           ADJ    1 1 NOM S M POS\npermagnus, permagna, permagnum  ADJ   [XXXDX]    lesser\nvery great;"
+    },
+    {
+      "input": "plurimi",
+      "options": {
+        "tricks": false
+      },
+      "expected": "pluri.mi             ADJ    1 1 GEN S M SUPER\npluri.mi             ADJ    1 1 GEN S N SUPER\npluri.mi             ADJ    1 1 NOM P M SUPER\npluri.mi             ADJ    1 1 VOC P M SUPER\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;\nplurim.i             N      2 1 GEN S M\nplurim.i             N      2 1 LOC S M\nplurim.i             N      2 1 NOM P M\nplurim.i             N      2 1 VOC P M\nplurimus, plurimi  N (2nd) M   [XXXDX]    lesser\nvery many, many a one; the most people, very many/great number of people;\nplurim.i             N      2 2 GEN S N\nplurim.i             N      2 2 LOC S N\nplurimum, plurimi  N (2nd) N   [XXXDX]    lesser\nmost/great number of things; greatest amount; very much; the most possible;\nplurim.i             ADJ    1 1 GEN S M POS\nplurim.i             ADJ    1 1 GEN S N POS\nplurim.i             ADJ    1 1 NOM P M POS\nplurim.i             ADJ    1 1 VOC P M POS\nplurimus, plurima, plurimum  ADJ   [XXXAX]\nmost, greatest number/amount; very many; most frequent; highest price/value;"
+    },
+    {
+      "input": "respublica",
+      "options": {
+        "tricks": false
+      },
+      "expected": "respublica                     ========   UNKNOWN"
+    },
+    {
+      "input": "xviiii",
+      "options": {
+        "tricks": false
+      },
+      "expected": "xviiii               NUM    2 0 X   X X CARD\n19  as a ROMAN NUMERAL;"
+    },
+    {
+      "input": "IIX",
+      "options": {
+        "tricks": false
+      },
+      "expected": "IIX                            ========   UNKNOWN"
+    },
+    {
+      "input": "C.",
+      "options": {
+        "tricks": false
+      },
+      "expected": "c                    N      9 8 X   X M\nC., abb.  N M   [XXXCO]\nGaius (Roman praenomen); (abb. C.); (abb. for) centum/100;\n*"
+    },
+    {
+      "input": "AMO",
+      "options": {
+        "tricks": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "Amo",
+      "options": {
+        "tricks": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "uirtus",
+      "options": {
+        "tricks": false
+      },
+      "expected": "uirtus               N      3 1 NOM S F\nuirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "virtus",
+      "options": {
+        "tricks": false
+      },
+      "expected": "virtus               N      3 1 NOM S F\nvirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "justus",
+      "options": {
+        "tricks": false
+      },
+      "expected": "just.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "iustus",
+      "options": {
+        "tricks": false
+      },
+      "expected": "iust.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "tricks": false
+      },
+      "expected": "am                             ========   UNKNOWN\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "tricks": false
+      },
+      "expected": "am.a                 N      1 1 NOM S F\nam.a                 N      1 1 VOC S F\nam.a                 N      1 1 ABL S F\nama, amae  N (1st) F   [XXXDO]    lesser\nbucket; water bucket; (esp. fireman's bucket);\nam.a                 V      1 1 PRES ACTIVE  IMP 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "\"amo\"--est",
+      "options": {
+        "tricks": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "tricks": false
+      },
+      "expected": "aaaaaaaaaaaaaaaaaaa            ========   UNKNOWN"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "tricks": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN"
+    },
+    {
+      "input": "bone",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nbon.e                ADV    POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;"
+    },
+    {
+      "input": "pulcherrime",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "pulcherri.me         ADJ    1 2 VOC S M SUPER\npulcher, pulchra -um, pulchrior -or -us, pulcherrimus -a -um  ADJ   [XXXAX]\npretty; beautiful; handsome; noble, illustrious;\npulcherrime          ADV    SUPER\npulchre, pulchrius, pulcherrime  ADV   [XXXDX]    lesser\nfine, beautifully;"
+    },
+    {
+      "input": "maxime",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "maxi.me              ADJ    1 1 VOC S M SUPER\nmagnus, magna -um, major -or -us, maximus -a -um  ADJ   [XXXAO]\nlarge/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;\ngreat (achievement); mighty; distinguished; skilled; bold/confident; proud;\nfull/complete/utter/pure; intense; loud; at high price; notable/famous; old;\nmaxi.me              ADJ    0 0 VOC S M SUPER\nmaximus, maxima, maximum  ADJ   [XXXAO]\ngreatest/biggest/largest; longest; oldest; highest, utmost; leading, chief;\nmaxime               ADV    SUPER\nmaxime  ADV   [XXXAO]\nespecially, chiefly; certainly; most, very much; (forms SUPER w/ADJ/ADV);"
+    },
+    {
+      "input": "amasti",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "Syncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\namav.isti            V      1 1 PERF ACTIVE  IND 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "audierunt",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "Syncope  ier=>iver\nSyncopated perfect often drops the 'v' and contracts vowel\naudiv.erunt          V      4 1 PERF ACTIVE  IND 3 P\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;"
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amaturus esse",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "amat.urus            VPAR   1 1 NOM S M FUT  ACTIVE  PPL\nPPL+esse             V      1 1 FUT  ACTIVE  INF 0 X\nFUT ACTIVE PPL + esse => PRES Periphastic/FUT ACTIVE INF - be about/going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amandum fuisse",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "am.andum             VPAR   1 1 NOM S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 VOC S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S M FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S N FUT  PASSIVE PPL\nPPL+fuisse           V      1 1 PERF PASSIVE INF 0 X\nFUT PASSIVE PPL + fuisse => PERF PASSIVE INF Periphrastic - about to, going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amatum iri",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "quicumque",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;"
+    },
+    {
+      "input": "cuiusque",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncui.us               ADJ    1 1 NOM S M POS\ncujus, cuja, cujum  ADJ   [XXXCO]\nof whom?, whose?; (interrogative); of/to whom, whose (relative);\ncu.jus               PRON   1 0 GEN S X\n [XXXAO]\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;"
+    },
+    {
+      "input": "aliquid",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "aliqu.id             PRON   1 0 NOM S N\naliqu.id             PRON   1 0 ACC S N\n [XXXAO]\nanyone/anybody/anything; someone; some/few; some (particular) thing;\nsome; any; a few; a particular/certain ~; some other; about/like (NUM);\naliquid              ADV    POS\naliquid  ADV   [XXXCO]\nto some degree/extent; somewhat;"
+    },
+    {
+      "input": "semifer",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "semifer              ADJ    1 2 NOM S M POS\nsemifer              ADJ    1 2 VOC S M POS\nsemifer, semifera, semiferum  ADJ   [XXXDX]    lesser\nhalf-wild; half-monster;"
+    },
+    {
+      "input": "permagnus",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "permagn.us           ADJ    1 1 NOM S M POS\npermagnus, permagna, permagnum  ADJ   [XXXDX]    lesser\nvery great;"
+    },
+    {
+      "input": "plurimi",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "pluri.mi             ADJ    1 1 GEN S M SUPER\npluri.mi             ADJ    1 1 GEN S N SUPER\npluri.mi             ADJ    1 1 NOM P M SUPER\npluri.mi             ADJ    1 1 VOC P M SUPER\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;\nplurim.i             N      2 1 GEN S M\nplurim.i             N      2 1 LOC S M\nplurim.i             N      2 1 NOM P M\nplurim.i             N      2 1 VOC P M\nplurimus, plurimi  N (2nd) M   [XXXDX]    lesser\nvery many, many a one; the most people, very many/great number of people;\nplurim.i             N      2 2 GEN S N\nplurim.i             N      2 2 LOC S N\nplurimum, plurimi  N (2nd) N   [XXXDX]    lesser\nmost/great number of things; greatest amount; very much; the most possible;\nplurim.i             ADJ    1 1 GEN S M POS\nplurim.i             ADJ    1 1 GEN S N POS\nplurim.i             ADJ    1 1 NOM P M POS\nplurim.i             ADJ    1 1 VOC P M POS\nplurimus, plurima, plurimum  ADJ   [XXXAX]\nmost, greatest number/amount; very many; most frequent; highest price/value;"
+    },
+    {
+      "input": "respublica",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "respublica                     ========   UNKNOWN"
+    },
+    {
+      "input": "xviiii",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "xviiii               NUM    2 0 X   X X CARD\n19  as a ROMAN NUMERAL;"
+    },
+    {
+      "input": "IIX",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "Bad Roman Numeral?\n\nIIX                  NUM    2 0 X   X X CARD              infreq\n8  as ill-formed ROMAN NUMERAL?;"
+    },
+    {
+      "input": "C.",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "c                    N      9 8 X   X M\nC., abb.  N M   [XXXCO]\nGaius (Roman praenomen); (abb. C.); (abb. for) centum/100;\n*"
+    },
+    {
+      "input": "AMO",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "Amo",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "uirtus",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "uirtus               N      3 1 NOM S F\nuirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "virtus",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "virtus               N      3 1 NOM S F\nvirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "justus",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "just.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "iustus",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "iust.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "am                             ========   UNKNOWN\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "am.a                 N      1 1 NOM S F\nam.a                 N      1 1 VOC S F\nam.a                 N      1 1 ABL S F\nama, amae  N (1st) F   [XXXDO]    lesser\nbucket; water bucket; (esp. fireman's bucket);\nam.a                 V      1 1 PRES ACTIVE  IMP 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "\"amo\"--est",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "aaaaaaaaaaaaaaaaaaa            ========   UNKNOWN"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "medievalTricks": false,
+        "twoWords": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN"
+    },
+    {
+      "input": "bone",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nbon.e                ADV    POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;"
+    },
+    {
+      "input": "pulcherrime",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "pulcherri.me         ADJ    1 2 VOC S M SUPER\npulcher, pulchra -um, pulchrior -or -us, pulcherrimus -a -um  ADJ   [XXXAX]\npretty; beautiful; handsome; noble, illustrious;\npulcherrime          ADV    SUPER\npulchre, pulchrius, pulcherrime  ADV   [XXXDX]    lesser\nfine, beautifully;"
+    },
+    {
+      "input": "maxime",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "maxi.me              ADJ    1 1 VOC S M SUPER\nmagnus, magna -um, major -or -us, maximus -a -um  ADJ   [XXXAO]\nlarge/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;\ngreat (achievement); mighty; distinguished; skilled; bold/confident; proud;\nfull/complete/utter/pure; intense; loud; at high price; notable/famous; old;\nmaxi.me              ADJ    0 0 VOC S M SUPER\nmaximus, maxima, maximum  ADJ   [XXXAO]\ngreatest/biggest/largest; longest; oldest; highest, utmost; leading, chief;\nmaxime               ADV    SUPER\nmaxime  ADV   [XXXAO]\nespecially, chiefly; certainly; most, very much; (forms SUPER w/ADJ/ADV);"
+    },
+    {
+      "input": "amasti",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "Syncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\namav.isti            V      1 1 PERF ACTIVE  IND 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "audierunt",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "Syncope  ier=>iver\nSyncopated perfect often drops the 'v' and contracts vowel\naudiv.erunt          V      4 1 PERF ACTIVE  IND 3 P\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;"
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amaturus esse",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "amat.urus            VPAR   1 1 NOM S M FUT  ACTIVE  PPL\nPPL+esse             V      1 1 FUT  ACTIVE  INF 0 X\nFUT ACTIVE PPL + esse => PRES Periphastic/FUT ACTIVE INF - be about/going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amandum fuisse",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "am.andum             VPAR   1 1 NOM S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 VOC S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S M FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S N FUT  PASSIVE PPL\nPPL+fuisse           V      1 1 PERF PASSIVE INF 0 X\nFUT PASSIVE PPL + fuisse => PERF PASSIVE INF Periphrastic - about to, going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amatum iri",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "quicumque",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;"
+    },
+    {
+      "input": "cuiusque",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncui.us               ADJ    1 1 NOM S M POS\ncujus, cuja, cujum  ADJ   [XXXCO]\nof whom?, whose?; (interrogative); of/to whom, whose (relative);\ncu.jus               PRON   1 0 GEN S X\n [XXXAO]\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;"
+    },
+    {
+      "input": "aliquid",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "aliqu.id             PRON   1 0 NOM S N\naliqu.id             PRON   1 0 ACC S N\n [XXXAO]\nanyone/anybody/anything; someone; some/few; some (particular) thing;\nsome; any; a few; a particular/certain ~; some other; about/like (NUM);\naliquid              ADV    POS\naliquid  ADV   [XXXCO]\nto some degree/extent; somewhat;"
+    },
+    {
+      "input": "semifer",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "semifer              ADJ    1 2 NOM S M POS\nsemifer              ADJ    1 2 VOC S M POS\nsemifer, semifera, semiferum  ADJ   [XXXDX]    lesser\nhalf-wild; half-monster;"
+    },
+    {
+      "input": "permagnus",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "permagn.us           ADJ    1 1 NOM S M POS\npermagnus, permagna, permagnum  ADJ   [XXXDX]    lesser\nvery great;"
+    },
+    {
+      "input": "plurimi",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "pluri.mi             ADJ    1 1 GEN S M SUPER\npluri.mi             ADJ    1 1 GEN S N SUPER\npluri.mi             ADJ    1 1 NOM P M SUPER\npluri.mi             ADJ    1 1 VOC P M SUPER\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;\nplurim.i             N      2 1 GEN S M\nplurim.i             N      2 1 LOC S M\nplurim.i             N      2 1 NOM P M\nplurim.i             N      2 1 VOC P M\nplurimus, plurimi  N (2nd) M   [XXXDX]    lesser\nvery many, many a one; the most people, very many/great number of people;\nplurim.i             N      2 2 GEN S N\nplurim.i             N      2 2 LOC S N\nplurimum, plurimi  N (2nd) N   [XXXDX]    lesser\nmost/great number of things; greatest amount; very much; the most possible;\nplurim.i             ADJ    1 1 GEN S M POS\nplurim.i             ADJ    1 1 GEN S N POS\nplurim.i             ADJ    1 1 NOM P M POS\nplurim.i             ADJ    1 1 VOC P M POS\nplurimus, plurima, plurimum  ADJ   [XXXAX]\nmost, greatest number/amount; very many; most frequent; highest price/value;"
+    },
+    {
+      "input": "respublica",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "Two words\nMay be 2 words combined (res+publica) If not obvious, probably incorrect\npublic.a             ADJ    1 1 NOM S F POS\npublic.a             ADJ    1 1 VOC S F POS\npublic.a             ADJ    1 1 ABL S F POS\npublic.a             ADJ    1 1 NOM P N POS\npublic.a             ADJ    1 1 VOC P N POS\npublic.a             ADJ    1 1 ACC P N POS\npublicus, publica, publicum  ADJ   [XXXAX]\npublic; common, of the people/state; official; [res publica => the state];\npublic.a             V      1 1 PRES ACTIVE  IMP 2 S\npublico, publicare, publicavi, publicatus  V (1st)   [XXXDX]    lesser\nconfiscate; make public property; publish;\nr.es                 N      5 1 NOM S F\nr.es                 N      5 1 VOC S F\nr.es                 N      5 1 NOM P F\nr.es                 N      5 1 VOC P F\nr.es                 N      5 1 ACC P F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\nres                  N      9 9 X   X N\nres, undeclined  N N   [DEQEW]    Late  uncommon\nres; (20th letter of Hebrew alphabet); (transliterate as R);\n*"
+    },
+    {
+      "input": "xviiii",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "xviiii               NUM    2 0 X   X X CARD\n19  as a ROMAN NUMERAL;"
+    },
+    {
+      "input": "IIX",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "Bad Roman Numeral?\n\nIIX                  NUM    2 0 X   X X CARD              infreq\n8  as ill-formed ROMAN NUMERAL?;"
+    },
+    {
+      "input": "C.",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "c                    N      9 8 X   X M\nC., abb.  N M   [XXXCO]\nGaius (Roman praenomen); (abb. C.); (abb. for) centum/100;\n*"
+    },
+    {
+      "input": "AMO",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "Amo",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "uirtus",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "uirtus               N      3 1 NOM S F\nuirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "virtus",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "virtus               N      3 1 NOM S F\nvirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "justus",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "just.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "iustus",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "iust.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "am                             ========   UNKNOWN\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 DAT S F                   Early     uncommon\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "am.a                 N      1 1 NOM S F\nam.a                 N      1 1 VOC S F\nam.a                 N      1 1 ABL S F\nama, amae  N (1st) F   [XXXDO]    lesser\nbucket; water bucket; (esp. fireman's bucket);\nam.a                 V      1 1 PRES ACTIVE  IMP 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 DAT S F                   Early     uncommon\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "\"amo\"--est",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "aaaaaaaaaaaaaaaaaaa            ========   UNKNOWN"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "omitMedieval": true,
+        "omitUncommon": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN"
+    },
+    {
+      "input": "bone",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nbon.e                ADV    POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;"
+    },
+    {
+      "input": "pulcherrime",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "pulcherri.me         ADJ    1 2 VOC S M SUPER\npulcher, pulchra -um, pulchrior -or -us, pulcherrimus -a -um  ADJ   [XXXAX]\npretty; beautiful; handsome; noble, illustrious;\npulcherrime          ADV    SUPER\npulchre, pulchrius, pulcherrime  ADV   [XXXDX]    lesser\nfine, beautifully;"
+    },
+    {
+      "input": "maxime",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "maxi.me              ADJ    1 1 VOC S M SUPER\nmagnus, magna -um, major -or -us, maximus -a -um  ADJ   [XXXAO]\nlarge/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;\ngreat (achievement); mighty; distinguished; skilled; bold/confident; proud;\nfull/complete/utter/pure; intense; loud; at high price; notable/famous; old;\nmaxi.me              ADJ    0 0 VOC S M SUPER\nmaximus, maxima, maximum  ADJ   [XXXAO]\ngreatest/biggest/largest; longest; oldest; highest, utmost; leading, chief;\nmaxime               ADV    SUPER\nmaxime  ADV   [XXXAO]\nespecially, chiefly; certainly; most, very much; (forms SUPER w/ADJ/ADV);"
+    },
+    {
+      "input": "amasti",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "Syncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\namav.isti            V      1 1 PERF ACTIVE  IND 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "audierunt",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "Syncope  ier=>iver\nSyncopated perfect often drops the 'v' and contracts vowel\naudiv.erunt          V      4 1 PERF ACTIVE  IND 3 P\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;"
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amaturus esse",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "amat.urus            VPAR   1 1 NOM S M FUT  ACTIVE  PPL\nPPL+esse             V      1 1 FUT  ACTIVE  INF 0 X\nFUT ACTIVE PPL + esse => PRES Periphastic/FUT ACTIVE INF - be about/going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amandum fuisse",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "am.andum             VPAR   1 1 NOM S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 VOC S N FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S M FUT  PASSIVE PPL\nam.andum             VPAR   1 1 ACC S N FUT  PASSIVE PPL\nPPL+fuisse           V      1 1 PERF PASSIVE INF 0 X\nFUT PASSIVE PPL + fuisse => PERF PASSIVE INF Periphrastic - about to, going to\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "amatum iri",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "quicumque",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;"
+    },
+    {
+      "input": "cuiusque",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncui.us               ADJ    1 1 NOM S M POS\ncujus, cuja, cujum  ADJ   [XXXCO]\nof whom?, whose?; (interrogative); of/to whom, whose (relative);\ncu.jus               PRON   1 0 GEN S X\n [XXXAO]\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\ncu.jus               PRON   1 0 GEN S X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;"
+    },
+    {
+      "input": "aliquid",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "aliqu.id             PRON   1 0 NOM S N\naliqu.id             PRON   1 0 ACC S N\n [XXXAO]\nanyone/anybody/anything; someone; some/few; some (particular) thing;\nsome; any; a few; a particular/certain ~; some other; about/like (NUM);\naliquid              ADV    POS\naliquid  ADV   [XXXCO]\nto some degree/extent; somewhat;"
+    },
+    {
+      "input": "semifer",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "semifer              ADJ    1 2 NOM S M POS\nsemifer              ADJ    1 2 VOC S M POS\nsemifer, semifera, semiferum  ADJ   [XXXDX]    lesser\nhalf-wild; half-monster;"
+    },
+    {
+      "input": "permagnus",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "permagn.us           ADJ    1 1 NOM S M POS\npermagnus, permagna, permagnum  ADJ   [XXXDX]    lesser\nvery great;"
+    },
+    {
+      "input": "plurimi",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "pluri.mi             ADJ    1 1 GEN S M SUPER\npluri.mi             ADJ    1 1 GEN S N SUPER\npluri.mi             ADJ    1 1 NOM P M SUPER\npluri.mi             ADJ    1 1 VOC P M SUPER\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;\nplurim.i             N      2 1 GEN S M\nplurim.i             N      2 1 LOC S M\nplurim.i             N      2 1 NOM P M\nplurim.i             N      2 1 VOC P M\nplurimus, plurimi  N (2nd) M   [XXXDX]    lesser\nvery many, many a one; the most people, very many/great number of people;\nplurim.i             N      2 2 GEN S N\nplurim.i             N      2 2 LOC S N\nplurimum, plurimi  N (2nd) N   [XXXDX]    lesser\nmost/great number of things; greatest amount; very much; the most possible;\nplurim.i             ADJ    1 1 GEN S M POS\nplurim.i             ADJ    1 1 GEN S N POS\nplurim.i             ADJ    1 1 NOM P M POS\nplurim.i             ADJ    1 1 VOC P M POS\nplurimus, plurima, plurimum  ADJ   [XXXAX]\nmost, greatest number/amount; very many; most frequent; highest price/value;"
+    },
+    {
+      "input": "respublica",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "Two words\nMay be 2 words combined (res+publica) If not obvious, probably incorrect\npublic.a             ADJ    1 1 NOM S F POS\npublic.a             ADJ    1 1 VOC S F POS\npublic.a             ADJ    1 1 ABL S F POS\npublic.a             ADJ    1 1 NOM P N POS\npublic.a             ADJ    1 1 VOC P N POS\npublic.a             ADJ    1 1 ACC P N POS\npublicus, publica, publicum  ADJ   [XXXAX]\npublic; common, of the people/state; official; [res publica => the state];\npublic.a             V      1 1 PRES ACTIVE  IMP 2 S\npublico, publicare, publicavi, publicatus  V (1st)   [XXXDX]    lesser\nconfiscate; make public property; publish;\nr.es                 N      5 1 NOM S F\nr.es                 N      5 1 VOC S F\nr.es                 N      5 1 NOM P F\nr.es                 N      5 1 VOC P F\nr.es                 N      5 1 ACC P F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\nres                  N      9 9 X   X N\nres, undeclined  N N   [DEQEW]    Late  uncommon\nres; (20th letter of Hebrew alphabet); (transliterate as R);\n*"
+    },
+    {
+      "input": "xviiii",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "xviiii               NUM    2 0 X   X X CARD\n19  as a ROMAN NUMERAL;"
+    },
+    {
+      "input": "IIX",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "Bad Roman Numeral?\n\nIIX                  NUM    2 0 X   X X CARD              infreq\n8  as ill-formed ROMAN NUMERAL?;"
+    },
+    {
+      "input": "C.",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "c                    N      9 8 X   X M\nC., abb.  N M   [XXXCO]\nGaius (Roman praenomen); (abb. C.); (abb. for) centum/100;\n*"
+    },
+    {
+      "input": "AMO",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "Amo",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "uirtus",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "uirtus               N      3 1 NOM S F\nuirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "virtus",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "virtus               N      3 1 NOM S F\nvirtus               N      3 1 VOC S F\nvirtus, virtutis  N (3rd) F   [XXXAX]\nstrength/power; courage/bravery; worth/manliness/virtue/character/excellence;\narmy; host; mighty works (pl.); class of Angels; [Dominus ~ => Lord of hosts];"
+    },
+    {
+      "input": "justus",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "just.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "iustus",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "iust.us              ADJ    1 1 NOM S M POS\njustus, justa -um, justior -or -us, justissimus -a -um  ADJ   [XXXAX]\njust, fair, equitable; right, lawful, justified; regular, proper;"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "am                             ========   UNKNOWN\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "amāre",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "am.a                 N      1 1 NOM S F\nam.a                 N      1 1 VOC S F\nam.a                 N      1 1 ABL S F\nama, amae  N (1st) F   [XXXDO]    lesser\nbucket; water bucket; (esp. fireman's bucket);\nam.a                 V      1 1 PRES ACTIVE  IMP 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;\n\nr.e                  N      5 1 GEN S F                   Early\nr.e                  N      5 1 ABL S F\nres, rei  N (5th) F   [XXXAX]\nthing; event/affair/business; fact; cause; property; [~ familiaris => property]\n*"
+    },
+    {
+      "input": "\"amo\"--est",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "am.o                 V      1 1 PRES ACTIVE  IND 1 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;"
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "aaaaaaaaaaaaaaaaaaa            ========   UNKNOWN"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN"
+    }
+  ]
+}

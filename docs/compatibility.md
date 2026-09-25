@@ -16,10 +16,11 @@ maintained mk270 lineage, not a reconstruction of historical 1.97FC.
 | Robustness | Checksum corruption, invalid options, UTF-16 spans, legacy Unicode splitting, long input, compounds, corrected isolation and repeated calls pass |
 | Student reading view | All 3,953 inputs retain every candidate and explanatory row in order, without mutating the legacy result; all source class combinations and all 39,336 dictionary entries have display mappings |
 
-`npm run verify` runs the offline build and twenty-two test groups: the original
+`npm run verify` runs the offline build and twenty-four test groups: the original
 nine engine/adapter groups, four student-display groups and three offline-storage
 groups, plus two browser-input/comparison-contract groups and two documentation
-rendering/preservation groups, plus two search-state and request-isolation groups.
+rendering/preservation groups, plus two search-state and request-isolation groups,
+and two source-audit option/width and native-buffer-error groups.
 The search-state fixtures preserve fresh native observations for failed attempts,
 affix fallback, distinct dictionary/affix spelling comparisons and transformed
 part-of-speech checks. The website also passes bounded Chromium/WebKit offline checks and eight
@@ -46,6 +47,22 @@ The 0.2 candidate includes [full fixed-wordlist acceptance](acceptance.md), whic
 extends the frozen baseline and records newly exposed compatibility differences.
 The old finite baseline remains passing; its success is not universal equivalence.
 [Browser macron adaptation](browser-input.md) is separate from the legacy profile.
+
+The local 0.3 source-audit checkpoint replays the same 4,144,877 frozen inputs.
+Relative to the preceding engine checkpoint, it resolves 45,982 differences,
+retains 508 and introduces two trimming-marker regressions (`potevis`, `poteuis`).
+The remaining 510 output differences comprise 207 missing-analysis, 221
+extra-analysis, 78 mixed-analysis and four trimming-marker cases. Full parity
+still fails. Fresh checks in two native builds reproduce all 510 residuals and
+96 controls, including forward/reverse sequences. Another 240 input/option cases
+are retained as native-output fixtures.
+
+The original `pilarium`/`pilarivm` native output-buffer failures now also raise
+explicit port execution errors. Their diagnostic text and process/adapter behavior
+are not yet equivalent; do not count them as matches. Empty input and `!` remain
+console-adapter comparison limitations. Native parse storage beyond its logical
+length, mutating loop bounds and some matching/case-conversion boundaries require
+further repair. This checkpoint is not a published release.
 
 ## Observed legacy behavior retained
 

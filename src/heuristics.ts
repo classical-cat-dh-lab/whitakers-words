@@ -1,5 +1,5 @@
 // Port of the ordered legacy fallback passes. See licenses/whitaker.txt.
-import { LegacyCore, emptyEntry, emptyRule, marker } from './core.js';
+import { LegacyCore, emptyEntry, emptyRule, marker, nullParse } from './core.js';
 import type { Parse, Trace } from './model.js';
 import { TABLES, type Trick } from './trick-tables.js';
 import { onlyRoman, romanParse } from './numerals.js';
@@ -10,8 +10,11 @@ function withExplanation(mark: Parse, parses: Parse[]): Parse[] { return [mark, 
 const acceptable = (p: Parse[]) => p.length > 0 && p.at(-2)?.rule.quality.pos !== 'TACKON';
 const vowel = (c: string) => 'aeiouy'.includes(c);
 export class Heuristics {
+    private xxxMeaning = '';
+    private yyyMeaning = '';
     constructor(readonly core: LegacyCore) { }
-    syncope(word: string, fixes = false, entering = 0): Parse[] {
+    syncope(word: string, fixes = false, entering = 0, capacity = 20): Parse[] {
+        this.yyyMeaning = '';
         const s = word.toLowerCase();
         const tests = [
             { fragments: ['ii'], last: s.length - 2, first: 0, insert: 'v', stem: 'Syncope  ii => ivi', meaning: "Syncopated perfect ivi can drop 'v' without contracting vowel ", strict: true },
@@ -24,19 +27,21 @@ export class Heuristics {
             for (let i = test.last; i >= test.first; i--) {
                 if (!test.fragments.some(f => s.startsWith(f, i)))
                     continue;
-                const modified = s.slice(0, i + 1) + test.insert + s.slice(i + 1), p = this.core.word(modified, fixes, 0, entering + 1);
+                const modified = s.slice(0, i + 1) + test.insert + s.slice(i + 1), p = this.core.word(modified, fixes, 0, entering + 1, capacity);
                 if (!p.length)
                     continue;
                 const perfect = p.at(-1)!.rule.quality.pos === 'V' && p.at(-1)!.rule.key === 3;
-                if (perfect || !test.strict)
+                if (perfect || !test.strict) {
+                    this.yyyMeaning = perfect ? test.meaning : '';
                     return withExplanation(explanation(test.stem, perfect ? test.meaning : '', 'syncope', word, modified, 'YYY'), p);
+                }
                 break;
             }
         return [];
     }
     tword(word: string, fixes: boolean): Parse[] {
-        const p = this.core.word(word, fixes, 0, 1);
-        return [...p, ...this.syncope(word, fixes, p.length + 1)];
+        const p = this.core.word(word, fixes, 0, 1, 40);
+        return [...p, ...this.syncope(word, fixes, p.length + 1, 40)];
     }
     table(word: string, tables: Trick[], fixes: boolean, slury = false): Parse[] {
         const s = word;
@@ -69,8 +74,10 @@ export class Heuristics {
             }
             for (const a of attempts) {
                 const p = this.tword(a.word, fixes);
-                if (acceptable(p))
+                if (acceptable(p)) {
+                    this.xxxMeaning = a.meaning.slice(0, 80);
                     return withExplanation(explanation(a.stem, a.meaning, slury ? 'slury' : 'trick', s, a.word), p);
+                }
             }
         }
         return [];
@@ -78,26 +85,30 @@ export class Heuristics {
     slury(word: string, fixes = false): Parse[] {
         const saved = this.core.usePrefixes;
         this.core.usePrefixes = false;
-        try { return this.table(word, TABLES[word[0]?.toUpperCase() + '_Slur_Tricks'] ?? [], fixes, true); }
-        finally { this.core.usePrefixes = saved; }
+        try {
+            return this.table(word, TABLES[word[0]?.toUpperCase() + '_Slur_Tricks'] ?? [], fixes, true);
+        }
+        finally {
+            this.core.usePrefixes = saved;
+        }
     }
-    split(word: string, fixes: boolean): Parse[] {
+    split(word: string, fixes: boolean, entering = 0): Parse[] {
         let num1 = false, num2 = false;
         for (let i = 2; i < word.length - 2; i++) {
             const first = word.slice(0, i), second = word.slice(i);
             if (['dis', 'ex', 'in', 'per', 'prae', 'pro', 're', 'si', 'sub', 'super', 'trans'].includes(first))
                 continue;
-            let a = this.core.word(first, fixes, 0, 1);
+            let a = this.core.word(first, fixes, 0, entering + 1, 40);
             if (!a.length)
                 continue;
             num1 ||= a.some(p => p.rule.quality.pos === 'NUM');
-            let b = this.core.word(second, fixes, 0, a.length + 1);
+            let b = this.core.word(second, fixes, 0, entering + a.length + 2, 40);
             if (!acceptable(b))
                 continue;
             num2 ||= b.some(p => p.rule.quality.pos === 'NUM');
             const numeric = this.core.options.trim && num1 && num2;
             if (numeric) {
-                const combined = [...a, ...b];
+                const combined = [...a, nullParse, ...b];
                 for (let j = 0; j < combined.length; j++)
                     if (['GEN', 'UNI'].includes(combined[j].dictionary) && combined[j].rule.quality.pos !== 'NUM')
                         combined.splice(j, 1);
@@ -105,16 +116,19 @@ export class Heuristics {
                 b = [];
             }
             const meaning = numeric ? `It is very likely a compound number    ${first} + ${second}` : `May be 2 words combined (${first}+${second}) If not obvious, probably incorrect`;
-            const separator: Parse = { stem: '', rule: emptyRule, entry: emptyEntry, dictionary: 'PPP', literal: '', traces: [] };
-            return withExplanation(explanation('Two words', meaning, 'split', word, first + ' ' + second), [...a, separator, ...b]);
+            this.xxxMeaning = meaning.slice(0, 80);
+            return withExplanation(explanation('Two words', meaning, 'split', word, first + ' ' + second), numeric ? a : [...a, nullParse, ...b]);
         }
         return [];
     }
     tricks(word: string, fixes: boolean): Parse[] {
+        this.xxxMeaning = '';
         if (word.startsWith('is')) {
             const p = this.tword('i' + word, fixes), q = p.at(-1)?.rule.quality;
-            if (acceptable(p) && q?.pos === 'V' && q.codes[0] === '6' && q.codes[1] === '1')
+            if (acceptable(p) && q?.pos === 'V' && q.codes[0] === '6' && q.codes[1] === '1') {
+                this.xxxMeaning = "Some forms of eo stem 'i' grates with an 'is .. .' ending, so 'is' -> 'iis' ";
                 return withExplanation(explanation('Word mod is => iis', "Some forms of eo stem 'i' grates with an 'is .. .' ending, so 'is' -> 'iis' ", 'trick', word, 'i' + word), p);
+            }
         }
         for (const table of [TABLES[word[0]?.toUpperCase() + '_Tricks'] ?? [], TABLES.Any_Tricks]) {
             const p = this.table(word, table, fixes);
@@ -123,9 +137,11 @@ export class Heuristics {
         }
         if (word.length > 3 && word.endsWith('is')) {
             const modified = word.slice(0, -2) + 'iis';
-            const p = this.core.word(modified, fixes).filter(p => { const q = p.rule.quality, c = q.codes; return q.pos === 'ADJ' && c[0] === '1' && c[1] === '1' && ['DAT', 'ABL'].includes(c[2]) && c[3] === 'P'; });
-            if (p.length)
+            const p = this.core.word(modified, fixes, 0, 1, 40).filter(p => { const q = p.rule.quality, c = q.codes; return q.pos === 'ADJ' && c[0] === '1' && c[1] === '1' && ['DAT', 'ABL'].includes(c[2]) && c[3] === 'P'; });
+            if (p.length) {
+                this.xxxMeaning = "A Terminal 'iis' on ADJ 1 1 DAT/ABL P might drop 'i'";
                 return withExplanation(explanation('Word mod iis -> is', "A Terminal 'iis' on ADJ 1 1 DAT/ABL P might drop 'i'", 'trick', word, modified), p);
+            }
         }
         let doubled: Parse[] = [];
         if (this.core.options.medievalTricks) {
@@ -138,18 +154,24 @@ export class Heuristics {
                     const p = this.tword(modified, fixes);
                     if (acceptable(p)) {
                         doubled = withExplanation(explanation(`Word mod ${word[i]} -> ${word[i]}${word[i]}`, 'A doubled consonant may be rendered by just the single  MEDIEVAL', 'trick', word, modified), p);
+                        this.xxxMeaning = doubled[0].entry.meaning;
                         break;
                     }
                 }
         }
-        const split = this.core.options.twoWords ? this.split(word, fixes) : [];
-        if (onlyRoman(word))
+        const split = this.core.options.twoWords ? this.split(word, fixes, doubled.length) : [];
+        if (onlyRoman(word)) {
+            this.xxxMeaning = '';
             return [explanation('Bad Roman Numeral?', '', 'roman', word, word), ...romanParse(word, true)];
+        }
         return [...doubled, ...split];
     }
     pass(word: string, capitalized = false): Parse[] {
+        this.xxxMeaning = '';
+        this.yyyMeaning = '';
         const o = this.core.options;
-        let p = [...romanParse(word), ...this.core.word(word)];
+        let p = romanParse(word);
+        p.push(...this.core.word(word, false, 0, p.length));
         let doneEnclitic = false;
         const hasToBe = (parses: Parse[]) => parses.some(x => x.rule.quality.pos === 'V' && x.rule.quality.codes[0] === '5' && x.rule.quality.codes[1] === '1');
         // Native No_Syncope is set before the first pass and enclitic syncope,
@@ -168,8 +190,12 @@ export class Heuristics {
                 hit.push(...sync(word, fixes, hasToBe([...p, ...hit])));
                 const saved = this.core.onlyFixes;
                 this.core.onlyFixes = true;
-                try { hit.push(...this.core.word(word, fixes, 0, p.length + hit.length)); }
-                finally { this.core.onlyFixes = saved; }
+                try {
+                    hit.push(...this.core.word(word, fixes, 0, p.length + hit.length));
+                }
+                finally {
+                    this.core.onlyFixes = saved;
+                }
                 if (hit.length) {
                     p.push(...withExplanation(marker(tack, 'tackon', word, less), hit));
                     doneEnclitic = true;
@@ -188,7 +214,9 @@ export class Heuristics {
                 p.push(...sync(word, true));
                 enclitic(true);
             }
-            finally { this.core.onlyFixes = false; }
+            finally {
+                this.core.onlyFixes = false;
+            }
         }
         if (!p.length && o.tricks && !(capitalized && o.ignoreUnknownNames)) {
             p = this.tricks(word, o.fixes);
@@ -203,6 +231,6 @@ export class Heuristics {
                     break;
                 }
         }
-        return p;
+        return p.map(x => x.dictionary === 'XXX' || x.dictionary === 'YYY' ? { ...x, entry: { ...x.entry, meaning: x.dictionary === 'XXX' ? this.xxxMeaning : this.yyyMeaning } } : x);
     }
 }

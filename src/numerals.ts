@@ -161,7 +161,7 @@ export function badRomanNumber(s: string): number {
 }
 export function romanParse(word: string, bad = false): Parse[] {
     const number = bad ? badRomanNumber(word) : romanNumber(word);
-    if (!number)
+    if (!bad && !number)
         return [];
     const meaning = ` ${number}  as ${bad ? 'ill-formed ROMAN NUMERAL?' : 'a ROMAN NUMERAL'};`;
     return [{ stem: word.slice(0, 18), rule: { ...emptyRule, quality: { pos: 'NUM', codes: ['2', '0', 'X', 'X', 'X', 'CARD'] }, frequency: bad ? 'D' : 'A' }, entry: { ...emptyEntry, meaning }, dictionary: 'RRR', traces: [{ kind: 'roman', sourceId: 'words_engine-roman_numerals_package.adb', input: word, output: String(number), explanation: meaning.trim() }] }];
