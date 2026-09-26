@@ -11,8 +11,3 @@ test('source-audited runtime surfaces reproduce native output across option prof
   const explanation=analyzer.analyze('amatus est amatum iri').legacyText.split('\n').find(s=>s.startsWith('PERF PASSIVE PPL +'));
   assert.equal(explanation,'PERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system'.padEnd(79));
 });
-test('native output-buffer failures remain explicit execution errors',()=>{
-  for(const input of ['pilarium','pilarivm'])
-    assert.throws(()=>analyzer.analyze(input),/Legacy CYCLE_OVER_PA output buffer overflow/,input);
-  assert.equal(view(analyzer.analyze('bone').legacyText),fixture.cases.find(c=>c.input==='bone').expected);
-});

@@ -132,7 +132,7 @@ export function sweep(input: Parse[] | ParseBuffer, options: LegacyOptions, cont
             wordOn = false;
             first = j + 1;
             if (get(j + 1).rule.quality.pos === p.rule.quality.pos)
-                throw new Error('Legacy List_Sweep internal loop error (#70)');
+                throw new LegacyConstraintError('Legacy List_Sweep internal loop error (#70)');
             diff = order(first, end);
             copy(end - diff + 1, end + 1, last - end);
             last -= diff;

@@ -1,0 +1,2411 @@
+{
+  "reference": "words-mk270-1f2f0fb",
+  "scope": "Analysis text after removing console framing; two independent native builds agree.",
+  "cases": [
+    {
+      "input": "pilarium",
+      "options": {},
+      "expectedSha256": "d9bb672e3f7116f7db410f4156c27f5bd0f00017396ebdc2159ff349806698a8",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "891569d8c96c30303cb900626e3f595729fe673a6a92adf6d7ab5fa1d7a4873a"
+    },
+    {
+      "input": "pilarivm",
+      "options": {},
+      "expectedSha256": "f549e5d6af256da66865d7ed0c9c27241425bcbd489ba709aa99dae35ed8f2e6",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "41cb0a1d0799ae1bfb65ffe40ddc84a0a72766f58827dff3fe72efeaa7d66cb3"
+    },
+    {
+      "input": "Pilarium",
+      "options": {},
+      "expectedSha256": "d6ad3503c1976e99480ce827eaeef5ae373751edb866eae4c5cc1922ecaddfdb",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "f8fdba7f8da877eef1508f52502b4a2ab6cb45339b08bd8ff816d74c1b19cf0b"
+    },
+    {
+      "input": "PILARIUM",
+      "options": {},
+      "expectedSha256": "2a6be5fbb3f8fdbbdd4bfbf4edd8a89b7e6ca307bd80ad86af9662e559731cd3",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "8d66bcb67caa5d585faf5e10e4cf4caadebbbd178b3088a8013ba4e86b978058"
+    },
+    {
+      "input": "pilarium.",
+      "options": {},
+      "expectedSha256": "d2dec74c85cc4069df77209f32fadb19dfac0800f5a3bc7785f8e66c9325de33",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "b5d09aeb8398e71ce9d916ab2f743cabf16fbe9169e5a233d694c56149f7e144"
+    },
+    {
+      "input": "amo pilarium amas",
+      "options": {},
+      "expectedSha256": "d86a2da42988d435f085948bdb627f0b380d9049d5584d944ea77b5d49f4f509",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "feee5329cb19171f117a8f8f7e07800a15d201fae3c2e46f4b5f09051c6f6a73"
+    },
+    {
+      "input": "pilarium amo",
+      "options": {},
+      "expectedSha256": "5e6166c0dde00b262afe0a7b92bb873964234c0e55ac37ad57927e916d369afb",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "3122b35a7d111ca29079152a8360e156cc611c5168b2a678b96a121a49a99d2b"
+    },
+    {
+      "input": "amo\npilarium\namas",
+      "options": {},
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "2fd46b5481e0ed49154fff1c0b47384483c20876935409f1b397eaa0d3b2dfa9"
+    },
+    {
+      "input": "amo\namo pilarium amas\nlaudo",
+      "options": {},
+      "expectedSha256": "6cd327d247b8b103af06be89f085aeb28f7f8356cde2284f71e2d154358aa758",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1966be63a41688b4739c36617199ceca2f1cb258c8786c58770be8d5bd4c7318"
+    },
+    {
+      "input": "pilarium pilarium",
+      "options": {},
+      "expectedSha256": "70f936599bfa7a896e7ffd7557dae1a85977fe1ceaef302a5845ce49fdaa6542",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "5e016b65f746e2e2b951460ef71cd9efaf04bc017d94c58be7a0a6fed75d8452"
+    },
+    {
+      "input": "amo  pilarium -- ignored",
+      "options": {},
+      "expectedSha256": "50d7e5c81acdbdc44d1c7d6b9e51aae0bf80232e5b19f12f51d3a240bf1b57e3",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "27426efd231e2e7df1c89983cd60f07f8656c4d9b5f7ea492a05f7e7485202b7"
+    },
+    {
+      "input": "  pilarium  ",
+      "options": {},
+      "expectedSha256": "a3bddd1af84e291591c15a099efdb8f756839e132f8e01df91cd6b6537c71009",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "12dc3c1dd1ac3b20b86e77e31938b97ed58da4c20b3132f797185c6843dea173"
+    },
+    {
+      "input": "😀 pilarium",
+      "options": {},
+      "expectedSha256": "19e5f031a0f1b2a0ce29f8d5514e5beadf2162e7eb50767f6211b9cf8896249b",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "bb4b453f756657641a9dc0e5d7042ff6db30c97f7f625d443e67de279a14686c"
+    },
+    {
+      "input": "amo\r\npilarium\r\namas",
+      "options": {},
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "430d351bd976376929aa1250f108a6f154503398cf4910161ca3b7adcb4750fe"
+    },
+    {
+      "input": "amo\n\npilarium\namas",
+      "options": {},
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "eba5f1b89c23832434a5ddbcb951cc2690e4fcac181e8bfe6b2a62340e158c55"
+    },
+    {
+      "input": "amatus est pilarium",
+      "options": {},
+      "expectedSha256": "e7b64b8a2cbe76d63f9de2f1fd80ecd2fe86913b2ecfbdcfbf929ab44d27ac07",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "92b59f27fe1f1415ab4b711bf8185be384d4ef4c93897a22c8bf50a30eb78f91"
+    },
+    {
+      "input": "amo pilarium est",
+      "options": {},
+      "expectedSha256": "d427404f64282ce060c2712e68b3c5a639ee32175cdf977628b5b6c67432ef21",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "80f433c9d120d22a15e5c6247d60194254f2918a6e812164d8cd4a040ae0257a"
+    },
+    {
+      "input": "quantacumque pilarium",
+      "options": {},
+      "expectedSha256": "409af3caac7b8453f50f26f5521368d667166a7234949a24f536cd26162bbdd1",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "c0e362d43d708c744a01eb2b369abb5770d9b28730879b2cff0dc04c1f36f3ce"
+    },
+    {
+      "input": "potevis pilarium",
+      "options": {},
+      "expectedSha256": "6d0f27f5448c550245212c86cbd871523bed06f58d8858f0c27354f8710d5278",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "33dbb359fd0a493bd6598c48106db4350258fcbb1a4f002266a6588f7843784b"
+    },
+    {
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx pilarium",
+      "options": {},
+      "expectedSha256": "8fe4b30c8e6d24d073d60bcedc3a16f05768a977723e89f0ffff224b928ea5b2",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1694c90619088986400218bb29d2dc2ffd18dd5098b25bf543dbe8782843bcdf"
+    },
+    {
+      "input": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   pilarium",
+      "options": {},
+      "expectedSha256": "518a0b37b8f96ad72c5262330e841a13071b7b40c467443b89313f6e99184988",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "540ed851a2fc80be3d35f3ee2050a37c3eb6fee2c2139a6974a8255690fabc7b"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo pilarium",
+      "options": {},
+      "expectedSha256": "67a2f98ef4b2f100f58f11a0f70967fdd27d7000d4723f973caec02769ce4182",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "43e7e0fb89ade0c3c5e3303a84f9f52f7c7120f95ed5530359a9635544940e14"
+    },
+    {
+      "input": "amo bone",
+      "options": {},
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "959506db28474ac379c57b56c411af280cabff2e539005614503defe935af3ac"
+    },
+    {
+      "input": "amo\nbone",
+      "options": {},
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "0d5ac71418b4c80d8f97fd061ff8a476866558a22f4060ac10ac8b9c4d976bd1"
+    },
+    {
+      "input": "xyzzy amo",
+      "options": {},
+      "expectedSha256": "a38ac7fcb739932367d46a86036ad2b8955cb6a38bd8fdfdfde729fea8946ef3",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "005ce1f9de33383e3e829056bbfb6e066f014c4cbd1611ae50e5e0b78d45ebd9"
+    },
+    {
+      "input": "123",
+      "options": {},
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "0f8b006332764629e3afd2579ebbf8fe7e278f2f8e275bd776cc07d97fbcb56e"
+    },
+    {
+      "input": "amo -- pilarium",
+      "options": {},
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo pilariumque",
+      "options": {},
+      "expectedSha256": "52226e3b922d6aa2a7263d40b7a1a27008a4fd239ca1e2993968e750eddc0c99",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "2d34b3cbeeaf471f8fea4ca5c957393ac6d58c0a403d5314caa9626135dc2618"
+    },
+    {
+      "input": "\nxyzzy",
+      "options": {},
+      "expectedSha256": "295508483cc1ef638321111521605c335f29401b2bf0c898a880922d292410f8",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "16effd86a2956052e8cfcbacdbb864cd6283314853b793d58c32a3830990d453"
+    },
+    {
+      "input": "amo\n\nxyzzy",
+      "options": {},
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e3d3e732366426dc0ad28a312099d8d34796bb86b460d9e460178c7cb29d71b0"
+    },
+    {
+      "input": "amo\n\n\nxyzzy",
+      "options": {},
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {},
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e3d3e732366426dc0ad28a312099d8d34796bb86b460d9e460178c7cb29d71b0"
+    },
+    {
+      "input": "amo\n   \n   \nxyzzy",
+      "options": {},
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo \nxyzzy",
+      "options": {},
+      "expectedSha256": "7b914e81f16b7654e946defcd9ae35a846df5773508091054f368e47c962d305",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "6269a3b402eb825379ad388cacf505bbeda9eac97d3be461b90d69e2c03b035c"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo \n\nxyzzy",
+      "options": {},
+      "expectedSha256": "89c0c47547994efb98728094427e80ca17321783ed322a7d1d34618753eece98",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1ada053a20a5f2621b4a36727b800e5f1589842c0620590e06cbfff6c6c896f6"
+    },
+    {
+      "input": "\n\namo",
+      "options": {},
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "858278b64790ba200584bb2c2cbe495e14f2632f116b0e2a84f5393339cc7acd"
+    },
+    {
+      "input": "\t\nxyzzy",
+      "options": {},
+      "expectedSha256": "b41063ef950ae0b334026b2fcfe6c53a39acb11d211b17e1d43d3144cb7f89b6",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "95b13c82e26b61c3efe15779bed5345d4c8466a2e129e280a9dcba379060fff2"
+    },
+    {
+      "input": "pilarium",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "d9bb672e3f7116f7db410f4156c27f5bd0f00017396ebdc2159ff349806698a8",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "891569d8c96c30303cb900626e3f595729fe673a6a92adf6d7ab5fa1d7a4873a"
+    },
+    {
+      "input": "pilarivm",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "f549e5d6af256da66865d7ed0c9c27241425bcbd489ba709aa99dae35ed8f2e6",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "41cb0a1d0799ae1bfb65ffe40ddc84a0a72766f58827dff3fe72efeaa7d66cb3"
+    },
+    {
+      "input": "Pilarium",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "d6ad3503c1976e99480ce827eaeef5ae373751edb866eae4c5cc1922ecaddfdb",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "f8fdba7f8da877eef1508f52502b4a2ab6cb45339b08bd8ff816d74c1b19cf0b"
+    },
+    {
+      "input": "PILARIUM",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "2a6be5fbb3f8fdbbdd4bfbf4edd8a89b7e6ca307bd80ad86af9662e559731cd3",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "8d66bcb67caa5d585faf5e10e4cf4caadebbbd178b3088a8013ba4e86b978058"
+    },
+    {
+      "input": "pilarium.",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "d2dec74c85cc4069df77209f32fadb19dfac0800f5a3bc7785f8e66c9325de33",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "b5d09aeb8398e71ce9d916ab2f743cabf16fbe9169e5a233d694c56149f7e144"
+    },
+    {
+      "input": "amo pilarium amas",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "d86a2da42988d435f085948bdb627f0b380d9049d5584d944ea77b5d49f4f509",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "feee5329cb19171f117a8f8f7e07800a15d201fae3c2e46f4b5f09051c6f6a73"
+    },
+    {
+      "input": "pilarium amo",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "5e6166c0dde00b262afe0a7b92bb873964234c0e55ac37ad57927e916d369afb",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "3122b35a7d111ca29079152a8360e156cc611c5168b2a678b96a121a49a99d2b"
+    },
+    {
+      "input": "amo\npilarium\namas",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "2fd46b5481e0ed49154fff1c0b47384483c20876935409f1b397eaa0d3b2dfa9"
+    },
+    {
+      "input": "amo\namo pilarium amas\nlaudo",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "6cd327d247b8b103af06be89f085aeb28f7f8356cde2284f71e2d154358aa758",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1966be63a41688b4739c36617199ceca2f1cb258c8786c58770be8d5bd4c7318"
+    },
+    {
+      "input": "pilarium pilarium",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "70f936599bfa7a896e7ffd7557dae1a85977fe1ceaef302a5845ce49fdaa6542",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "5e016b65f746e2e2b951460ef71cd9efaf04bc017d94c58be7a0a6fed75d8452"
+    },
+    {
+      "input": "amo  pilarium -- ignored",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "50d7e5c81acdbdc44d1c7d6b9e51aae0bf80232e5b19f12f51d3a240bf1b57e3",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "27426efd231e2e7df1c89983cd60f07f8656c4d9b5f7ea492a05f7e7485202b7"
+    },
+    {
+      "input": "  pilarium  ",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "a3bddd1af84e291591c15a099efdb8f756839e132f8e01df91cd6b6537c71009",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "12dc3c1dd1ac3b20b86e77e31938b97ed58da4c20b3132f797185c6843dea173"
+    },
+    {
+      "input": "😀 pilarium",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "19e5f031a0f1b2a0ce29f8d5514e5beadf2162e7eb50767f6211b9cf8896249b",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "bb4b453f756657641a9dc0e5d7042ff6db30c97f7f625d443e67de279a14686c"
+    },
+    {
+      "input": "amo\r\npilarium\r\namas",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "430d351bd976376929aa1250f108a6f154503398cf4910161ca3b7adcb4750fe"
+    },
+    {
+      "input": "amo\n\npilarium\namas",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "eba5f1b89c23832434a5ddbcb951cc2690e4fcac181e8bfe6b2a62340e158c55"
+    },
+    {
+      "input": "amatus est pilarium",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "e7b64b8a2cbe76d63f9de2f1fd80ecd2fe86913b2ecfbdcfbf929ab44d27ac07",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "92b59f27fe1f1415ab4b711bf8185be384d4ef4c93897a22c8bf50a30eb78f91"
+    },
+    {
+      "input": "amo pilarium est",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "d427404f64282ce060c2712e68b3c5a639ee32175cdf977628b5b6c67432ef21",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "80f433c9d120d22a15e5c6247d60194254f2918a6e812164d8cd4a040ae0257a"
+    },
+    {
+      "input": "quantacumque pilarium",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "409af3caac7b8453f50f26f5521368d667166a7234949a24f536cd26162bbdd1",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "c0e362d43d708c744a01eb2b369abb5770d9b28730879b2cff0dc04c1f36f3ce"
+    },
+    {
+      "input": "potevis pilarium",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "6d0f27f5448c550245212c86cbd871523bed06f58d8858f0c27354f8710d5278",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "33dbb359fd0a493bd6598c48106db4350258fcbb1a4f002266a6588f7843784b"
+    },
+    {
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx pilarium",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "8fe4b30c8e6d24d073d60bcedc3a16f05768a977723e89f0ffff224b928ea5b2",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1694c90619088986400218bb29d2dc2ffd18dd5098b25bf543dbe8782843bcdf"
+    },
+    {
+      "input": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   pilarium",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "518a0b37b8f96ad72c5262330e841a13071b7b40c467443b89313f6e99184988",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "540ed851a2fc80be3d35f3ee2050a37c3eb6fee2c2139a6974a8255690fabc7b"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo pilarium",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "67a2f98ef4b2f100f58f11a0f70967fdd27d7000d4723f973caec02769ce4182",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "43e7e0fb89ade0c3c5e3303a84f9f52f7c7120f95ed5530359a9635544940e14"
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "959506db28474ac379c57b56c411af280cabff2e539005614503defe935af3ac"
+    },
+    {
+      "input": "amo\nbone",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "0d5ac71418b4c80d8f97fd061ff8a476866558a22f4060ac10ac8b9c4d976bd1"
+    },
+    {
+      "input": "xyzzy amo",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "a38ac7fcb739932367d46a86036ad2b8955cb6a38bd8fdfdfde729fea8946ef3",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "005ce1f9de33383e3e829056bbfb6e066f014c4cbd1611ae50e5e0b78d45ebd9"
+    },
+    {
+      "input": "123",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "0f8b006332764629e3afd2579ebbf8fe7e278f2f8e275bd776cc07d97fbcb56e"
+    },
+    {
+      "input": "amo -- pilarium",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo pilariumque",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "52226e3b922d6aa2a7263d40b7a1a27008a4fd239ca1e2993968e750eddc0c99",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "2d34b3cbeeaf471f8fea4ca5c957393ac6d58c0a403d5314caa9626135dc2618"
+    },
+    {
+      "input": "\nxyzzy",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "295508483cc1ef638321111521605c335f29401b2bf0c898a880922d292410f8",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "16effd86a2956052e8cfcbacdbb864cd6283314853b793d58c32a3830990d453"
+    },
+    {
+      "input": "amo\n\nxyzzy",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e3d3e732366426dc0ad28a312099d8d34796bb86b460d9e460178c7cb29d71b0"
+    },
+    {
+      "input": "amo\n\n\nxyzzy",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e3d3e732366426dc0ad28a312099d8d34796bb86b460d9e460178c7cb29d71b0"
+    },
+    {
+      "input": "amo\n   \n   \nxyzzy",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo \nxyzzy",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "7b914e81f16b7654e946defcd9ae35a846df5773508091054f368e47c962d305",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "6269a3b402eb825379ad388cacf505bbeda9eac97d3be461b90d69e2c03b035c"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo \n\nxyzzy",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "89c0c47547994efb98728094427e80ca17321783ed322a7d1d34618753eece98",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1ada053a20a5f2621b4a36727b800e5f1589842c0620590e06cbfff6c6c896f6"
+    },
+    {
+      "input": "\n\namo",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "858278b64790ba200584bb2c2cbe495e14f2632f116b0e2a84f5393339cc7acd"
+    },
+    {
+      "input": "\t\nxyzzy",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "b41063ef950ae0b334026b2fcfe6c53a39acb11d211b17e1d43d3144cb7f89b6",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "95b13c82e26b61c3efe15779bed5345d4c8466a2e129e280a9dcba379060fff2"
+    },
+    {
+      "input": "pilarium",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "f62aa7878163c1871e73354b02d0a499252b9662693e962929dd47d62d64a83e",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e80d2062de5fed5cedc4d8bb463a073792d44be5263c164909ac5d9eb7efca76"
+    },
+    {
+      "input": "pilarivm",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "60d5f838938f804ea84882ba8962df5918a254b886a60d56f706d065e797192e",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "01f702f619a5715178bfa57079efac75402e74ffde8b899b49d7494fd7479b0c"
+    },
+    {
+      "input": "Pilarium",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "a166c7c48023ded878ca6c25cec9aa0c7cd88d9c3704cac0ee7ddbcc265a264f",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "2b8b03a99d878ef3e1ba702c5e992205b4986f37748ebddfe9f1c36614f242d6"
+    },
+    {
+      "input": "PILARIUM",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "b5cac1097c689c66ea95083768c6e669894839b81e505c1124b57b0f0025481e",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "80d8f5d399cc5826b54bee01edf9ffd65ae5215d84f0003ecf4ee5305d15399e"
+    },
+    {
+      "input": "pilarium.",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "f62aa7878163c1871e73354b02d0a499252b9662693e962929dd47d62d64a83e",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e80d2062de5fed5cedc4d8bb463a073792d44be5263c164909ac5d9eb7efca76"
+    },
+    {
+      "input": "amo pilarium amas",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "71426ee7d9c2b7f8244471d3cca3629c92509c0c37baf1e27f2062a2798772f6",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "6916f546d8ae4994892ceb634742e947bb24ad0b6294c8e1ba39f4cc17ecb373"
+    },
+    {
+      "input": "pilarium amo",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "2145d0feb436c0d4745433e0ea588f98e4c7881b41d1fc9af04881524947a91e",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e49b9f55edfcee19915252d67b7ae8ed6b23e2385094a2674ab18de6b3bb7bee"
+    },
+    {
+      "input": "amo\npilarium\namas",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "d2f2466f32a5fba5a5f63366bd2a40f4091538c14e544b01e8b98df992fdcb0e",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "175cf784a0f17963f2d7b9bfd95c04fbdd1607413172523741cc47b6577d6617"
+    },
+    {
+      "input": "amo\namo pilarium amas\nlaudo",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "fe3c057259962a4246f7b6f28ee17c07fdb71efdbcdb153abe4f8a32831fd956",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "5ee0f5bb46b5d7cd65d09313475d396bb967f1c0819f760dd41552bd0f036008"
+    },
+    {
+      "input": "pilarium pilarium",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "905b992556eccf218153c6d1269bd34338e21d87a73a6bff2e6d83401c285d0c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "a487379e607368137393b908a181878cb9b21bd7aec1432b5235cabad2290b55"
+    },
+    {
+      "input": "amo  pilarium -- ignored",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "9c687811b297be2632e03cb6dfa2a72e56a39369e032243c4cda8c3a05f91c12",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "4a6dc45b6d377419678de57fd38ad7aa2224f63bb85e5321c497b5cd718dc341"
+    },
+    {
+      "input": "  pilarium  ",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "f62aa7878163c1871e73354b02d0a499252b9662693e962929dd47d62d64a83e",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e80d2062de5fed5cedc4d8bb463a073792d44be5263c164909ac5d9eb7efca76"
+    },
+    {
+      "input": "😀 pilarium",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "f62aa7878163c1871e73354b02d0a499252b9662693e962929dd47d62d64a83e",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e80d2062de5fed5cedc4d8bb463a073792d44be5263c164909ac5d9eb7efca76"
+    },
+    {
+      "input": "amo\r\npilarium\r\namas",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "d2f2466f32a5fba5a5f63366bd2a40f4091538c14e544b01e8b98df992fdcb0e",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "175cf784a0f17963f2d7b9bfd95c04fbdd1607413172523741cc47b6577d6617"
+    },
+    {
+      "input": "amo\n\npilarium\namas",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "01a94f5de258a0a3e94fda8c399c1975252d1b55e994244f4f3fee3da76801e1",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "5b2d745aecf879496fd2cc8c0a4636ef731fbda457d5fa8b07e22065e09caab5"
+    },
+    {
+      "input": "amatus est pilarium",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "9399a1cf066a814b2efc029d695c518930766e4c16a28f93171258d23a7b354a",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "bd410af4fa3321004c6ee7a6150ce27e2e8d6aeacaebfd836debd2e6c93affba"
+    },
+    {
+      "input": "amo pilarium est",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "fcd2241d82c5b5f88fb0f170d44d1999abc418e06b6c810b29695133aa2c67d3",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "614583149a59b10e3581b7feceff0d0f2fd552aa9235ad720b0bdddc91c505ec"
+    },
+    {
+      "input": "quantacumque pilarium",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "d438f45d625311513d35928715272ede7827e615f19fd321b21dc475a4043200",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "ddd5a4d03111476c243a2284f80243a8b365f2a9ef361a39d05ab4e00b645c5b"
+    },
+    {
+      "input": "potevis pilarium",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "26aae720d588da95c2a996f8a5024fd662f56bcc401df8849d14738147d27041",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "0b8a6dcc891fce4270ec6ca41e3d67a01c51dba34ba8133fe138504453080394"
+    },
+    {
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx pilarium",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "8fe4b30c8e6d24d073d60bcedc3a16f05768a977723e89f0ffff224b928ea5b2",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1694c90619088986400218bb29d2dc2ffd18dd5098b25bf543dbe8782843bcdf"
+    },
+    {
+      "input": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   pilarium",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "1a0bd2448f48f0b7afca42ce8ae76695dc11dada806df25c56e09f29249db682",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e012d2c9e11f8040e14dee19e92f160fcd51b275bd4afca1a50d986ed38bc91e"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo pilarium",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "7e2fb4ef7e41c593cb04cd77ad158f5d7df3e881f4ab5867059d41b995a009e1",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1e627a5a83d1adf33dd08fef228367686d4c23647965f89dc2f8c60a83b1e15c"
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "8b329a19f68e767e35bdff40cf54caa9d2453e524dadeb68f507730cd0663e15",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "5ce480eb06e445148eafeeccef3dc153804454b25788d412ca4c912a4d16e365"
+    },
+    {
+      "input": "amo\nbone",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "8b329a19f68e767e35bdff40cf54caa9d2453e524dadeb68f507730cd0663e15",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1dbdb5f0227173582a4f2d555d073c52a44f05706b805b52cb66eca47d3cf6ea"
+    },
+    {
+      "input": "xyzzy amo",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "a38ac7fcb739932367d46a86036ad2b8955cb6a38bd8fdfdfde729fea8946ef3",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "005ce1f9de33383e3e829056bbfb6e066f014c4cbd1611ae50e5e0b78d45ebd9"
+    },
+    {
+      "input": "123",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "0f8b006332764629e3afd2579ebbf8fe7e278f2f8e275bd776cc07d97fbcb56e"
+    },
+    {
+      "input": "amo -- pilarium",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo pilariumque",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "999b88911508688a5ccb9ca5adca3c00f4fd81e5f0ee222c19d2ba09f1d33493",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "d73486b339eaa4519db58fd78dee3fabad6f9888d3f3899546c6fd0177e31137"
+    },
+    {
+      "input": "\nxyzzy",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "295508483cc1ef638321111521605c335f29401b2bf0c898a880922d292410f8",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "16effd86a2956052e8cfcbacdbb864cd6283314853b793d58c32a3830990d453"
+    },
+    {
+      "input": "amo\n\nxyzzy",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e3d3e732366426dc0ad28a312099d8d34796bb86b460d9e460178c7cb29d71b0"
+    },
+    {
+      "input": "amo\n\n\nxyzzy",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e3d3e732366426dc0ad28a312099d8d34796bb86b460d9e460178c7cb29d71b0"
+    },
+    {
+      "input": "amo\n   \n   \nxyzzy",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo \nxyzzy",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "7b914e81f16b7654e946defcd9ae35a846df5773508091054f368e47c962d305",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "6269a3b402eb825379ad388cacf505bbeda9eac97d3be461b90d69e2c03b035c"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo \n\nxyzzy",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "89c0c47547994efb98728094427e80ca17321783ed322a7d1d34618753eece98",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1ada053a20a5f2621b4a36727b800e5f1589842c0620590e06cbfff6c6c896f6"
+    },
+    {
+      "input": "\n\namo",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "858278b64790ba200584bb2c2cbe495e14f2632f116b0e2a84f5393339cc7acd"
+    },
+    {
+      "input": "\t\nxyzzy",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "b41063ef950ae0b334026b2fcfe6c53a39acb11d211b17e1d43d3144cb7f89b6",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "95b13c82e26b61c3efe15779bed5345d4c8466a2e129e280a9dcba379060fff2"
+    },
+    {
+      "input": "pilarium",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "d9bb672e3f7116f7db410f4156c27f5bd0f00017396ebdc2159ff349806698a8",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "891569d8c96c30303cb900626e3f595729fe673a6a92adf6d7ab5fa1d7a4873a"
+    },
+    {
+      "input": "pilarivm",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "f549e5d6af256da66865d7ed0c9c27241425bcbd489ba709aa99dae35ed8f2e6",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "41cb0a1d0799ae1bfb65ffe40ddc84a0a72766f58827dff3fe72efeaa7d66cb3"
+    },
+    {
+      "input": "Pilarium",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "d6ad3503c1976e99480ce827eaeef5ae373751edb866eae4c5cc1922ecaddfdb",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "f8fdba7f8da877eef1508f52502b4a2ab6cb45339b08bd8ff816d74c1b19cf0b"
+    },
+    {
+      "input": "PILARIUM",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "2a6be5fbb3f8fdbbdd4bfbf4edd8a89b7e6ca307bd80ad86af9662e559731cd3",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "8d66bcb67caa5d585faf5e10e4cf4caadebbbd178b3088a8013ba4e86b978058"
+    },
+    {
+      "input": "pilarium.",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "d2dec74c85cc4069df77209f32fadb19dfac0800f5a3bc7785f8e66c9325de33",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "b5d09aeb8398e71ce9d916ab2f743cabf16fbe9169e5a233d694c56149f7e144"
+    },
+    {
+      "input": "amo pilarium amas",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "d86a2da42988d435f085948bdb627f0b380d9049d5584d944ea77b5d49f4f509",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "feee5329cb19171f117a8f8f7e07800a15d201fae3c2e46f4b5f09051c6f6a73"
+    },
+    {
+      "input": "pilarium amo",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "5e6166c0dde00b262afe0a7b92bb873964234c0e55ac37ad57927e916d369afb",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "3122b35a7d111ca29079152a8360e156cc611c5168b2a678b96a121a49a99d2b"
+    },
+    {
+      "input": "amo\npilarium\namas",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "2fd46b5481e0ed49154fff1c0b47384483c20876935409f1b397eaa0d3b2dfa9"
+    },
+    {
+      "input": "amo\namo pilarium amas\nlaudo",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "6cd327d247b8b103af06be89f085aeb28f7f8356cde2284f71e2d154358aa758",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1966be63a41688b4739c36617199ceca2f1cb258c8786c58770be8d5bd4c7318"
+    },
+    {
+      "input": "pilarium pilarium",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "70f936599bfa7a896e7ffd7557dae1a85977fe1ceaef302a5845ce49fdaa6542",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "5e016b65f746e2e2b951460ef71cd9efaf04bc017d94c58be7a0a6fed75d8452"
+    },
+    {
+      "input": "amo  pilarium -- ignored",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "50d7e5c81acdbdc44d1c7d6b9e51aae0bf80232e5b19f12f51d3a240bf1b57e3",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "27426efd231e2e7df1c89983cd60f07f8656c4d9b5f7ea492a05f7e7485202b7"
+    },
+    {
+      "input": "  pilarium  ",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "a3bddd1af84e291591c15a099efdb8f756839e132f8e01df91cd6b6537c71009",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "12dc3c1dd1ac3b20b86e77e31938b97ed58da4c20b3132f797185c6843dea173"
+    },
+    {
+      "input": "😀 pilarium",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "19e5f031a0f1b2a0ce29f8d5514e5beadf2162e7eb50767f6211b9cf8896249b",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "bb4b453f756657641a9dc0e5d7042ff6db30c97f7f625d443e67de279a14686c"
+    },
+    {
+      "input": "amo\r\npilarium\r\namas",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "430d351bd976376929aa1250f108a6f154503398cf4910161ca3b7adcb4750fe"
+    },
+    {
+      "input": "amo\n\npilarium\namas",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "eba5f1b89c23832434a5ddbcb951cc2690e4fcac181e8bfe6b2a62340e158c55"
+    },
+    {
+      "input": "amatus est pilarium",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "e7b64b8a2cbe76d63f9de2f1fd80ecd2fe86913b2ecfbdcfbf929ab44d27ac07",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "92b59f27fe1f1415ab4b711bf8185be384d4ef4c93897a22c8bf50a30eb78f91"
+    },
+    {
+      "input": "amo pilarium est",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "d427404f64282ce060c2712e68b3c5a639ee32175cdf977628b5b6c67432ef21",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "80f433c9d120d22a15e5c6247d60194254f2918a6e812164d8cd4a040ae0257a"
+    },
+    {
+      "input": "quantacumque pilarium",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "409af3caac7b8453f50f26f5521368d667166a7234949a24f536cd26162bbdd1",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "c0e362d43d708c744a01eb2b369abb5770d9b28730879b2cff0dc04c1f36f3ce"
+    },
+    {
+      "input": "potevis pilarium",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "6d0f27f5448c550245212c86cbd871523bed06f58d8858f0c27354f8710d5278",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "33dbb359fd0a493bd6598c48106db4350258fcbb1a4f002266a6588f7843784b"
+    },
+    {
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx pilarium",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "35fd1a953ecbb7a3dcfbae189135ae72bab7d626b7887ae4338f0ab677e18ed6",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "48e46b5e7f8ff64e846d724020b003efff28e1e08dca8376deb98e23806794de"
+    },
+    {
+      "input": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   pilarium",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "518a0b37b8f96ad72c5262330e841a13071b7b40c467443b89313f6e99184988",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "540ed851a2fc80be3d35f3ee2050a37c3eb6fee2c2139a6974a8255690fabc7b"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo pilarium",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "67a2f98ef4b2f100f58f11a0f70967fdd27d7000d4723f973caec02769ce4182",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "43e7e0fb89ade0c3c5e3303a84f9f52f7c7120f95ed5530359a9635544940e14"
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "959506db28474ac379c57b56c411af280cabff2e539005614503defe935af3ac"
+    },
+    {
+      "input": "amo\nbone",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "0d5ac71418b4c80d8f97fd061ff8a476866558a22f4060ac10ac8b9c4d976bd1"
+    },
+    {
+      "input": "xyzzy amo",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "a38ac7fcb739932367d46a86036ad2b8955cb6a38bd8fdfdfde729fea8946ef3",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "005ce1f9de33383e3e829056bbfb6e066f014c4cbd1611ae50e5e0b78d45ebd9"
+    },
+    {
+      "input": "123",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "0f8b006332764629e3afd2579ebbf8fe7e278f2f8e275bd776cc07d97fbcb56e"
+    },
+    {
+      "input": "amo -- pilarium",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo pilariumque",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "52226e3b922d6aa2a7263d40b7a1a27008a4fd239ca1e2993968e750eddc0c99",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "2d34b3cbeeaf471f8fea4ca5c957393ac6d58c0a403d5314caa9626135dc2618"
+    },
+    {
+      "input": "\nxyzzy",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "295508483cc1ef638321111521605c335f29401b2bf0c898a880922d292410f8",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "16effd86a2956052e8cfcbacdbb864cd6283314853b793d58c32a3830990d453"
+    },
+    {
+      "input": "amo\n\nxyzzy",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e3d3e732366426dc0ad28a312099d8d34796bb86b460d9e460178c7cb29d71b0"
+    },
+    {
+      "input": "amo\n\n\nxyzzy",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e3d3e732366426dc0ad28a312099d8d34796bb86b460d9e460178c7cb29d71b0"
+    },
+    {
+      "input": "amo\n   \n   \nxyzzy",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo \nxyzzy",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "7b914e81f16b7654e946defcd9ae35a846df5773508091054f368e47c962d305",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "6269a3b402eb825379ad388cacf505bbeda9eac97d3be461b90d69e2c03b035c"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo \n\nxyzzy",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "89c0c47547994efb98728094427e80ca17321783ed322a7d1d34618753eece98",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1ada053a20a5f2621b4a36727b800e5f1589842c0620590e06cbfff6c6c896f6"
+    },
+    {
+      "input": "\n\namo",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "858278b64790ba200584bb2c2cbe495e14f2632f116b0e2a84f5393339cc7acd"
+    },
+    {
+      "input": "\t\nxyzzy",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "b41063ef950ae0b334026b2fcfe6c53a39acb11d211b17e1d43d3144cb7f89b6",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "95b13c82e26b61c3efe15779bed5345d4c8466a2e129e280a9dcba379060fff2"
+    },
+    {
+      "input": "pilarium",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "d9bb672e3f7116f7db410f4156c27f5bd0f00017396ebdc2159ff349806698a8",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "891569d8c96c30303cb900626e3f595729fe673a6a92adf6d7ab5fa1d7a4873a"
+    },
+    {
+      "input": "pilarivm",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "f549e5d6af256da66865d7ed0c9c27241425bcbd489ba709aa99dae35ed8f2e6",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "41cb0a1d0799ae1bfb65ffe40ddc84a0a72766f58827dff3fe72efeaa7d66cb3"
+    },
+    {
+      "input": "Pilarium",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "d6ad3503c1976e99480ce827eaeef5ae373751edb866eae4c5cc1922ecaddfdb",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "f8fdba7f8da877eef1508f52502b4a2ab6cb45339b08bd8ff816d74c1b19cf0b"
+    },
+    {
+      "input": "PILARIUM",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "2a6be5fbb3f8fdbbdd4bfbf4edd8a89b7e6ca307bd80ad86af9662e559731cd3",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "8d66bcb67caa5d585faf5e10e4cf4caadebbbd178b3088a8013ba4e86b978058"
+    },
+    {
+      "input": "pilarium.",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "d2dec74c85cc4069df77209f32fadb19dfac0800f5a3bc7785f8e66c9325de33",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "b5d09aeb8398e71ce9d916ab2f743cabf16fbe9169e5a233d694c56149f7e144"
+    },
+    {
+      "input": "amo pilarium amas",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "d86a2da42988d435f085948bdb627f0b380d9049d5584d944ea77b5d49f4f509",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "feee5329cb19171f117a8f8f7e07800a15d201fae3c2e46f4b5f09051c6f6a73"
+    },
+    {
+      "input": "pilarium amo",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "5e6166c0dde00b262afe0a7b92bb873964234c0e55ac37ad57927e916d369afb",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "3122b35a7d111ca29079152a8360e156cc611c5168b2a678b96a121a49a99d2b"
+    },
+    {
+      "input": "amo\npilarium\namas",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "2fd46b5481e0ed49154fff1c0b47384483c20876935409f1b397eaa0d3b2dfa9"
+    },
+    {
+      "input": "amo\namo pilarium amas\nlaudo",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "6cd327d247b8b103af06be89f085aeb28f7f8356cde2284f71e2d154358aa758",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1966be63a41688b4739c36617199ceca2f1cb258c8786c58770be8d5bd4c7318"
+    },
+    {
+      "input": "pilarium pilarium",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "70f936599bfa7a896e7ffd7557dae1a85977fe1ceaef302a5845ce49fdaa6542",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "5e016b65f746e2e2b951460ef71cd9efaf04bc017d94c58be7a0a6fed75d8452"
+    },
+    {
+      "input": "amo  pilarium -- ignored",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "50d7e5c81acdbdc44d1c7d6b9e51aae0bf80232e5b19f12f51d3a240bf1b57e3",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "27426efd231e2e7df1c89983cd60f07f8656c4d9b5f7ea492a05f7e7485202b7"
+    },
+    {
+      "input": "  pilarium  ",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "a3bddd1af84e291591c15a099efdb8f756839e132f8e01df91cd6b6537c71009",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "12dc3c1dd1ac3b20b86e77e31938b97ed58da4c20b3132f797185c6843dea173"
+    },
+    {
+      "input": "😀 pilarium",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "19e5f031a0f1b2a0ce29f8d5514e5beadf2162e7eb50767f6211b9cf8896249b",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "bb4b453f756657641a9dc0e5d7042ff6db30c97f7f625d443e67de279a14686c"
+    },
+    {
+      "input": "amo\r\npilarium\r\namas",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "430d351bd976376929aa1250f108a6f154503398cf4910161ca3b7adcb4750fe"
+    },
+    {
+      "input": "amo\n\npilarium\namas",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "eba5f1b89c23832434a5ddbcb951cc2690e4fcac181e8bfe6b2a62340e158c55"
+    },
+    {
+      "input": "amatus est pilarium",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "e7b64b8a2cbe76d63f9de2f1fd80ecd2fe86913b2ecfbdcfbf929ab44d27ac07",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "92b59f27fe1f1415ab4b711bf8185be384d4ef4c93897a22c8bf50a30eb78f91"
+    },
+    {
+      "input": "amo pilarium est",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "d427404f64282ce060c2712e68b3c5a639ee32175cdf977628b5b6c67432ef21",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "80f433c9d120d22a15e5c6247d60194254f2918a6e812164d8cd4a040ae0257a"
+    },
+    {
+      "input": "quantacumque pilarium",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "409af3caac7b8453f50f26f5521368d667166a7234949a24f536cd26162bbdd1",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "c0e362d43d708c744a01eb2b369abb5770d9b28730879b2cff0dc04c1f36f3ce"
+    },
+    {
+      "input": "potevis pilarium",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "6d0f27f5448c550245212c86cbd871523bed06f58d8858f0c27354f8710d5278",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "33dbb359fd0a493bd6598c48106db4350258fcbb1a4f002266a6588f7843784b"
+    },
+    {
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx pilarium",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "8fe4b30c8e6d24d073d60bcedc3a16f05768a977723e89f0ffff224b928ea5b2",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1694c90619088986400218bb29d2dc2ffd18dd5098b25bf543dbe8782843bcdf"
+    },
+    {
+      "input": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   pilarium",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "518a0b37b8f96ad72c5262330e841a13071b7b40c467443b89313f6e99184988",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "540ed851a2fc80be3d35f3ee2050a37c3eb6fee2c2139a6974a8255690fabc7b"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo pilarium",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "67a2f98ef4b2f100f58f11a0f70967fdd27d7000d4723f973caec02769ce4182",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "43e7e0fb89ade0c3c5e3303a84f9f52f7c7120f95ed5530359a9635544940e14"
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "959506db28474ac379c57b56c411af280cabff2e539005614503defe935af3ac"
+    },
+    {
+      "input": "amo\nbone",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "0d5ac71418b4c80d8f97fd061ff8a476866558a22f4060ac10ac8b9c4d976bd1"
+    },
+    {
+      "input": "xyzzy amo",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "a38ac7fcb739932367d46a86036ad2b8955cb6a38bd8fdfdfde729fea8946ef3",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "005ce1f9de33383e3e829056bbfb6e066f014c4cbd1611ae50e5e0b78d45ebd9"
+    },
+    {
+      "input": "123",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "0f8b006332764629e3afd2579ebbf8fe7e278f2f8e275bd776cc07d97fbcb56e"
+    },
+    {
+      "input": "amo -- pilarium",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo pilariumque",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "52226e3b922d6aa2a7263d40b7a1a27008a4fd239ca1e2993968e750eddc0c99",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "2d34b3cbeeaf471f8fea4ca5c957393ac6d58c0a403d5314caa9626135dc2618"
+    },
+    {
+      "input": "\nxyzzy",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "295508483cc1ef638321111521605c335f29401b2bf0c898a880922d292410f8",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "16effd86a2956052e8cfcbacdbb864cd6283314853b793d58c32a3830990d453"
+    },
+    {
+      "input": "amo\n\nxyzzy",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e3d3e732366426dc0ad28a312099d8d34796bb86b460d9e460178c7cb29d71b0"
+    },
+    {
+      "input": "amo\n\n\nxyzzy",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e3d3e732366426dc0ad28a312099d8d34796bb86b460d9e460178c7cb29d71b0"
+    },
+    {
+      "input": "amo\n   \n   \nxyzzy",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo \nxyzzy",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "7b914e81f16b7654e946defcd9ae35a846df5773508091054f368e47c962d305",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "6269a3b402eb825379ad388cacf505bbeda9eac97d3be461b90d69e2c03b035c"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo \n\nxyzzy",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "89c0c47547994efb98728094427e80ca17321783ed322a7d1d34618753eece98",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1ada053a20a5f2621b4a36727b800e5f1589842c0620590e06cbfff6c6c896f6"
+    },
+    {
+      "input": "\n\namo",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "858278b64790ba200584bb2c2cbe495e14f2632f116b0e2a84f5393339cc7acd"
+    },
+    {
+      "input": "\t\nxyzzy",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "b41063ef950ae0b334026b2fcfe6c53a39acb11d211b17e1d43d3144cb7f89b6",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "95b13c82e26b61c3efe15779bed5345d4c8466a2e129e280a9dcba379060fff2"
+    },
+    {
+      "input": "pilarium",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "d9bb672e3f7116f7db410f4156c27f5bd0f00017396ebdc2159ff349806698a8",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "891569d8c96c30303cb900626e3f595729fe673a6a92adf6d7ab5fa1d7a4873a"
+    },
+    {
+      "input": "pilarivm",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "f549e5d6af256da66865d7ed0c9c27241425bcbd489ba709aa99dae35ed8f2e6",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "41cb0a1d0799ae1bfb65ffe40ddc84a0a72766f58827dff3fe72efeaa7d66cb3"
+    },
+    {
+      "input": "Pilarium",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "d6ad3503c1976e99480ce827eaeef5ae373751edb866eae4c5cc1922ecaddfdb",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "f8fdba7f8da877eef1508f52502b4a2ab6cb45339b08bd8ff816d74c1b19cf0b"
+    },
+    {
+      "input": "PILARIUM",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "2a6be5fbb3f8fdbbdd4bfbf4edd8a89b7e6ca307bd80ad86af9662e559731cd3",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "8d66bcb67caa5d585faf5e10e4cf4caadebbbd178b3088a8013ba4e86b978058"
+    },
+    {
+      "input": "pilarium.",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "d2dec74c85cc4069df77209f32fadb19dfac0800f5a3bc7785f8e66c9325de33",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "b5d09aeb8398e71ce9d916ab2f743cabf16fbe9169e5a233d694c56149f7e144"
+    },
+    {
+      "input": "amo pilarium amas",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "d86a2da42988d435f085948bdb627f0b380d9049d5584d944ea77b5d49f4f509",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "feee5329cb19171f117a8f8f7e07800a15d201fae3c2e46f4b5f09051c6f6a73"
+    },
+    {
+      "input": "pilarium amo",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "5e6166c0dde00b262afe0a7b92bb873964234c0e55ac37ad57927e916d369afb",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "3122b35a7d111ca29079152a8360e156cc611c5168b2a678b96a121a49a99d2b"
+    },
+    {
+      "input": "amo\npilarium\namas",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "2fd46b5481e0ed49154fff1c0b47384483c20876935409f1b397eaa0d3b2dfa9"
+    },
+    {
+      "input": "amo\namo pilarium amas\nlaudo",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "6cd327d247b8b103af06be89f085aeb28f7f8356cde2284f71e2d154358aa758",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1966be63a41688b4739c36617199ceca2f1cb258c8786c58770be8d5bd4c7318"
+    },
+    {
+      "input": "pilarium pilarium",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "70f936599bfa7a896e7ffd7557dae1a85977fe1ceaef302a5845ce49fdaa6542",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "5e016b65f746e2e2b951460ef71cd9efaf04bc017d94c58be7a0a6fed75d8452"
+    },
+    {
+      "input": "amo  pilarium -- ignored",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "50d7e5c81acdbdc44d1c7d6b9e51aae0bf80232e5b19f12f51d3a240bf1b57e3",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "27426efd231e2e7df1c89983cd60f07f8656c4d9b5f7ea492a05f7e7485202b7"
+    },
+    {
+      "input": "  pilarium  ",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "a3bddd1af84e291591c15a099efdb8f756839e132f8e01df91cd6b6537c71009",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "12dc3c1dd1ac3b20b86e77e31938b97ed58da4c20b3132f797185c6843dea173"
+    },
+    {
+      "input": "😀 pilarium",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "19e5f031a0f1b2a0ce29f8d5514e5beadf2162e7eb50767f6211b9cf8896249b",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "bb4b453f756657641a9dc0e5d7042ff6db30c97f7f625d443e67de279a14686c"
+    },
+    {
+      "input": "amo\r\npilarium\r\namas",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "430d351bd976376929aa1250f108a6f154503398cf4910161ca3b7adcb4750fe"
+    },
+    {
+      "input": "amo\n\npilarium\namas",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "f771ed22a756676ef63c1f690a35578b6062da3ac0a4edecbdbe0af46e8970cf",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "eba5f1b89c23832434a5ddbcb951cc2690e4fcac181e8bfe6b2a62340e158c55"
+    },
+    {
+      "input": "amatus est pilarium",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "e7b64b8a2cbe76d63f9de2f1fd80ecd2fe86913b2ecfbdcfbf929ab44d27ac07",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "92b59f27fe1f1415ab4b711bf8185be384d4ef4c93897a22c8bf50a30eb78f91"
+    },
+    {
+      "input": "amo pilarium est",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "d427404f64282ce060c2712e68b3c5a639ee32175cdf977628b5b6c67432ef21",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "80f433c9d120d22a15e5c6247d60194254f2918a6e812164d8cd4a040ae0257a"
+    },
+    {
+      "input": "quantacumque pilarium",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "409af3caac7b8453f50f26f5521368d667166a7234949a24f536cd26162bbdd1",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "c0e362d43d708c744a01eb2b369abb5770d9b28730879b2cff0dc04c1f36f3ce"
+    },
+    {
+      "input": "potevis pilarium",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "6d0f27f5448c550245212c86cbd871523bed06f58d8858f0c27354f8710d5278",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "33dbb359fd0a493bd6598c48106db4350258fcbb1a4f002266a6588f7843784b"
+    },
+    {
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx pilarium",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "8fe4b30c8e6d24d073d60bcedc3a16f05768a977723e89f0ffff224b928ea5b2",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1694c90619088986400218bb29d2dc2ffd18dd5098b25bf543dbe8782843bcdf"
+    },
+    {
+      "input": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   pilarium",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "518a0b37b8f96ad72c5262330e841a13071b7b40c467443b89313f6e99184988",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "540ed851a2fc80be3d35f3ee2050a37c3eb6fee2c2139a6974a8255690fabc7b"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo pilarium",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "67a2f98ef4b2f100f58f11a0f70967fdd27d7000d4723f973caec02769ce4182",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "43e7e0fb89ade0c3c5e3303a84f9f52f7c7120f95ed5530359a9635544940e14"
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "959506db28474ac379c57b56c411af280cabff2e539005614503defe935af3ac"
+    },
+    {
+      "input": "amo\nbone",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "0d5ac71418b4c80d8f97fd061ff8a476866558a22f4060ac10ac8b9c4d976bd1"
+    },
+    {
+      "input": "xyzzy amo",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "a38ac7fcb739932367d46a86036ad2b8955cb6a38bd8fdfdfde729fea8946ef3",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "005ce1f9de33383e3e829056bbfb6e066f014c4cbd1611ae50e5e0b78d45ebd9"
+    },
+    {
+      "input": "123",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "0f8b006332764629e3afd2579ebbf8fe7e278f2f8e275bd776cc07d97fbcb56e"
+    },
+    {
+      "input": "amo -- pilarium",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo pilariumque",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "52226e3b922d6aa2a7263d40b7a1a27008a4fd239ca1e2993968e750eddc0c99",
+      "nativeException": true,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "2d34b3cbeeaf471f8fea4ca5c957393ac6d58c0a403d5314caa9626135dc2618"
+    },
+    {
+      "input": "\nxyzzy",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "295508483cc1ef638321111521605c335f29401b2bf0c898a880922d292410f8",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "16effd86a2956052e8cfcbacdbb864cd6283314853b793d58c32a3830990d453"
+    },
+    {
+      "input": "amo\n\nxyzzy",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e3d3e732366426dc0ad28a312099d8d34796bb86b460d9e460178c7cb29d71b0"
+    },
+    {
+      "input": "amo\n\n\nxyzzy",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "e3d3e732366426dc0ad28a312099d8d34796bb86b460d9e460178c7cb29d71b0"
+    },
+    {
+      "input": "amo\n   \n   \nxyzzy",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "226b8bc15eaac854b4d4cf4a7ec5e44d7e0807e1973b4c4a9fa39cf7ae2510bc"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo \nxyzzy",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "7b914e81f16b7654e946defcd9ae35a846df5773508091054f368e47c962d305",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "6269a3b402eb825379ad388cacf505bbeda9eac97d3be461b90d69e2c03b035c"
+    },
+    {
+      "input": "amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo amo \n\nxyzzy",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "89c0c47547994efb98728094427e80ca17321783ed322a7d1d34618753eece98",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "1ada053a20a5f2621b4a36727b800e5f1589842c0620590e06cbfff6c6c896f6"
+    },
+    {
+      "input": "\n\namo",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "858278b64790ba200584bb2c2cbe495e14f2632f116b0e2a84f5393339cc7acd"
+    },
+    {
+      "input": "\t\nxyzzy",
+      "options": {
+        "omitArchaic": false,
+        "omitUncommon": false
+      },
+      "expectedSha256": "b41063ef950ae0b334026b2fcfe6c53a39acb11d211b17e1d43d3144cb7f89b6",
+      "nativeException": false,
+      "nativeExitCode": 0,
+      "nativeStderr": "",
+      "nativeStdoutSha256": "95b13c82e26b61c3efe15779bed5345d4c8466a2e129e280a9dcba379060fff2"
+    }
+  ]
+}

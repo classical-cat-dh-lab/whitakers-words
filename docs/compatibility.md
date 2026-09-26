@@ -16,12 +16,13 @@ maintained mk270 lineage, not a reconstruction of historical 1.97FC.
 | Robustness | Checksum corruption, invalid options, UTF-16 spans, legacy Unicode splitting, long input, compounds, corrected isolation and repeated calls pass |
 | Student reading view | All 3,953 inputs retain every candidate and explanatory row in order, without mutating the legacy result; all source class combinations and all 39,336 dictionary entries have display mappings |
 
-`npm run verify` runs the offline build and twenty-seven test groups: the original
+`npm run verify` runs the offline build and thirty-one test groups: the original
 nine engine/adapter groups, four student-display groups and three offline-storage
 groups, plus two browser-input/comparison-contract groups and two documentation
 rendering/preservation groups, plus two search-state and request-isolation groups,
-and two source-audit option/width and native-buffer-error groups, plus three
-parse-storage, runtime-surface and native-addon-reader groups.
+and one source-audit option/width group, plus three parse-storage, runtime-surface
+and native-addon-reader groups, and five exceptional-session, termination, CLI
+and native-capacity groups.
 The search-state fixtures preserve fresh native observations for failed attempts,
 affix fallback, distinct dictionary/affix spelling comparisons and transformed
 part-of-speech checks. The website also passes bounded Chromium/WebKit offline checks and eight
@@ -57,12 +58,23 @@ differences in the original 0.2 baseline. The earlier 240 input/option fixtures
 remain passing; another 180 cases across six option profiles and all 343 effective
 native addon fix/connection fields are now retained as regression observations.
 
-The original `pilarium`/`pilarivm` native output-buffer failures still raise
-explicit port execution errors. Native diagnostic text and process/adapter behavior
-are not yet equivalent; do not count them as matches. Empty input and `!` remain
-console-adapter comparison limitations. Normal fixed-wordlist output agreement
-does not establish complete exceptional-path I/O parity. This checkpoint is local
-and has not been published as a release.
+The following local repair restores native line-atomic analysis and exceptional
+termination. All 222 input/option session cases match two native builds, compared
+with 68 before the repair. These include 105 native failures and controls for
+blank reads, 2,500-byte boundaries, same-line and preceding-line output, case,
+punctuation, compounds and Unicode. Six synthetic states injected at the native
+grouping caller verify 12/13 forms, 40/41 groups and 99/100 parse slots. The native
+grouping routine itself is unchanged in this probe. The final 100th nominal/verb
+record can fail because Ada evaluates the next array access even after the active
+range ends.
+
+The two original native-error inputs remain errors in the source algorithm.
+They now return explicit `legacy-error` results with the original diagnostic
+body; CLI stdout, empty stderr and exit code 0 reproduce the native outer handler.
+These are classified separately from successful normal analyses. Empty input and
+`!` remain limitations of the original wordlist console comparator. This local
+checkpoint does not establish universal exceptional-path equivalence and has not
+been published as a release. See [the result contract](api.md).
 
 ## Observed legacy behavior retained
 
@@ -83,6 +95,11 @@ and has not been published as a release.
   use the part of speech after any suffix transformation.
 - Shared parse buffers retain inactive slots after pruning or rollback; later
   passes can expose them. Mutating loops use the original Ada range bounds.
+- Analysis completes for every word in a native input line before ordinary
+  results for that line are printed. A failure discards that pending line, retains
+  previously completed lines and terminates subsequent processing. Two blank
+  native reads also end a session; prompt width after one blank read affects
+  unknown-word alignment even when the prompt itself is omitted.
 - Addon reading preserves the native comment buffer's retained tail. In the frozen
   data, this gives the ordinary adjective `cumque` tackon an unusable effective
   spelling. The portable reader reproduces that original defect without changing
@@ -100,11 +117,16 @@ correctness. The qualified profile uses only the canonical general dictionary;
 local/special dictionaries, editing modes, interactive menus, persistent option
 files and historical platform-specific side effects are not implemented adapters.
 
-Custom option combinations, rare original buffer/exception paths, additional
+Custom option combinations, unqualified original buffer/exception paths, additional
 cross-platform runtimes and broader affix cross-products remain release
 qualification work. Nondefault options are explicitly labeled `custom`, not
 silently presented as the frozen profile. Native file hash differences do not
 change the canonical portable data; see [reference boundaries](building.md).
+Host memory exhaustion, storage-error retries, native file-system failures and
+platform-specific exception-information strings are not reproduced by the API.
+The CLI exposes the analysis body through its own documented arguments and stdin
+protocol; it is not a clone of native interactive menus or native command-line
+invocation modes.
 
 Future linguistic changes must use a reviewed deviation with evidence and tests.
 Full classical-author corpus comparison and stress testing remain future work.

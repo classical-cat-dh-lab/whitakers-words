@@ -81,7 +81,7 @@ export function inflectionText(p: Parse): string {
         s += '  ' + pad(infFreq[p.rule.frequency], 8);
     return s;
 }
-export function formatParses(parses: Parse[], trimmed: boolean): string {
+export function prepareParses(parses: Parse[]): Parse[][] {
     const groups: Parse[][] = [];
     // Cycle_Over_Pa resets ODM at each POS run, but retains the previous group
     // and dictionary entry when a PPP verb is appended to a participle/supine.
@@ -114,10 +114,17 @@ export function formatParses(parses: Parse[], trimmed: boolean): string {
                 break;
             }
             i++;
+            // Ada's `and` evaluates Pa(I) even after I exceeds Pa_Last.
+            // At the end of the 100-slot array that read raises Constraint_Error.
+            if (i === 100)
+                throw new LegacyConstraintError('Legacy CYCLE_OVER_PA index overflow');
         }
     }
     if (groups.length > 40 || groups.some(g => g.length > 12))
         throw new LegacyConstraintError('Legacy CYCLE_OVER_PA output buffer overflow');
+    return groups;
+}
+export function formatGroups(groups: Parse[][], trimmed: boolean): string {
     let previousIR = '', previousCitation = '';
     let output = '';
     const used = new Set<string>();
@@ -142,4 +149,7 @@ export function formatParses(parses: Parse[], trimmed: boolean): string {
         previousCitation = ['GEN', 'UNI'].includes(p.dictionary) ? e.citation : emptyEntry.citation;
     }
     return output + (trimmed ? '*' : '') + '\n';
+}
+export function formatParses(parses: Parse[], trimmed: boolean): string {
+    return formatGroups(prepareParses(parses), trimmed);
 }

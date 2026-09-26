@@ -1,0 +1,51 @@
+{
+  "created": "2026-09-26T01:18:51.299Z",
+  "reference": "words-mk270-1f2f0fb",
+  "scope": "Synthetic caller states; Cycle_Over_Pa itself is unchanged. Later formatting is outside this probe.",
+  "sourceSha256": "685618c20bca4584557f457eab3d0e521478271ca1d74758d836fd728fab5464",
+  "binarySha256": "da72ddeecd5e589a8b06a28c6319bb3159d2e01c4829e95846f2e644715fdace",
+  "cases": [
+    {
+      "count": 99,
+      "perGroup": 10,
+      "nativePass": true,
+      "nativeStdoutSha256": "3adc4cdfc6df447ff9eca4bcb01799ec53133c22513c8e14ae5a93ce940d72d4",
+      "nativeStderr": "CYCLE-PASS|amo\n"
+    },
+    {
+      "count": 100,
+      "perGroup": 10,
+      "nativePass": false,
+      "nativeStdoutSha256": "ab3a3c6b217533876ab0c10bb604ccff23fe14d7c5fb3457680ae3e2e9617da7",
+      "nativeStderr": ""
+    },
+    {
+      "count": 12,
+      "perGroup": 12,
+      "nativePass": true,
+      "nativeStdoutSha256": "510fb4936610ae36624c73a78bda31f0ddc283520d1d915401c89ad7ab1e7862",
+      "nativeStderr": "CYCLE-PASS|amat\n"
+    },
+    {
+      "count": 13,
+      "perGroup": 13,
+      "nativePass": false,
+      "nativeStdoutSha256": "fcf1f0eac2ad2cb7dc93056f531e61b0b38f3227b1538376e492fa9b2f388d37",
+      "nativeStderr": ""
+    },
+    {
+      "count": 40,
+      "perGroup": 1,
+      "nativePass": true,
+      "nativeStdoutSha256": "7c184610456ba7c64f4bd281feee3a1090f4ddd0f06fdb2b1ff4101a7c3e859a",
+      "nativeStderr": "CYCLE-PASS|amatis\n"
+    },
+    {
+      "count": 41,
+      "perGroup": 1,
+      "nativePass": false,
+      "nativeStdoutSha256": "4a11ff81a6e42e19f7efbd3ec4f75e3da5234f56fbdcb418593a4972f5d58040",
+      "nativeStderr": ""
+    }
+  ]
+}

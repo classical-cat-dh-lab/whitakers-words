@@ -155,7 +155,7 @@ export interface Analysis {
     snapshot: typeof SNAPSHOT;
     profile: typeof PROFILE | 'custom';
     dataIdentity: typeof DATA_IDENTITY;
-    status: 'analyzed' | 'unknown' | 'partial' | 'empty' | 'unsupported-input';
+    status: 'analyzed' | 'unknown' | 'partial' | 'empty' | 'unsupported-input' | 'legacy-error';
     truncated: boolean;
     diagnostics: string[];
     input: string;
@@ -163,6 +163,16 @@ export interface Analysis {
     tokens: TokenResult[];
     legacyText: string;
     appliedDeviations: readonly string[];
+    legacyFailure?: {
+        stage: 'analysis' | 'cycle-over-pa';
+        line: number;
+        word: string;
+        exitCode: 0;
+    };
+    legacyStop?: {
+        reason: 'blank-input';
+        offset: number;
+    };
 }
 export interface SourceData {
     dictionary: string;

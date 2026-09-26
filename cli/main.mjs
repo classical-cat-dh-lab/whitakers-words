@@ -14,7 +14,7 @@ else{
     let input=words.join(' ');if(!words.length){process.stdin.setEncoding('utf8');for await(const chunk of process.stdin)input+=chunk;}
     const analyze=text=>args.includes('--english')?analyzer.lookupEnglish(text):args.includes('--corrected')?applyCorrectedLayer(analyzer.analyze(text)):analyzer.analyze(text);
     if(args.includes('--legacy')){const result=analyze(input);process.stdout.write((result.corrected??result).legacyText);}
-    else if(args.includes('--jsonl')){for(const line of input.replace(/\n$/,'').split('\n'))process.stdout.write(JSON.stringify(analyze(line))+'\n');}
+    else if(args.includes('--jsonl')){for(const line of input.replace(/\n$/,'').split('\n')){const result=analyze(line);process.stdout.write(JSON.stringify(result)+'\n');if((result.corrected??result).status==='legacy-error')break;}}
     else process.stdout.write(JSON.stringify(analyze(input),null,2)+'\n');
   }catch(error){process.stderr.write('whitaker-words: '+error.message+'\n');process.exitCode=1;}
 }
