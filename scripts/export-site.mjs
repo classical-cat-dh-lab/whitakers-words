@@ -5,12 +5,13 @@ import {fileURLToPath} from 'node:url';
 import {resolve, dirname} from 'node:path';
 import {validateManifest} from '../browser/offline-core.mjs';
 import {documentPages} from './document-pages.mjs';
+import {ORIGIN, publicPath, publishPage} from './stable-pages.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url)), site = resolve(root, 'site');
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const pkg = JSON.parse(await readFile(resolve(root, 'package.json')));
 const model = await import('../dist/model.js');
-if (pkg.version !== model.VERSION) throw new Error('Package and engine version disagree.');
+// Frontend releases have their own version; the qualified engine stays frozen.
 const files = new Map();
 async function add(path) {
   const full = resolve(root, path), info = await lstat(full);
@@ -19,7 +20,7 @@ async function add(path) {
     for (const name of (await readdir(full)).sort()) await add(path + '/' + name);
   } else files.set(path, await readFile(full));
 }
-for (const file of ['index.html', 'app.mjs', 'input.mjs', 'notation.mjs', 'reading-order.mjs', 'worker.mjs', 'render-reader.mjs', 'offline.mjs', 'offline-core.mjs', 'theme.mjs', 'style.css', 'validation-cases.json', 'icon.svg', 'manifest.webmanifest']) await add('browser/' + file);
+for (const file of ['index.html', 'app.mjs', 'input.mjs', 'notation.mjs', 'reading-order.mjs', 'navigation.mjs', 'worker.mjs', 'render-reader.mjs', 'offline.mjs', 'offline-core.mjs', 'theme.mjs', 'style.css', 'validation-cases.json', 'icon.svg', 'manifest.webmanifest']) await add('browser/' + file);
 await add('browser/resources');
 for (const file of (await readdir(resolve(root, 'dist'))).filter(f => f.endsWith('.js')).sort()) await add('dist/' + file);
 for (const file of ['legacy/DICTLINE.GEN', 'legacy/INFLECTS.LAT', 'legacy/ADDONS.LAT', 'legacy/UNIQUES.LAT', 'dictionary-forms.tsv', 'english-index.tsv']) await add('data/' + file);
@@ -60,10 +61,22 @@ function icon(size) {
 for (const size of [192,512]) files.set(`browser/icon-${size}.png`, icon(size));
 const swSource = await readFile(resolve(root, 'browser/sw.mjs'), 'utf8');
 const contentIdentity = [...files].sort(([a],[b]) => a.localeCompare(b)).map(([path, bytes]) => [path, hash(bytes)]);
-const id = pkg.version + '-' + hash(JSON.stringify({files: contentIdentity, serviceWorker: hash(swSource)})).slice(0,12), base = '/releases/' + id + '/';
+const buildIdentity = hash(Buffer.concat([await readFile(new URL('./stable-pages.mjs', import.meta.url)), await readFile(new URL(import.meta.url))]));
+const id = pkg.version + '-' + hash(JSON.stringify({files: contentIdentity, serviceWorker: hash(swSource), build: buildIdentity})).slice(0,12), base = '/releases/' + id + '/';
+const routes = {};
+for (const [path, bytes] of files) {
+  const canonical = publicPath(path);
+  if (!canonical) continue;
+  files.set(path, Buffer.from(publishPage(bytes.toString(), path, base)));
+  routes[canonical] = base + path;
+}
+const webmanifest = JSON.parse(files.get('browser/manifest.webmanifest'));
+for (const icon of webmanifest.icons) icon.src = base + 'browser/' + icon.src;
+files.set('browser/manifest.webmanifest', Buffer.from(JSON.stringify(webmanifest, null, 2) + '\n'));
+routes['/manifest.webmanifest'] = base + 'browser/manifest.webmanifest';
 const smoke = JSON.parse(await readFile(resolve(root, 'browser/validation-cases.json')))[0];
 const manifest = validateManifest({format: 1, id, base, version: pkg.version, engine: model.VERSION, reader: 'student-v1', snapshot: model.SNAPSHOT, data: model.DATA_IDENTITY,
-  entry: base + 'browser/index.html', bytes: [...files.values()].reduce((sum, b) => sum + b.length, 0), smoke,
+  entry: base + 'browser/index.html', routes, bytes: [...files.values()].reduce((sum, b) => sum + b.length, 0), smoke,
   files: [...files].sort(([a],[b]) => a.localeCompare(b)).map(([path, bytes]) => ({url: base + path, bytes: bytes.length, sha256: hash(bytes)}))});
 
 // This generated directory is the only deployment root, never the repository.
@@ -73,9 +86,19 @@ for (const [path, bytes] of files) {
 }
 await writeFile(resolve(site, 'sw.js'), swSource.replace("'./offline-core.mjs'", JSON.stringify(base + 'browser/offline-core.mjs')));
 await writeFile(resolve(site, 'release.json'), JSON.stringify(manifest, null, 2) + '\n');
-await writeFile(resolve(site, 'index.html'), `<!doctype html><html lang="en"><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=${base}browser/"><title>Whitaker’s Words</title><a href="${base}browser/">Open Whitaker’s Words</a></html>\n`);
-await writeFile(resolve(site, '_redirects'), `/ ${base}browser/ 302\n/browser/ ${base}browser/ 302\n`);
-await writeFile(resolve(site, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  X-Frame-Options: DENY\n  Referrer-Policy: strict-origin-when-cross-origin\n  Content-Security-Policy: default-src 'self'; script-src 'self'; worker-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'\n/sw.js\n  Cache-Control: no-cache\n  Service-Worker-Allowed: /\n/release.json\n  Cache-Control: no-cache\n/releases/*\n  Cache-Control: public, max-age=31536000, immutable\n/downloads/*\n  Cache-Control: no-cache\n`);
+for (const [path, target] of Object.entries(routes)) {
+  const file = resolve(site, '.' + path + (path.endsWith('/') ? 'index.html' : ''));
+  await mkdir(dirname(file), {recursive: true}); await writeFile(file, files.get(target.slice(base.length)));
+}
+const redirects = ['/browser / 301', '/browser/ / 301', '/browser/index.html / 301', '/releases/:release/browser / 301', '/releases/:release/browser/ / 301', '/releases/:release/browser/index.html / 301'];
+for (const path of Object.keys(routes).filter(path => path.startsWith('/docs/'))) {
+  const name = path.split('/')[2];
+  redirects.push(`/docs/${name}.html ${path} 301`, `/releases/:release/docs/${name}.html ${path} 301`, `/releases/:release/docs/${name} ${path} 301`);
+}
+await writeFile(resolve(site, '_redirects'), redirects.sort((a, b) => Number(a.includes(':release')) - Number(b.includes(':release'))).join('\n') + '\n');
+await writeFile(resolve(site, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${ORIGIN}/sitemap.xml\n`);
+await writeFile(resolve(site, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + Object.keys(routes).filter(path => path.endsWith('/')).map(path => `<url><loc>${ORIGIN}${path}</loc></url>`).join('') + '</urlset>\n');
+await writeFile(resolve(site, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  X-Frame-Options: DENY\n  Referrer-Policy: strict-origin-when-cross-origin\n  Content-Security-Policy: default-src 'self'; script-src 'self'; worker-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'\n/\n  Cache-Control: no-cache\n/docs/*\n  Cache-Control: no-cache\n/manifest.webmanifest\n  Cache-Control: no-cache\n/sw.js\n  Cache-Control: no-cache\n  Service-Worker-Allowed: /\n/release.json\n  Cache-Control: no-cache\n/releases/*\n  Cache-Control: public, max-age=31536000, immutable\n  X-Robots-Tag: noindex\n/downloads/*\n  Cache-Control: no-cache\n`);
 
 // Deterministic corresponding-source archive: explicit product allowlist, no Git
 // metadata, operator files, local usernames, absolute paths or compiler outputs.

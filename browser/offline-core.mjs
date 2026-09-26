@@ -13,7 +13,23 @@ export function validateManifest(manifest) {
     urls.add(file.url); size += file.bytes;
   }
   if (size !== manifest.bytes || size > 100 * 1024 * 1024 || !urls.has(manifest.entry) || !urls.has(manifest.base + 'browser/worker.mjs') || !manifest.smoke?.input || !/^[a-f0-9]{64}$/.test(manifest.smoke.sha256)) throw new Error('Incomplete offline bundle.');
+  // Optional extension of format 1: released older clients can still save it.
+  if (manifest.routes !== undefined) {
+    if (!manifest.routes || Array.isArray(manifest.routes) || manifest.routes['/'] !== manifest.entry) throw new Error('Invalid public routes.');
+    for (const [path, target] of Object.entries(manifest.routes)) {
+      const doc = /^\/docs\/([a-z0-9.-]+)\/$/.exec(path);
+      const expected = path === '/' ? manifest.entry : path === '/manifest.webmanifest' ? manifest.base + 'browser/manifest.webmanifest' : doc ? manifest.base + 'docs/' + doc[1] + '.html' : null;
+      if (!expected || target !== expected || !urls.has(target)) throw new Error('Invalid public route target.');
+    }
+  }
   return manifest;
+}
+
+export function canonicalPath(path) {
+  if (/\.(?:json|md|txt|cff)$/.test(path)) return path;
+  if (/^(?:\/releases\/[a-z0-9.-]+)?\/browser(?:\/index\.html|\/)?$/.test(path) || path === '/index.html') return '/';
+  const doc = /^(?:\/releases\/[a-z0-9.-]+)?\/docs\/([a-z0-9.-]+?)(?:\.html|\/)?$/.exec(path);
+  return doc ? '/docs/' + doc[1] + '/' : path;
 }
 
 export async function verifyResponse(response, file) {

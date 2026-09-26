@@ -3,6 +3,7 @@ import {readFile,realpath,stat} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {resolve,extname,sep} from 'node:path';
 import {documentPages} from './document-pages.mjs';
+import {canonicalPath} from '../browser/offline-core.mjs';
 const preview=process.argv.includes('--site'),root=resolve(fileURLToPath(new URL('../',import.meta.url)),preview?'site':'.'),port=Number(process.env.WORDS_PORT??4173);
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.webmanifest':'application/manifest+json','.svg':'image/svg+xml','.png':'image/png','.gz':'application/gzip','.woff2':'font/woff2','.md':'text/plain; charset=utf-8'};
 const allowed=new Set(['browser','dist','data','docs','licenses']);
@@ -11,7 +12,8 @@ createServer(async(req,res)=>{
   try{
     if(req.method!=='GET'&&req.method!=='HEAD'){res.writeHead(405).end();return;}
     const path=decodeURIComponent(new URL(req.url,'http://localhost').pathname),parts=path.split('/').filter(Boolean);
-    if(!parts.length||(preview&&path==='/browser/')){const location=preview?JSON.parse(await readFile(resolve(root,'release.json'),'utf8')).base+'browser/':'/browser/';res.writeHead(302,{location}).end();return;}
+    if(preview&&canonicalPath(path)!==path){res.writeHead(301,{location:canonicalPath(path)}).end();return;}
+    if(!preview&&!parts.length){res.writeHead(302,{location:'/browser/'}).end();return;}
     if((!preview&&!allowed.has(parts[0]))||parts.some(p=>p.startsWith('.')||p.startsWith('_'))){res.writeHead(404).end();return;}
     if(documents?.has(parts.join('/'))){res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'}).end(req.method==='HEAD'?undefined:documents.get(parts.join('/')));return;}
     let target=resolve(root,...parts);if((await stat(target)).isDirectory())target=resolve(target,'index.html');target=await realpath(target);

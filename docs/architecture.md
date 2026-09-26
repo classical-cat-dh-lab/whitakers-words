@@ -79,3 +79,19 @@ production hosting serves static files, with all analysis performed on-device.
 
 Future consumers should use the versioned WORDS contract, not treat its resolved
 codes or glosses as the schema or linguistic authority of a new Latin analyzer.
+
+## Stable navigation and release-isolated resources
+
+The exported home page and documentation have permanent public paths, canonical
+links and a sitemap. Each HTML response pins every executable, stylesheet, font
+and data dependency to its content-addressed release. Source files keep relative
+module imports; exported absolute entry URLs establish their release base.
+The application and frozen engine have independent version identifiers.
+
+The release manifest maps stable pages to immutable files. Its format remains
+compatible with earlier offline clients. A Service Worker serves stable navigation
+from the complete selected bundle, and retains previous caches for open older tabs.
+An update checks file lengths, SHA-256 digests and a browser analysis before it can
+be selected. Selection and reload require an explicit user action. New routing code
+may take control only after the complete selected bundle passes integrity checks.
+No page silently swaps its executing modules or dictionary beneath a lookup.

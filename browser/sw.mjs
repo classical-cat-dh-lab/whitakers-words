@@ -1,4 +1,4 @@
-import {CACHE_PREFIX, DATABASE, validateManifest, verifyResponse, localResponse} from './offline-core.mjs';
+import {CACHE_PREFIX, DATABASE, validateManifest, verifyResponse, localResponse, canonicalPath} from './offline-core.mjs';
 
 // No automatic skipWaiting: a new worker never replaces an open application.
 self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));
@@ -102,6 +102,11 @@ self.addEventListener('message', event => {
         case 'cancel': download?.abort.abort(); result = {cancelled: true}; break;
         case 'confirm': result = await confirm(event.data.id); break;
         case 'activate': result = await activate(event.data.id); break;
+        case 'take-control': {
+          const saved = await state();
+          if (saved.active?.manifest.id !== event.data.id || !saved.active.manifest.routes || !await healthy(saved.active)) throw new Error('A verified stable-page bundle must be active first.');
+          await self.skipWaiting(); result = {ready: true}; break;
+        }
         default: throw new Error('Unknown offline action.');
       }
       send({done: true, result});
@@ -112,9 +117,22 @@ self.addEventListener('message', event => {
 async function offlineResponse(request) {
   const url = new URL(request.url);
   const current = await state();
-  if (request.mode === 'navigate' && (url.pathname === '/' || url.pathname === '/index.html')) {
+  if (request.mode === 'navigate' || url.pathname === '/manifest.webmanifest') {
+    const path = canonicalPath(url.pathname);
     for (const saved of [current.active, current.previous]) {
-      if (await healthy(saved)) return Response.redirect(new URL(saved.manifest.entry.replace(/index\.html$/, ''), self.location.origin), 302);
+      if (!await healthy(saved)) continue;
+      if (saved.manifest.routes) {
+        if (path !== url.pathname) return Response.redirect(new URL(path + url.search, self.location.origin), 301);
+        const target = saved.manifest.routes[path];
+        if (target) return localResponse(await (await caches.open(saved.cache)).match(target));
+      } else if (path === '/') {
+        // First migration from a pre-stable-URL installation: prefer the online
+        // stable shell; when offline retain the old working application intact.
+        if (url.pathname.startsWith('/releases/')) break;
+        try { const response = await fetch(request); if (response.ok) return response; } catch { /* Use legacy saved entry. */ }
+        return Response.redirect(new URL(saved.manifest.entry.replace(/index\.html$/, ''), self.location.origin), 302);
+      }
+      break;
     }
   }
   const pathname = url.pathname.endsWith('/') ? url.pathname + 'index.html' : url.pathname;

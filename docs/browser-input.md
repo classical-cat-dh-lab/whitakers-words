@@ -1,7 +1,6 @@
 # Browser lookup and offline use
 
-This guide describes the current frontend preview, pending review for a 0.3.1
-beta release. The published 0.3.0 beta retains its earlier interface.
+This guide describes the 0.3.1 beta browser interface on the frozen 0.3.0 engine.
 
 The default **Latin lookup** accepts a word, phrase or sentence. Press Enter or
 Return to look it up; Shift+Enter inserts a newline. A **Look up** button supports
@@ -119,3 +118,21 @@ Footer links open formatted HTML pages with return navigation. These documents,
 including the original WORDS notice and full AGPL license, are included in the
 saved offline bundle. The source introduction page offers the complete source
 archive as an explicit download; that archive requires a connection.
+
+## Stable pages and offline updates
+
+Bookmark [the dictionary](https://words.latingreek.org/) or any help page directly.
+Page addresses remain the same across releases; older versioned page links redirect
+to the corresponding permanent page. Each loaded page uses its own immutable
+application and dictionary resources.
+
+After **Save offline**, the header offers **Update**. When a newer release is
+found on opening, refocusing or reconnecting, the saved app shows a notice.
+Choose **Update** to download it. Every file is checked and a sample analysis is
+run before **Reload** becomes available. Your current input and results remain
+until you choose to reload. A failed or cancelled download preserves the complete
+saved version; already open tabs continue using their own resources.
+
+The app installs only when you choose to use your browser's installation feature.
+Clearing site data removes the offline installation. The browser may reclaim
+storage when space is low; reconnect and save again if the app reports missing files.

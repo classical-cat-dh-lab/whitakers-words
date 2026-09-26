@@ -14,7 +14,9 @@ the qualification identities and release source hashes.
 regression suite. The release qualified 36 groups; later frontend tests extend
 that suite without changing the frozen backend. A backend change requires a new reviewed baseline and
 appropriate comparison against this release; do not rewrite this immutable tag
-or its published archives. Frontend work may continue independently.
+or its published archives. Frontend work may continue independently. In the 0.3.1 frontend release, the
+application/package version is `0.3.1-beta.1`; the frozen engine continues to
+report `0.3.0-beta.1`. The website manifest records both identities.
 
 The measured counts and exceptions are in [backend acceptance](acceptance.md).
 The reference is WORDS 1.99.0, snapshot `words-mk270-1f2f0fb`, from commit

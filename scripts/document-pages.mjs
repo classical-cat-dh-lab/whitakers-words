@@ -13,7 +13,7 @@ const metadataPages = new Map([
 function linkTarget(target) {
   if (/^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(target) && !/^https?:\/\//i.test(target)) throw new Error('Unsupported document link: ' + target);
   const [path, fragment] = target.split('#');
-  return (metadataPages.get(path) ?? path.replace(/\.md$/, '.html')) + (fragment === undefined ? '' : '#' + fragment);
+  return (path === '../deviations/README.md' ? 'corrected-layers.html' : metadataPages.get(path) ?? path.replace(/\.md$/, '.html')) + (fragment === undefined ? '' : '#' + fragment);
 }
 
 function inline(text) {
@@ -132,6 +132,7 @@ export async function documentPages(root, version) {
     const title = file.split('/').at(-1);
     pages.set('docs/' + target, Buffer.from(page(title, `<h1>${escape(title)}</h1><pre tabindex="0"><code>${escape(source)}</code></pre>`)));
   }
+  pages.set('docs/corrected-layers.html', Buffer.from(page('Corrected layers', renderMarkdown(await readFile(resolve(root, 'deviations/README.md'), 'utf8')))));
   for (const [file, target, title] of [['licenses/whitaker.txt', 'original-notice', 'Original WORDS notice'], ['LICENSE', 'license', 'GNU Affero General Public License']]) {
     pages.set(`docs/${target}.html`, Buffer.from(page(title, `<h1>${title}</h1>${renderNotice(await readFile(resolve(root, file), 'utf8'))}`)));
   }

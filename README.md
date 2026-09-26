@@ -1,22 +1,22 @@
 # Whitaker's Words — TypeScript preservation
 
-**0.3.0-beta.1 · Beta** — [Open the dictionary](https://words.latingreek.org/).
+**0.3.1-beta.1 · Beta** — [Open the dictionary](https://words.latingreek.org/).
 
-The [0.3 beta release](docs/release-0.3.md) restores the original Ada execution
-behavior and freezes the verified backend baseline. It includes the accepted
-0.2.1 browser interface, offline use and saved night mode.
+The [0.3.1 beta release](docs/release-0.3.1.md) improves the reading interface:
+compact header controls, collapsed passage results, dictionary-frequency ordering,
+clearer principal parts and optional expandable technical output. The verified
+[0.3.0 backend](docs/backend-baseline.md) and original dictionary remain frozen.
 
-The current source includes a frontend preview on that frozen backend: compact
-header controls, collapsed passage results, dictionary-frequency ordering,
-clearer principal parts and optional expandable technical output. This preview
-is pending review for 0.3.1 beta and has not replaced the published beta.
+The dictionary and help pages use stable addresses for bookmarks and sharing.
+Runtime resources remain isolated by release. Offline updates are downloaded,
+checked and tested before you choose to reload; an open lookup is never interrupted.
 
 A preservation of William Whitaker's WORDS in TypeScript, compiled to JavaScript
 ESM: Latin analysis, English gloss lookup, a structured API, a CLI and a small
 browser application with dictionary notation for students. Analysis runs entirely
 on the user's device. There is no runtime service or database server.
 
-Choose **Save offline** in the preview to download and verify the complete
+Choose **Save offline** to download and verify the complete
 dictionary and application. It then works without a connection. App installation
 is optional; clearing the website's data removes its saved offline files. After
 saving, the download panel becomes a compact Update control. Enter a word, phrase
@@ -42,7 +42,7 @@ analyzer. The legacy profile targets original behavior, including linguistic
 errors and quirks; [tested behavior and remaining limits](docs/acceptance.md) are
 recorded explicitly. The corrected layer is empty.
 
-Archived release: [0.3.0-beta.1 — DOI: 10.5281/zenodo.22970444](https://doi.org/10.5281/zenodo.22970444).
+Archived release: [0.3.1-beta.1 — DOI: 10.5281/zenodo.22973796](https://doi.org/10.5281/zenodo.22973796).
 The archive preserves the exact release files; citation metadata is also available
 in [CITATION.cff](CITATION.cff).
 
@@ -64,7 +64,7 @@ No `npm install` is required. Use `npm run site` then `npm run preview` to build
 and preview the offline website. Serve `site/` over HTTPS (or localhost); opening
 files directly does not support modules or Service Workers. Download the frozen
 source and ready-to-host website from the
-[0.3.0-beta.1 release](https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v0.3.0-beta.1).
+[0.3.1-beta.1 release](https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v0.3.1-beta.1).
 No npm package is published.
 
 ## Verification and documentation

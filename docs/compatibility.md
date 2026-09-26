@@ -19,17 +19,17 @@ maintained mk270 lineage, not a reconstruction of historical 1.97FC.
 `npm run verify` runs the offline build, frozen backend hash check and portable
 regression suite. The released 0.3.0 beta passed 36 groups covering the engine,
 adapters, reader, offline storage, input, documents, search state and native
-exception/capacity behavior. The current frontend preview adds four groups:
-compact notation and three dictionary-order checks. The ordering checks retain
+exception/capacity behavior. The 0.3.1 frontend release passes 43 groups: the original 36 plus compact
+notation, three dictionary-order checks and three stable-page/manifest checks. The ordering checks retain
 every candidate, form and explanation across the 3,953-input reference corpus,
 preserve equal-band order and keep nonordinal frequency categories distinct.
 The search-state fixtures preserve fresh native observations for failed attempts,
 affix fallback, distinct dictionary/affix spelling comparisons and transformed
-part-of-speech checks. The published 0.3.0 website passed bounded Chromium/WebKit
-offline checks and eight complete browser-to-Node JSON comparisons. The current
-frontend preview is checked in the in-app browser; those checks do not constitute
-a new Chromium/WebKit release qualification. Physical mobile-device installation
-and full classical-author corpora remain outside this qualification. The
+part-of-speech checks. The 0.3.1 website passes bounded Chromium/WebKit
+qualification for eight complete browser-to-Node JSON comparisons, explicit
+upgrades, old-tab coexistence, cold offline restart, interrupted/corrupt downloads,
+cache repair, stable help pages and touch/viewport behavior. Physical mobile-device
+installation and full classical-author corpora remain outside this qualification. The
 expanded corpus contains Aeneid vocabulary, all unique forms, available examples
 derived from the source inflection rules and explicit fallback probes. Repeated
 forms are deduplicated. This is broad feature coverage, not every possible stem,

@@ -67,7 +67,7 @@ $('#analysis-form').addEventListener('submit',async event=>{
 $('#validate').addEventListener('click',async()=>{
   $('#validate').disabled=true;$('#validation-results').replaceChildren();
   try{
-    const response=await fetch('./validation-cases.json');if(!response.ok)throw new Error('Cannot load validation cases');const cases=await response.json();let passed=0;
+    const response=await fetch(new URL('./validation-cases.json',import.meta.url));if(!response.ok)throw new Error('Cannot load validation cases');const cases=await response.json();let passed=0;
     for(const c of cases){const {result}=await query(c.input,c.mode);const actual=JSON.stringify(result),digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(actual))),x=>x.toString(16).padStart(2,'0')).join('');const ok=digest===c.sha256;passed+=Number(ok);const item=document.createElement('li');item.textContent=`${ok?'PASS':'FAIL'} — ${c.label}`;item.className=ok?'pass':'fail';$('#validation-results').append(item);}
     $('#status').textContent=`Validation: ${passed}/${cases.length} match the Node structured results.`;
   }catch(error){$('#status').textContent='Error: '+error.message;}finally{$('#validate').disabled=false;}
