@@ -194,6 +194,13 @@ export interface EnglishIndexRow {
     sourceRow: number;
 }
 export interface EnglishResult {
+    status?: 'legacy-error';
+    truncated?: true;
+    diagnostics?: string[];
+    legacyFailure?: {
+        stage: 'english-search';
+        exitCode: 0;
+    };
     schemaVersion: 1;
     snapshot: typeof SNAPSHOT;
     engineVersion: string;

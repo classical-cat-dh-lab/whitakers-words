@@ -1,0 +1,5382 @@
+{
+  "reference": "words-mk270-1f2f0fb",
+  "scriptSha256": "7c7c3d51ab547ce2ef0d75767a8d5981646fc801b19afc31b857f0b81a19477b",
+  "cases": [
+    {
+      "input": "amo",
+      "options": {},
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {},
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {},
+      "expectedSha256": "38e23bfa5e1cc0731f94c32f5fb9f19466730272f18c1bc031ba65202eb2768c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {},
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {},
+      "expectedSha256": "2d157823e6a9e8227a113889a881e51adbde3001879743bfb8b9f67aec725b95",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {},
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {},
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {},
+      "expectedSha256": "237108b94d1fd7a0b97375ce22b11091dc03e5fd619e345351f20ca2a6cdb17d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {},
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {},
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {},
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {},
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {},
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {},
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {},
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {},
+      "expectedSha256": "b1ca5d1d5c1ae7ff7915f9f3053c99ce9640b3857c2966939a2a1ec8d212cf20",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {},
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {},
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {},
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {},
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {},
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {},
+      "expectedSha256": "9c6d630e1ff86048dd50ef40110a1ae90d5f295cf7b888b0b83003fb5466a421",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {},
+      "expectedSha256": "16639ee70e33a0266aec1593c0f8d3ca520648e0a761a5f614433cabae988367",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {},
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {},
+      "expectedSha256": "0ec65949fbc653f6c81b9a5c237ccad6e6c774fdfdb301a8ab23ba9fc64ea6bb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {},
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {},
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {},
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {},
+      "expectedSha256": "765cb3d9fa07af211b88690658bd7f5828f0bc3c1886e3a5a7502ef8461147c9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {},
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {},
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {},
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "9db6e6b22ad44c2f30ca89c55504cc83f4524bfc9806ed1305a8b0d875fd06b9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "38e23bfa5e1cc0731f94c32f5fb9f19466730272f18c1bc031ba65202eb2768c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "2d157823e6a9e8227a113889a881e51adbde3001879743bfb8b9f67aec725b95",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "237108b94d1fd7a0b97375ce22b11091dc03e5fd619e345351f20ca2a6cdb17d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "b1ca5d1d5c1ae7ff7915f9f3053c99ce9640b3857c2966939a2a1ec8d212cf20",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "1bf14702908e498d33dd270fc407b81b0b6724d8f84d738556befb7a823e1f82",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "6865f4c2b47bb67f2167e158eeb10779e95ac7674825ed1d3bd107e245868bb1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "7f592ab8e7a03cd0b3e3bf250465091e6617c141c800ed511621910aa18f0d12",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "0ec65949fbc653f6c81b9a5c237ccad6e6c774fdfdb301a8ab23ba9fc64ea6bb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "9db6e6b22ad44c2f30ca89c55504cc83f4524bfc9806ed1305a8b0d875fd06b9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "765cb3d9fa07af211b88690658bd7f5828f0bc3c1886e3a5a7502ef8461147c9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "trim": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "38e23bfa5e1cc0731f94c32f5fb9f19466730272f18c1bc031ba65202eb2768c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "2d157823e6a9e8227a113889a881e51adbde3001879743bfb8b9f67aec725b95",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "237108b94d1fd7a0b97375ce22b11091dc03e5fd619e345351f20ca2a6cdb17d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "b1ca5d1d5c1ae7ff7915f9f3053c99ce9640b3857c2966939a2a1ec8d212cf20",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "9c6d630e1ff86048dd50ef40110a1ae90d5f295cf7b888b0b83003fb5466a421",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "16639ee70e33a0266aec1593c0f8d3ca520648e0a761a5f614433cabae988367",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "0ec65949fbc653f6c81b9a5c237ccad6e6c774fdfdb301a8ab23ba9fc64ea6bb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "765cb3d9fa07af211b88690658bd7f5828f0bc3c1886e3a5a7502ef8461147c9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "omitArchaic": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "38e23bfa5e1cc0731f94c32f5fb9f19466730272f18c1bc031ba65202eb2768c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "2d157823e6a9e8227a113889a881e51adbde3001879743bfb8b9f67aec725b95",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "237108b94d1fd7a0b97375ce22b11091dc03e5fd619e345351f20ca2a6cdb17d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "b1ca5d1d5c1ae7ff7915f9f3053c99ce9640b3857c2966939a2a1ec8d212cf20",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "9c6d630e1ff86048dd50ef40110a1ae90d5f295cf7b888b0b83003fb5466a421",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "16639ee70e33a0266aec1593c0f8d3ca520648e0a761a5f614433cabae988367",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "0ec65949fbc653f6c81b9a5c237ccad6e6c774fdfdb301a8ab23ba9fc64ea6bb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "765cb3d9fa07af211b88690658bd7f5828f0bc3c1886e3a5a7502ef8461147c9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "omitMedieval": true
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "9db6e6b22ad44c2f30ca89c55504cc83f4524bfc9806ed1305a8b0d875fd06b9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "38e23bfa5e1cc0731f94c32f5fb9f19466730272f18c1bc031ba65202eb2768c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "2d157823e6a9e8227a113889a881e51adbde3001879743bfb8b9f67aec725b95",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "237108b94d1fd7a0b97375ce22b11091dc03e5fd619e345351f20ca2a6cdb17d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "b1ca5d1d5c1ae7ff7915f9f3053c99ce9640b3857c2966939a2a1ec8d212cf20",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "9c6d630e1ff86048dd50ef40110a1ae90d5f295cf7b888b0b83003fb5466a421",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "7f592ab8e7a03cd0b3e3bf250465091e6617c141c800ed511621910aa18f0d12",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "0ec65949fbc653f6c81b9a5c237ccad6e6c774fdfdb301a8ab23ba9fc64ea6bb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "9db6e6b22ad44c2f30ca89c55504cc83f4524bfc9806ed1305a8b0d875fd06b9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "765cb3d9fa07af211b88690658bd7f5828f0bc3c1886e3a5a7502ef8461147c9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "omitUncommon": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "38e23bfa5e1cc0731f94c32f5fb9f19466730272f18c1bc031ba65202eb2768c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "2d157823e6a9e8227a113889a881e51adbde3001879743bfb8b9f67aec725b95",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "39c0b03c39fbc4d80002d3c62982b61be167fed5295a5d4889ae40a500fb6adb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "b1ca5d1d5c1ae7ff7915f9f3053c99ce9640b3857c2966939a2a1ec8d212cf20",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "9c6d630e1ff86048dd50ef40110a1ae90d5f295cf7b888b0b83003fb5466a421",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "16639ee70e33a0266aec1593c0f8d3ca520648e0a761a5f614433cabae988367",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "0ec65949fbc653f6c81b9a5c237ccad6e6c774fdfdb301a8ab23ba9fc64ea6bb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "8b329a19f68e767e35bdff40cf54caa9d2453e524dadeb68f507730cd0663e15",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "765cb3d9fa07af211b88690658bd7f5828f0bc3c1886e3a5a7502ef8461147c9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "fixes": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "38e23bfa5e1cc0731f94c32f5fb9f19466730272f18c1bc031ba65202eb2768c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "2d157823e6a9e8227a113889a881e51adbde3001879743bfb8b9f67aec725b95",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "237108b94d1fd7a0b97375ce22b11091dc03e5fd619e345351f20ca2a6cdb17d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "36d065030d7296f1740c46c99e74ccb02dcbcb88edce98fa59e66e0affe73748",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "74974959b7731b0274133afba0304c9662352097c3b58d2c177d0ad8afa8b3b2",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "16639ee70e33a0266aec1593c0f8d3ca520648e0a761a5f614433cabae988367",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "0ec65949fbc653f6c81b9a5c237ccad6e6c774fdfdb301a8ab23ba9fc64ea6bb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "765cb3d9fa07af211b88690658bd7f5828f0bc3c1886e3a5a7502ef8461147c9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "tricks": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "38e23bfa5e1cc0731f94c32f5fb9f19466730272f18c1bc031ba65202eb2768c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "2d157823e6a9e8227a113889a881e51adbde3001879743bfb8b9f67aec725b95",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "237108b94d1fd7a0b97375ce22b11091dc03e5fd619e345351f20ca2a6cdb17d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "b1ca5d1d5c1ae7ff7915f9f3053c99ce9640b3857c2966939a2a1ec8d212cf20",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "9c6d630e1ff86048dd50ef40110a1ae90d5f295cf7b888b0b83003fb5466a421",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "16639ee70e33a0266aec1593c0f8d3ca520648e0a761a5f614433cabae988367",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "0ec65949fbc653f6c81b9a5c237ccad6e6c774fdfdb301a8ab23ba9fc64ea6bb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "765cb3d9fa07af211b88690658bd7f5828f0bc3c1886e3a5a7502ef8461147c9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "medievalTricks": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "38e23bfa5e1cc0731f94c32f5fb9f19466730272f18c1bc031ba65202eb2768c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "d7f5e519b70557de323bb1894292dbfeeb64d8f7dd957352220ff354021a22bd",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "237108b94d1fd7a0b97375ce22b11091dc03e5fd619e345351f20ca2a6cdb17d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "b1ca5d1d5c1ae7ff7915f9f3053c99ce9640b3857c2966939a2a1ec8d212cf20",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "9c6d630e1ff86048dd50ef40110a1ae90d5f295cf7b888b0b83003fb5466a421",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "16639ee70e33a0266aec1593c0f8d3ca520648e0a761a5f614433cabae988367",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "ed900b17d25887c46995896ab336a0dac2015a17ef49b1a0b9bd6b5bb4c9b62b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "765cb3d9fa07af211b88690658bd7f5828f0bc3c1886e3a5a7502ef8461147c9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "syncope": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "38e23bfa5e1cc0731f94c32f5fb9f19466730272f18c1bc031ba65202eb2768c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "2d157823e6a9e8227a113889a881e51adbde3001879743bfb8b9f67aec725b95",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "237108b94d1fd7a0b97375ce22b11091dc03e5fd619e345351f20ca2a6cdb17d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "b1ca5d1d5c1ae7ff7915f9f3053c99ce9640b3857c2966939a2a1ec8d212cf20",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "74974959b7731b0274133afba0304c9662352097c3b58d2c177d0ad8afa8b3b2",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "16639ee70e33a0266aec1593c0f8d3ca520648e0a761a5f614433cabae988367",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "0ec65949fbc653f6c81b9a5c237ccad6e6c774fdfdb301a8ab23ba9fc64ea6bb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "765cb3d9fa07af211b88690658bd7f5828f0bc3c1886e3a5a7502ef8461147c9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "twoWords": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "2d157823e6a9e8227a113889a881e51adbde3001879743bfb8b9f67aec725b95",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "237108b94d1fd7a0b97375ce22b11091dc03e5fd619e345351f20ca2a6cdb17d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "b1ca5d1d5c1ae7ff7915f9f3053c99ce9640b3857c2966939a2a1ec8d212cf20",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "9c6d630e1ff86048dd50ef40110a1ae90d5f295cf7b888b0b83003fb5466a421",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "16639ee70e33a0266aec1593c0f8d3ca520648e0a761a5f614433cabae988367",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "0ec65949fbc653f6c81b9a5c237ccad6e6c774fdfdb301a8ab23ba9fc64ea6bb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "c56ff710fa29198e39665ba03e17f892906bed26412f4fc03558f6f658b9f4ac",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "compounds": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "38e23bfa5e1cc0731f94c32f5fb9f19466730272f18c1bc031ba65202eb2768c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "2d157823e6a9e8227a113889a881e51adbde3001879743bfb8b9f67aec725b95",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "237108b94d1fd7a0b97375ce22b11091dc03e5fd619e345351f20ca2a6cdb17d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "b1ca5d1d5c1ae7ff7915f9f3053c99ce9640b3857c2966939a2a1ec8d212cf20",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "9c6d630e1ff86048dd50ef40110a1ae90d5f295cf7b888b0b83003fb5466a421",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "16639ee70e33a0266aec1593c0f8d3ca520648e0a761a5f614433cabae988367",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "0ec65949fbc653f6c81b9a5c237ccad6e6c774fdfdb301a8ab23ba9fc64ea6bb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "765cb3d9fa07af211b88690658bd7f5828f0bc3c1886e3a5a7502ef8461147c9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "ignoreUnknownNames": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "38e23bfa5e1cc0731f94c32f5fb9f19466730272f18c1bc031ba65202eb2768c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "2d157823e6a9e8227a113889a881e51adbde3001879743bfb8b9f67aec725b95",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "237108b94d1fd7a0b97375ce22b11091dc03e5fd619e345351f20ca2a6cdb17d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "b1ca5d1d5c1ae7ff7915f9f3053c99ce9640b3857c2966939a2a1ec8d212cf20",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "9c6d630e1ff86048dd50ef40110a1ae90d5f295cf7b888b0b83003fb5466a421",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "16639ee70e33a0266aec1593c0f8d3ca520648e0a761a5f614433cabae988367",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "0ec65949fbc653f6c81b9a5c237ccad6e6c774fdfdb301a8ab23ba9fc64ea6bb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "765cb3d9fa07af211b88690658bd7f5828f0bc3c1886e3a5a7502ef8461147c9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "9db6e6b22ad44c2f30ca89c55504cc83f4524bfc9806ed1305a8b0d875fd06b9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "b93782e62a05020b43c71a2aee92868c7d9991a5d66260756413a5dcb82f5eb5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "e7873e1f9a5c392ec276d8a3ba95408ea11924f1e6e20217ecc7c2383822af2a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "36d065030d7296f1740c46c99e74ccb02dcbcb88edce98fa59e66e0affe73748",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "1bf14702908e498d33dd270fc407b81b0b6724d8f84d738556befb7a823e1f82",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "7ee137119dfe7cd4d0f91f7e8930b4781dd5ca315425f078056ccac85738faa6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "7f592ab8e7a03cd0b3e3bf250465091e6617c141c800ed511621910aa18f0d12",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "c03272afd1687ef904b3c291b96e02333120e44101285e2302ef128e209abe3c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "8b329a19f68e767e35bdff40cf54caa9d2453e524dadeb68f507730cd0663e15",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "9db6e6b22ad44c2f30ca89c55504cc83f4524bfc9806ed1305a8b0d875fd06b9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "c56ff710fa29198e39665ba03e17f892906bed26412f4fc03558f6f658b9f4ac",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "trim": false,
+        "omitArchaic": false,
+        "omitMedieval": false,
+        "omitUncommon": false,
+        "fixes": false,
+        "tricks": false,
+        "medievalTricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false,
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "38e23bfa5e1cc0731f94c32f5fb9f19466730272f18c1bc031ba65202eb2768c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "2d157823e6a9e8227a113889a881e51adbde3001879743bfb8b9f67aec725b95",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "237108b94d1fd7a0b97375ce22b11091dc03e5fd619e345351f20ca2a6cdb17d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "b1ca5d1d5c1ae7ff7915f9f3053c99ce9640b3857c2966939a2a1ec8d212cf20",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "9c6d630e1ff86048dd50ef40110a1ae90d5f295cf7b888b0b83003fb5466a421",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "16639ee70e33a0266aec1593c0f8d3ca520648e0a761a5f614433cabae988367",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "0ec65949fbc653f6c81b9a5c237ccad6e6c774fdfdb301a8ab23ba9fc64ea6bb",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "98b086712a3684b2a6287a144dfede70540f0799e1617637ca217a8126a46493",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "765cb3d9fa07af211b88690658bd7f5828f0bc3c1886e3a5a7502ef8461147c9",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "trim": true,
+        "omitArchaic": true,
+        "omitMedieval": true,
+        "omitUncommon": true,
+        "fixes": true,
+        "tricks": true,
+        "medievalTricks": true,
+        "syncope": true,
+        "twoWords": true,
+        "compounds": true,
+        "ignoreUnknownNames": true,
+        "ignoreUnknownCaps": true
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma virumque cano",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus  est.",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "49be57e94f1a97bcc11a18d7a5830af2ff743c5d90bef452825497dfa46e0cb6",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amasti laudavere",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "b93782e62a05020b43c71a2aee92868c7d9991a5d66260756413a5dcb82f5eb5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quicumque aliquis quidam",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "3d3f1cc2ae1e40abf0320fce860be67bbd211f07659f4e29a05979e8456f1f96",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quis cuique quoque",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "f1b291c7ce69d9394d94450cb55dd21098ffaad8698fd5f021d77a449dc053d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quantacumque quicunque",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "e7873e1f9a5c392ec276d8a3ba95408ea11924f1e6e20217ecc7c2383822af2a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "mecum tecum nobiscum",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "bba873eae50997b0967d4d138ae63fa61a4c94d270d4a737faa9e49d00ea9dda",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "inutilis peramo",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "b06adcd91a4c90dcff7f6db67dbad51dcc4656085700f2899b4ce11c125a2f9e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatque amatusne",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "49d1cf41fccdf419ef62329c40c9909568fbf70d1892c21fd2f7a6e473ae9a5e",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "duodeviginti XXI IV",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "8ba3c975ded37ae3e60a7930a3fccdf6c44370005de640905ed441a49f7a6374",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "Ubi Iulius?",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "6da25efb78953aa68dc4ba22e8086614302d0f4637d00b6e3cbee76d26256dab",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "xyzzy Marcus XYZ",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "85d6edcad80e8f26400eb1914326ee159a5a6055b35132d82883dc67669ca5b5",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "qvi QVI Qvi",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "c0c13ab02eed76abe66496c09b2a16c59b5ba4b0d122a5a0f167d53b4544424d",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "vult uult volt",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "36d065030d7296f1740c46c99e74ccb02dcbcb88edce98fa59e66e0affe73748",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "aere aeri",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "eaa0d6e7f220a3cf164c62dd70d219f0872dd2df41587bd8be20ba56c3bf968f",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "bene melius optime",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "8022e66f994bc72c6aaf2558729f0020a987248e58732d1c83d2fa99db8650d4",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "sum es fui futurus",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "734f18cd1ad8d4d4200b40ef48962f39d0536d7de0376b2610624dbf9f6ec27a",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "cujus cuius",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "2af977c2f8bd5e8c311465ee3ce5231726eaa825fbd0a54f633497860dac798b",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "adfero affero",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "d4be760fc8f6e1303f87c26e15493a5aed67a60e7940803730a4960852e176a3",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "respublica res publica",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "74974959b7731b0274133afba0304c9662352097c3b58d2c177d0ad8afa8b3b2",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "iudicium judicium",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "16639ee70e33a0266aec1593c0f8d3ca520648e0a761a5f614433cabae988367",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "quocum quacum",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "9789345c450f94bb7dffa0fb73d346d43134dcef7511153279f23cbb30057889",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amavisse amasse",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "c03272afd1687ef904b3c291b96e02333120e44101285e2302ef128e209abe3c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "puella puellae puellarum",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "b36a190139028d9b7959feceab75dacae2565d7e3fec05a71db7463c5cc563c1",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo bone",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "8b329a19f68e767e35bdff40cf54caa9d2453e524dadeb68f507730cd0663e15",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "arma\nvirumque\ncano",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "2e0cd249632e930e1b5b0f50978d2d2a6c2308a641a4c7fb39b6f69613b03434",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amatus est\namo amas amat",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "c56ff710fa29198e39665ba03e17f892906bed26412f4fc03558f6f658b9f4ac",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo -- ignored",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n   \nxyzzy",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "143b1bf4d7dbb902d32dcd7dd4c52fbc291a1ec8da3810817f8d62c90c836169",
+      "nativeException": false,
+      "nativeExitCode": 0
+    },
+    {
+      "input": "amo\n\n\nlaudo",
+      "options": {
+        "fixes": false,
+        "tricks": false,
+        "syncope": false,
+        "twoWords": false,
+        "compounds": false
+      },
+      "expectedSha256": "2e4dc150157b06031fcc3c94e52ab595119770b808c78718e0ecb2afca50175c",
+      "nativeException": false,
+      "nativeExitCode": 0
+    }
+  ]
+}

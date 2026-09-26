@@ -1,0 +1,91 @@
+{
+  "created": "2026-09-26T02:19:25.375Z",
+  "reference": "words-mk270-1f2f0fb",
+  "scope": "Original routines unchanged; added caller mutates synthetic table state in an isolated copy.",
+  "sourceSha256": "9f5bef97dafeba241510f4a38e74c0f49d2f7a1f4681b4290918bde607387923",
+  "driverSha256": "66597ef13bc38366d2c33996976a76486af8121e0c555b795c46d9b14e75caaf",
+  "binarySha256": "6253c8be823ae86836138a2649310cf2832f88d0d699ac31b31e587f0e84d44b",
+  "stdoutSha256": "5ceb4cbfea3c1b24eb74a8bc05a2011138e87e7ea57fac743ccea5abcb6bfd89",
+  "rows": [
+    {
+      "kind": "PDL",
+      "count": 80,
+      "failed": false,
+      "last": 1,
+      "pdl": 80,
+      "stem": "a"
+    },
+    {
+      "kind": "PDL",
+      "count": 81,
+      "failed": true,
+      "last": 0,
+      "pdl": 81,
+      "stem": "a"
+    },
+    {
+      "kind": "SL",
+      "count": 249,
+      "failed": false,
+      "last": 1,
+      "pdl": 1,
+      "stem": "xx"
+    },
+    {
+      "kind": "SL",
+      "count": 250,
+      "failed": false,
+      "last": 1,
+      "pdl": 1,
+      "stem": "xx"
+    },
+    {
+      "kind": "SL",
+      "count": 251,
+      "failed": true,
+      "last": 0,
+      "pdl": 1,
+      "stem": "kept"
+    },
+    {
+      "kind": "SXX",
+      "count": 250,
+      "failed": false,
+      "last": 2,
+      "pdl": 2,
+      "stem": "xx"
+    },
+    {
+      "kind": "SXX",
+      "count": 252,
+      "failed": false,
+      "last": 0,
+      "pdl": 2,
+      "stem": "xx"
+    },
+    {
+      "kind": "QU",
+      "count": 249,
+      "failed": false,
+      "last": 0,
+      "pdl": 1,
+      "stem": "q"
+    },
+    {
+      "kind": "QU",
+      "count": 250,
+      "failed": false,
+      "last": 1,
+      "pdl": 1,
+      "stem": "q"
+    },
+    {
+      "kind": "QU",
+      "count": 251,
+      "failed": false,
+      "last": 0,
+      "pdl": 7,
+      "stem": "q"
+    }
+  ]
+}

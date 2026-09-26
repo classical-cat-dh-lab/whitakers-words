@@ -4,12 +4,18 @@ import type { Dataset } from './data.js';
 export function searchEnglish(data: Dataset, input: string, partOfSpeech: PartOfSpeech = 'X', trim = true): EnglishResult {
     if (typeof input !== 'string' || !POS.includes(partOfSpeech) || typeof trim !== 'boolean')
         throw new TypeError('Invalid English lookup request');
-    const lookup = (input.match(/[a-zA-Z]+/g)?.[0] ?? '').slice(0, 24).toLowerCase(), hits: EnglishIndexRow[] = [];
+    const lookup = (input.match(/[a-zA-Z]+/g)?.[0] ?? '').replaceAll('QV', 'QU').replaceAll('qv', 'qu').slice(0, 24).toLowerCase(), hits: EnglishIndexRow[] = [];
     const index = data.english;
     let left = 0, right = index.length - 1, j = Math.floor((left + right) / 2), first = true, second = true;
+    let overflow = false;
     const load = (row: EnglishIndexRow) => {
-        if (partOfSpeech === 'X' || row.pos === partOfSpeech || row.pos === 'PACK' && partOfSpeech === 'PRON')
+        if (partOfSpeech === 'X' || row.pos === partOfSpeech || row.pos === 'PACK' && partOfSpeech === 'PRON') {
+            if (hits.length === 500) {
+                overflow = true;
+                return;
+            }
             hits.push(row);
+        }
     };
     if (lookup)
         for (let attempts = 0; attempts < 100; attempts++) {
@@ -39,21 +45,27 @@ export function searchEnglish(data: Dataset, input: string, partOfSpeech: PartOf
                     if (index[i].word.toLowerCase() !== lookup)
                         break;
                     load(index[i]);
+                    if (overflow)
+                        break;
                 }
-                for (let i = j + 1; i <= right; i++) {
+                for (let i = j + 1; !overflow && i <= right; i++) {
                     if (index[i].word.toLowerCase() !== lookup)
                         break;
                     load(index[i]);
+                    if (overflow)
+                        break;
                 }
                 break;
             }
         }
-    if (hits.length > 500)
-        throw new RangeError('Legacy English hit buffer exceeds 500 records');
+    if (overflow) {
+        const diagnostics = ['exception SEARCH NUMBER_OF_HITS =  501', 'Exception in PARSE_LINE processing ' + input, 'Unexpected exception raised in PARSE'];
+        return { schemaVersion: 1, snapshot: SNAPSHOT, engineVersion: VERSION, profile: trim && partOfSpeech === 'X' ? PROFILE : 'custom', dataIdentity: { ...DATA_IDENTITY }, input, lookup, partOfSpeech, totalHits: 501, trimmed: false, hits: [], legacyText: diagnostics.join('\n') + '\n', status: 'legacy-error', truncated: true, diagnostics, legacyFailure: { stage: 'english-search', exitCode: 0 } };
+    }
     const frequency = 'XABCDEFIMN';
     hits.sort((a, b) => b.rank - a.rank || frequency.indexOf(a.frequency) - frequency.indexOf(b.frequency) || a.semi - b.semi);
     const totalHits = hits.length, trimmed = trim && totalHits > 6, selected = hits.slice(0, trimmed ? 6 : totalHits).map(index => ({ index, entry: data.entries[index.entryId - 1] }));
-    let legacyText = selected.length ? '' : 'No Match\n';
+    let legacyText = selected.length || !lookup ? '' : 'No Match\n';
     for (const { entry: e } of selected) {
         let citation = e.citation + '   ';
         const c = e.part.codes;

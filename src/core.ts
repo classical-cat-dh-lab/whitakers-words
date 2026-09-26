@@ -109,6 +109,7 @@ export function marker(affix: Affix, kind: Trace['kind'], input: string, output:
 export class LegacyCore {
     // Native PDL survives rejected attempts. It belongs to this request, not the dataset.
     private candidates: Stem[] = [];
+    private candidateCount = 0;
     // QU/PACK searches still consume SSA(1) when no new inflection replaces it.
     private reducedStem = 'x'.repeat(18);
     onlyFixes = false;
@@ -127,7 +128,7 @@ export class LegacyCore {
         this.packons = data.affixes.filter(a => a.kind === 'TACKON' && a.codes[0] === 'PACK' && ['1', '2'].includes(a.codes[1]) && a.meaning.startsWith('PACKON w/'));
         this.tackons = data.affixes.filter(a => a.kind === 'TACKON' && !this.packons.includes(a));
     }
-    pairs(word: string, qu = false): {
+    pairs(word: string, qu = false, accept: (rule: Rule) => boolean = () => true, onAppend?: (stem: string) => void): {
         stem: string;
         rule: Rule;
     }[] {
@@ -135,11 +136,19 @@ export class LegacyCore {
             stem: string;
             rule: Rule;
         }[] = [];
+        const append = (stem: string, rule: Rule) => {
+            if (!accept(rule))
+                return;
+            if (out.length === 250)
+                throw new LegacyConstraintError('Legacy inflection buffer exceeds 250 records');
+            out.push({ stem, rule });
+            onAppend?.(stem);
+        };
         if (!word)
             return out;
         if (!qu && word.length <= 18)
             for (const rule of this.data.endings.get('0:') ?? [])
-                out.push({ stem: word, rule });
+                append(word, rule);
         if (!qu && !('acdeimnorst u'.replaceAll(' ', '').includes(word.at(-1)!)))
             return out;
         for (let size = Math.min(qu ? 6 : 7, word.length); size >= 1; size--) {
@@ -149,13 +158,14 @@ export class LegacyCore {
                 const special = rule.quality.pos === 'PRON' && ['1', '2'].includes(rule.quality.codes[0]);
                 if (qu !== special || !eq(rule.ending, word.slice(-size)))
                     continue;
-                out.push({ stem: word.slice(0, -size), rule });
+                append(word.slice(0, -size), rule);
             }
         }
         return out;
     }
     private search(stems: string[], restriction: 'regular' | 'qu' | 'pack' = 'regular'): void {
         this.candidates = [];
+        this.candidateCount = 0;
         const input = [...new Set(stems)].sort((a, b) => a.length - b.length);
         if (!input.length)
             return;
@@ -163,7 +173,9 @@ export class LegacyCore {
             const p = item.entry.part;
             if (restricted && (restriction === 'regular' && (p.pos === 'PACK' || p.pos === 'PRON' && p.codes[0] === '1') || restriction === 'qu' && !(p.pos === 'PRON' && p.codes[0] === '1') || restriction === 'pack' && p.pos !== 'PACK'))
                 return;
-            if (this.candidates.length === 80)
+            // Ada increments PDL_Index before the failing assignment. The
+            // invalid count survives Word rollback and can affect Only_Fixes.
+            if (++this.candidateCount > 80)
                 throw new LegacyConstraintError('Legacy PDL exceeds 80 records');
             this.candidates.push(item);
         };
@@ -222,9 +234,17 @@ export class LegacyCore {
             right = range[1];
         }
     }
+    private *candidateRows(): Generator<Stem> {
+        const last = this.candidateCount;
+        for (let i = 0; i < last; i++) {
+            if (i >= 80)
+                throw new LegacyConstraintError('Legacy PDL index exceeds 80 records');
+            yield this.candidates[i];
+        }
+    }
     basic(word: string, restriction: 'regular' | 'qu' | 'pack' = 'regular', retained = false, pack?: Affix, destination?: ParseBuffer, packInput = word): Parse[] {
         const out: Parse[] = [];
-        const pairs = this.pairs(word, restriction !== 'regular').filter(pair => (restriction !== 'qu' || pair.rule.key === (word.startsWith('qu') || word.startsWith('aliqu') ? 1 : 2) && pair.rule.ending.length <= 4) && (!pack || decn(pair.rule.quality.codes, pack.codes.slice(1))));
+        const pairs = this.pairs(word, restriction !== 'regular', rule => (restriction !== 'qu' || rule.key === (word.startsWith('qu') || word.startsWith('aliqu') ? 1 : 2) && rule.ending.length <= 4) && (!pack || decn(rule.quality.codes, pack.codes.slice(1))), restriction === 'regular' ? undefined : stem => { this.reducedStem = stem; });
         if (restriction === 'regular') {
             if (!pairs.length)
                 return out;
@@ -237,9 +257,7 @@ export class LegacyCore {
                 this.reducedStem = pairs.at(-1)!.stem;
             this.search([this.reducedStem], restriction);
         }
-        if (pairs.length > 250)
-            throw new LegacyConstraintError('Legacy inflection buffer exceeds 250 records');
-        for (const item of this.candidates) {
+        for (const item of this.candidateRows()) {
             for (const pair of pairs) {
                 // Reduce_Stem_List joins the retained PDL by stem length, not spelling.
                 if (restriction === 'regular' && item.stem.length !== pair.stem.length)
@@ -270,6 +288,9 @@ export class LegacyCore {
                     out.push(record);
                 }
             }
+            // QU/PACK scans until a null record rather than the array bound.
+            if (restriction !== 'regular' && pairs.length === 250)
+                throw new LegacyConstraintError('Legacy pronoun inflection sentinel exceeds 250 records');
         }
         return restriction === 'regular' ? sorted(out) : out;
     }
@@ -352,7 +373,7 @@ export class LegacyCore {
             if (!roots.length)
                 return hits;
             this.search(roots);
-            for (const item of this.candidates) {
+            for (const item of this.candidateRows()) {
                 for (const pair of pairs) {
                     if (Math.min(18, item.stem.length + (prefix?.fix.length ?? 0) + (suffix?.fix.length ?? 0)) !== pair.stem.length)
                         continue;

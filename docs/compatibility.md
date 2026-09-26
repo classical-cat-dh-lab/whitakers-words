@@ -16,13 +16,14 @@ maintained mk270 lineage, not a reconstruction of historical 1.97FC.
 | Robustness | Checksum corruption, invalid options, UTF-16 spans, legacy Unicode splitting, long input, compounds, corrected isolation and repeated calls pass |
 | Student reading view | All 3,953 inputs retain every candidate and explanatory row in order, without mutating the legacy result; all source class combinations and all 39,336 dictionary entries have display mappings |
 
-`npm run verify` runs the offline build and thirty-one test groups: the original
+`npm run verify` runs the offline build and thirty-six test groups: the original
 nine engine/adapter groups, four student-display groups and three offline-storage
 groups, plus two browser-input/comparison-contract groups and two documentation
 rendering/preservation groups, plus two search-state and request-isolation groups,
 and one source-audit option/width group, plus three parse-storage, runtime-surface
 and native-addon-reader groups, and five exceptional-session, termination, CLI
-and native-capacity groups.
+and native-capacity groups, plus five dictionary/inflection-capacity,
+sequence/option and full-English-index groups.
 The search-state fixtures preserve fresh native observations for failed attempts,
 affix fallback, distinct dictionary/affix spelling comparisons and transformed
 part-of-speech checks. The website also passes bounded Chromium/WebKit offline checks and eight
@@ -77,6 +78,28 @@ checkpoint does not establish universal exceptional-path equivalence and has not
 been published as a release. See [the result contract](api.md).
 
 ## Observed legacy behavior retained
+
+The subsequent capacity review qualifies ten synthetic native caller states:
+dictionary candidates at 80/81, inflections at 249/250/251, reduced records at
+250/252, and QU processing at 249/250/251. It preserves failing-write timing,
+the retained 81st candidate count, and the QU/PACK read beyond a full 250-slot
+array while searching for its null sentinel. All ten states match, compared with
+six before this repair. These are injected caller/table states in an isolated
+native copy; the original matching routines are unchanged.
+
+All **23,808 nonempty distinct English index spellings**, plus 192 POS/trim/input
+probes, match both native builds: **24,000/24,000**, versus 23,963 before repair,
+with no regressions. Five observations intentionally reproduce the original
+500-hit overflow; they are failure outcomes, not successful lookups. The other
+resolved observations cover native QV conversion and input with no ASCII word.
+Another **512 Latin sessions across 16 option profiles** match both native builds,
+including combined settings and multiline sequences. Portable tests also reverse
+request order. These finite profiles do not qualify every option/input combination.
+
+The complete **4,144,877-query** Latin replay after these repairs retains all
+**4,144,873 normal matches** and both original native failure outcomes, with no
+new differences or port failures. The two original comparator exclusions remain
+separate. This capacity checkpoint is local and has not been released.
 
 - Unique entries retain the original null part initialization (`X`), even when
   their parse quality is a noun, pronoun or verb. Citation artifacts remain.

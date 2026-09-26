@@ -77,11 +77,17 @@ where the selected source has disabled its original handling.
 ## English and corrected layers
 
 `lookupEnglish(input, partOfSpeech = 'X', trim = true)` uses the first ASCII word,
-limited to the native 24-character English lookup width. It returns entry/index
+applies the native `QV`/`qv` to `QU`/`qu` conversion, then limits the lookup to
+24 characters. Input without an ASCII word produces no legacy output. It returns entry/index
 provenance, total hit count, visible hits and legacy text. Default trimming shows
 the first six hits in original rank/frequency/semicolon order. POS filtering and
-untrimmed output are custom profiles. The native 500-hit buffer limit raises an
-explicit error if exceeded.
+untrimmed output are custom profiles. On the attempted 501st accepted hit, the
+native 500-slot buffer fails before sorting or displaying any hit. The result
+returns `status: legacy-error`, `truncated: true`, `totalHits: 501` (the attempted
+count), `trimmed: false`, no hits, and the original three diagnostic lines in
+`diagnostics` and `legacyText`. `legacyFailure` records `stage: english-search`
+and `exitCode: 0`. CLI and JSONL termination follow the same failure contract as
+Latin analysis. A later independent call remains usable.
 
 `applyCorrectedLayer(legacy, selectedDeviations = [])` returns separate `legacy`
 and `corrected` values plus the selected layer ID. Currently the registry is empty:
