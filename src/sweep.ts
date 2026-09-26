@@ -1,6 +1,7 @@
 // Ordered translations of List_Package.Fix_Adverb and List_Sweep.
 import { type Parse, type LegacyOptions } from './model.js';
 import { compareQ, dictionaryOrder, emptyEntry, emptyRule, nullParse, sameParse, sameQuality, LegacyConstraintError } from './core.js';
+import { ParseBuffer } from './buffer.js';
 function allowed(p: Parse): boolean {
     if (p.dictionary !== 'GEN' || p.rule.quality.pos !== 'V')
         return true;
@@ -24,7 +25,7 @@ function allowed(p: Parse): boolean {
 const xon = (p: Parse) => ['TACKON', 'PREFIX', 'SUFFIX'].includes(p.rule.quality.pos);
 const artificial = (p: Parse) => ['ADDONS', 'XXX', 'YYY'].includes(p.dictionary);
 const clone = (p: Parse): Parse => ({ ...p, rule: { ...p.rule, quality: { ...p.rule.quality, codes: [...p.rule.quality.codes] } } });
-export function sweep(input: Parse[], options: LegacyOptions, context: {
+export function sweep(input: Parse[] | ParseBuffer, options: LegacyOptions, context: {
     allCaps?: boolean;
     period?: boolean;
 } = {}): {
@@ -32,16 +33,14 @@ export function sweep(input: Parse[], options: LegacyOptions, context: {
     trimmed: boolean;
 } {
     // Keep the storage beyond Last: Ada slice assignments leave those slots intact.
-    const pa = [nullParse, ...input.map(clone)];
-    let last = input.length, trimmed = false;
-    const get = (i: number): Parse => pa[i] ?? nullParse;
-    const copy = (to: number, from: number, count: number) => {
-        const values = Array.from({ length: Math.max(0, count) }, (_, i) => get(from + i));
-        values.forEach((p, i) => { pa[to + i] = p; });
-    };
+    const original = input instanceof ParseBuffer ? input : new ParseBuffer(100, input.map(clone));
+    let storage = original, last = original.last, trimmed = false;
+    const get = (i: number): Parse => storage.get(i);
+    const put = (i: number, p: Parse) => storage.set(i, p);
+    const copy = (to: number, from: number, count: number) => storage.copy(to, from, count);
     const remove = (i: number, end: number) => copy(i, i + 1, end - i);
     let pppMeaning: string | undefined;
-    if (options.fixes && !input.some(p => p.rule.quality.pos === 'ADV')) {
+    if (options.fixes && !original.read().some(p => p.rule.quality.pos === 'ADV')) {
         let j1 = 0, j2 = 0;
         for (let i = last; i >= 1; i--) {
             const q = get(i).rule.quality, c = q.codes;
@@ -63,25 +62,30 @@ export function sweep(input: Parse[], options: LegacyOptions, context: {
                 j--;
             }
             for (let k = j1 + 1; k <= j2; k++)
-                pa[last + k - j1 + 1] = get(k);
+                put(last + k - j1 + 1, get(k));
             last += j2 - j1 + 1;
-            pa[last] = { stem: 'e', rule: { ...emptyRule, quality: { pos: 'SUFFIX', codes: [] }, frequency: 'B' }, entry: emptyEntry, dictionary: 'PPP', traces: [] };
+            put(last, { stem: 'e', rule: { ...emptyRule, quality: { pos: 'SUFFIX', codes: [] }, frequency: 'B' }, entry: emptyEntry, dictionary: 'PPP', traces: [] });
             last++;
             if (last > 100)
                 throw new LegacyConstraintError('Legacy Fix_Adverb parse buffer overflow');
             const p = get(j2 + 1), comparison = p.rule.quality.codes[5];
             if (comparison === 'POS' || comparison === 'SUPER') {
                 pppMeaning = comparison === 'POS' ? '-ly; -ily;  Converting ADJ to ADV' : '-estly; -estily; most -ly, very -ly  Converting ADJ to ADV';
-                pa[last] = { ...p, rule: { ...emptyRule, quality: { pos: 'ADV', codes: [comparison] }, ending: comparison === 'POS' ? 'e' : 'me', frequency: 'B' } };
+                put(last, { ...p, rule: { ...emptyRule, quality: { pos: 'ADV', codes: [comparison] }, ending: comparison === 'POS' ? 'e' : 'me', frequency: 'B' } });
             }
         }
     }
+    original.last = last;
+    if (!last)
+        return { parses: [], trimmed };
+    storage = original.view(last);
     const pronKinds = ['X', 'PERS', 'REL', 'REFLEX', 'DEMONS', 'INTERR', 'INDEF', 'ADJECT'];
     for (let i = 1; i <= last; i++) {
         const p = get(i);
         if (p.dictionary === 'GEN' && p.entry.part.pos === 'PRON' && p.entry.part.codes[0] === '1') {
-            pa[i] = clone(p);
-            pa[i].rule.quality.codes[1] = String(pronKinds.indexOf(p.entry.part.codes[2]));
+            const updated = clone(p);
+            updated.rule.quality.codes[1] = String(pronKinds.indexOf(p.entry.part.codes[2]));
+            put(i, updated);
         }
     }
     const order = (first: number, end: number): number => {
@@ -94,14 +98,16 @@ export function sweep(input: Parse[], options: LegacyOptions, context: {
             let hits = 0;
             for (let i = first; i < end; i++)
                 if (swap(get(i), get(i + 1))) {
-                    [pa[i], pa[i + 1]] = [get(i + 1), get(i)];
+                    const left = get(i);
+                    put(i, get(i + 1));
+                    put(i + 1, left);
                     hits++;
                 }
             if (!hits)
                 break;
         }
         if (options.trim) {
-            const items = pa.slice(first, end + 1);
+            const items = storage.read(first, end);
             const nonArchaic = items.some(p => p.dictionary === 'GEN' && p.rule.age !== 'A' && p.entry.flags[0] !== 'A');
             const nonMedieval = items.some(p => p.dictionary === 'GEN' && 'XABCDE'.includes(p.rule.age) && 'XABCDE'.includes(p.entry.flags[0]));
             const nonUncommon = items.some(p => p.dictionary === 'GEN' && 'XAB'.includes(p.rule.frequency) && 'XABC'.includes(p.entry.flags[3]));
@@ -186,5 +192,7 @@ export function sweep(input: Parse[], options: LegacyOptions, context: {
         if (p.dictionary === 'PPP' && pppMeaning !== undefined)
             p.entry = { ...p.entry, meaning: pppMeaning };
     }
+    original.last = last;
+    parses.forEach((p, i) => original.set(i + 1, p));
     return { parses, trimmed };
 }

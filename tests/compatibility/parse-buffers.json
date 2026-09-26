@@ -1,0 +1,1420 @@
+{
+  "reference": "words-mk270-1f2f0fb",
+  "comparison": "Trim trailing line whitespace and outer frame whitespace; preserve internal order and multiplicity.",
+  "nativeBuilds": [
+    "ad10670238d1418a2f1ba757582dc8732e1e8712fdd3dd82861183dce1e276c9",
+    "c77d4f09b82585897b25252e0613a3d0edb058d00c95ad0605458135b7c9cef8"
+  ],
+  "cases": [
+    {
+      "input": "Aesopice",
+      "options": {},
+      "expected": "ic                   SUFFIX\n-ic; of, pertaining/belonging to; connected with; derived/coming from (place);\naesop.i              N      2 1 NOM P M\nAesopus, Aesopi  N (2nd) M   [XGHCO]\naesopic.e            ADJ    1 1 VOC S M POS\nAesop (Greek author of fables); (Roman tragic actor contemporary with Cicero);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\naesopic.e            ADV    POS\nAesopus, Aesopi  N (2nd) M   [XGHCO]\nAesop (Greek author of fables); (Roman tragic actor contemporary with Cicero);",
+      "nativeStdoutSha256": "1c1ab9559043017489ec46da0ec179cfd577935ef6e08a0e65aaa0bd3a14cbc2"
+    },
+    {
+      "input": "Coscine",
+      "options": {},
+      "expected": "ne                   TACKON\n-ne = is it not that (enclitic); or ...(introduces a question or alternative);\nWord mod co/con\nAn initial 'co' may be rendered by 'con'\nconsc.i              V      4 1 PRES ACTIVE  IMP 2 S\nconscio, conscire, conscivi, -  V (4th)   [XXXEO]    uncommon\nfeel guilty; be conscious of (wrong); have on conscience; know well (late);\nconsci               N      2 4 GEN S C                   Early\nconscius, consci(i)  N (2nd) C   [XXXDO]    lesser\naccomplice, accessory; partner; confidante; one privy to (crime/plot); witness;",
+      "nativeStdoutSha256": "21835251486b0eb8959b385cb35e7274708ab096932530d80b78ae5011c059b2"
+    },
+    {
+      "input": "CosCine",
+      "options": {},
+      "expected": "ne                   TACKON\n-ne = is it not that (enclitic); or ...(introduces a question or alternative);\nWord mod co/con\nAn initial 'co' may be rendered by 'con'\nconsc.i              V      4 1 PRES ACTIVE  IMP 2 S\nconscio, conscire, conscivi, -  V (4th)   [XXXEO]    uncommon\nfeel guilty; be conscious of (wrong); have on conscience; know well (late);\nconsci               N      2 4 GEN S C                   Early\nconscius, consci(i)  N (2nd) C   [XXXDO]    lesser\naccomplice, accessory; partner; confidante; one privy to (crime/plot); witness;",
+      "nativeStdoutSha256": "21835251486b0eb8959b385cb35e7274708ab096932530d80b78ae5011c059b2"
+    },
+    {
+      "input": "nerati",
+      "options": {},
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\nrati                 ADV    POS\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;",
+      "nativeStdoutSha256": "332ae06448c7f98c4429b480c4dfa279b4d4c8fc1138a8624ffba16661d9ef0d"
+    },
+    {
+      "input": "Nerati",
+      "options": {},
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\nrati                 ADV    POS\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;",
+      "nativeStdoutSha256": "332ae06448c7f98c4429b480c4dfa279b4d4c8fc1138a8624ffba16661d9ef0d"
+    },
+    {
+      "input": "nepotati",
+      "options": {},
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\npotati               ADV    POS\npoto, potare, potavi, potatus  V (1st)   [XXXAO]\ndrink; drink heavily/convivially, tipple; swallow; absorb, soak up;\nat                   SUFFIX\n-ate, -ship, the office of; official body (consul.atus = consulate, consulship)\nnepotat.i            N      4 1 GEN S M                   Archaic\nnepos, nepotis  N (3rd) C   [XXXAX]\ngrandson/daughter; descendant; spendthrift, prodigal, playboy; secondary shoot;\nat                   SUFFIX\n-ed, having, having a, provided with; -able;\nnepotat.i            ADJ    1 1 GEN S M POS\nnepotat.i            ADJ    1 1 GEN S N POS\nnepotat.i            ADJ    1 1 NOM P M POS\nnepotat.i            ADJ    1 1 VOC P M POS\nnepos, nepotis  N (3rd) C   [XXXAX]\ngrandson/daughter; descendant; spendthrift, prodigal, playboy; secondary shoot;",
+      "nativeStdoutSha256": "b5fffdf1b7584ff3a15dc777a7bd2698ac0901ee828c979f90d2ad4211c767fe"
+    },
+    {
+      "input": "nonadecima",
+      "options": {},
+      "expected": "Two words\nIt is very likely a compound number    nona + decima\ndecim.a              NUM    2 0 NOM S F ORD\ndecim.a              NUM    2 0 VOC S F ORD\ndecim.a              NUM    2 0 ABL S F ORD\ndecim.a              NUM    2 0 NOM P N ORD\ndecem, decimus -a -um, deni -ae -a, decie (n)s  NUM   [XXXBO]\n 10th - (ORD, 'in series'); (a/the) 10th (part) (fract w/pars?);\nnon.a                N      1 1 VOC S F\nNona, Nonae  N (1st) F   [XXXDX]    lesser\nNones (pl.), abb. Non.; 7th of month, March, May, July, Oct., 5th elsewhen;\nnon.a                NUM    2 0 NOM S F ORD\nnon.a                NUM    2 0 VOC S F ORD\nnon.a                NUM    2 0 ABL S F ORD\nnon.a                NUM    2 0 NOM P N ORD\nnon.a                NUM    2 0 VOC P N ORD\nnon.a                NUM    2 0 ACC P N ORD\nnovem, nonus -a -um, noveni -ae -a, novie (n)s  NUM   [XXXBX]\n 9th - (ORD, 'in series'); (a/the) 9th (part) (fract w/pars?);\n*",
+      "nativeStdoutSha256": "fb0264cfb841f8b3c9294a05d178c4d6a2b780753e16ed5667afbc3aafc9619d"
+    },
+    {
+      "input": "nonadecimvm",
+      "options": {},
+      "expected": "Two words\nIt is very likely a compound number    nona + decimvm\ndecim.um             NUM    2 0 NOM S N ORD\ndecim.um             NUM    2 0 VOC S N ORD\ndecem, decimus -a -um, deni -ae -a, decie (n)s  NUM   [XXXBO]\n 10th - (ORD, 'in series'); (a/the) 10th (part) (fract w/pars?);\nnon.a                N      1 1 VOC S F\nNona, Nonae  N (1st) F   [XXXDX]    lesser\nNones (pl.), abb. Non.; 7th of month, March, May, July, Oct., 5th elsewhen;\nnon.a                NUM    2 0 NOM S F ORD\nnon.a                NUM    2 0 VOC S F ORD\nnon.a                NUM    2 0 ABL S F ORD\nnon.a                NUM    2 0 NOM P N ORD\nnon.a                NUM    2 0 VOC P N ORD\nnon.a                NUM    2 0 ACC P N ORD\nnovem, nonus -a -um, noveni -ae -a, novie (n)s  NUM   [XXXBX]\n 9th - (ORD, 'in series'); (a/the) 9th (part) (fract w/pars?);\n*",
+      "nativeStdoutSha256": "4bd2d3818c2fa8d817694a3511016306143d6834844077247c6c2e8ad18737f6"
+    },
+    {
+      "input": "laurice",
+      "options": {},
+      "expected": "ic                   SUFFIX\n-ic; of, pertaining/belonging to; connected with; derived/coming from (place);\nlauric.e             ADJ    1 1 VOC S M POS\nlaura, laurae  N (1st) F   [EEEFE]    Later  veryrare\nmonastery; settlement of anchorites in Egypt;\nlaurus, lauri  N (2nd) F   [XXXBO]\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\n*",
+      "nativeStdoutSha256": "5eeb1d7bb3c5f82a1a28f69231b8f46290279db9d5645c885aa781fe5a3f2814"
+    },
+    {
+      "input": "potevis",
+      "options": {},
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\npot.e                ADJ    1 1 VOC S M POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\npote                 ADJ    9 9 X   X X POS\npote, undeclined  ADJ   [XXXDX]    lesser\nable, capable; possible  (early Latin);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\npot.e                ADV    POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\n*",
+      "nativeStdoutSha256": "4f581d51789d12931c569f0721217b14a97ab82ab9d6cd9fe534af983db0c694"
+    },
+    {
+      "input": "poteuis",
+      "options": {},
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\npot.e                ADJ    1 1 VOC S M POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\npote                 ADJ    9 9 X   X X POS\npote, undeclined  ADJ   [XXXDX]    lesser\nable, capable; possible  (early Latin);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\npot.e                ADV    POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\n*",
+      "nativeStdoutSha256": "4f581d51789d12931c569f0721217b14a97ab82ab9d6cd9fe534af983db0c694"
+    },
+    {
+      "input": "quantacumque",
+      "options": {},
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nac                   SUFFIX\n-ing; having a tendency;\nquantac.um           ADJ    3 1 GEN P X POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "57a003f035ce0b2a64580e23eceb344a3eb0e5757cb71a57ba3f0eb5a423e6e3"
+    },
+    {
+      "input": "quantacunque",
+      "options": {},
+      "expected": "cunque               TACKON\n-ever/-soever; (for generalized/indefinite force); (what/how -> what/however);\nquant.a              ADJ    1 1 NOM S F POS\nquant.a              ADJ    1 1 VOC S F POS\nquant.a              ADJ    1 1 ABL S F POS\nquant.a              ADJ    1 1 NOM P N POS\nquant.a              ADJ    1 1 VOC P N POS\nquant.a              ADJ    1 1 ACC P N POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "e5d1945199c4f28ae95bfbc67c24380e0ce7d1a560674bef3b69ea70c3e9f8e4"
+    },
+    {
+      "input": "utercumque",
+      "options": {},
+      "expected": "Two words\nMay be 2 words combined (uter+cumque) If not obvious, probably incorrect\ncumque               ADV    POS\ncumque  ADV   [XXXEO]    uncommon\nat any time; -ever, -soever; appended to give generalized/indefinite force;\nuter                 N      3 3 NOM S M\nuter                 N      3 3 VOC S M\nuter, utris  N (3rd) M   [XXXDS]    lesser\nuter                 N      3 4 NOM S N\nuter                 N      3 4 VOC S N\nuter                 N      3 4 ACC S N\nuter, utris  N (3rd) N   [XXXDS]    lesser\nskin; wine/water skin; bag/bottle made of skin/hide; (inflated for flotation);\nuter                 ADJ    1 4 NOM S M POS\nuter                 ADJ    1 4 VOC S M POS\nuter, utra, utrum  ADJ   [XXXAO]\nwhich (of two), whichever, no matter which; one, either, one or other;\n(w/que) each/either (of two); both (separately); each side (pl.), each set;\n*",
+      "nativeStdoutSha256": "67c9c897db5756c1e26b0dcb458777377ff06ebcfe44174c1bcff63ff33f6922"
+    },
+    {
+      "input": "utercunque",
+      "options": {},
+      "expected": "cunque               TACKON\n-ever/-soever; (for generalized/indefinite force); (what/how -> what/however);\nuter                 ADJ    1 4 NOM S M POS\nuter                 ADJ    1 4 VOC S M POS\nuter, utra, utrum  ADJ   [XXXAO]\nwhich (of two), whichever, no matter which; one, either, one or other;\n(w/que) each/either (of two); both (separately); each side (pl.), each set;",
+      "nativeStdoutSha256": "b00ae1efcd134c3ab3c431d8f2da863ac475aff95b8591883ceeaeb18ab1f43e"
+    },
+    {
+      "input": "cvivscvmqve",
+      "options": {},
+      "expected": "Two words\nMay be 2 words combined (cvivs+cvmque) If not obvious, probably incorrect\ncvi.us               ADJ    1 1 NOM S M POS\ncujus, cuja, cujum  ADJ   [XXXCO]\nof whom?, whose?; (interrogative); of/to whom, whose (relative);\ncvmque               ADV    POS\ncumque  ADV   [XXXEO]    uncommon\nat any time; -ever, -soever; appended to give generalized/indefinite force;\n*",
+      "nativeStdoutSha256": "f41a950689d98fcfb50a73d4404fecf93c6ba3f1846bb85ed2bbd8c1982a87c1"
+    },
+    {
+      "input": "quantavis",
+      "options": {},
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\nquant.a              ADJ    1 1 NOM S F POS\nquant.a              ADJ    1 1 VOC S F POS\nquant.a              ADJ    1 1 ABL S F POS\nquant.a              ADJ    1 1 NOM P N POS\nquant.a              ADJ    1 1 VOC P N POS\nquant.a              ADJ    1 1 ACC P N POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "4a8606753693e14ee51b3c5e6a6d50053c8d0eb5b1c95051b857755218a2b962"
+    },
+    {
+      "input": "quicumque",
+      "options": {},
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;",
+      "nativeStdoutSha256": "0219b7d1ac2b3c796fd5f2b21a31310a95ab6042a3da380c416f14f49e5cce58"
+    },
+    {
+      "input": "quicunque",
+      "options": {},
+      "expected": "cunque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cunque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncunque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cunque) who/whatever, no matter who/what, in any time/way, however small;",
+      "nativeStdoutSha256": "2ceb1fc4b511c813eb1dc6c30c527f73d85368c576297fc6bcd1620d1fcea3b2"
+    },
+    {
+      "input": "quisque",
+      "options": {},
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nqu.is                PRON   1 0 NOM S C\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nqu.is                PRON   1 0 NOM S C\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nanyone/anybody/anything; whoever you pick; something (or other); any (NOM S);\nqui.s                V      6 1 PRES ACTIVE  IND 2 S\nqueo, quire, quivi(ii), quitus  V   [XXXBX]\nbe able;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nqu.is                PRON   1 0 NOM S C\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;",
+      "nativeStdoutSha256": "a4d08e7f11d43d10030ed76a4d75a75c5b70f1d91aab8ae9f4570157a8aadc77"
+    },
+    {
+      "input": "quidam",
+      "options": {},
+      "expected": "dam                  TACKON\nPACKON w/qui => certain; a certain (one); a certain thing;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXBX]\nqu.i                 PRON   1 0 NOM S M\n(w/-dam) certain; as INDEF a certain thing; somebody, one, something;",
+      "nativeStdoutSha256": "ff380efd4d549d2cd858e08a60d11d0d7fbfaa99a090e8f0fb93d116c66506ce"
+    },
+    {
+      "input": "multusque",
+      "options": {},
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nmult.us              ADJ    1 1 NOM S M POS\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;",
+      "nativeStdoutSha256": "306717eb8dd9278e358ae4e3d050d2ab5e03b05884eb1ba04688d83b1d8d9b3b"
+    },
+    {
+      "input": "amasti",
+      "options": {},
+      "expected": "Syncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\namav.isti            V      1 1 PERF ACTIVE  IND 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "e2c6d50e6b56338abe5af2881acd827258f302b768d01d6a6ad84d704a60fa80"
+    },
+    {
+      "input": "audierunt",
+      "options": {},
+      "expected": "Syncope  ier=>iver\nSyncopated perfect often drops the 'v' and contracts vowel\naudiv.erunt          V      4 1 PERF ACTIVE  IND 3 P\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;",
+      "nativeStdoutSha256": "12af70375565d058e56fb1e60e0f83cc22b6e7fc8caef4ff49ad8ba0d3651241"
+    },
+    {
+      "input": "coissem",
+      "options": {},
+      "expected": "Word mod co/com\nAn initial 'co' may be rendered by 'com'\nSyncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\ncoiv.issem           V      6 1 PLUP ACTIVE  SUB 1 S\ncoeo, coire, coivi(ii), coitus  V   [XXXAO]\nfit together; have sexual intercourse; collect/gather (fluid); meet; rally;\nenter agreement; unite/assemble/conspire; come/go together; mend/knit (wound);\n*",
+      "nativeStdoutSha256": "bfd8f784dfce51af213907e565fb4b9e96a1ff2fc74d3ff77645a976a0dd78a1"
+    },
+    {
+      "input": "amatus est",
+      "options": {},
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "5b42cdbf11077eff80101805a69486f096a86def7be0aa544530ce68e17f7ce9"
+    },
+    {
+      "input": "amatum iri",
+      "options": {},
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "0ab80246530c68df13d8cb83d5a2593c49919360501c3e33f058076c04e382f0"
+    },
+    {
+      "input": "bone",
+      "options": {},
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nbon.e                ADV    POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;",
+      "nativeStdoutSha256": "a5f07ba94565ef3235c94c016b029452a190361cab12b640e472547b85197a09"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaa",
+      "options": {},
+      "expected": "quaaaaaaaaaaaaaaaaa            ========   UNKNOWN",
+      "nativeStdoutSha256": "1319b7950bea461132a43cfbae491f6f60091d3e8ac1a91c91b0f84f3cef7a7a"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {},
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN",
+      "nativeStdoutSha256": "f552a2a321d03e0d65ce002fe57083b994fc6794cbed9798759cfe8d33e91789"
+    },
+    {
+      "input": "Aesopice",
+      "options": {
+        "trim": false
+      },
+      "expected": "ic                   SUFFIX\n-ic; of, pertaining/belonging to; connected with; derived/coming from (place);\naesop.i              N      2 1 NOM P M\nAesopus, Aesopi  N (2nd) M   [XGHCO]\naesopic.e            ADJ    1 1 VOC S M POS\nAesop (Greek author of fables); (Roman tragic actor contemporary with Cicero);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\naesopic.e            ADV    POS\nAesopus, Aesopi  N (2nd) M   [XGHCO]\nAesop (Greek author of fables); (Roman tragic actor contemporary with Cicero);",
+      "nativeStdoutSha256": "1c1ab9559043017489ec46da0ec179cfd577935ef6e08a0e65aaa0bd3a14cbc2"
+    },
+    {
+      "input": "Coscine",
+      "options": {
+        "trim": false
+      },
+      "expected": "ne                   TACKON\n-ne = is it not that (enclitic); or ...(introduces a question or alternative);\nWord mod co/con\nAn initial 'co' may be rendered by 'con'\nconsc.i              V      4 1 PRES ACTIVE  IMP 2 S\nconscio, conscire, conscivi, -  V (4th)   [XXXEO]    uncommon\nfeel guilty; be conscious of (wrong); have on conscience; know well (late);\nconsci               N      2 4 GEN S C                   Early\nconscius, consci(i)  N (2nd) C   [XXXDO]    lesser\naccomplice, accessory; partner; confidante; one privy to (crime/plot); witness;",
+      "nativeStdoutSha256": "21835251486b0eb8959b385cb35e7274708ab096932530d80b78ae5011c059b2"
+    },
+    {
+      "input": "CosCine",
+      "options": {
+        "trim": false
+      },
+      "expected": "ne                   TACKON\n-ne = is it not that (enclitic); or ...(introduces a question or alternative);\nWord mod co/con\nAn initial 'co' may be rendered by 'con'\nconsc.i              V      4 1 PRES ACTIVE  IMP 2 S\nconscio, conscire, conscivi, -  V (4th)   [XXXEO]    uncommon\nfeel guilty; be conscious of (wrong); have on conscience; know well (late);\nconsci               N      2 4 GEN S C                   Early\nconscius, consci(i)  N (2nd) C   [XXXDO]    lesser\naccomplice, accessory; partner; confidante; one privy to (crime/plot); witness;",
+      "nativeStdoutSha256": "21835251486b0eb8959b385cb35e7274708ab096932530d80b78ae5011c059b2"
+    },
+    {
+      "input": "nerati",
+      "options": {
+        "trim": false
+      },
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\nrati                 ADV    POS\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;",
+      "nativeStdoutSha256": "332ae06448c7f98c4429b480c4dfa279b4d4c8fc1138a8624ffba16661d9ef0d"
+    },
+    {
+      "input": "Nerati",
+      "options": {
+        "trim": false
+      },
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\nrati                 ADV    POS\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;",
+      "nativeStdoutSha256": "332ae06448c7f98c4429b480c4dfa279b4d4c8fc1138a8624ffba16661d9ef0d"
+    },
+    {
+      "input": "nepotati",
+      "options": {
+        "trim": false
+      },
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\npotati               ADV    POS\npoto, potare, potavi, potatus  V (1st)   [XXXAO]\ndrink; drink heavily/convivially, tipple; swallow; absorb, soak up;\nat                   SUFFIX\n-ate, -ship, the office of; official body (consul.atus = consulate, consulship)\nnepotat.i            N      4 1 GEN S M                   Archaic\nnepos, nepotis  N (3rd) C   [XXXAX]\ngrandson/daughter; descendant; spendthrift, prodigal, playboy; secondary shoot;\nat                   SUFFIX\n-ed, having, having a, provided with; -able;\nnepotat.i            ADJ    1 1 GEN S M POS\nnepotat.i            ADJ    1 1 GEN S N POS\nnepotat.i            ADJ    1 1 NOM P M POS\nnepotat.i            ADJ    1 1 VOC P M POS\nnepos, nepotis  N (3rd) C   [XXXAX]\ngrandson/daughter; descendant; spendthrift, prodigal, playboy; secondary shoot;",
+      "nativeStdoutSha256": "b5fffdf1b7584ff3a15dc777a7bd2698ac0901ee828c979f90d2ad4211c767fe"
+    },
+    {
+      "input": "nonadecima",
+      "options": {
+        "trim": false
+      },
+      "expected": "Two words\nMay be 2 words combined (nona+decima) If not obvious, probably incorrect\ndecim.a              NUM    2 0 NOM S F ORD\ndecim.a              NUM    2 0 VOC S F ORD\ndecim.a              NUM    2 0 ABL S F ORD\ndecim.a              NUM    2 0 NOM P N ORD\ndecim.a              NUM    2 0 VOC P N ORD\ndecim.a              NUM    2 0 ACC P N ORD\ndecem, decimus -a -um, deni -ae -a, decie (n)s  NUM   [XXXBO]\n 10th - (ORD, 'in series'); (a/the) 10th (part) (fract w/pars?);\ndecim.a              N      1 1 NOM S F\ndecim.a              N      1 1 VOC S F\ndecim.a              N      1 1 ABL S F\ndecima, decimae  N (1st) F   [XLXDO]    lesser\ntithe; tenth part; (offering/tax/largesse); tax/right to collect 10%; 10th hour\ndecim.a              V      1 1 PRES ACTIVE  IMP 2 S\ndecimo, decimare, decimavi, decimatus  V (1st) TRANS   [XWXDO]    lesser\nchoose by lot every tenth man (for punishment); make tithe offering (to a god);\nnon.a                N      1 1 NOM S F\nnon.a                N      1 1 VOC S F\nnon.a                N      1 1 ABL S F\nNona, Nonae  N (1st) F   [XXXDX]    lesser\nNones (pl.), abb. Non.; 7th of month, March, May, July, Oct., 5th elsewhen;\nnon.a                NUM    2 0 NOM S F ORD\nnon.a                NUM    2 0 VOC S F ORD\nnon.a                NUM    2 0 ABL S F ORD\nnon.a                NUM    2 0 NOM P N ORD\nnon.a                NUM    2 0 VOC P N ORD\nnon.a                NUM    2 0 ACC P N ORD\nnovem, nonus -a -um, noveni -ae -a, novie (n)s  NUM   [XXXBX]\n 9th - (ORD, 'in series'); (a/the) 9th (part) (fract w/pars?);",
+      "nativeStdoutSha256": "c1affef0ffeb56cb9ff6edf4afe0595421823ede0f9cce5115fff5475a43e5c0"
+    },
+    {
+      "input": "nonadecimvm",
+      "options": {
+        "trim": false
+      },
+      "expected": "Two words\nMay be 2 words combined (nona+decimvm) If not obvious, probably incorrect\ndecim.um             NUM    2 0 NOM S N ORD\ndecim.um             NUM    2 0 VOC S N ORD\ndecim.um             NUM    2 0 ACC S M ORD\ndecim.um             NUM    2 0 ACC S N ORD\ndecem, decimus -a -um, deni -ae -a, decie (n)s  NUM   [XXXBO]\n 10th - (ORD, 'in series'); (a/the) 10th (part) (fract w/pars?);\ndecim.um             N      1 1 GEN P F                   uncommon\ndecima, decimae  N (1st) F   [XLXDO]    lesser\ntithe; tenth part; (offering/tax/largesse); tax/right to collect 10%; 10th hour\ndecim.um             N      2 1 ACC S M\ndecim.um             N      2 1 GEN P M                   uncommon\nDecimus, Decimi  N (2nd) M   [XXXDX]    lesser\nDecimus (Roman praenomen); (abb. D.);\ndecimvm              ADV    POS\ndecimum  ADV   [XXXEO]    uncommon\nfor the tenth time;\nnon.a                N      1 1 NOM S F\nnon.a                N      1 1 VOC S F\nnon.a                N      1 1 ABL S F\nNona, Nonae  N (1st) F   [XXXDX]    lesser\nNones (pl.), abb. Non.; 7th of month, March, May, July, Oct., 5th elsewhen;\nnon.a                NUM    2 0 NOM S F ORD\nnon.a                NUM    2 0 VOC S F ORD\nnon.a                NUM    2 0 ABL S F ORD\nnon.a                NUM    2 0 NOM P N ORD\nnon.a                NUM    2 0 VOC P N ORD\nnon.a                NUM    2 0 ACC P N ORD\nnovem, nonus -a -um, noveni -ae -a, novie (n)s  NUM   [XXXBX]\n 9th - (ORD, 'in series'); (a/the) 9th (part) (fract w/pars?);",
+      "nativeStdoutSha256": "8f10087243c73b71526acc1ed2fcf955da3c67ec8213ca48cd3370853634cd63"
+    },
+    {
+      "input": "laurice",
+      "options": {
+        "trim": false
+      },
+      "expected": "ic                   SUFFIX\n-ic; of, pertaining/belonging to; connected with; derived/coming from (place);\nlauric.e             ADJ    1 1 VOC S M POS\nlaura, laurae  N (1st) F   [EEEFE]    Later  veryrare\nmonastery; settlement of anchorites in Egypt;\nlaurus, lauri  N (2nd) F   [XXXBO]\nlaur.i               N      4 1 GEN S F                   Archaic\nlaurus, laurus  N (4th) F   [XXXBO]\nlauric.e             ADJ    1 1 VOC S M POS\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;",
+      "nativeStdoutSha256": "8f59c0c72bff0391e3ff70edfdbf456acf3aa366de1bc790c6674c4daf8fc698"
+    },
+    {
+      "input": "potevis",
+      "options": {
+        "trim": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\npot.e                ADJ    1 1 VOC S M POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\npote                 ADJ    9 9 X   X X POS\npote, undeclined  ADJ   [XXXDX]    lesser\nable, capable; possible  (early Latin);\npot.e                V      3 1 PRES         IMP 2 S\npotior, poti, potitus sum  V (3rd) DEP   [XXXCO]\nobtain, acquire; grasp; attain, reach (goal); come by (experiences);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\npot.e                ADV    POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;",
+      "nativeStdoutSha256": "44b765c475cc103e6e3784756eeb359de6db805b36191eccebc2ae41857caf01"
+    },
+    {
+      "input": "poteuis",
+      "options": {
+        "trim": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\npot.e                ADJ    1 1 VOC S M POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\npote                 ADJ    9 9 X   X X POS\npote, undeclined  ADJ   [XXXDX]    lesser\nable, capable; possible  (early Latin);\npot.e                V      3 1 PRES         IMP 2 S\npotior, poti, potitus sum  V (3rd) DEP   [XXXCO]\nobtain, acquire; grasp; attain, reach (goal); come by (experiences);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\npot.e                ADV    POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;",
+      "nativeStdoutSha256": "44b765c475cc103e6e3784756eeb359de6db805b36191eccebc2ae41857caf01"
+    },
+    {
+      "input": "quantacumque",
+      "options": {
+        "trim": false
+      },
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nac                   SUFFIX\n-ing; having a tendency;\nquantac.um           ADJ    3 1 GEN P X POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "57a003f035ce0b2a64580e23eceb344a3eb0e5757cb71a57ba3f0eb5a423e6e3"
+    },
+    {
+      "input": "quantacunque",
+      "options": {
+        "trim": false
+      },
+      "expected": "cunque               TACKON\n-ever/-soever; (for generalized/indefinite force); (what/how -> what/however);\nquant.a              ADJ    1 1 NOM S F POS\nquant.a              ADJ    1 1 VOC S F POS\nquant.a              ADJ    1 1 ABL S F POS\nquant.a              ADJ    1 1 NOM P N POS\nquant.a              ADJ    1 1 VOC P N POS\nquant.a              ADJ    1 1 ACC P N POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "e5d1945199c4f28ae95bfbc67c24380e0ce7d1a560674bef3b69ea70c3e9f8e4"
+    },
+    {
+      "input": "utercumque",
+      "options": {
+        "trim": false
+      },
+      "expected": "Two words\nMay be 2 words combined (uter+cumque) If not obvious, probably incorrect\ncumque               ADV    POS\ncumque  ADV   [XXXEO]    uncommon\nat any time; -ever, -soever; appended to give generalized/indefinite force;\nuter                 N      3 3 NOM S M\nuter                 N      3 3 VOC S M\nuter, utris  N (3rd) M   [XXXDS]    lesser\nuter                 N      3 4 NOM S N\nuter                 N      3 4 VOC S N\nuter                 N      3 4 ACC S N\nuter, utris  N (3rd) N   [XXXDS]    lesser\nskin; wine/water skin; bag/bottle made of skin/hide; (inflated for flotation);\nuter                 ADJ    1 4 NOM S M POS\nuter                 ADJ    1 4 VOC S M POS\nuter, utra, utrum  ADJ   [XXXAO]\nwhich (of two), whichever, no matter which; one, either, one or other;\n(w/que) each/either (of two); both (separately); each side (pl.), each set;",
+      "nativeStdoutSha256": "4c7f89f14158d23c6a9cc720f13e494604ab6420b85a36b5c4df50333e4d7e85"
+    },
+    {
+      "input": "utercunque",
+      "options": {
+        "trim": false
+      },
+      "expected": "cunque               TACKON\n-ever/-soever; (for generalized/indefinite force); (what/how -> what/however);\nuter                 ADJ    1 4 NOM S M POS\nuter                 ADJ    1 4 VOC S M POS\nuter, utra, utrum  ADJ   [XXXAO]\nwhich (of two), whichever, no matter which; one, either, one or other;\n(w/que) each/either (of two); both (separately); each side (pl.), each set;",
+      "nativeStdoutSha256": "b00ae1efcd134c3ab3c431d8f2da863ac475aff95b8591883ceeaeb18ab1f43e"
+    },
+    {
+      "input": "cvivscvmqve",
+      "options": {
+        "trim": false
+      },
+      "expected": "Two words\nMay be 2 words combined (cvivs+cvmque) If not obvious, probably incorrect\ncvi.us               ADJ    1 1 NOM S M POS\ncujus, cuja, cujum  ADJ   [XXXCO]\nof whom?, whose?; (interrogative); of/to whom, whose (relative);\ncvmque               ADV    POS\ncumque  ADV   [XXXEO]    uncommon\nat any time; -ever, -soever; appended to give generalized/indefinite force;",
+      "nativeStdoutSha256": "482f3b877698343468b51d18b80ab51db3d70615d5ccb576322a30ba93534e98"
+    },
+    {
+      "input": "quantavis",
+      "options": {
+        "trim": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\nquant.a              ADJ    1 1 NOM S F POS\nquant.a              ADJ    1 1 VOC S F POS\nquant.a              ADJ    1 1 ABL S F POS\nquant.a              ADJ    1 1 NOM P N POS\nquant.a              ADJ    1 1 VOC P N POS\nquant.a              ADJ    1 1 ACC P N POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "4a8606753693e14ee51b3c5e6a6d50053c8d0eb5b1c95051b857755218a2b962"
+    },
+    {
+      "input": "quicumque",
+      "options": {
+        "trim": false
+      },
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;",
+      "nativeStdoutSha256": "0219b7d1ac2b3c796fd5f2b21a31310a95ab6042a3da380c416f14f49e5cce58"
+    },
+    {
+      "input": "quicunque",
+      "options": {
+        "trim": false
+      },
+      "expected": "cunque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cunque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncunque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cunque) who/whatever, no matter who/what, in any time/way, however small;",
+      "nativeStdoutSha256": "2ceb1fc4b511c813eb1dc6c30c527f73d85368c576297fc6bcd1620d1fcea3b2"
+    },
+    {
+      "input": "quisque",
+      "options": {
+        "trim": false
+      },
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nqu.is                PRON   1 0 NOM S C\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nqu.is                PRON   1 0 NOM S C\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nanyone/anybody/anything; whoever you pick; something (or other); any (NOM S);\nqui.s                V      6 1 PRES ACTIVE  IND 2 S\nqueo, quire, quivi(ii), quitus  V   [XXXBX]\nbe able;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nqu.is                PRON   1 0 NOM S C\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;",
+      "nativeStdoutSha256": "a4d08e7f11d43d10030ed76a4d75a75c5b70f1d91aab8ae9f4570157a8aadc77"
+    },
+    {
+      "input": "quidam",
+      "options": {
+        "trim": false
+      },
+      "expected": "dam                  TACKON\nPACKON w/qui => certain; a certain (one); a certain thing;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXBX]\nqu.i                 PRON   1 0 NOM S M\n(w/-dam) certain; as INDEF a certain thing; somebody, one, something;",
+      "nativeStdoutSha256": "ff380efd4d549d2cd858e08a60d11d0d7fbfaa99a090e8f0fb93d116c66506ce"
+    },
+    {
+      "input": "multusque",
+      "options": {
+        "trim": false
+      },
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nmult.us              ADJ    1 1 NOM S M POS\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;",
+      "nativeStdoutSha256": "306717eb8dd9278e358ae4e3d050d2ab5e03b05884eb1ba04688d83b1d8d9b3b"
+    },
+    {
+      "input": "amasti",
+      "options": {
+        "trim": false
+      },
+      "expected": "Syncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\namav.isti            V      1 1 PERF ACTIVE  IND 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "e2c6d50e6b56338abe5af2881acd827258f302b768d01d6a6ad84d704a60fa80"
+    },
+    {
+      "input": "audierunt",
+      "options": {
+        "trim": false
+      },
+      "expected": "Syncope  ier=>iver\nSyncopated perfect often drops the 'v' and contracts vowel\naudiv.erunt          V      4 1 PERF ACTIVE  IND 3 P\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;",
+      "nativeStdoutSha256": "12af70375565d058e56fb1e60e0f83cc22b6e7fc8caef4ff49ad8ba0d3651241"
+    },
+    {
+      "input": "coissem",
+      "options": {
+        "trim": false
+      },
+      "expected": "Word mod co/com\nAn initial 'co' may be rendered by 'com'\ncomiss.em            V      1 1 PRES         SUB 1 S\ncomissor, comissari, comissatus sum  V (1st) DEP   [XXXCO]\ncarouse, revel, make merry; hold a festive procession (L+S);\nSyncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\ncoiv.issem           V      6 1 PLUP ACTIVE  SUB 1 S\ncoeo, coire, coivi(ii), coitus  V   [XXXAO]\nfit together; have sexual intercourse; collect/gather (fluid); meet; rally;\nenter agreement; unite/assemble/conspire; come/go together; mend/knit (wound);",
+      "nativeStdoutSha256": "78c6f2d4a14ff1d5492a7ca5415aa3fcbee6c8974d738497a70355bfeefebd86"
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "trim": false
+      },
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "5b42cdbf11077eff80101805a69486f096a86def7be0aa544530ce68e17f7ce9"
+    },
+    {
+      "input": "amatum iri",
+      "options": {
+        "trim": false
+      },
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "0ab80246530c68df13d8cb83d5a2593c49919360501c3e33f058076c04e382f0"
+    },
+    {
+      "input": "bone",
+      "options": {
+        "trim": false
+      },
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nbon.e                ADV    POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;",
+      "nativeStdoutSha256": "a5f07ba94565ef3235c94c016b029452a190361cab12b640e472547b85197a09"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaa",
+      "options": {
+        "trim": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaa            ========   UNKNOWN",
+      "nativeStdoutSha256": "1319b7950bea461132a43cfbae491f6f60091d3e8ac1a91c91b0f84f3cef7a7a"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "trim": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN",
+      "nativeStdoutSha256": "f552a2a321d03e0d65ce002fe57083b994fc6794cbed9798759cfe8d33e91789"
+    },
+    {
+      "input": "Aesopice",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Aesopice                       ========   UNKNOWN",
+      "nativeStdoutSha256": "6488f441ec7db53958ac14271bfbab718774a943f0e66667a7e7af48fe75bc08"
+    },
+    {
+      "input": "Coscine",
+      "options": {
+        "fixes": false
+      },
+      "expected": "ne                   TACKON\n-ne = is it not that (enclitic); or ...(introduces a question or alternative);\nWord mod co/con\nAn initial 'co' may be rendered by 'con'\nconsc.i              V      4 1 PRES ACTIVE  IMP 2 S\nconscio, conscire, conscivi, -  V (4th)   [XXXEO]    uncommon\nfeel guilty; be conscious of (wrong); have on conscience; know well (late);\nconsci               N      2 4 GEN S C                   Early\nconscius, consci(i)  N (2nd) C   [XXXDO]    lesser\naccomplice, accessory; partner; confidante; one privy to (crime/plot); witness;",
+      "nativeStdoutSha256": "21835251486b0eb8959b385cb35e7274708ab096932530d80b78ae5011c059b2"
+    },
+    {
+      "input": "CosCine",
+      "options": {
+        "fixes": false
+      },
+      "expected": "ne                   TACKON\n-ne = is it not that (enclitic); or ...(introduces a question or alternative);\nWord mod co/con\nAn initial 'co' may be rendered by 'con'\nconsc.i              V      4 1 PRES ACTIVE  IMP 2 S\nconscio, conscire, conscivi, -  V (4th)   [XXXEO]    uncommon\nfeel guilty; be conscious of (wrong); have on conscience; know well (late);\nconsci               N      2 4 GEN S C                   Early\nconscius, consci(i)  N (2nd) C   [XXXDO]    lesser\naccomplice, accessory; partner; confidante; one privy to (crime/plot); witness;",
+      "nativeStdoutSha256": "21835251486b0eb8959b385cb35e7274708ab096932530d80b78ae5011c059b2"
+    },
+    {
+      "input": "nerati",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Two words\nMay be 2 words combined (ne+rati) If not obvious, probably incorrect\nn.e                  V      2 1 PRES ACTIVE  IMP 2 S\nneo, nere, nevi, netus  V (2nd)   [XXXDX]    lesser\nspin; weave; produce by spinning;\nne                   ADV    POS\nne  ADV   [XXXAX]\nnot; (intro clause of purpose with subj verb); [ne....quidem => not even];\ntruly, indeed, verily, assuredly; (particle of assurance); (w/personal PRON);\nne                   CONJ\nne  CONJ   [XXXAX]\nthat not, lest; (for negative of IMP);\nrat.i                VPAR   2 1 GEN S M PERF         PPL\nrat.i                VPAR   2 1 GEN S N PERF         PPL\nrat.i                VPAR   2 1 NOM P M PERF         PPL\nrat.i                VPAR   2 1 VOC P M PERF         PPL\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;\nrat.i                N      2 1 GEN S C\nrat.i                N      2 1 LOC S C\nrat.i                N      2 1 NOM P C\nrat.i                N      2 1 VOC P C\nratus, rati  N (2nd) C   [GXXEK]    NeoLatin  uncommon\nrat;\nrat.i                ADJ    1 1 GEN S M POS\nrat.i                ADJ    1 1 GEN S N POS\nrat.i                ADJ    1 1 NOM P M POS\nrat.i                ADJ    1 1 VOC P M POS\nratus, rata, ratum  ADJ   [XXXDX]    lesser\nestablished, authoritative; fixed, certain;\nrat.i                N      3 3 LOC S F                   Early\nrat.i                N      3 3 DAT S F\nrat.i                N      3 3 ABL S F\nratis, ratis  N (3rd) F   [XXXAX]\nraft; ship, boat;\n*",
+      "nativeStdoutSha256": "5346da0de395ad7ee3c6e185a6de45e4b54ce78b193dae30371320444a51ec1b"
+    },
+    {
+      "input": "Nerati",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Nerati                         ========   UNKNOWN",
+      "nativeStdoutSha256": "783701206f67c5e638ab205b96130d4f69d5979207f652ba6b304b0ddc4b04a2"
+    },
+    {
+      "input": "nepotati",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Two words\nMay be 2 words combined (ne+potati) If not obvious, probably incorrect\nn.e                  V      2 1 PRES ACTIVE  IMP 2 S\nneo, nere, nevi, netus  V (2nd)   [XXXDX]    lesser\nspin; weave; produce by spinning;\nne                   ADV    POS\nne  ADV   [XXXAX]\nnot; (intro clause of purpose with subj verb); [ne....quidem => not even];\ntruly, indeed, verily, assuredly; (particle of assurance); (w/personal PRON);\nne                   CONJ\nne  CONJ   [XXXAX]\nthat not, lest; (for negative of IMP);\npotat.i              VPAR   1 1 GEN S M PERF PASSIVE PPL\npotat.i              VPAR   1 1 GEN S N PERF PASSIVE PPL\npotat.i              VPAR   1 1 NOM P M PERF PASSIVE PPL\npotat.i              VPAR   1 1 VOC P M PERF PASSIVE PPL\npoto, potare, potavi, potatus  V (1st)   [XXXAO]\ndrink; drink heavily/convivially, tipple; swallow; absorb, soak up;\n*",
+      "nativeStdoutSha256": "21f24228439eab85df917e92f8463f963c80e3066cd7a723907c34e16fe0ea5b"
+    },
+    {
+      "input": "nonadecima",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Two words\nIt is very likely a compound number    nona + decima\ndecim.a              NUM    2 0 NOM S F ORD\ndecim.a              NUM    2 0 VOC S F ORD\ndecim.a              NUM    2 0 ABL S F ORD\ndecim.a              NUM    2 0 NOM P N ORD\ndecem, decimus -a -um, deni -ae -a, decie (n)s  NUM   [XXXBO]\n 10th - (ORD, 'in series'); (a/the) 10th (part) (fract w/pars?);\nnon.a                N      1 1 VOC S F\nNona, Nonae  N (1st) F   [XXXDX]    lesser\nNones (pl.), abb. Non.; 7th of month, March, May, July, Oct., 5th elsewhen;\nnon.a                NUM    2 0 NOM S F ORD\nnon.a                NUM    2 0 VOC S F ORD\nnon.a                NUM    2 0 ABL S F ORD\nnon.a                NUM    2 0 NOM P N ORD\nnon.a                NUM    2 0 VOC P N ORD\nnon.a                NUM    2 0 ACC P N ORD\nnovem, nonus -a -um, noveni -ae -a, novie (n)s  NUM   [XXXBX]\n 9th - (ORD, 'in series'); (a/the) 9th (part) (fract w/pars?);\n*",
+      "nativeStdoutSha256": "fb0264cfb841f8b3c9294a05d178c4d6a2b780753e16ed5667afbc3aafc9619d"
+    },
+    {
+      "input": "nonadecimvm",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Two words\nIt is very likely a compound number    nona + decimvm\ndecim.um             NUM    2 0 NOM S N ORD\ndecim.um             NUM    2 0 VOC S N ORD\ndecem, decimus -a -um, deni -ae -a, decie (n)s  NUM   [XXXBO]\n 10th - (ORD, 'in series'); (a/the) 10th (part) (fract w/pars?);\nnon.a                N      1 1 VOC S F\nNona, Nonae  N (1st) F   [XXXDX]    lesser\nNones (pl.), abb. Non.; 7th of month, March, May, July, Oct., 5th elsewhen;\nnon.a                NUM    2 0 NOM S F ORD\nnon.a                NUM    2 0 VOC S F ORD\nnon.a                NUM    2 0 ABL S F ORD\nnon.a                NUM    2 0 NOM P N ORD\nnon.a                NUM    2 0 VOC P N ORD\nnon.a                NUM    2 0 ACC P N ORD\nnovem, nonus -a -um, noveni -ae -a, novie (n)s  NUM   [XXXBX]\n 9th - (ORD, 'in series'); (a/the) 9th (part) (fract w/pars?);\n*",
+      "nativeStdoutSha256": "4bd2d3818c2fa8d817694a3511016306143d6834844077247c6c2e8ad18737f6"
+    },
+    {
+      "input": "laurice",
+      "options": {
+        "fixes": false
+      },
+      "expected": "laurice                        ========   UNKNOWN",
+      "nativeStdoutSha256": "6cd940cc32f08744534b385d8dee322661e220a552d782b0f327e2837e28d2b5"
+    },
+    {
+      "input": "potevis",
+      "options": {
+        "fixes": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\npot.e                ADJ    1 1 VOC S M POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\npote                 ADJ    9 9 X   X X POS\npote, undeclined  ADJ   [XXXDX]    lesser\nable, capable; possible  (early Latin);",
+      "nativeStdoutSha256": "e6115c8e936f432206ea01587eaaa9668c6a69f89c90b3ea89f61c0741cb4b2b"
+    },
+    {
+      "input": "poteuis",
+      "options": {
+        "fixes": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\npot.e                ADJ    1 1 VOC S M POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\npote                 ADJ    9 9 X   X X POS\npote, undeclined  ADJ   [XXXDX]    lesser\nable, capable; possible  (early Latin);",
+      "nativeStdoutSha256": "e6115c8e936f432206ea01587eaaa9668c6a69f89c90b3ea89f61c0741cb4b2b"
+    },
+    {
+      "input": "quantacumque",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Two words\nMay be 2 words combined (quanta+cumque) If not obvious, probably incorrect\ncumque               ADV    POS\ncumque  ADV   [XXXEO]    uncommon\nat any time; -ever, -soever; appended to give generalized/indefinite force;\nquant.a              ADJ    1 1 NOM S F POS\nquant.a              ADJ    1 1 VOC S F POS\nquant.a              ADJ    1 1 ABL S F POS\nquant.a              ADJ    1 1 NOM P N POS\nquant.a              ADJ    1 1 VOC P N POS\nquant.a              ADJ    1 1 ACC P N POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;\n*",
+      "nativeStdoutSha256": "2994c0a72cdf822f78c15420451584795cd83b94c35c2cb437ffa79a1f8ad1b4"
+    },
+    {
+      "input": "quantacunque",
+      "options": {
+        "fixes": false
+      },
+      "expected": "cunque               TACKON\n-ever/-soever; (for generalized/indefinite force); (what/how -> what/however);\nquant.a              ADJ    1 1 NOM S F POS\nquant.a              ADJ    1 1 VOC S F POS\nquant.a              ADJ    1 1 ABL S F POS\nquant.a              ADJ    1 1 NOM P N POS\nquant.a              ADJ    1 1 VOC P N POS\nquant.a              ADJ    1 1 ACC P N POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "e5d1945199c4f28ae95bfbc67c24380e0ce7d1a560674bef3b69ea70c3e9f8e4"
+    },
+    {
+      "input": "utercumque",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Two words\nMay be 2 words combined (uter+cumque) If not obvious, probably incorrect\ncumque               ADV    POS\ncumque  ADV   [XXXEO]    uncommon\nat any time; -ever, -soever; appended to give generalized/indefinite force;\nuter                 N      3 3 NOM S M\nuter                 N      3 3 VOC S M\nuter, utris  N (3rd) M   [XXXDS]    lesser\nuter                 N      3 4 NOM S N\nuter                 N      3 4 VOC S N\nuter                 N      3 4 ACC S N\nuter, utris  N (3rd) N   [XXXDS]    lesser\nskin; wine/water skin; bag/bottle made of skin/hide; (inflated for flotation);\nuter                 ADJ    1 4 NOM S M POS\nuter                 ADJ    1 4 VOC S M POS\nuter, utra, utrum  ADJ   [XXXAO]\nwhich (of two), whichever, no matter which; one, either, one or other;\n(w/que) each/either (of two); both (separately); each side (pl.), each set;\n*",
+      "nativeStdoutSha256": "67c9c897db5756c1e26b0dcb458777377ff06ebcfe44174c1bcff63ff33f6922"
+    },
+    {
+      "input": "utercunque",
+      "options": {
+        "fixes": false
+      },
+      "expected": "cunque               TACKON\n-ever/-soever; (for generalized/indefinite force); (what/how -> what/however);\nuter                 ADJ    1 4 NOM S M POS\nuter                 ADJ    1 4 VOC S M POS\nuter, utra, utrum  ADJ   [XXXAO]\nwhich (of two), whichever, no matter which; one, either, one or other;\n(w/que) each/either (of two); both (separately); each side (pl.), each set;",
+      "nativeStdoutSha256": "b00ae1efcd134c3ab3c431d8f2da863ac475aff95b8591883ceeaeb18ab1f43e"
+    },
+    {
+      "input": "cvivscvmqve",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Two words\nMay be 2 words combined (cvivs+cvmque) If not obvious, probably incorrect\ncvi.us               ADJ    1 1 NOM S M POS\ncujus, cuja, cujum  ADJ   [XXXCO]\nof whom?, whose?; (interrogative); of/to whom, whose (relative);\ncvmque               ADV    POS\ncumque  ADV   [XXXEO]    uncommon\nat any time; -ever, -soever; appended to give generalized/indefinite force;\n*",
+      "nativeStdoutSha256": "f41a950689d98fcfb50a73d4404fecf93c6ba3f1846bb85ed2bbd8c1982a87c1"
+    },
+    {
+      "input": "quantavis",
+      "options": {
+        "fixes": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\nquant.a              ADJ    1 1 NOM S F POS\nquant.a              ADJ    1 1 VOC S F POS\nquant.a              ADJ    1 1 ABL S F POS\nquant.a              ADJ    1 1 NOM P N POS\nquant.a              ADJ    1 1 VOC P N POS\nquant.a              ADJ    1 1 ACC P N POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "4a8606753693e14ee51b3c5e6a6d50053c8d0eb5b1c95051b857755218a2b962"
+    },
+    {
+      "input": "quicumque",
+      "options": {
+        "fixes": false
+      },
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;",
+      "nativeStdoutSha256": "0219b7d1ac2b3c796fd5f2b21a31310a95ab6042a3da380c416f14f49e5cce58"
+    },
+    {
+      "input": "quicunque",
+      "options": {
+        "fixes": false
+      },
+      "expected": "cunque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cunque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncunque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cunque) who/whatever, no matter who/what, in any time/way, however small;",
+      "nativeStdoutSha256": "2ceb1fc4b511c813eb1dc6c30c527f73d85368c576297fc6bcd1620d1fcea3b2"
+    },
+    {
+      "input": "quisque",
+      "options": {
+        "fixes": false
+      },
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nqu.is                PRON   1 0 NOM S C\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nqu.is                PRON   1 0 NOM S C\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nanyone/anybody/anything; whoever you pick; something (or other); any (NOM S);\nqui.s                V      6 1 PRES ACTIVE  IND 2 S\nqueo, quire, quivi(ii), quitus  V   [XXXBX]\nbe able;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nqu.is                PRON   1 0 NOM S C\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;",
+      "nativeStdoutSha256": "a4d08e7f11d43d10030ed76a4d75a75c5b70f1d91aab8ae9f4570157a8aadc77"
+    },
+    {
+      "input": "quidam",
+      "options": {
+        "fixes": false
+      },
+      "expected": "dam                  TACKON\nPACKON w/qui => certain; a certain (one); a certain thing;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXBX]\nqu.i                 PRON   1 0 NOM S M\n(w/-dam) certain; as INDEF a certain thing; somebody, one, something;",
+      "nativeStdoutSha256": "ff380efd4d549d2cd858e08a60d11d0d7fbfaa99a090e8f0fb93d116c66506ce"
+    },
+    {
+      "input": "multusque",
+      "options": {
+        "fixes": false
+      },
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nmult.us              ADJ    1 1 NOM S M POS\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;",
+      "nativeStdoutSha256": "306717eb8dd9278e358ae4e3d050d2ab5e03b05884eb1ba04688d83b1d8d9b3b"
+    },
+    {
+      "input": "amasti",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Syncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\namav.isti            V      1 1 PERF ACTIVE  IND 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "e2c6d50e6b56338abe5af2881acd827258f302b768d01d6a6ad84d704a60fa80"
+    },
+    {
+      "input": "audierunt",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Syncope  ier=>iver\nSyncopated perfect often drops the 'v' and contracts vowel\naudiv.erunt          V      4 1 PERF ACTIVE  IND 3 P\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;",
+      "nativeStdoutSha256": "12af70375565d058e56fb1e60e0f83cc22b6e7fc8caef4ff49ad8ba0d3651241"
+    },
+    {
+      "input": "coissem",
+      "options": {
+        "fixes": false
+      },
+      "expected": "Word mod co/com\nAn initial 'co' may be rendered by 'com'\nSyncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\ncoiv.issem           V      6 1 PLUP ACTIVE  SUB 1 S\ncoeo, coire, coivi(ii), coitus  V   [XXXAO]\nfit together; have sexual intercourse; collect/gather (fluid); meet; rally;\nenter agreement; unite/assemble/conspire; come/go together; mend/knit (wound);\n*",
+      "nativeStdoutSha256": "bfd8f784dfce51af213907e565fb4b9e96a1ff2fc74d3ff77645a976a0dd78a1"
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "fixes": false
+      },
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "5b42cdbf11077eff80101805a69486f096a86def7be0aa544530ce68e17f7ce9"
+    },
+    {
+      "input": "amatum iri",
+      "options": {
+        "fixes": false
+      },
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "0ab80246530c68df13d8cb83d5a2593c49919360501c3e33f058076c04e382f0"
+    },
+    {
+      "input": "bone",
+      "options": {
+        "fixes": false
+      },
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;",
+      "nativeStdoutSha256": "37a0ccdc8088f42e9fc7ea303259ff0a1f5337e53402aab1301c933fd7aab295"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaa",
+      "options": {
+        "fixes": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaa            ========   UNKNOWN",
+      "nativeStdoutSha256": "1319b7950bea461132a43cfbae491f6f60091d3e8ac1a91c91b0f84f3cef7a7a"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "fixes": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN",
+      "nativeStdoutSha256": "f552a2a321d03e0d65ce002fe57083b994fc6794cbed9798759cfe8d33e91789"
+    },
+    {
+      "input": "Aesopice",
+      "options": {
+        "tricks": false
+      },
+      "expected": "ic                   SUFFIX\n-ic; of, pertaining/belonging to; connected with; derived/coming from (place);\naesop.i              N      2 1 NOM P M\nAesopus, Aesopi  N (2nd) M   [XGHCO]\naesopic.e            ADJ    1 1 VOC S M POS\nAesop (Greek author of fables); (Roman tragic actor contemporary with Cicero);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\naesopic.e            ADV    POS\nAesopus, Aesopi  N (2nd) M   [XGHCO]\nAesop (Greek author of fables); (Roman tragic actor contemporary with Cicero);",
+      "nativeStdoutSha256": "1c1ab9559043017489ec46da0ec179cfd577935ef6e08a0e65aaa0bd3a14cbc2"
+    },
+    {
+      "input": "Coscine",
+      "options": {
+        "tricks": false
+      },
+      "expected": "ne                   TACKON\n-ne = is it not that (enclitic); or ...(introduces a question or alternative);\nWord mod co/con\nAn initial 'co' may be rendered by 'con'\nconsc.i              V      4 1 PRES ACTIVE  IMP 2 S\nconscio, conscire, conscivi, -  V (4th)   [XXXEO]    uncommon\nfeel guilty; be conscious of (wrong); have on conscience; know well (late);\nconsci               N      2 4 GEN S C                   Early\nconscius, consci(i)  N (2nd) C   [XXXDO]    lesser\naccomplice, accessory; partner; confidante; one privy to (crime/plot); witness;",
+      "nativeStdoutSha256": "21835251486b0eb8959b385cb35e7274708ab096932530d80b78ae5011c059b2"
+    },
+    {
+      "input": "CosCine",
+      "options": {
+        "tricks": false
+      },
+      "expected": "ne                   TACKON\n-ne = is it not that (enclitic); or ...(introduces a question or alternative);\nWord mod co/con\nAn initial 'co' may be rendered by 'con'\nconsc.i              V      4 1 PRES ACTIVE  IMP 2 S\nconscio, conscire, conscivi, -  V (4th)   [XXXEO]    uncommon\nfeel guilty; be conscious of (wrong); have on conscience; know well (late);\nconsci               N      2 4 GEN S C                   Early\nconscius, consci(i)  N (2nd) C   [XXXDO]    lesser\naccomplice, accessory; partner; confidante; one privy to (crime/plot); witness;",
+      "nativeStdoutSha256": "21835251486b0eb8959b385cb35e7274708ab096932530d80b78ae5011c059b2"
+    },
+    {
+      "input": "nerati",
+      "options": {
+        "tricks": false
+      },
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\nrati                 ADV    POS\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;",
+      "nativeStdoutSha256": "332ae06448c7f98c4429b480c4dfa279b4d4c8fc1138a8624ffba16661d9ef0d"
+    },
+    {
+      "input": "Nerati",
+      "options": {
+        "tricks": false
+      },
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\nrati                 ADV    POS\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;",
+      "nativeStdoutSha256": "332ae06448c7f98c4429b480c4dfa279b4d4c8fc1138a8624ffba16661d9ef0d"
+    },
+    {
+      "input": "nepotati",
+      "options": {
+        "tricks": false
+      },
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\npotati               ADV    POS\npoto, potare, potavi, potatus  V (1st)   [XXXAO]\ndrink; drink heavily/convivially, tipple; swallow; absorb, soak up;\nat                   SUFFIX\n-ate, -ship, the office of; official body (consul.atus = consulate, consulship)\nnepotat.i            N      4 1 GEN S M                   Archaic\nnepos, nepotis  N (3rd) C   [XXXAX]\ngrandson/daughter; descendant; spendthrift, prodigal, playboy; secondary shoot;\nat                   SUFFIX\n-ed, having, having a, provided with; -able;\nnepotat.i            ADJ    1 1 GEN S M POS\nnepotat.i            ADJ    1 1 GEN S N POS\nnepotat.i            ADJ    1 1 NOM P M POS\nnepotat.i            ADJ    1 1 VOC P M POS\nnepos, nepotis  N (3rd) C   [XXXAX]\ngrandson/daughter; descendant; spendthrift, prodigal, playboy; secondary shoot;",
+      "nativeStdoutSha256": "b5fffdf1b7584ff3a15dc777a7bd2698ac0901ee828c979f90d2ad4211c767fe"
+    },
+    {
+      "input": "nonadecima",
+      "options": {
+        "tricks": false
+      },
+      "expected": "nonadecima                     ========   UNKNOWN",
+      "nativeStdoutSha256": "37d9dc37f4fb223dd36a80ebd69c37389f479b3bdd22c6672f1ee2d661078d7a"
+    },
+    {
+      "input": "nonadecimvm",
+      "options": {
+        "tricks": false
+      },
+      "expected": "nonadecimvm                    ========   UNKNOWN",
+      "nativeStdoutSha256": "f481ef8af694ec9541ba0feffe79bdc070387d641ce4b2cd77820057e8942e80"
+    },
+    {
+      "input": "laurice",
+      "options": {
+        "tricks": false
+      },
+      "expected": "ic                   SUFFIX\n-ic; of, pertaining/belonging to; connected with; derived/coming from (place);\nlauric.e             ADJ    1 1 VOC S M POS\nlaura, laurae  N (1st) F   [EEEFE]    Later  veryrare\nmonastery; settlement of anchorites in Egypt;\nlaurus, lauri  N (2nd) F   [XXXBO]\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\n*",
+      "nativeStdoutSha256": "5eeb1d7bb3c5f82a1a28f69231b8f46290279db9d5645c885aa781fe5a3f2814"
+    },
+    {
+      "input": "potevis",
+      "options": {
+        "tricks": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\npot.e                ADJ    1 1 VOC S M POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\npote                 ADJ    9 9 X   X X POS\npote, undeclined  ADJ   [XXXDX]    lesser\nable, capable; possible  (early Latin);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\npot.e                ADV    POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\n*",
+      "nativeStdoutSha256": "4f581d51789d12931c569f0721217b14a97ab82ab9d6cd9fe534af983db0c694"
+    },
+    {
+      "input": "poteuis",
+      "options": {
+        "tricks": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\npot.e                ADJ    1 1 VOC S M POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\npote                 ADJ    9 9 X   X X POS\npote, undeclined  ADJ   [XXXDX]    lesser\nable, capable; possible  (early Latin);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\npot.e                ADV    POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\n*",
+      "nativeStdoutSha256": "4f581d51789d12931c569f0721217b14a97ab82ab9d6cd9fe534af983db0c694"
+    },
+    {
+      "input": "quantacumque",
+      "options": {
+        "tricks": false
+      },
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nac                   SUFFIX\n-ing; having a tendency;\nquantac.um           ADJ    3 1 GEN P X POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "57a003f035ce0b2a64580e23eceb344a3eb0e5757cb71a57ba3f0eb5a423e6e3"
+    },
+    {
+      "input": "quantacunque",
+      "options": {
+        "tricks": false
+      },
+      "expected": "cunque               TACKON\n-ever/-soever; (for generalized/indefinite force); (what/how -> what/however);\nquant.a              ADJ    1 1 NOM S F POS\nquant.a              ADJ    1 1 VOC S F POS\nquant.a              ADJ    1 1 ABL S F POS\nquant.a              ADJ    1 1 NOM P N POS\nquant.a              ADJ    1 1 VOC P N POS\nquant.a              ADJ    1 1 ACC P N POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "e5d1945199c4f28ae95bfbc67c24380e0ce7d1a560674bef3b69ea70c3e9f8e4"
+    },
+    {
+      "input": "utercumque",
+      "options": {
+        "tricks": false
+      },
+      "expected": "utercumque                     ========   UNKNOWN",
+      "nativeStdoutSha256": "0f97453acf534871af5fb813b3a0fc2f99811e3a41ba390da14918af5e54475c"
+    },
+    {
+      "input": "utercunque",
+      "options": {
+        "tricks": false
+      },
+      "expected": "cunque               TACKON\n-ever/-soever; (for generalized/indefinite force); (what/how -> what/however);\nuter                 ADJ    1 4 NOM S M POS\nuter                 ADJ    1 4 VOC S M POS\nuter, utra, utrum  ADJ   [XXXAO]\nwhich (of two), whichever, no matter which; one, either, one or other;\n(w/que) each/either (of two); both (separately); each side (pl.), each set;",
+      "nativeStdoutSha256": "b00ae1efcd134c3ab3c431d8f2da863ac475aff95b8591883ceeaeb18ab1f43e"
+    },
+    {
+      "input": "cvivscvmqve",
+      "options": {
+        "tricks": false
+      },
+      "expected": "cvivscvmque                    ========   UNKNOWN",
+      "nativeStdoutSha256": "eec2f1a755a4ae376b548b4a46a606dbf726eff351742b16ce0cd4ae184b299b"
+    },
+    {
+      "input": "quantavis",
+      "options": {
+        "tricks": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\nquant.a              ADJ    1 1 NOM S F POS\nquant.a              ADJ    1 1 VOC S F POS\nquant.a              ADJ    1 1 ABL S F POS\nquant.a              ADJ    1 1 NOM P N POS\nquant.a              ADJ    1 1 VOC P N POS\nquant.a              ADJ    1 1 ACC P N POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "4a8606753693e14ee51b3c5e6a6d50053c8d0eb5b1c95051b857755218a2b962"
+    },
+    {
+      "input": "quicumque",
+      "options": {
+        "tricks": false
+      },
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;",
+      "nativeStdoutSha256": "0219b7d1ac2b3c796fd5f2b21a31310a95ab6042a3da380c416f14f49e5cce58"
+    },
+    {
+      "input": "quicunque",
+      "options": {
+        "tricks": false
+      },
+      "expected": "cunque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cunque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncunque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cunque) who/whatever, no matter who/what, in any time/way, however small;",
+      "nativeStdoutSha256": "2ceb1fc4b511c813eb1dc6c30c527f73d85368c576297fc6bcd1620d1fcea3b2"
+    },
+    {
+      "input": "quisque",
+      "options": {
+        "tricks": false
+      },
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nqu.is                PRON   1 0 NOM S C\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nqu.is                PRON   1 0 NOM S C\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nanyone/anybody/anything; whoever you pick; something (or other); any (NOM S);\nqui.s                V      6 1 PRES ACTIVE  IND 2 S\nqueo, quire, quivi(ii), quitus  V   [XXXBX]\nbe able;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nqu.is                PRON   1 0 NOM S C\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;",
+      "nativeStdoutSha256": "a4d08e7f11d43d10030ed76a4d75a75c5b70f1d91aab8ae9f4570157a8aadc77"
+    },
+    {
+      "input": "quidam",
+      "options": {
+        "tricks": false
+      },
+      "expected": "dam                  TACKON\nPACKON w/qui => certain; a certain (one); a certain thing;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXBX]\nqu.i                 PRON   1 0 NOM S M\n(w/-dam) certain; as INDEF a certain thing; somebody, one, something;",
+      "nativeStdoutSha256": "ff380efd4d549d2cd858e08a60d11d0d7fbfaa99a090e8f0fb93d116c66506ce"
+    },
+    {
+      "input": "multusque",
+      "options": {
+        "tricks": false
+      },
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nmult.us              ADJ    1 1 NOM S M POS\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;",
+      "nativeStdoutSha256": "306717eb8dd9278e358ae4e3d050d2ab5e03b05884eb1ba04688d83b1d8d9b3b"
+    },
+    {
+      "input": "amasti",
+      "options": {
+        "tricks": false
+      },
+      "expected": "Syncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\namav.isti            V      1 1 PERF ACTIVE  IND 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "e2c6d50e6b56338abe5af2881acd827258f302b768d01d6a6ad84d704a60fa80"
+    },
+    {
+      "input": "audierunt",
+      "options": {
+        "tricks": false
+      },
+      "expected": "Syncope  ier=>iver\nSyncopated perfect often drops the 'v' and contracts vowel\naudiv.erunt          V      4 1 PERF ACTIVE  IND 3 P\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;",
+      "nativeStdoutSha256": "12af70375565d058e56fb1e60e0f83cc22b6e7fc8caef4ff49ad8ba0d3651241"
+    },
+    {
+      "input": "coissem",
+      "options": {
+        "tricks": false
+      },
+      "expected": "Word mod co/com\nAn initial 'co' may be rendered by 'com'\nSyncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\ncoiv.issem           V      6 1 PLUP ACTIVE  SUB 1 S\ncoeo, coire, coivi(ii), coitus  V   [XXXAO]\nfit together; have sexual intercourse; collect/gather (fluid); meet; rally;\nenter agreement; unite/assemble/conspire; come/go together; mend/knit (wound);\n*",
+      "nativeStdoutSha256": "bfd8f784dfce51af213907e565fb4b9e96a1ff2fc74d3ff77645a976a0dd78a1"
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "tricks": false
+      },
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "5b42cdbf11077eff80101805a69486f096a86def7be0aa544530ce68e17f7ce9"
+    },
+    {
+      "input": "amatum iri",
+      "options": {
+        "tricks": false
+      },
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "0ab80246530c68df13d8cb83d5a2593c49919360501c3e33f058076c04e382f0"
+    },
+    {
+      "input": "bone",
+      "options": {
+        "tricks": false
+      },
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nbon.e                ADV    POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;",
+      "nativeStdoutSha256": "a5f07ba94565ef3235c94c016b029452a190361cab12b640e472547b85197a09"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaa",
+      "options": {
+        "tricks": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaa            ========   UNKNOWN",
+      "nativeStdoutSha256": "1319b7950bea461132a43cfbae491f6f60091d3e8ac1a91c91b0f84f3cef7a7a"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "tricks": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN",
+      "nativeStdoutSha256": "f552a2a321d03e0d65ce002fe57083b994fc6794cbed9798759cfe8d33e91789"
+    },
+    {
+      "input": "Aesopice",
+      "options": {
+        "syncope": false
+      },
+      "expected": "ic                   SUFFIX\n-ic; of, pertaining/belonging to; connected with; derived/coming from (place);\naesop.i              N      2 1 NOM P M\nAesopus, Aesopi  N (2nd) M   [XGHCO]\naesopic.e            ADJ    1 1 VOC S M POS\nAesop (Greek author of fables); (Roman tragic actor contemporary with Cicero);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\naesopic.e            ADV    POS\nAesopus, Aesopi  N (2nd) M   [XGHCO]\nAesop (Greek author of fables); (Roman tragic actor contemporary with Cicero);",
+      "nativeStdoutSha256": "1c1ab9559043017489ec46da0ec179cfd577935ef6e08a0e65aaa0bd3a14cbc2"
+    },
+    {
+      "input": "Coscine",
+      "options": {
+        "syncope": false
+      },
+      "expected": "ne                   TACKON\n-ne = is it not that (enclitic); or ...(introduces a question or alternative);\nWord mod co/con\nAn initial 'co' may be rendered by 'con'\nconsc.i              V      4 1 PRES ACTIVE  IMP 2 S\nconscio, conscire, conscivi, -  V (4th)   [XXXEO]    uncommon\nfeel guilty; be conscious of (wrong); have on conscience; know well (late);\nconsci               N      2 4 GEN S C                   Early\nconscius, consci(i)  N (2nd) C   [XXXDO]    lesser\naccomplice, accessory; partner; confidante; one privy to (crime/plot); witness;",
+      "nativeStdoutSha256": "21835251486b0eb8959b385cb35e7274708ab096932530d80b78ae5011c059b2"
+    },
+    {
+      "input": "CosCine",
+      "options": {
+        "syncope": false
+      },
+      "expected": "ne                   TACKON\n-ne = is it not that (enclitic); or ...(introduces a question or alternative);\nWord mod co/con\nAn initial 'co' may be rendered by 'con'\nconsc.i              V      4 1 PRES ACTIVE  IMP 2 S\nconscio, conscire, conscivi, -  V (4th)   [XXXEO]    uncommon\nfeel guilty; be conscious of (wrong); have on conscience; know well (late);\nconsci               N      2 4 GEN S C                   Early\nconscius, consci(i)  N (2nd) C   [XXXDO]    lesser\naccomplice, accessory; partner; confidante; one privy to (crime/plot); witness;",
+      "nativeStdoutSha256": "21835251486b0eb8959b385cb35e7274708ab096932530d80b78ae5011c059b2"
+    },
+    {
+      "input": "nerati",
+      "options": {
+        "syncope": false
+      },
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\nrati                 ADV    POS\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;",
+      "nativeStdoutSha256": "332ae06448c7f98c4429b480c4dfa279b4d4c8fc1138a8624ffba16661d9ef0d"
+    },
+    {
+      "input": "Nerati",
+      "options": {
+        "syncope": false
+      },
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\nrati                 ADV    POS\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;",
+      "nativeStdoutSha256": "332ae06448c7f98c4429b480c4dfa279b4d4c8fc1138a8624ffba16661d9ef0d"
+    },
+    {
+      "input": "nepotati",
+      "options": {
+        "syncope": false
+      },
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\npotati               ADV    POS\npoto, potare, potavi, potatus  V (1st)   [XXXAO]\ndrink; drink heavily/convivially, tipple; swallow; absorb, soak up;\nat                   SUFFIX\n-ate, -ship, the office of; official body (consul.atus = consulate, consulship)\nnepotat.i            N      4 1 GEN S M                   Archaic\nnepos, nepotis  N (3rd) C   [XXXAX]\ngrandson/daughter; descendant; spendthrift, prodigal, playboy; secondary shoot;\nat                   SUFFIX\n-ed, having, having a, provided with; -able;\nnepotat.i            ADJ    1 1 GEN S M POS\nnepotat.i            ADJ    1 1 GEN S N POS\nnepotat.i            ADJ    1 1 NOM P M POS\nnepotat.i            ADJ    1 1 VOC P M POS\nnepos, nepotis  N (3rd) C   [XXXAX]\ngrandson/daughter; descendant; spendthrift, prodigal, playboy; secondary shoot;",
+      "nativeStdoutSha256": "b5fffdf1b7584ff3a15dc777a7bd2698ac0901ee828c979f90d2ad4211c767fe"
+    },
+    {
+      "input": "nonadecima",
+      "options": {
+        "syncope": false
+      },
+      "expected": "Two words\nIt is very likely a compound number    nona + decima\ndecim.a              NUM    2 0 NOM S F ORD\ndecim.a              NUM    2 0 VOC S F ORD\ndecim.a              NUM    2 0 ABL S F ORD\ndecim.a              NUM    2 0 NOM P N ORD\ndecem, decimus -a -um, deni -ae -a, decie (n)s  NUM   [XXXBO]\n 10th - (ORD, 'in series'); (a/the) 10th (part) (fract w/pars?);\nnon.a                N      1 1 VOC S F\nNona, Nonae  N (1st) F   [XXXDX]    lesser\nNones (pl.), abb. Non.; 7th of month, March, May, July, Oct., 5th elsewhen;\nnon.a                NUM    2 0 NOM S F ORD\nnon.a                NUM    2 0 VOC S F ORD\nnon.a                NUM    2 0 ABL S F ORD\nnon.a                NUM    2 0 NOM P N ORD\nnon.a                NUM    2 0 VOC P N ORD\nnon.a                NUM    2 0 ACC P N ORD\nnovem, nonus -a -um, noveni -ae -a, novie (n)s  NUM   [XXXBX]\n 9th - (ORD, 'in series'); (a/the) 9th (part) (fract w/pars?);\n*",
+      "nativeStdoutSha256": "fb0264cfb841f8b3c9294a05d178c4d6a2b780753e16ed5667afbc3aafc9619d"
+    },
+    {
+      "input": "nonadecimvm",
+      "options": {
+        "syncope": false
+      },
+      "expected": "Two words\nIt is very likely a compound number    nona + decimvm\ndecim.um             NUM    2 0 NOM S N ORD\ndecim.um             NUM    2 0 VOC S N ORD\ndecem, decimus -a -um, deni -ae -a, decie (n)s  NUM   [XXXBO]\n 10th - (ORD, 'in series'); (a/the) 10th (part) (fract w/pars?);\nnon.a                N      1 1 VOC S F\nNona, Nonae  N (1st) F   [XXXDX]    lesser\nNones (pl.), abb. Non.; 7th of month, March, May, July, Oct., 5th elsewhen;\nnon.a                NUM    2 0 NOM S F ORD\nnon.a                NUM    2 0 VOC S F ORD\nnon.a                NUM    2 0 ABL S F ORD\nnon.a                NUM    2 0 NOM P N ORD\nnon.a                NUM    2 0 VOC P N ORD\nnon.a                NUM    2 0 ACC P N ORD\nnovem, nonus -a -um, noveni -ae -a, novie (n)s  NUM   [XXXBX]\n 9th - (ORD, 'in series'); (a/the) 9th (part) (fract w/pars?);\n*",
+      "nativeStdoutSha256": "4bd2d3818c2fa8d817694a3511016306143d6834844077247c6c2e8ad18737f6"
+    },
+    {
+      "input": "laurice",
+      "options": {
+        "syncope": false
+      },
+      "expected": "ic                   SUFFIX\n-ic; of, pertaining/belonging to; connected with; derived/coming from (place);\nlauric.e             ADJ    1 1 VOC S M POS\nlaura, laurae  N (1st) F   [EEEFE]    Later  veryrare\nmonastery; settlement of anchorites in Egypt;\nlaurus, lauri  N (2nd) F   [XXXBO]\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\n*",
+      "nativeStdoutSha256": "5eeb1d7bb3c5f82a1a28f69231b8f46290279db9d5645c885aa781fe5a3f2814"
+    },
+    {
+      "input": "potevis",
+      "options": {
+        "syncope": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\npot.e                ADJ    1 1 VOC S M POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\npote                 ADJ    9 9 X   X X POS\npote, undeclined  ADJ   [XXXDX]    lesser\nable, capable; possible  (early Latin);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\npot.e                ADV    POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\n*",
+      "nativeStdoutSha256": "4f581d51789d12931c569f0721217b14a97ab82ab9d6cd9fe534af983db0c694"
+    },
+    {
+      "input": "poteuis",
+      "options": {
+        "syncope": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\npot.e                ADJ    1 1 VOC S M POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\npote                 ADJ    9 9 X   X X POS\npote, undeclined  ADJ   [XXXDX]    lesser\nable, capable; possible  (early Latin);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\npot.e                ADV    POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\n*",
+      "nativeStdoutSha256": "4f581d51789d12931c569f0721217b14a97ab82ab9d6cd9fe534af983db0c694"
+    },
+    {
+      "input": "quantacumque",
+      "options": {
+        "syncope": false
+      },
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nac                   SUFFIX\n-ing; having a tendency;\nquantac.um           ADJ    3 1 GEN P X POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "57a003f035ce0b2a64580e23eceb344a3eb0e5757cb71a57ba3f0eb5a423e6e3"
+    },
+    {
+      "input": "quantacunque",
+      "options": {
+        "syncope": false
+      },
+      "expected": "cunque               TACKON\n-ever/-soever; (for generalized/indefinite force); (what/how -> what/however);\nquant.a              ADJ    1 1 NOM S F POS\nquant.a              ADJ    1 1 VOC S F POS\nquant.a              ADJ    1 1 ABL S F POS\nquant.a              ADJ    1 1 NOM P N POS\nquant.a              ADJ    1 1 VOC P N POS\nquant.a              ADJ    1 1 ACC P N POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "e5d1945199c4f28ae95bfbc67c24380e0ce7d1a560674bef3b69ea70c3e9f8e4"
+    },
+    {
+      "input": "utercumque",
+      "options": {
+        "syncope": false
+      },
+      "expected": "Two words\nMay be 2 words combined (uter+cumque) If not obvious, probably incorrect\ncumque               ADV    POS\ncumque  ADV   [XXXEO]    uncommon\nat any time; -ever, -soever; appended to give generalized/indefinite force;\nuter                 N      3 3 NOM S M\nuter                 N      3 3 VOC S M\nuter, utris  N (3rd) M   [XXXDS]    lesser\nuter                 N      3 4 NOM S N\nuter                 N      3 4 VOC S N\nuter                 N      3 4 ACC S N\nuter, utris  N (3rd) N   [XXXDS]    lesser\nskin; wine/water skin; bag/bottle made of skin/hide; (inflated for flotation);\nuter                 ADJ    1 4 NOM S M POS\nuter                 ADJ    1 4 VOC S M POS\nuter, utra, utrum  ADJ   [XXXAO]\nwhich (of two), whichever, no matter which; one, either, one or other;\n(w/que) each/either (of two); both (separately); each side (pl.), each set;\n*",
+      "nativeStdoutSha256": "67c9c897db5756c1e26b0dcb458777377ff06ebcfe44174c1bcff63ff33f6922"
+    },
+    {
+      "input": "utercunque",
+      "options": {
+        "syncope": false
+      },
+      "expected": "cunque               TACKON\n-ever/-soever; (for generalized/indefinite force); (what/how -> what/however);\nuter                 ADJ    1 4 NOM S M POS\nuter                 ADJ    1 4 VOC S M POS\nuter, utra, utrum  ADJ   [XXXAO]\nwhich (of two), whichever, no matter which; one, either, one or other;\n(w/que) each/either (of two); both (separately); each side (pl.), each set;",
+      "nativeStdoutSha256": "b00ae1efcd134c3ab3c431d8f2da863ac475aff95b8591883ceeaeb18ab1f43e"
+    },
+    {
+      "input": "cvivscvmqve",
+      "options": {
+        "syncope": false
+      },
+      "expected": "Two words\nMay be 2 words combined (cvivs+cvmque) If not obvious, probably incorrect\ncvi.us               ADJ    1 1 NOM S M POS\ncujus, cuja, cujum  ADJ   [XXXCO]\nof whom?, whose?; (interrogative); of/to whom, whose (relative);\ncvmque               ADV    POS\ncumque  ADV   [XXXEO]    uncommon\nat any time; -ever, -soever; appended to give generalized/indefinite force;\n*",
+      "nativeStdoutSha256": "f41a950689d98fcfb50a73d4404fecf93c6ba3f1846bb85ed2bbd8c1982a87c1"
+    },
+    {
+      "input": "quantavis",
+      "options": {
+        "syncope": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\nquant.a              ADJ    1 1 NOM S F POS\nquant.a              ADJ    1 1 VOC S F POS\nquant.a              ADJ    1 1 ABL S F POS\nquant.a              ADJ    1 1 NOM P N POS\nquant.a              ADJ    1 1 VOC P N POS\nquant.a              ADJ    1 1 ACC P N POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "4a8606753693e14ee51b3c5e6a6d50053c8d0eb5b1c95051b857755218a2b962"
+    },
+    {
+      "input": "quicumque",
+      "options": {
+        "syncope": false
+      },
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;",
+      "nativeStdoutSha256": "0219b7d1ac2b3c796fd5f2b21a31310a95ab6042a3da380c416f14f49e5cce58"
+    },
+    {
+      "input": "quicunque",
+      "options": {
+        "syncope": false
+      },
+      "expected": "cunque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cunque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncunque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cunque) who/whatever, no matter who/what, in any time/way, however small;",
+      "nativeStdoutSha256": "2ceb1fc4b511c813eb1dc6c30c527f73d85368c576297fc6bcd1620d1fcea3b2"
+    },
+    {
+      "input": "quisque",
+      "options": {
+        "syncope": false
+      },
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nqu.is                PRON   1 0 NOM S C\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nqu.is                PRON   1 0 NOM S C\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nanyone/anybody/anything; whoever you pick; something (or other); any (NOM S);\nqui.s                V      6 1 PRES ACTIVE  IND 2 S\nqueo, quire, quivi(ii), quitus  V   [XXXBX]\nbe able;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nqu.is                PRON   1 0 NOM S C\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;",
+      "nativeStdoutSha256": "a4d08e7f11d43d10030ed76a4d75a75c5b70f1d91aab8ae9f4570157a8aadc77"
+    },
+    {
+      "input": "quidam",
+      "options": {
+        "syncope": false
+      },
+      "expected": "dam                  TACKON\nPACKON w/qui => certain; a certain (one); a certain thing;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXBX]\nqu.i                 PRON   1 0 NOM S M\n(w/-dam) certain; as INDEF a certain thing; somebody, one, something;",
+      "nativeStdoutSha256": "ff380efd4d549d2cd858e08a60d11d0d7fbfaa99a090e8f0fb93d116c66506ce"
+    },
+    {
+      "input": "multusque",
+      "options": {
+        "syncope": false
+      },
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nmult.us              ADJ    1 1 NOM S M POS\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;",
+      "nativeStdoutSha256": "306717eb8dd9278e358ae4e3d050d2ab5e03b05884eb1ba04688d83b1d8d9b3b"
+    },
+    {
+      "input": "amasti",
+      "options": {
+        "syncope": false
+      },
+      "expected": "am                   PREFIX\naround, round about; having two;\nast.i                N      4 1 GEN S M                   Archaic\nastus, astus  N (4th) M   [XXXCO]\ncraft, cunning, guile; cunning procedure/method, trick, stratagem;",
+      "nativeStdoutSha256": "07876fa13c7388afaea43a74ae84e5057ad9e0c8b12c6a53f194ec02f79df58f"
+    },
+    {
+      "input": "audierunt",
+      "options": {
+        "syncope": false
+      },
+      "expected": "Two words\nMay be 2 words combined (audi+erunt) If not obvious, probably incorrect\naud.i                V      4 1 PRES ACTIVE  IMP 2 S\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;\n.erunt               V      5 1 FUT  ACTIVE  IND 3 P\nsum, esse, fui, futurus  V   [XXXAX]\nbe; exist; (also used to form verb perfect passive tenses) with NOM PERF PPL\n*",
+      "nativeStdoutSha256": "59b171c247ba4ee863bad48956d2490d00e1a076e85fb8cbe5ce6fa2c3005a8c"
+    },
+    {
+      "input": "coissem",
+      "options": {
+        "syncope": false
+      },
+      "expected": "Word mod co/com\nAn initial 'co' may be rendered by 'com'\n*",
+      "nativeStdoutSha256": "657ed36abd26f08b1b5fddbdefe6af0e6af5da3e1174014a67f69d531b5b63b4"
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "syncope": false
+      },
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "5b42cdbf11077eff80101805a69486f096a86def7be0aa544530ce68e17f7ce9"
+    },
+    {
+      "input": "amatum iri",
+      "options": {
+        "syncope": false
+      },
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "0ab80246530c68df13d8cb83d5a2593c49919360501c3e33f058076c04e382f0"
+    },
+    {
+      "input": "bone",
+      "options": {
+        "syncope": false
+      },
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nbon.e                ADV    POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;",
+      "nativeStdoutSha256": "a5f07ba94565ef3235c94c016b029452a190361cab12b640e472547b85197a09"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaa",
+      "options": {
+        "syncope": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaa            ========   UNKNOWN",
+      "nativeStdoutSha256": "1319b7950bea461132a43cfbae491f6f60091d3e8ac1a91c91b0f84f3cef7a7a"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "syncope": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN",
+      "nativeStdoutSha256": "f552a2a321d03e0d65ce002fe57083b994fc6794cbed9798759cfe8d33e91789"
+    },
+    {
+      "input": "Aesopice",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "ic                   SUFFIX\n-ic; of, pertaining/belonging to; connected with; derived/coming from (place);\naesop.i              N      2 1 NOM P M\nAesopus, Aesopi  N (2nd) M   [XGHCO]\naesopic.e            ADJ    1 1 VOC S M POS\nAesop (Greek author of fables); (Roman tragic actor contemporary with Cicero);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\naesopic.e            ADV    POS\nAesopus, Aesopi  N (2nd) M   [XGHCO]\nAesop (Greek author of fables); (Roman tragic actor contemporary with Cicero);",
+      "nativeStdoutSha256": "1c1ab9559043017489ec46da0ec179cfd577935ef6e08a0e65aaa0bd3a14cbc2"
+    },
+    {
+      "input": "Coscine",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "ne                   TACKON\n-ne = is it not that (enclitic); or ...(introduces a question or alternative);\nWord mod co/con\nAn initial 'co' may be rendered by 'con'\nconsc.i              V      4 1 PRES ACTIVE  IMP 2 S\nconscio, conscire, conscivi, -  V (4th)   [XXXEO]    uncommon\nfeel guilty; be conscious of (wrong); have on conscience; know well (late);\nconsci               N      2 4 GEN S C                   Early\nconscius, consci(i)  N (2nd) C   [XXXDO]    lesser\naccomplice, accessory; partner; confidante; one privy to (crime/plot); witness;",
+      "nativeStdoutSha256": "21835251486b0eb8959b385cb35e7274708ab096932530d80b78ae5011c059b2"
+    },
+    {
+      "input": "CosCine",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "ne                   TACKON\n-ne = is it not that (enclitic); or ...(introduces a question or alternative);\nWord mod co/con\nAn initial 'co' may be rendered by 'con'\nconsc.i              V      4 1 PRES ACTIVE  IMP 2 S\nconscio, conscire, conscivi, -  V (4th)   [XXXEO]    uncommon\nfeel guilty; be conscious of (wrong); have on conscience; know well (late);\nconsci               N      2 4 GEN S C                   Early\nconscius, consci(i)  N (2nd) C   [XXXDO]    lesser\naccomplice, accessory; partner; confidante; one privy to (crime/plot); witness;",
+      "nativeStdoutSha256": "21835251486b0eb8959b385cb35e7274708ab096932530d80b78ae5011c059b2"
+    },
+    {
+      "input": "nerati",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\nrati                 ADV    POS\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;",
+      "nativeStdoutSha256": "332ae06448c7f98c4429b480c4dfa279b4d4c8fc1138a8624ffba16661d9ef0d"
+    },
+    {
+      "input": "Nerati",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\nrati                 ADV    POS\nreor, reri, ratus sum  V (2nd) DEP   [XXXAX]\nthink, regard; deem; suppose, believe, reckon;",
+      "nativeStdoutSha256": "332ae06448c7f98c4429b480c4dfa279b4d4c8fc1138a8624ffba16661d9ef0d"
+    },
+    {
+      "input": "nepotati",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "ne                   PREFIX\nnot;\ni                    SUFFIX\n-ly; (use imagination! run -> hastily; strive -> eagerly; stand -> immediately)\npotati               ADV    POS\npoto, potare, potavi, potatus  V (1st)   [XXXAO]\ndrink; drink heavily/convivially, tipple; swallow; absorb, soak up;\nat                   SUFFIX\n-ate, -ship, the office of; official body (consul.atus = consulate, consulship)\nnepotat.i            N      4 1 GEN S M                   Archaic\nnepos, nepotis  N (3rd) C   [XXXAX]\ngrandson/daughter; descendant; spendthrift, prodigal, playboy; secondary shoot;\nat                   SUFFIX\n-ed, having, having a, provided with; -able;\nnepotat.i            ADJ    1 1 GEN S M POS\nnepotat.i            ADJ    1 1 GEN S N POS\nnepotat.i            ADJ    1 1 NOM P M POS\nnepotat.i            ADJ    1 1 VOC P M POS\nnepos, nepotis  N (3rd) C   [XXXAX]\ngrandson/daughter; descendant; spendthrift, prodigal, playboy; secondary shoot;",
+      "nativeStdoutSha256": "b5fffdf1b7584ff3a15dc777a7bd2698ac0901ee828c979f90d2ad4211c767fe"
+    },
+    {
+      "input": "nonadecima",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "Two words\nIt is very likely a compound number    nona + decima\ndecim.a              NUM    2 0 NOM S F ORD\ndecim.a              NUM    2 0 VOC S F ORD\ndecim.a              NUM    2 0 ABL S F ORD\ndecim.a              NUM    2 0 NOM P N ORD\ndecem, decimus -a -um, deni -ae -a, decie (n)s  NUM   [XXXBO]\n 10th - (ORD, 'in series'); (a/the) 10th (part) (fract w/pars?);\nnon.a                N      1 1 VOC S F\nNona, Nonae  N (1st) F   [XXXDX]    lesser\nNones (pl.), abb. Non.; 7th of month, March, May, July, Oct., 5th elsewhen;\nnon.a                NUM    2 0 NOM S F ORD\nnon.a                NUM    2 0 VOC S F ORD\nnon.a                NUM    2 0 ABL S F ORD\nnon.a                NUM    2 0 NOM P N ORD\nnon.a                NUM    2 0 VOC P N ORD\nnon.a                NUM    2 0 ACC P N ORD\nnovem, nonus -a -um, noveni -ae -a, novie (n)s  NUM   [XXXBX]\n 9th - (ORD, 'in series'); (a/the) 9th (part) (fract w/pars?);\n*",
+      "nativeStdoutSha256": "fb0264cfb841f8b3c9294a05d178c4d6a2b780753e16ed5667afbc3aafc9619d"
+    },
+    {
+      "input": "nonadecimvm",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "Two words\nIt is very likely a compound number    nona + decimvm\ndecim.um             NUM    2 0 NOM S N ORD\ndecim.um             NUM    2 0 VOC S N ORD\ndecem, decimus -a -um, deni -ae -a, decie (n)s  NUM   [XXXBO]\n 10th - (ORD, 'in series'); (a/the) 10th (part) (fract w/pars?);\nnon.a                N      1 1 VOC S F\nNona, Nonae  N (1st) F   [XXXDX]    lesser\nNones (pl.), abb. Non.; 7th of month, March, May, July, Oct., 5th elsewhen;\nnon.a                NUM    2 0 NOM S F ORD\nnon.a                NUM    2 0 VOC S F ORD\nnon.a                NUM    2 0 ABL S F ORD\nnon.a                NUM    2 0 NOM P N ORD\nnon.a                NUM    2 0 VOC P N ORD\nnon.a                NUM    2 0 ACC P N ORD\nnovem, nonus -a -um, noveni -ae -a, novie (n)s  NUM   [XXXBX]\n 9th - (ORD, 'in series'); (a/the) 9th (part) (fract w/pars?);\n*",
+      "nativeStdoutSha256": "4bd2d3818c2fa8d817694a3511016306143d6834844077247c6c2e8ad18737f6"
+    },
+    {
+      "input": "laurice",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "ic                   SUFFIX\n-ic; of, pertaining/belonging to; connected with; derived/coming from (place);\nlauric.e             ADJ    1 1 VOC S M POS\nlaura, laurae  N (1st) F   [EEEFE]    Later  veryrare\nmonastery; settlement of anchorites in Egypt;\nlaurus, lauri  N (2nd) F   [XXXBO]\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\ne                    SUFFIX\nlauric.e             ADV    POS\nlaurus, laurus  N (4th) F   [XXXBO]\nlaurel/bay tree/foliage/sprig/branch (medicine/magic); triumph/victory; honor;\n*",
+      "nativeStdoutSha256": "5eeb1d7bb3c5f82a1a28f69231b8f46290279db9d5645c885aa781fe5a3f2814"
+    },
+    {
+      "input": "potevis",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\npot.e                ADJ    1 1 VOC S M POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\npote                 ADJ    9 9 X   X X POS\npote, undeclined  ADJ   [XXXDX]    lesser\nable, capable; possible  (early Latin);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\npot.e                ADV    POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\n*",
+      "nativeStdoutSha256": "4f581d51789d12931c569f0721217b14a97ab82ab9d6cd9fe534af983db0c694"
+    },
+    {
+      "input": "poteuis",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\npot.e                ADJ    1 1 VOC S M POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\npote                 ADJ    9 9 X   X X POS\npote, undeclined  ADJ   [XXXDX]    lesser\nable, capable; possible  (early Latin);\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\npot.e                ADV    POS\npotus, pota, potum  ADJ   [XXXDX]    lesser\ndrunk; drunk up, drained; having drunk; being drunk, drunken, intoxicated;\n*",
+      "nativeStdoutSha256": "4f581d51789d12931c569f0721217b14a97ab82ab9d6cd9fe534af983db0c694"
+    },
+    {
+      "input": "quantacumque",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nac                   SUFFIX\n-ing; having a tendency;\nquantac.um           ADJ    3 1 GEN P X POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "57a003f035ce0b2a64580e23eceb344a3eb0e5757cb71a57ba3f0eb5a423e6e3"
+    },
+    {
+      "input": "quantacunque",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "cunque               TACKON\n-ever/-soever; (for generalized/indefinite force); (what/how -> what/however);\nquant.a              ADJ    1 1 NOM S F POS\nquant.a              ADJ    1 1 VOC S F POS\nquant.a              ADJ    1 1 ABL S F POS\nquant.a              ADJ    1 1 NOM P N POS\nquant.a              ADJ    1 1 VOC P N POS\nquant.a              ADJ    1 1 ACC P N POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "e5d1945199c4f28ae95bfbc67c24380e0ce7d1a560674bef3b69ea70c3e9f8e4"
+    },
+    {
+      "input": "utercumque",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "Two words\nMay be 2 words combined (uter+cumque) If not obvious, probably incorrect\ncumque               ADV    POS\ncumque  ADV   [XXXEO]    uncommon\nat any time; -ever, -soever; appended to give generalized/indefinite force;\nuter                 N      3 3 NOM S M\nuter                 N      3 3 VOC S M\nuter, utris  N (3rd) M   [XXXDS]    lesser\nuter                 N      3 4 NOM S N\nuter                 N      3 4 VOC S N\nuter                 N      3 4 ACC S N\nuter, utris  N (3rd) N   [XXXDS]    lesser\nskin; wine/water skin; bag/bottle made of skin/hide; (inflated for flotation);\nuter                 ADJ    1 4 NOM S M POS\nuter                 ADJ    1 4 VOC S M POS\nuter, utra, utrum  ADJ   [XXXAO]\nwhich (of two), whichever, no matter which; one, either, one or other;\n(w/que) each/either (of two); both (separately); each side (pl.), each set;\n*",
+      "nativeStdoutSha256": "67c9c897db5756c1e26b0dcb458777377ff06ebcfe44174c1bcff63ff33f6922"
+    },
+    {
+      "input": "utercunque",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "cunque               TACKON\n-ever/-soever; (for generalized/indefinite force); (what/how -> what/however);\nuter                 ADJ    1 4 NOM S M POS\nuter                 ADJ    1 4 VOC S M POS\nuter, utra, utrum  ADJ   [XXXAO]\nwhich (of two), whichever, no matter which; one, either, one or other;\n(w/que) each/either (of two); both (separately); each side (pl.), each set;",
+      "nativeStdoutSha256": "b00ae1efcd134c3ab3c431d8f2da863ac475aff95b8591883ceeaeb18ab1f43e"
+    },
+    {
+      "input": "cvivscvmqve",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "Two words\nMay be 2 words combined (cvivs+cvmque) If not obvious, probably incorrect\ncvi.us               ADJ    1 1 NOM S M POS\ncujus, cuja, cujum  ADJ   [XXXCO]\nof whom?, whose?; (interrogative); of/to whom, whose (relative);\ncvmque               ADV    POS\ncumque  ADV   [XXXEO]    uncommon\nat any time; -ever, -soever; appended to give generalized/indefinite force;\n*",
+      "nativeStdoutSha256": "f41a950689d98fcfb50a73d4404fecf93c6ba3f1846bb85ed2bbd8c1982a87c1"
+    },
+    {
+      "input": "quantavis",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "vis                  TACKON\nTACKON (what)-ever (w/quantus) [quantusvis => of whatever size you like];\nquant.a              ADJ    1 1 NOM S F POS\nquant.a              ADJ    1 1 VOC S F POS\nquant.a              ADJ    1 1 ABL S F POS\nquant.a              ADJ    1 1 NOM P N POS\nquant.a              ADJ    1 1 VOC P N POS\nquant.a              ADJ    1 1 ACC P N POS\nquantus, quanta, quantum  ADJ   [XXXAO]\nhow great; how much/many; of what size/amount/degree/number/worth/price;",
+      "nativeStdoutSha256": "4a8606753693e14ee51b3c5e6a6d50053c8d0eb5b1c95051b857755218a2b962"
+    },
+    {
+      "input": "quicumque",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "cumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncum                  TACKON\nPACKON w/qui pron with ABL => with what, with whom;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\n(w/-cum) only ABL with whom?, with which?;\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;\ncumque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cumque) who/whatever, no matter who/what, in any time/way, however small;",
+      "nativeStdoutSha256": "0219b7d1ac2b3c796fd5f2b21a31310a95ab6042a3da380c416f14f49e5cce58"
+    },
+    {
+      "input": "quicunque",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "cunque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cunque) who/whatever, no matter who/what, in any time/way, however small;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\ncunque               TACKON\nPACKON w/qui => whoever; whatever; everyone who, all that, anything that;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXAX]\nqu.i                 PRON   1 0 NOM S M\n(w/-cunque) who/whatever, no matter who/what, in any time/way, however small;",
+      "nativeStdoutSha256": "2ceb1fc4b511c813eb1dc6c30c527f73d85368c576297fc6bcd1620d1fcea3b2"
+    },
+    {
+      "input": "quisque",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "que                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nqu.is                PRON   1 0 NOM S C\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\nque                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nwho; that; which, what; of which kind/degree; person/thing/time/point that;\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nwho/whatever, everyone who, all that, anything that;\nany; anyone/anything, any such; unspecified some; (after si/sin/sive/ne);\nwho?, which?, what?; what kind of?;\nqu.is                PRON   1 0 NOM S C\nwho/what/which?, what/which one/man/person/thing? what kind/type of?;\nanyone/anybody/anything; whoever you pick; something (or other); any (NOM S);\nqui.s                V      6 1 PRES ACTIVE  IND 2 S\nqueo, quire, quivi(ii), quitus  V   [XXXBX]\nbe able;\nque                  TACKON\nPACKON w/qui => whoever it be; whatever; each, each one; everyone, everything;\nqu.is                PRON   1 0 DAT P X\nqu.is                PRON   1 0 ABL P X\nqu  PACK   [XXXAX]\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;\n(w/-que) any; each;\nqu.is                PRON   1 0 NOM S C\n(w/-que) each, each one; every, everybody, everything (more than 2); whatever;",
+      "nativeStdoutSha256": "a4d08e7f11d43d10030ed76a4d75a75c5b70f1d91aab8ae9f4570157a8aadc77"
+    },
+    {
+      "input": "quidam",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "dam                  TACKON\nPACKON w/qui => certain; a certain (one); a certain thing;\nqu.i                 PRON   1 0 DAT S X\nqu.i                 PRON   1 0 NOM P M\nqu  PACK   [XXXBX]\nqu.i                 PRON   1 0 NOM S M\n(w/-dam) certain; as INDEF a certain thing; somebody, one, something;",
+      "nativeStdoutSha256": "ff380efd4d549d2cd858e08a60d11d0d7fbfaa99a090e8f0fb93d116c66506ce"
+    },
+    {
+      "input": "multusque",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "que                  TACKON\n-que = and (enclitic, translated before attached word); completes plerus/uter;\nmult.us              ADJ    1 1 NOM S M POS\nmultus, multa -um, -, plurimus -a -um  ADJ   [XXXAX]\nmuch, many, great, many a; large, intense, assiduous; tedious;",
+      "nativeStdoutSha256": "306717eb8dd9278e358ae4e3d050d2ab5e03b05884eb1ba04688d83b1d8d9b3b"
+    },
+    {
+      "input": "amasti",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "Syncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\namav.isti            V      1 1 PERF ACTIVE  IND 2 S\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "e2c6d50e6b56338abe5af2881acd827258f302b768d01d6a6ad84d704a60fa80"
+    },
+    {
+      "input": "audierunt",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "Syncope  ier=>iver\nSyncopated perfect often drops the 'v' and contracts vowel\naudiv.erunt          V      4 1 PERF ACTIVE  IND 3 P\naudio, audire, audivi, auditus  V (4th)   [XXXAO]\nhear, listen, accept, agree with; obey; harken, pay attention; be able to hear;",
+      "nativeStdoutSha256": "12af70375565d058e56fb1e60e0f83cc22b6e7fc8caef4ff49ad8ba0d3651241"
+    },
+    {
+      "input": "coissem",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "Word mod co/com\nAn initial 'co' may be rendered by 'com'\nSyncope   s => vis\nSyncopated perfect often drops the 'v' and contracts vowel\ncoiv.issem           V      6 1 PLUP ACTIVE  SUB 1 S\ncoeo, coire, coivi(ii), coitus  V   [XXXAO]\nfit together; have sexual intercourse; collect/gather (fluid); meet; rally;\nenter agreement; unite/assemble/conspire; come/go together; mend/knit (wound);\n*",
+      "nativeStdoutSha256": "bfd8f784dfce51af213907e565fb4b9e96a1ff2fc74d3ff77645a976a0dd78a1"
+    },
+    {
+      "input": "amatus est",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "amat.us              VPAR   1 1 NOM S M PERF PASSIVE PPL\nPPL+est              V      1 1 PERF PASSIVE IND 3 S\nPERF PASSIVE PPL + verb TO_BE => PASSIVE perfect system\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "5b42cdbf11077eff80101805a69486f096a86def7be0aa544530ce68e17f7ce9"
+    },
+    {
+      "input": "amatum iri",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "amat.um              SUPINE 1 1 ACC S N\nSUPINE + iri         V      1 1 FUT  PASSIVE INF 0 X\namo, amare, amavi, amatus  V (1st)   [XXXAO]\nlove, like; fall in love with; be fond of; have a tendency to;",
+      "nativeStdoutSha256": "0ab80246530c68df13d8cb83d5a2593c49919360501c3e33f058076c04e382f0"
+    },
+    {
+      "input": "bone",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "bon.e                N      2 1 VOC S M\nbonus, boni  N (2nd) M   [XXXCO]\ngood/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);\nbon.e                ADJ    1 1 VOC S M POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;\ne                    SUFFIX\n-ly; -ily;  Converting ADJ to ADV\nbon.e                ADV    POS\nbonus, bona -um, melior -or -us, optimus -a -um  ADJ   [XXXAO]\ngood, honest, brave, noble, kind, pleasant, right, useful; valid; healthy;",
+      "nativeStdoutSha256": "a5f07ba94565ef3235c94c016b029452a190361cab12b640e472547b85197a09"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaa",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaa            ========   UNKNOWN",
+      "nativeStdoutSha256": "1319b7950bea461132a43cfbae491f6f60091d3e8ac1a91c91b0f84f3cef7a7a"
+    },
+    {
+      "input": "quaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {
+        "ignoreUnknownNames": false,
+        "ignoreUnknownCaps": false
+      },
+      "expected": "quaaaaaaaaaaaaaaaaaaaaaaaa     ========   UNKNOWN",
+      "nativeStdoutSha256": "f552a2a321d03e0d65ce002fe57083b994fc6794cbed9798759cfe8d33e91789"
+    }
+  ]
+}

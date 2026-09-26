@@ -54,6 +54,36 @@ function active(s: string): {
     text: string;
     line: number;
 }[] { return lines(s).filter(x => x.text.trim() && !x.text.trimStart().startsWith('--')); }
+function addonRecords(s: string): {
+    header: string;
+    codes: string;
+    meaning: string;
+    line: number;
+}[] {
+    const input = lines(s), records = [];
+    if (!input.at(-1)!.text)
+        input.pop();
+    let i = 0;
+    while (i < input.length) {
+        // Get_Non_Comment_Line retains the tail of each skipped comment in its
+        // 250-character local line. Its comment search scans that entire line.
+        let buffer = ' '.repeat(250), header = '', line = 0;
+        while (i < input.length) {
+            const row = input[i++];
+            buffer = row.text + buffer.slice(row.text.length);
+            if (buffer.trimStart().startsWith('--'))
+                continue;
+            const comment = buffer.indexOf('--');
+            header = buffer.slice(0, comment < 0 ? row.text.length : comment);
+            line = row.line;
+            break;
+        }
+        if (i + 1 >= input.length)
+            throw new Error('Incomplete addon record');
+        records.push({ header, codes: input[i++].text, meaning: input[i++].text, line });
+    }
+    return records;
+}
 export async function loadDataset(data: SourceData): Promise<Dataset> {
     for (const [key, digest] of Object.entries(checks)) {
         const buffer = new TextEncoder().encode(data[key as keyof SourceData]);
@@ -91,15 +121,14 @@ export function parseDataset(data: SourceData): Dataset {
             throw new Error(`Invalid inflection row ${line}`);
         return { id: i + 1, sourceLine: line, quality, key, ending, age, frequency };
     });
-    const addonLines = active(data.addons), affixes: Affix[] = [];
-    if (addonLines.length % 3)
-        throw new Error('Incomplete addon record');
-    for (let i = 0; i < addonLines.length; i += 3) {
-        const h = words(addonLines[i].text);
+    const affixes: Affix[] = [];
+    for (const record of addonRecords(data.addons)) {
+        const h = words(record.header);
         const kind = h[0] as Affix['kind'];
         if (!['PREFIX', 'SUFFIX', 'TACKON'].includes(kind))
             throw new Error('Unknown addon kind');
-        affixes.push({ id: i / 3 + 1, sourceLine: addonLines[i].line, kind, fix: h[1], connect: h[2] ?? '', codes: words(addonLines[i + 1].text), meaning: addonLines[i + 2].text.slice(0, 80).trimEnd() });
+        const fix = kind === 'TACKON' ? record.header.slice(record.header.indexOf(kind) + kind.length).trim().slice(0, 18).trimEnd() : h[1];
+        affixes.push({ id: affixes.length + 1, sourceLine: record.line, kind, fix, connect: kind === 'TACKON' ? '' : (h[2]?.[0] ?? ''), codes: words(record.codes), meaning: record.meaning.slice(0, 80).trimEnd() });
     }
     const uniqueLines = active(data.uniques), uniques: Unique[] = [];
     if (uniqueLines.length % 3)

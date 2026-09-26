@@ -1,11 +1,8 @@
 // Port of the pinned WORDS matching/control rules. Upstream notice: licenses/whitaker.txt.
 import { POS, DEFAULT_OPTIONS, eq, norm, effective, cloneQuality, type Quality, type Rule, type Parse, type Entry, type Part, type Stem, type Affix, type LegacyOptions, type Trace } from './model.js';
 import type { Dataset } from './data.js';
-export const emptyEntry: Entry = { id: 0, sourceLine: null, stems: ['', '', '', ''], part: { pos: 'X', codes: [] }, flags: 'XXXXX', meaning: '', citation: '' };
-export const emptyRule: Rule = { id: 0, sourceLine: 0, quality: { pos: 'X', codes: [] }, key: 0, ending: '', age: 'X', frequency: 'X' };
-export const nullParse: Parse = { stem: '', rule: emptyRule, entry: emptyEntry, dictionary: 'X', traces: [] };
-export class LegacyConstraintError extends Error {
-}
+import { ParseBuffer, emptyEntry, emptyRule, nullParse, LegacyConstraintError } from './buffer.js';
+export { emptyEntry, emptyRule, nullParse, LegacyConstraintError } from './buffer.js';
 export function decn(left: readonly string[], right: readonly string[]): boolean {
     return left[0] === right[0] && left[1] === right[1] || right[0] === '0' && right[1] === '0' && left[0] !== '9' || left[0] === right[0] && right[1] === '0';
 }
@@ -225,7 +222,7 @@ export class LegacyCore {
             right = range[1];
         }
     }
-    basic(word: string, restriction: 'regular' | 'qu' | 'pack' = 'regular', retained = false, pack?: Affix): Parse[] {
+    basic(word: string, restriction: 'regular' | 'qu' | 'pack' = 'regular', retained = false, pack?: Affix, destination?: ParseBuffer, packInput = word): Parse[] {
         const out: Parse[] = [];
         const pairs = this.pairs(word, restriction !== 'regular').filter(pair => (restriction !== 'qu' || pair.rule.key === (word.startsWith('qu') || word.startsWith('aliqu') ? 1 : 2) && pair.rule.ending.length <= 4) && (!pack || decn(pair.rule.quality.codes, pack.codes.slice(1))));
         if (restriction === 'regular') {
@@ -248,12 +245,10 @@ export class LegacyCore {
                 if (restriction === 'regular' && item.stem.length !== pair.stem.length)
                     continue;
                 const e = item.entry, p = e.part;
-                if (restriction === 'qu' && !(p.pos === 'PRON' && p.codes[0] === '1'))
-                    continue;
-                if (restriction === 'pack' && p.pos !== 'PACK')
-                    continue;
                 if (pack && !e.meaning.trimStart().startsWith('(w/-' + pack.fix))
                     continue;
+                if (restriction === 'qu' && p.pos !== 'PRON' || restriction === 'pack' && p.pos !== 'PACK')
+                    throw new LegacyConstraintError('Legacy QU dictionary variant mismatch');
                 let rule: Rule | null;
                 if (restriction === 'qu' || restriction === 'pack') {
                     if (p.codes[0] !== pair.rule.quality.codes[0] || p.codes[1] !== pair.rule.quality.codes[1])
@@ -265,7 +260,14 @@ export class LegacyCore {
                 if (rule) {
                     if (restriction === 'regular' && out.length === 250)
                         throw new LegacyConstraintError('Legacy reduced buffer exceeds 250 records');
-                    out.push({ stem: pair.stem, rule, entry: e, dictionary: 'GEN', traces: [] });
+                    const packMarker = pack ? marker(pack, 'tackon', packInput, word) : null;
+                    const record: Parse = { stem: pair.stem, rule, entry: e, dictionary: 'GEN', traces: packMarker?.traces ?? [] };
+                    if (destination) {
+                        if (pack && !out.length)
+                            destination.append(packMarker!);
+                        destination.append(record);
+                    }
+                    out.push(record);
                 }
             }
         }
@@ -284,43 +286,49 @@ export class LegacyCore {
             return null;
         return word.slice(0, -fix.fix.length);
     }
-    qu(word: string): Parse[] {
-        for (const tick of [...this.tickons, null]) {
-            const w = tick ? this.usePrefixes ? this.subtract(word, tick, true) : null : word;
-            if (w === null)
-                continue;
-            let result: Parse[] = tick ? [marker(tick, 'prefix', word, w)] : [];
-            if ((w.startsWith('qu') || w.startsWith('cu')) && w.length >= 3) {
-                result.push(...this.basic(w, 'qu'));
-                if (result.length > 1)
-                    return result;
-                const packed: Parse[] = [];
-                for (const affix of this.packons) {
-                    let stem = this.subtract(w, affix);
-                    if (stem === null)
-                        continue;
-                    if (affix.fix.startsWith('dam') && stem.endsWith('n'))
-                        stem = stem.slice(0, -1) + 'm';
-                    const hit = this.basic(stem, 'pack', false, affix);
-                    if (hit.length) {
-                        const m = marker(affix, 'tackon', word, stem);
-                        packed.push(m, ...hit.map(p => ({ ...p, traces: [...m.traces, ...p.traces] })));
+    private quInto(word: string, pa: ParseBuffer): void {
+        const saved = pa.last;
+        try {
+            for (const tick of [...this.tickons, null]) {
+                const less = tick && this.usePrefixes ? this.subtract(word, tick, true) : null;
+                const w = (less ?? word).slice(0, 18);
+                pa.last = saved;
+                pa.set(saved + 1, nullParse);
+                if (tick && w === word)
+                    continue;
+                if (tick)
+                    pa.append(marker(tick, 'prefix', word, w));
+                if ((w.startsWith('qu') || w.startsWith('cu')) && w.length >= 3) {
+                    this.basic(w, 'qu', false, undefined, pa);
+                    if (pa.last > saved + 1)
+                        return;
+                    for (const affix of this.packons) {
+                        let stem = this.subtract(w, affix);
+                        if (stem === null)
+                            continue;
+                        if (affix.fix.startsWith('dam') && stem.endsWith('n'))
+                            stem = stem.slice(0, -1) + 'm';
+                        this.basic(stem, 'pack', false, affix, pa, word);
                     }
+                    if (pa.last > saved + 1)
+                        return;
                 }
-                result.push(...packed);
-                if (result.length > 1)
-                    return result;
+                else if (word.length >= 6 && (word.startsWith('aliqu') || word.startsWith('alicu')))
+                    this.basic(word, 'qu', false, undefined, pa);
+                if (pa.last === saved + 1)
+                    pa.last = saved;
+                else
+                    return;
             }
-            else if (word.length >= 6 && (word.startsWith('aliqu') || word.startsWith('alicu')))
-                result.push(...this.basic(word, 'qu'));
-            if (result.length !== 1)
-                return result;
         }
-        return [];
+        catch (error) {
+            if (!(error instanceof LegacyConstraintError))
+                throw error;
+            // QU catches a constraint failure without restoring Pa_Last or storage.
+        }
     }
-    fixed(word: string, prefixesFirst = true, capacity = 100): Parse[] {
+    private fixedInto(word: string, prefixesFirst: boolean, pa: ParseBuffer): void {
         const pairs = this.pairs(word);
-        const out: Parse[] = [];
         const prefixes = this.usePrefixes ? this.prefixes.filter(p => word[0] === p.fix[0] && word.length > p.fix.length && eq(word.slice(0, p.fix.length), p.fix)) : [];
         const match = (prefix: Affix | null, suffix: Affix | null): Parse[] => {
             const hits: Parse[] = [];
@@ -386,8 +394,10 @@ export class LegacyCore {
         };
         if (prefixesFirst) {
             const hit = tryPrefixes();
-            if (hit.length)
-                return hit;
+            if (hit.length) {
+                pa.appendAll(hit);
+                return;
+            }
         }
         let lastReduction: Parse[] = [];
         for (const suffix of this.suffixes) {
@@ -407,44 +417,55 @@ export class LegacyCore {
             if (hit.length) {
                 const m = marker(suffix, 'suffix', word, word);
                 const traces = [...(prefixMarker?.traces ?? []), ...m.traces];
-                out.push(...(prefixMarker ? [prefixMarker] : []), m, ...hit.map(p => ({ ...p, traces })));
-                if (out.length > capacity)
-                    throw new LegacyConstraintError('Legacy suffix parse buffer overflow');
+                pa.appendAll([...(prefixMarker ? [prefixMarker] : []), m, ...hit.map(p => ({ ...p, traces }))]);
             }
         }
         // Prune_Stems tests the last SXX, not whether any earlier suffix succeeded.
         const tail = lastReduction.length ? sorted([...lastReduction]) : tryPrefixes();
-        return [...out, ...tail];
+        pa.appendAll(tail);
     }
     word(raw: string, fixes = false, depth = 0, entering = 0, capacity = 100): Parse[] {
+        const pa = new ParseBuffer(capacity);
+        pa.last = entering;
+        this.wordInto(raw, pa, fixes);
+        return pa.read(entering + 1);
+    }
+    wordInto(raw: string, pa: ParseBuffer, fixes = false): void {
+        const saved = pa.last;
         try {
-            const result = this.wordBody(raw, fixes, depth, entering, capacity);
-            return entering + result.length <= capacity ? result : [];
+            this.wordBody(raw, pa, fixes);
         }
         catch (error) {
-            if (error instanceof LegacyConstraintError)
-                return [];
+            if (error instanceof LegacyConstraintError) {
+                pa.last = saved;
+                return;
+            }
             throw error;
         }
     }
-    private wordBody(raw: string, fixes: boolean, depth: number, entering: number, capacity: number): Parse[] {
+    private wordBody(raw: string, pa: ParseBuffer, fixes: boolean): void {
         const word = raw.toLowerCase();
+        const entering = pa.last;
         if (!word)
-            return [];
-        let result = [...this.uniques(word), ...this.qu(word), ...this.basic(word, 'regular', this.onlyFixes)];
-        if (!entering && !result.length && fixes)
-            result = this.fixed(word, !this.candidates.length, capacity - entering);
-        if (!result.length)
+            return;
+        pa.appendAll(this.uniques(word));
+        this.quInto(word, pa);
+        const regular = this.basic(word, 'regular', this.onlyFixes);
+        if (!pa.last && !regular.length && fixes)
+            this.fixedInto(word, !this.candidates.length, pa);
+        else
+            pa.appendAll(regular);
+        if (pa.last === entering)
             for (const tack of this.tackons.slice(4)) {
                 const less = this.subtract(word, tack);
                 if (less === null)
                     continue;
-                let hit = this.word(less, fixes, depth + 1, entering, capacity);
+                this.wordInto(less, pa, fixes);
                 const p = tack.codes[0];
-                let tackOn = false, tackHit = p === 'X' && hit.length > 0;
+                let tackOn = false, tackHit = p === 'X' && pa.last > entering;
                 if (p !== 'X')
-                    for (let j = hit.length - 1; j >= 0; j--) {
-                        const q = hit[j].rule.quality;
+                    for (let j = pa.last; j > entering; j--) {
+                        const q = pa.get(j).rule.quality;
                         if (['PREFIX', 'SUFFIX'].includes(q.pos) && tackOn) {
                             tackOn = false;
                             continue;
@@ -459,13 +480,17 @@ export class LegacyCore {
                             if (p === 'N')
                                 continue;
                         }
-                        hit.splice(j, 1);
+                        pa.remove(j);
                     }
                 if (tackHit) {
                     const m = marker(tack, 'tackon', word, less);
-                    return [m, ...hit.map(x => ({ ...x, traces: [...m.traces, ...x.traces] }))];
+                    pa.insert(entering + 1, m);
+                    for (let i = entering + 2; i <= pa.last; i++) {
+                        const x = pa.get(i);
+                        pa.set(i, { ...x, traces: [...m.traces, ...x.traces] });
+                    }
+                    return;
                 }
             }
-        return result;
     }
 }

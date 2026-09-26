@@ -1,21 +1,29 @@
 // Port of the ordered legacy fallback passes. See licenses/whitaker.txt.
-import { LegacyCore, emptyEntry, emptyRule, marker, nullParse } from './core.js';
+import { LegacyCore, marker } from './core.js';
+import { ParseBuffer, emptyEntry, emptyRule, nullParse, LegacyConstraintError } from './buffer.js';
 import type { Parse, Trace } from './model.js';
 import { TABLES, type Trick } from './trick-tables.js';
 import { onlyRoman, romanParse } from './numerals.js';
 export function explanation(stem: string, meaning: string, kind: Trace['kind'], input: string, output: string, dictionary: 'XXX' | 'YYY' = 'XXX'): Parse {
     return { stem: stem.slice(0, 18), rule: emptyRule, entry: { ...emptyEntry, meaning: meaning.slice(0, 80) }, dictionary, traces: [{ kind, sourceId: 'words_engine-tricks.adb', input, output, explanation: meaning }] };
 }
-function withExplanation(mark: Parse, parses: Parse[]): Parse[] { return [mark, ...parses.map(p => ({ ...p, traces: [...mark.traces, ...p.traces] }))]; }
-const acceptable = (p: Parse[]) => p.length > 0 && p.at(-2)?.rule.quality.pos !== 'TACKON';
-const vowel = (c: string) => 'aeiouy'.includes(c);
+function annotate(pa: ParseBuffer, index: number): void {
+    const mark = pa.get(index);
+    for (let i = index + 1; i <= pa.last; i++) {
+        const p = pa.get(i);
+        pa.set(i, { ...p, traces: [...mark.traces, ...p.traces] });
+    }
+}
+const acceptable = (pa: ParseBuffer, saved: number) => pa.last > saved + 1 && pa.get(pa.last - 1).rule.quality.pos !== 'TACKON';
+const vowel = (c: string) => 'aeiouy'.includes(c.toLowerCase());
 export class Heuristics {
     private xxxMeaning = '';
     private yyyMeaning = '';
+    readonly messages: string[] = [];
     constructor(readonly core: LegacyCore) { }
-    syncope(word: string, fixes = false, entering = 0, capacity = 20): Parse[] {
+    private syncopeInto(word: string, pa: ParseBuffer, fixes: boolean): void {
         this.yyyMeaning = '';
-        const s = word.toLowerCase();
+        const s = word.toLowerCase(), saved = pa.last;
         const tests = [
             { fragments: ['ii'], last: s.length - 2, first: 0, insert: 'v', stem: 'Syncope  ii => ivi', meaning: "Syncopated perfect ivi can drop 'v' without contracting vowel ", strict: true },
             { fragments: ['as', 'es', 'is', 'os'], last: s.length - 3, first: 0, insert: 'vi', stem: 'Syncope   s => vis', meaning: "Syncopated perfect often drops the 'v' and contracts vowel ", strict: false },
@@ -23,214 +31,303 @@ export class Heuristics {
             { fragments: ['ier'], last: s.length - 4, first: 0, insert: 'v', stem: 'Syncope  ier=>iver', meaning: "Syncopated perfect often drops the 'v' and contracts vowel ", strict: true },
             { fragments: ['s', 'x'], last: s.length - 3, first: 0, insert: 'is', stem: 'Syncope s/x => +is', meaning: "Syncopated perfect sometimes drops the 'is' after 's' or 'x' ", strict: true }
         ];
-        for (const test of tests)
-            for (let i = test.last; i >= test.first; i--) {
-                if (!test.fragments.some(f => s.startsWith(f, i)))
-                    continue;
-                const modified = s.slice(0, i + 1) + test.insert + s.slice(i + 1), p = this.core.word(modified, fixes, 0, entering + 1, capacity);
-                if (!p.length)
-                    continue;
-                const perfect = p.at(-1)!.rule.quality.pos === 'V' && p.at(-1)!.rule.key === 3;
-                if (perfect || !test.strict) {
-                    this.yyyMeaning = perfect ? test.meaning : '';
-                    return withExplanation(explanation(test.stem, perfect ? test.meaning : '', 'syncope', word, modified, 'YYY'), p);
+        try {
+            for (const test of tests) {
+                for (let i = test.last; i >= test.first; i--) {
+                    if (!test.fragments.some(f => s.startsWith(f, i)))
+                        continue;
+                    const modified = s.slice(0, i + 1) + test.insert + s.slice(i + 1);
+                    pa.append(explanation(test.stem, '', 'syncope', word, modified, 'YYY'));
+                    this.core.wordInto(modified, pa, fixes);
+                    if (pa.last > saved + 1)
+                        break;
+                    pa.last = saved;
                 }
-                break;
+                if (pa.last > saved + 1) {
+                    const p = pa.get(pa.last), perfect = p.rule.quality.pos === 'V' && p.rule.key === 3;
+                    if (perfect || !test.strict) {
+                        this.yyyMeaning = perfect ? test.meaning : '';
+                        const p = pa.get(saved + 1);
+                        pa.set(saved + 1, { ...p, entry: { ...p.entry, meaning: this.yyyMeaning }, traces: p.traces.map(t => ({ ...t, explanation: this.yyyMeaning })) });
+                        annotate(pa, saved + 1);
+                        return;
+                    }
+                }
+                pa.last = saved;
             }
-        return [];
+        }
+        catch (error) {
+            if (!(error instanceof LegacyConstraintError))
+                throw error;
+            pa.last = saved;
+        }
+        pa.set(saved + 1, nullParse);
     }
-    tword(word: string, fixes: boolean): Parse[] {
-        const p = this.core.word(word, fixes, 0, 1, 40);
-        return [...p, ...this.syncope(word, fixes, p.length + 1, 40)];
+    private tword(word: string, pa: ParseBuffer, fixes: boolean): void {
+        this.core.wordInto(word, pa, fixes);
+        this.syncopeInto(word, pa, fixes);
     }
-    table(word: string, tables: Trick[], fixes: boolean, slury = false): Parse[] {
-        const s = word;
-        for (const [op, a, b] of tables) {
-            const attempts: {
+    private table(word: string, tables: Trick[], pa: ParseBuffer, fixes: boolean, slury = false): boolean {
+        for (const [op, a, b, max] of tables) {
+            const saved = pa.last, attempts: {
                 word: string;
                 stem: string;
                 meaning: string;
             }[] = [];
             if (op === 'Internal') {
-                for (let i = 0; i <= s.length - a.length; i++)
-                    if (s.startsWith(a, i))
-                        attempts.push({ word: s.slice(0, i) + b + s.slice(i + a.length), stem: `Word mod ${a}/${b}`, meaning: `An internal '${a}' might be rendered by '${b}'` });
+                for (let i = 0; i <= word.length - a.length; i++)
+                    if (word.startsWith(a, i))
+                        attempts.push({ word: word.slice(0, i) + b + word.slice(i + a.length), stem: `Word mod ${a}/${b}`, meaning: `An internal '${a}' might be rendered by '${b}'` });
             }
             else if (op === 'Slur') {
                 const n = a.length;
-                if (s.length >= n + 2 && s.startsWith(a) && !vowel(s[n]))
-                    attempts.push({ word: a.slice(0, -1) + s[n] + s.slice(n), stem: `Slur ${a}/${a.slice(0, -1)}~`, meaning: `An initial '${a}' may be rendered by ${a.slice(0, -1)}~` });
-                // The reverse branch compares unequal-length Ada strings and never succeeds.
+                if (word.length >= n + 2 && word.startsWith(a) && !vowel(word[n]))
+                    attempts.push({ word: a.slice(0, -1) + word[n] + word.slice(n), stem: `Slur ${a}/${a.slice(0, -1)}~`, meaning: `An initial '${a}' may be rendered by ${a.slice(0, -1)}~` });
             }
             else {
-                const pairs = op === 'Flip_Flop' ? [[a, String(b)], [String(b), a]] : [[a, String(b)]];
-                for (const [from, to] of pairs) {
-                    if (s.length >= from.length + 2 && s.startsWith(from)) {
-                        attempts.push({ word: to + s.slice(from.length), stem: `Word mod ${from}/${to}`, meaning: `An initial '${slury && op === 'Flip_Flop' ? a : from}' ${op === 'Flip' && !slury ? 'may have replaced usual' : 'may be rendered by'} '${slury && op === 'Flip_Flop' ? b : to}'` });
+                for (const [from, to] of op === 'Flip_Flop' ? [[a, String(b)], [String(b), a]] : [[a, String(b)]])
+                    if (word.length >= from.length + 2 && word.startsWith(from)) {
+                        attempts.push({ word: to + word.slice(from.length), stem: `Word mod ${from}/${to}`, meaning: `An initial '${slury && op === 'Flip_Flop' ? a : from}' ${op === 'Flip' && !slury ? 'may have replaced usual' : 'may be rendered by'} '${slury && op === 'Flip_Flop' ? b : to}'` });
                         if (slury)
                             break;
                     }
-                }
             }
             for (const a of attempts) {
-                const p = this.tword(a.word, fixes);
-                if (acceptable(p)) {
+                pa.append(explanation(a.stem, a.meaning, slury ? 'slury' : 'trick', word, a.word));
+                this.tword(a.word, pa, fixes);
+                if (acceptable(pa, saved)) {
                     this.xxxMeaning = a.meaning.slice(0, 80);
-                    return withExplanation(explanation(a.stem, a.meaning, slury ? 'slury' : 'trick', s, a.word), p);
+                    annotate(pa, saved + 1);
+                    break;
                 }
+                pa.last = saved;
             }
+            // Native tables can deliberately continue after a small successful hit.
+            if (pa.last > (op === 'Slur' ? Number(b) : max ?? 0))
+                return true;
         }
-        return [];
+        return false;
     }
-    slury(word: string, fixes = false): Parse[] {
-        const saved = this.core.usePrefixes;
+    private sluryInto(word: string, pa: ParseBuffer, fixes: boolean): void {
+        const saved = pa.last, prefixes = this.core.usePrefixes;
         this.core.usePrefixes = false;
         try {
-            return this.table(word, TABLES[word[0]?.toUpperCase() + '_Slur_Tricks'] ?? [], fixes, true);
+            this.table(word, TABLES[word[0]?.toUpperCase() + '_Slur_Tricks'] ?? [], pa, fixes, true);
+        }
+        catch (error) {
+            if (!(error instanceof LegacyConstraintError))
+                throw error;
+            pa.last = saved;
+            pa.set(saved + 1, nullParse);
+            this.messages.push('Exception in TRY_SLURY processing ' + word);
         }
         finally {
-            this.core.usePrefixes = saved;
+            this.core.usePrefixes = prefixes;
         }
     }
-    split(word: string, fixes: boolean, entering = 0): Parse[] {
-        let num1 = false, num2 = false;
-        for (let i = 2; i < word.length - 2; i++) {
-            const first = word.slice(0, i), second = word.slice(i);
-            if (['dis', 'ex', 'in', 'per', 'prae', 'pro', 're', 'si', 'sub', 'super', 'trans'].includes(first))
-                continue;
-            let a = this.core.word(first, fixes, 0, entering + 1, 40);
-            if (!a.length)
-                continue;
-            num1 ||= a.some(p => p.rule.quality.pos === 'NUM');
-            let b = this.core.word(second, fixes, 0, entering + a.length + 2, 40);
-            if (!acceptable(b))
-                continue;
-            num2 ||= b.some(p => p.rule.quality.pos === 'NUM');
-            const numeric = this.core.options.trim && num1 && num2;
-            if (numeric) {
-                const combined = [...a, nullParse, ...b];
-                for (let j = 0; j < combined.length; j++)
-                    if (['GEN', 'UNI'].includes(combined[j].dictionary) && combined[j].rule.quality.pos !== 'NUM')
-                        combined.splice(j, 1);
-                a = combined;
-                b = [];
-            }
-            const meaning = numeric ? `It is very likely a compound number    ${first} + ${second}` : `May be 2 words combined (${first}+${second}) If not obvious, probably incorrect`;
-            this.xxxMeaning = meaning.slice(0, 80);
-            return withExplanation(explanation('Two words', meaning, 'split', word, first + ' ' + second), numeric ? a : [...a, nullParse, ...b]);
-        }
-        return [];
-    }
-    tricks(word: string, fixes: boolean): Parse[] {
-        this.xxxMeaning = '';
-        if (word.startsWith('is')) {
-            const p = this.tword('i' + word, fixes), q = p.at(-1)?.rule.quality;
-            if (acceptable(p) && q?.pos === 'V' && q.codes[0] === '6' && q.codes[1] === '1') {
-                this.xxxMeaning = "Some forms of eo stem 'i' grates with an 'is .. .' ending, so 'is' -> 'iis' ";
-                return withExplanation(explanation('Word mod is => iis', "Some forms of eo stem 'i' grates with an 'is .. .' ending, so 'is' -> 'iis' ", 'trick', word, 'i' + word), p);
-            }
-        }
-        for (const table of [TABLES[word[0]?.toUpperCase() + '_Tricks'] ?? [], TABLES.Any_Tricks]) {
-            const p = this.table(word, table, fixes);
-            if (p.length)
-                return p;
-        }
-        if (word.length > 3 && word.endsWith('is')) {
-            const modified = word.slice(0, -2) + 'iis';
-            const p = this.core.word(modified, fixes, 0, 1, 40).filter(p => { const q = p.rule.quality, c = q.codes; return q.pos === 'ADJ' && c[0] === '1' && c[1] === '1' && ['DAT', 'ABL'].includes(c[2]) && c[3] === 'P'; });
-            if (p.length) {
-                this.xxxMeaning = "A Terminal 'iis' on ADJ 1 1 DAT/ABL P might drop 'i'";
-                return withExplanation(explanation('Word mod iis -> is', "A Terminal 'iis' on ADJ 1 1 DAT/ABL P might drop 'i'", 'trick', word, modified), p);
-            }
-        }
-        let doubled: Parse[] = [];
-        if (this.core.options.medievalTricks) {
-            const p = this.table(word, TABLES.Mediaeval_Tricks, fixes);
-            if (p.length)
-                return p;
-            for (let i = 1; i < word.length - 1; i++)
-                if (!vowel(word[i]) && vowel(word[i - 1]) && vowel(word[i + 1])) {
-                    const modified = word.slice(0, i + 1) + word.slice(i);
-                    const p = this.tword(modified, fixes);
-                    if (acceptable(p)) {
-                        doubled = withExplanation(explanation(`Word mod ${word[i]} -> ${word[i]}${word[i]}`, 'A doubled consonant may be rendered by just the single  MEDIEVAL', 'trick', word, modified), p);
-                        this.xxxMeaning = doubled[0].entry.meaning;
+    private splitInto(word: string, pa: ParseBuffer, fixes: boolean): void {
+        const saved = pa.last;
+        let num1 = false, num2 = false, i = 2;
+        while (i < word.length - 2) {
+            pa.append(explanation('Two words', '', 'split', word, ''));
+            while (i < word.length - 2) {
+                const first = word.slice(0, i);
+                if (!['dis', 'ex', 'in', 'per', 'prae', 'pro', 're', 'si', 'sub', 'super', 'trans'].includes(first)) {
+                    this.core.wordInto(first, pa, fixes);
+                    if (pa.last > saved + 1) {
+                        num1 ||= pa.read(saved + 1).some(p => p.rule.quality.pos === 'NUM');
                         break;
                     }
                 }
+                i++;
+            }
+            if (pa.last <= saved + 1) {
+                pa.last = saved;
+                return;
+            }
+            const first = word.slice(0, i), second = word.slice(i);
+            pa.append(nullParse);
+            const middle = pa.last;
+            this.core.wordInto(second, pa, fixes);
+            if (pa.last > middle && pa.get(pa.last - 1).rule.quality.pos !== 'TACKON') {
+                num2 ||= pa.read(middle).some(p => p.rule.quality.pos === 'NUM');
+                const numeric = this.core.options.trim && num1 && num2;
+                if (numeric) {
+                    // Ada evaluates this bound once. Removed tail slots remain readable.
+                    const bound = pa.last;
+                    for (let j = saved + 1; j <= bound; j++) {
+                        const p = pa.get(j);
+                        if (['GEN', 'UNI'].includes(p.dictionary) && p.rule.quality.pos !== 'NUM')
+                            pa.remove(j);
+                    }
+                }
+                this.xxxMeaning = (numeric ? `It is very likely a compound number    ${first} + ${second}` : `May be 2 words combined (${first}+${second}) If not obvious, probably incorrect`).slice(0, 80);
+                pa.set(saved + 1, explanation('Two words', this.xxxMeaning, 'split', word, first + ' ' + second));
+                annotate(pa, saved + 1);
+                return;
+            }
+            pa.last = saved;
+            i++;
         }
-        const split = this.core.options.twoWords ? this.split(word, fixes, doubled.length) : [];
-        if (onlyRoman(word)) {
-            this.xxxMeaning = '';
-            return [explanation('Bad Roman Numeral?', '', 'roman', word, word), ...romanParse(word, true)];
-        }
-        return [...doubled, ...split];
+        pa.last = saved;
     }
-    pass(word: string, capitalized = false): Parse[] {
+    private tricksInto(word: string, pa: ParseBuffer, fixes: boolean): void {
+        const saved = pa.last;
+        this.xxxMeaning = '';
+        try {
+            if (word.startsWith('is')) {
+                pa.last = 1;
+                pa.set(1, explanation('Word mod is => iis', '', 'trick', word, 'i' + word));
+                this.tword('i' + word, pa, fixes);
+                const q = pa.get(pa.last).rule.quality;
+                if (acceptable(pa, saved) && q.pos === 'V' && q.codes[0] === '6' && q.codes[1] === '1') {
+                    this.xxxMeaning = "Some forms of eo stem 'i' grates with an 'is .. .' ending, so 'is' -> 'iis' ";
+                    pa.set(1, explanation('Word mod is => iis', this.xxxMeaning, 'trick', word, 'i' + word));
+                    annotate(pa, 1);
+                    return;
+                }
+                pa.last = 0;
+            }
+            for (const table of [TABLES[word[0]?.toUpperCase() + '_Tricks'] ?? [], TABLES.Any_Tricks])
+                if (this.table(word, table, pa, fixes))
+                    return;
+            if (word.length > 3 && word.endsWith('is')) {
+                const start = pa.last, modified = word.slice(0, -2) + 'iis';
+                pa.append(explanation('Word mod iis -> is', '', 'trick', word, modified));
+                this.core.wordInto(modified, pa, fixes);
+                for (let i = pa.last; i > start + 1; i--) {
+                    const q = pa.get(i).rule.quality, c = q.codes;
+                    if (!(q.pos === 'ADJ' && c[0] === '1' && c[1] === '1' && ['DAT', 'ABL'].includes(c[2]) && c[3] === 'P'))
+                        pa.remove(i);
+                }
+                if (pa.last > start + 1) {
+                    this.xxxMeaning = "A Terminal 'iis' on ADJ 1 1 DAT/ABL P might drop 'i'";
+                    pa.set(start + 1, explanation('Word mod iis -> is', this.xxxMeaning, 'trick', word, modified));
+                    annotate(pa, start + 1);
+                    return;
+                }
+                pa.last = start;
+            }
+            if (this.core.options.medievalTricks) {
+                if (this.table(word, TABLES.Mediaeval_Tricks, pa, fixes))
+                    return;
+                const start = pa.last;
+                for (let i = 1; i < word.length - 1; i++)
+                    if (!vowel(word[i]) && vowel(word[i - 1]) && vowel(word[i + 1])) {
+                        const modified = word.slice(0, i + 1) + word.slice(i), meaning = 'A doubled consonant may be rendered by just the single  MEDIEVAL';
+                        pa.append(explanation(`Word mod ${word[i]} -> ${word[i]}${word[i]}`, meaning, 'trick', word, modified));
+                        this.tword(modified, pa, fixes);
+                        if (acceptable(pa, start)) {
+                            this.xxxMeaning = meaning;
+                            annotate(pa, start + 1);
+                            break;
+                        }
+                        pa.last = start;
+                    }
+            }
+            if (this.core.options.twoWords)
+                this.splitInto(word, pa, fixes);
+            if (onlyRoman(word)) {
+                this.xxxMeaning = '';
+                pa.last = 0;
+                pa.append(explanation('Bad Roman Numeral?', '', 'roman', word, word));
+                pa.appendAll(romanParse(word, true));
+            }
+        }
+        catch (error) {
+            if (!(error instanceof LegacyConstraintError))
+                throw error;
+            pa.last = saved;
+            pa.set(saved + 1, nullParse);
+            this.messages.push('Exception in TRY_TRICKS processing ' + word);
+        }
+    }
+    pass(word: string, capitalized = false): Parse[] { return this.passBuffer(word, capitalized).read(); }
+    passBuffer(word: string, capitalized = false): ParseBuffer {
         this.xxxMeaning = '';
         this.yyyMeaning = '';
-        const o = this.core.options;
-        let p = romanParse(word);
-        p.push(...this.core.word(word, false, 0, p.length));
+        this.messages.length = 0;
+        const pa = new ParseBuffer(100), o = this.core.options;
         let doneEnclitic = false;
-        const hasToBe = (parses: Parse[]) => parses.some(x => x.rule.quality.pos === 'V' && x.rule.quality.codes[0] === '5' && x.rule.quality.codes[1] === '1');
-        // Native No_Syncope is set before the first pass and enclitic syncope,
-        // then cleared by Perform_Syncope. The fixes-only pass does not set it.
-        const sync = (w: string, fixes: boolean, suppressed = false) => o.syncope && !suppressed ? this.syncope(w, fixes) : [];
+        const hasToBe = () => pa.read().some(p => p.rule.quality.pos === 'V' && p.rule.quality.codes[0] === '5' && p.rule.quality.codes[1] === '1');
+        const sync = (fixes: boolean, suppressed = false) => {
+            if (!o.syncope || suppressed)
+                return;
+            const sy = new ParseBuffer(20);
+            this.syncopeInto(word, sy, fixes);
+            pa.copy(pa.last + 1, 1, sy.last, sy);
+            pa.last += sy.last;
+        };
         const enclitic = (fixes: boolean) => {
             if (doneEnclitic)
                 return;
-            for (const tack of this.core.tackons.slice(0, p.length ? 1 : 4)) {
-                const less = this.core.subtract(word, tack);
+            const entering = pa.last, lower = word.toLowerCase();
+            for (const tack of this.core.tackons.slice(0, pa.last ? 1 : 4)) {
+                const less = this.core.subtract(lower, tack);
                 if (less === null)
                     continue;
-                let hit = this.core.word(less, fixes, 0, p.length);
-                if (!p.length && !hit.length)
-                    hit = this.slury(less, fixes);
-                hit.push(...sync(word, fixes, hasToBe([...p, ...hit])));
+                this.core.wordInto(less, pa, fixes);
+                if (!pa.last)
+                    this.sluryInto(less, pa, fixes);
+                sync(fixes, hasToBe());
                 const saved = this.core.onlyFixes;
                 this.core.onlyFixes = true;
                 try {
-                    hit.push(...this.core.word(word, fixes, 0, p.length + hit.length));
+                    this.core.wordInto(word, pa, fixes);
                 }
                 finally {
                     this.core.onlyFixes = saved;
                 }
-                if (hit.length) {
-                    p.push(...withExplanation(marker(tack, 'tackon', word, less), hit));
+                if (pa.last > entering) {
+                    pa.insert(entering + 1, marker(tack, 'tackon', word, less));
+                    annotate(pa, entering + 1);
                     doneEnclitic = true;
                 }
                 return;
             }
         };
-        if (!p.length)
-            p = this.slury(word);
-        p.push(...sync(word, false, hasToBe(p)));
+        pa.appendAll(romanParse(word));
+        this.core.wordInto(word, pa);
+        if (!pa.last)
+            this.sluryInto(word, pa, false);
+        sync(false, hasToBe());
         enclitic(false);
-        if (!p.length && o.fixes) {
+        if (!pa.last && o.fixes) {
+            const saved = this.core.onlyFixes;
             this.core.onlyFixes = true;
             try {
-                p = this.core.word(word, true);
-                p.push(...sync(word, true));
+                this.core.wordInto(word, pa, true);
+                sync(true);
                 enclitic(true);
             }
             finally {
-                this.core.onlyFixes = false;
+                this.core.onlyFixes = saved;
             }
         }
-        if (!p.length && o.tricks && !(capitalized && o.ignoreUnknownNames)) {
-            p = this.tricks(word, o.fixes);
-            if (!p.length && !doneEnclitic)
+        if (!pa.last && o.tricks && !(capitalized && o.ignoreUnknownNames)) {
+            const tr = new ParseBuffer(40);
+            this.tricksInto(word, tr, o.fixes);
+            if (!tr.last && !doneEnclitic)
                 for (const tack of this.core.tackons.slice(0, 4)) {
-                    const less = this.core.subtract(word, tack);
+                    const less = this.core.subtract(word.toLowerCase(), tack);
                     if (less === null)
                         continue;
-                    const hit = this.tricks(less, o.fixes);
-                    if (hit.length)
-                        p = withExplanation(marker(tack, 'tackon', word, less), hit);
+                    const saved = tr.last;
+                    this.tricksInto(less, tr, o.fixes);
+                    if (tr.last > saved) {
+                        tr.insert(saved + 1, marker(tack, 'tackon', word, less));
+                        annotate(tr, saved + 1);
+                    }
                     break;
                 }
+            pa.copy(pa.last + 1, 1, tr.last, tr);
+            pa.last += tr.last;
         }
-        return p.map(x => x.dictionary === 'XXX' || x.dictionary === 'YYY' ? { ...x, entry: { ...x.entry, meaning: x.dictionary === 'XXX' ? this.xxxMeaning : this.yyyMeaning } } : x);
+        for (let i = 1; i <= pa.capacity; i++) {
+            const p = pa.get(i);
+            if (p.dictionary === 'XXX' || p.dictionary === 'YYY')
+                pa.set(i, { ...p, entry: { ...p.entry, meaning: p.dictionary === 'XXX' ? this.xxxMeaning : this.yyyMeaning } });
+        }
+        return pa;
     }
 }

@@ -71,16 +71,16 @@ export function analyzerFromDataset(data: Dataset): Analyzer {
             const selected = options(overrides), core = new LegacyCore(data, selected), heuristics = new Heuristics(core), words = tokenize(input), tokens: TokenResult[] = [];
             for (let i = 0; i < words.length; i++) {
                 const token = words[i], next = words[i + 1];
-                let parses = heuristics.pass(token.lookup, /^[A-Z][a-z]/.test(token.lookup)), consumedNext = false;
-                if (parses.length && selected.compounds && next?.line === token.line) {
+                const parses = heuristics.passBuffer(token.lookup, /^[A-Z][a-z]/.test(token.lookup));
+                let consumedNext = false;
+                if (parses.last && selected.compounds && next?.line === token.line) {
                     const joined = compounds(parses, next.surface);
-                    parses = joined.parses;
                     consumedNext = joined.consumed;
                 }
                 const filtered = sweep(parses, selected, { allCaps: /^[A-Z]+$/.test(token.lookup), period: token.period });
                 const column = i === 0 || words[i - 1].line !== token.line ? 2 : 0;
                 const unknown = token.lookup + (token.lookup.length + column > 29 ? '\n' + ' '.repeat(29) : ' '.repeat(29 - column - token.lookup.length)) + '    ========   UNKNOWN    \n' + (filtered.trimmed ? '*' : '') + '\n';
-                const legacyText = filtered.parses.length ? formatParses(filtered.parses, filtered.trimmed) : unknown;
+                const legacyText = heuristics.messages.map(s => s + '\n').join('') + (filtered.parses.length ? formatParses(filtered.parses, filtered.trimmed) : unknown);
                 const end = consumedNext ? next.end : token.end;
                 tokens.push({ surface: input.slice(token.start, end), lookup: token.lookup, span: { start: token.start, end }, status: filtered.parses.length ? 'analyzed' : 'unknown', parses: structuredClone(filtered.parses).map(p => ({ ...p, morphology: describeQuality(p.rule.quality) })), trimmed: filtered.trimmed, legacyText, consumedNext, diagnostics: [] });
                 if (consumedNext)

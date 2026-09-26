@@ -16,11 +16,12 @@ maintained mk270 lineage, not a reconstruction of historical 1.97FC.
 | Robustness | Checksum corruption, invalid options, UTF-16 spans, legacy Unicode splitting, long input, compounds, corrected isolation and repeated calls pass |
 | Student reading view | All 3,953 inputs retain every candidate and explanatory row in order, without mutating the legacy result; all source class combinations and all 39,336 dictionary entries have display mappings |
 
-`npm run verify` runs the offline build and twenty-four test groups: the original
+`npm run verify` runs the offline build and twenty-seven test groups: the original
 nine engine/adapter groups, four student-display groups and three offline-storage
 groups, plus two browser-input/comparison-contract groups and two documentation
 rendering/preservation groups, plus two search-state and request-isolation groups,
-and two source-audit option/width and native-buffer-error groups.
+and two source-audit option/width and native-buffer-error groups, plus three
+parse-storage, runtime-surface and native-addon-reader groups.
 The search-state fixtures preserve fresh native observations for failed attempts,
 affix fallback, distinct dictionary/affix spelling comparisons and transformed
 part-of-speech checks. The website also passes bounded Chromium/WebKit offline checks and eight
@@ -48,21 +49,20 @@ extends the frozen baseline and records newly exposed compatibility differences.
 The old finite baseline remains passing; its success is not universal equivalence.
 [Browser macron adaptation](browser-input.md) is separate from the legacy profile.
 
-The local 0.3 source-audit checkpoint replays the same 4,144,877 frozen inputs.
-Relative to the preceding engine checkpoint, it resolves 45,982 differences,
-retains 508 and introduces two trimming-marker regressions (`potevis`, `poteuis`).
-The remaining 510 output differences comprise 207 missing-analysis, 221
-extra-analysis, 78 mixed-analysis and four trimming-marker cases. Full parity
-still fails. Fresh checks in two native builds reproduce all 510 residuals and
-96 controls, including forward/reverse sequences. Another 240 input/option cases
-are retained as native-output fixtures.
+The local 0.3 storage/reader checkpoint replays all **4,144,877** frozen inputs.
+All **4,144,873 comparable normal outputs match**, with zero regressions and no
+new exceptions. This resolves all 510 differences in the preceding source-audit
+checkpoint, including its two trimming-marker regressions, and all 109,001 output
+differences in the original 0.2 baseline. The earlier 240 input/option fixtures
+remain passing; another 180 cases across six option profiles and all 343 effective
+native addon fix/connection fields are now retained as regression observations.
 
-The original `pilarium`/`pilarivm` native output-buffer failures now also raise
-explicit port execution errors. Their diagnostic text and process/adapter behavior
+The original `pilarium`/`pilarivm` native output-buffer failures still raise
+explicit port execution errors. Native diagnostic text and process/adapter behavior
 are not yet equivalent; do not count them as matches. Empty input and `!` remain
-console-adapter comparison limitations. Native parse storage beyond its logical
-length, mutating loop bounds and some matching/case-conversion boundaries require
-further repair. This checkpoint is not a published release.
+console-adapter comparison limitations. Normal fixed-wordlist output agreement
+does not establish complete exceptional-path I/O parity. This checkpoint is local
+and has not been published as a release.
 
 ## Observed legacy behavior retained
 
@@ -81,6 +81,12 @@ further repair. This checkpoint is not a published release.
   the native stages. Affix
   comparison folds u/v only; dictionary matching also folds i/j. Prefix checks
   use the part of speech after any suffix transformation.
+- Shared parse buffers retain inactive slots after pruning or rollback; later
+  passes can expose them. Mutating loops use the original Ada range bounds.
+- Addon reading preserves the native comment buffer's retained tail. In the frozen
+  data, this gives the ordinary adjective `cumque` tackon an unusable effective
+  spelling. The portable reader reproduces that original defect without changing
+  the source data or adding a lexical exception.
 - PACK/enclitic duplicate groups, the adjective-to-adverb fallback, period-sensitive
   abbreviations and compound display behavior retain their original irregularities.
 - Original data, meanings, frequency labels and heuristic suggestions are retained

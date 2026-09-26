@@ -1,6 +1,7 @@
 // Port of Parse.Compounds_With_Sum, including its historical voice assignment.
 import type { Parse, Quality } from './model.js';
 import { emptyEntry, emptyRule } from './core.js';
+import { ParseBuffer } from './buffer.js';
 const sumForms = [
     'sum es est sumus estis sunt', 'eram eras erat eramus eratis erant', 'ero eris erit erimus eritis erunt',
     'fui fuisti fuit fuimus fuistis fuerunt', 'fueram fueras fuerat fueramus fueratis fuerant', 'fuero fueris fuerit fuerimus fueritis fuerunt',
@@ -32,23 +33,24 @@ const variant = (q: Quality) => q.pos !== 'VPAR' ? -1 : ['PERF,PASSIVE,PPL', 'FU
 function compound(word: string, q: Quality, codes: string[], meaning: string): Parse {
     return { stem: word.slice(0, 18), rule: { ...emptyRule, quality: { pos: 'V', codes }, frequency: 'A' }, entry: { ...emptyEntry, meaning }, dictionary: 'PPP', traces: [{ kind: 'compound', sourceId: 'words_engine-parse.adb:Compounds_With_Sum', input: word, output: codes.join(' '), explanation: meaning }] };
 }
-export function compounds(parses: Parse[], next: string): {
+export function compounds(input: Parse[] | ParseBuffer, next: string): {
     parses: Parse[];
     consumed: boolean;
 } {
+    const result = input instanceof ParseBuffer ? input : new ParseBuffer(100, input);
+    const parses = result.read();
     const info = sum(next), infinitive = next === 'esse' || next === 'fuisse', iri = next === 'iri';
     const eligible = (q: Quality) => info ? q.pos === 'VPAR' && q.codes[2] === 'NOM' && q.codes[3] === info.number && variant(q) >= 0 : infinitive ? variant(q) >= 0 && (next === 'esse' || q.codes[5] === 'FUT') : iri ? q.pos === 'SUPINE' && q.codes[2] === 'ACC' : false;
     if (!parses.some(p => eligible(p.rule.quality)))
         return { parses, consumed: false };
-    const result = [...parses];
     let on = false, q: Quality | null = null, codes: string[] = ['0', '0', 'X', 'X', 'X', '0', 'X'], meaning = '';
-    for (let i = result.length - 1; i >= 0; i--) {
-        const p = result[i], quality = p.rule.quality, c = quality.codes;
+    for (let i = result.last; i >= 1; i--) {
+        const p = result.get(i), quality = p.rule.quality, c = quality.codes;
         if (['TACKON', 'PREFIX', 'SUFFIX'].includes(quality.pos) && on)
             continue;
         const keep = info ? quality.pos === 'VPAR' && c[2] === 'NOM' && c[3] === info.number : infinitive ? quality.pos === 'VPAR' : quality.pos === 'SUPINE' && c[2] === 'ACC';
         if (!keep) {
-            result.splice(i, 1);
+            result.remove(i);
             on = false;
             continue;
         }
@@ -58,7 +60,7 @@ export function compounds(parses: Parse[], next: string): {
             q = quality;
             codes = [...c.slice(0, 2), 'FUT', 'PASSIVE', 'INF', '0', 'X'];
             meaning = 'SUPINE + iri => FUT PASSIVE INF - to be about/going/ready to be ~';
-            result.push(compound('SUPINE + iri', q, codes, meaning));
+            result.append(compound('SUPINE + iri', q, codes, meaning));
         }
         else if (v >= 0) {
             on = true;
@@ -75,6 +77,6 @@ export function compounds(parses: Parse[], next: string): {
         }
     }
     if (!iri && q)
-        result.push(compound('PPL+' + next, q, codes, meaning));
-    return { parses: result, consumed: true };
+        result.append(compound('PPL+' + next, q, codes, meaning));
+    return { parses: result.read(), consumed: true };
 }
