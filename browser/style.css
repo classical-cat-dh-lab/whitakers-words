@@ -110,7 +110,7 @@ textarea::placeholder { color: var(--ds-color-text-muted); opacity: 1; }
 .reader-preview { min-width: 0; }
 .reader-preview-entry { display: block; }
 .reader-preview-entry + .reader-preview-entry { margin-top: .1rem; }
-.reader-principal-parts { display: block; font: 700 var(--ds-text-body)/1.5 var(--ds-font-serif-classical); overflow-wrap: anywhere; }
+.reader-principal-parts { display: block; padding-inline-start: .9rem; font: 400 var(--ds-text-body)/1.5 var(--ds-font-serif-classical); overflow-wrap: anywhere; }
 .reader-preview-labels { display: block; padding-inline-start: .9rem; margin-top: .2rem; font: var(--ds-text-small)/1.5 var(--ds-font-sans-ui); overflow-wrap: anywhere; }
 .reader-entry h4 { font-weight: 700; }
 .reader-labels { padding-inline-start: .9rem; }

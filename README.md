@@ -1,11 +1,10 @@
 # Whitaker's Words — TypeScript preservation
 
-**0.3.2-beta.1 · Beta candidate** — [Open the dictionary](https://words.latingreek.org/).
+**0.3.2-beta.1 · Beta** — [Open the dictionary](https://words.latingreek.org/).
 
-The [0.3.2 beta candidate](docs/release-0.3.2.md) adds a clickable passage reader,
+The [0.3.2 beta release](docs/release-0.3.2.md) adds a clickable passage reader,
 compact principal-part summaries, selectable result views and update checks that
-avoid downloading an intact current dictionary again. The latest published
-release remains [0.3.1 beta](docs/release-0.3.1.md). The verified
+avoid downloading an intact current dictionary again. The verified
 [0.3.0 backend](docs/backend-baseline.md) and original dictionary remain frozen.
 
 The dictionary and help pages use stable addresses for bookmarks and sharing.
@@ -43,7 +42,7 @@ analyzer. The legacy profile targets original behavior, including linguistic
 errors and quirks; [tested behavior and remaining limits](docs/acceptance.md) are
 recorded explicitly. The corrected layer is empty.
 
-Archived release: [0.3.1-beta.1 — DOI: 10.5281/zenodo.22973796](https://doi.org/10.5281/zenodo.22973796).
+Archived release: [0.3.2-beta.1 — DOI: 10.5281/zenodo.22981285](https://doi.org/10.5281/zenodo.22981285).
 The archive preserves the exact release files; citation metadata is also available
 in [CITATION.cff](CITATION.cff).
 
@@ -65,7 +64,7 @@ No `npm install` is required. Use `npm run site` then `npm run preview` to build
 and preview the offline website. Serve `site/` over HTTPS (or localhost); opening
 files directly does not support modules or Service Workers. Download the frozen
 source and ready-to-host website from the
-[0.3.1-beta.1 release](https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v0.3.1-beta.1).
+[0.3.2-beta.1 release](https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v0.3.2-beta.1).
 No npm package is published.
 
 ## Verification and documentation

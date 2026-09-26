@@ -1,12 +1,12 @@
-# 0.3.2-beta.1 candidate
+# 0.3.2-beta.1
 
-This frontend candidate adds passage reading while retaining the frozen 0.3.0
-engine and original dictionary. It has not replaced the published 0.3.1 release.
+This frontend release adds passage reading while retaining the frozen 0.3.0
+engine and original dictionary.
 
 - Select a word in the original passage to switch its dictionary details without
   reloading or querying again. Display options choose Text + list, Text only or
   List only; both views are enabled by default.
-- Collapsed list rows contain the input word and principal parts. Identical
+- Collapsed list rows contain the input word and regular-weight, indented principal parts. Identical
   headings are shown once in a summary; all candidates remain in the details.
   Expanded entries show principal parts, fixed grammar, English meanings and
   possible forms in that order.
@@ -22,3 +22,5 @@ engine and original dictionary. It has not replaced the published 0.3.1 release.
 Application: 0.3.2-beta.1. Engine: 0.3.0-beta.1. The browser input adapter, library,
 CLI, legacy output, original dictionary and frozen backend hashes are unchanged.
 See [browser use](browser-input.md) and [backend acceptance](acceptance.md).
+
+Archive: [DOI 10.5281/zenodo.22981285](https://doi.org/10.5281/zenodo.22981285), in the existing Words version lineage.

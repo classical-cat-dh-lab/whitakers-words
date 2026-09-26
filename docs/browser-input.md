@@ -57,8 +57,9 @@ and summaries.
 
 Expanded entries present principal parts, fixed grammatical labels, English
 meanings, then **Possible forms**. Additional source metadata stays under
-**Word details**. Principal parts are bold. **Back to top** returns to the page
-title. The separate [abbreviations and terminology](abbreviations.md) page is
+**Word details**. Expanded entry headings are bold; list principal parts use
+regular weight and an inset to distinguish them from the input word. **Back to top**
+returns to the page title. The separate [abbreviations and terminology](abbreviations.md) page is
 linked from the footer and included in the offline bundle.
 
 **Display options** contains the unchecked **Original WORDS order** switch and
