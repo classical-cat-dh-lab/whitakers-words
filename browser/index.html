@@ -31,7 +31,7 @@
         </div>
       </div>
       <p id="theme-status" class="preference-status" role="status" hidden></p>
-      <div class="title-row"><h1>Whitaker’s Words</h1><span class="beta-badge">beta</span></div>
+      <div class="title-row"><h1 id="page-title" tabindex="-1">Whitaker’s Words</h1><span class="beta-badge">beta</span></div>
       <p class="tagline">A Latin dictionary for reading. Look up a word or explore a passage.</p>
     </header>
     <section id="offline" aria-label="Offline use" hidden>
@@ -58,7 +58,7 @@
         <fieldset><legend>Additional information</legend>
           <label><input type="checkbox" id="show-legacy" aria-controls="legacy-panel"> Original text</label>
           <label><input type="checkbox" id="show-json" aria-controls="json-panel"> Structured data</label>
-          <label><input type="checkbox" id="show-notes" aria-controls="reader-output"> Lookup notes</label>
+          <label><input type="checkbox" id="show-notes" aria-controls="notes-panel"> Lookup notes</label>
           <label><input type="checkbox" id="show-validation" aria-controls="validation"> Validation tools</label>
         </fieldset>
       </details>
@@ -66,12 +66,15 @@
     </form>
     <section id="results" aria-labelledby="result-heading" hidden>
       <div class="reader-heading"><h2 id="result-heading" tabindex="-1">Results</h2><div class="reader-links"><a id="new-lookup" href="#input">New lookup</a><a id="abbreviations-link" href="#abbreviations">Abbreviations</a></div></div>
-      <div id="reader-output" class="hide-lookup-notes"></div>
-      <section id="legacy-panel" class="technical-output" hidden><h3>Original-style text output</h3><p>The same lookup in the original program’s text layout.</p><pre id="legacy-output" tabindex="0"></pre></section>
-      <section id="json-panel" class="technical-output" hidden><h3>Structured result</h3><pre id="json-output" tabindex="0"></pre></section>
+      <div id="order-control" class="result-order controls"><label for="result-order">Order</label><select id="result-order"><option value="frequency">Dictionary frequency</option><option value="original">Original WORDS order</option></select></div>
+      <div id="reader-output"></div>
+      <div class="result-actions"><a id="back-to-top" class="back-to-top" href="#page-title">Back to top ↑</a></div>
+      <details id="legacy-panel" class="technical-output" hidden><summary>Original-style text output</summary><p>The same lookup in the original program’s text layout.</p><pre id="legacy-output" tabindex="0"></pre></details>
+      <details id="json-panel" class="technical-output" hidden><summary>Structured result</summary><pre id="json-output" tabindex="0"></pre></details>
+      <details id="notes-panel" class="technical-output" hidden><summary>Lookup notes</summary><div id="notes-output"></div></details>
     </section>
     <details id="abbreviations"><summary>Abbreviations and terminology</summary><p>Compact dictionary notation for students. Meanings apply in the categories shown; the underlying WORDS analyses are preserved.</p><div id="abbreviation-table" class="table-scroll" tabindex="0" role="region" aria-label="Abbreviations table"></div></details>
-    <section id="validation" class="technical-output" aria-label="Validation tools" hidden><h2>Validation</h2><button type="button" id="validate" disabled>Run validation cases</button><ol id="validation-results"></ol></section>
+    <details id="validation" class="technical-output" hidden><summary>Validation tools</summary><button type="button" id="validate" disabled>Run validation cases</button><ol id="validation-results"></ol></details>
     <footer><p>All lookups run on your device. Your text stays with you.</p><p><a id="offline-help-link" href="#offline-help">Offline help</a> · <a href="../docs/acceptance.html">About this beta &amp; tested scope</a> · <a href="../docs/compatibility.html">Compatibility</a></p><p>WORDS and its dictionary: William Whitaker. TypeScript preservation: © 2026 Xinjie Fang / Classical Cat Digital Humanities Lab. This is an independent project.</p><p><a href="../docs/original-notice.html">Original notice</a> · <a href="../docs/license.html">AGPL-3.0-only · No warranty</a> · <a href="../docs/source.html">Corresponding source</a></p></footer>
   </main>
 </body>

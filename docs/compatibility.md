@@ -16,18 +16,19 @@ maintained mk270 lineage, not a reconstruction of historical 1.97FC.
 | Robustness | Checksum corruption, invalid options, UTF-16 spans, legacy Unicode splitting, long input, compounds, corrected isolation and repeated calls pass |
 | Student reading view | All 3,953 inputs retain every candidate and explanatory row in order, without mutating the legacy result; all source class combinations and all 39,336 dictionary entries have display mappings |
 
-`npm run verify` runs the offline build and thirty-seven test groups: the original
-nine engine/adapter groups, four student-display groups and three offline-storage
-groups, plus two browser-input/comparison-contract groups and two documentation
-rendering/preservation groups, plus two search-state and request-isolation groups,
-and one source-audit option/width group, plus three parse-storage, runtime-surface
-and native-addon-reader groups, and five exceptional-session, termination, CLI
-and native-capacity groups, plus five dictionary/inflection-capacity,
-sequence/option and full-English-index groups, and one browser-notation isolation group.
+`npm run verify` runs the offline build, frozen backend hash check and portable
+regression suite. The released 0.3.0 beta passed 36 groups covering the engine,
+adapters, reader, offline storage, input, documents, search state and native
+exception/capacity behavior. The current frontend preview adds four groups:
+compact notation and three dictionary-order checks. The ordering checks retain
+every candidate, form and explanation across the 3,953-input reference corpus,
+preserve equal-band order and keep nonordinal frequency categories distinct.
 The search-state fixtures preserve fresh native observations for failed attempts,
 affix fallback, distinct dictionary/affix spelling comparisons and transformed
-part-of-speech checks. The website also passes bounded Chromium/WebKit offline checks and eight
-complete browser-to-Node JSON comparisons. Physical mobile-device installation
+part-of-speech checks. The published 0.3.0 website passed bounded Chromium/WebKit
+offline checks and eight complete browser-to-Node JSON comparisons. The current
+frontend preview is checked in the in-app browser; those checks do not constitute
+a new Chromium/WebKit release qualification. Physical mobile-device installation
 and full classical-author corpora remain outside this qualification. The
 expanded corpus contains Aeneid vocabulary, all unique forms, available examples
 derived from the source inflection rules and explicit fallback probes. Repeated
@@ -47,6 +48,10 @@ trailing whitespace/CR on each output line. It retains internal blank lines,
 candidate multiplicity, order, morphology, flags, citations, meanings, explanatory
 text, unknown results and trimming markers. It never compares an unordered set.
 The CLI intentionally omits the startup banner and interactive command interpreter.
+The browser's selectable dictionary-frequency order is outside this raw-output
+contract. The library reader and original text/JSON retain their source order;
+the browser reorders complete entries only within uninterrupted interpretation
+groups. See [browser ordering](browser-input.md#dictionary-frequency-order).
 
 ## Expanded qualification
 

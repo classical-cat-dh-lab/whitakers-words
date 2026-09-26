@@ -15,7 +15,11 @@ needed. The build verifies the vendored TypeScript 6.0.3 archive, restores the
 compiler under `.tools/`, verifies all data and selected design-resource hashes,
 then emits ESM and TypeScript declarations into `dist/`. Native Node tests verify
 the frozen Ada observations and the structured adapters. `npm run serve` binds
-the validation page to `127.0.0.1:4173`; `WORDS_PORT` can select another local port.
+the dictionary development page to `127.0.0.1:4173/browser/`; `WORDS_PORT` can
+select another local port. To exercise the complete offline bundle and HTML
+documentation, run `npm run site` followed by `npm run preview`, then open
+`http://127.0.0.1:4173/`. These builds use the checked-out source, which can include
+frontend changes awaiting release; the README identifies the published version.
 
 `node scripts/benchmark.mjs` measures the local load/request/batch boundary;
 `--write` explicitly refreshes `docs/performance.json`. The existing result is one

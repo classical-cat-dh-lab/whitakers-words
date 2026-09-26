@@ -91,8 +91,7 @@ textarea::placeholder { color: var(--ds-color-text-muted); opacity: 1; }
 .display-options legend { padding: .25rem 0; }
 .display-options label { display: inline-flex; align-items: center; gap: .5rem; min-height: 2.75rem; cursor: pointer; }
 .display-options input { width: 1.1rem; height: 1.1rem; margin: 0; accent-color: var(--ds-color-action-primary); }
-.hide-lookup-notes .lookup-note { display: none; }
-.technical-output { margin-top: 1.5rem; }
+.technical-output { margin-top: .5rem; }
 .technical-output h3 { font-size: var(--ds-text-h4); }
 .reader-guide { font: var(--ds-text-small)/1.5 var(--ds-font-sans-ui); margin: .25rem 0 1rem; }
 .reader-accordion { margin: 0; border-top: 1px solid var(--ds-color-border); }
@@ -106,8 +105,17 @@ textarea::placeholder { color: var(--ds-color-text-muted); opacity: 1; }
 .reader-preview { min-width: 0; }
 .reader-preview-entry { display: block; }
 .reader-preview-entry + .reader-preview-entry { margin-top: .5rem; }
-.reader-principal-parts { display: block; font: var(--ds-text-body)/1.5 var(--ds-font-serif-classical); overflow-wrap: anywhere; }
-.reader-preview-labels { display: block; font: var(--ds-text-small)/1.5 var(--ds-font-sans-ui); overflow-wrap: anywhere; }
+.reader-principal-parts { display: block; font: 700 var(--ds-text-body)/1.5 var(--ds-font-serif-classical); overflow-wrap: anywhere; }
+.reader-preview-labels { display: block; padding-inline-start: .9rem; margin-top: .2rem; font: var(--ds-text-small)/1.5 var(--ds-font-sans-ui); overflow-wrap: anywhere; }
+.reader-entry h4 { font-weight: 700; }
+.reader-labels { padding-inline-start: .9rem; }
+.reader-forms { margin-inline-start: .9rem; }
+.reader-frequency { font-style: italic; }
+.result-order { margin: 0 0 1rem; }
+.result-order select { font-size: var(--ds-text-small); max-width: 100%; }
+.result-actions { display: flex; justify-content: flex-end; margin: 1.25rem 0; }
+.back-to-top { display: inline-flex; align-items: center; min-height: 2.75rem; padding: .45rem .8rem; border: 1px solid var(--ds-color-text-primary); border-radius: .25rem; font: var(--ds-text-small)/1.4 var(--ds-font-sans-ui); }
+#notes-output { font: var(--ds-text-small)/1.6 var(--ds-font-sans-ui); }
 .reader-preview .reader-unknown { display: block; margin: 0; }
 .reader-expanded { padding: 0 .5rem .5rem; }
 .reader-error { color: var(--ds-color-error); }

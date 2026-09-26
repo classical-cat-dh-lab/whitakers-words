@@ -3,7 +3,9 @@
 Display version: student-v1. This is the implemented house style for Latin students,
 using familiar dictionary and classroom notation; it is not a claim that every
 publisher uses one identical abbreviation standard. The table is generated from
-the same registry as the page and its abbreviation hints.
+the browser projection of the shared terminology registry, including numeric
+ordinals such as **1st decl**. The frozen library reader retains its original
+`student-v1` labels; see [the API contract](api.md).
 
 Part-of-speech labels keep **noun** and **verb** in full, avoiding confusion between
 “noun” and neuter **n.** Gender labels use **m.**, **f.**, **n.**, and **m./f.**

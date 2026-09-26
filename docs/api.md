@@ -116,7 +116,8 @@ grouped. Compound form rows remain attached to their preceding participle or
 supine. Grouping does not discard or reorder the original alternatives.
 
 Each display term supplies `text`, `full`, `category` and an identifier. The shared
-[abbreviation registry](abbreviations.md) drives both hints and the review table.
+registry drives display hints; the browser projects compact numeric ordinals
+through `browser/notation.mjs`, also used for its [review table](abbreviations.md).
 Inflection codes become contextual descriptions, such as `fourth conj.` or
 `irregular: sum-type`; unknown fields are written out. English lookup retains
 dictionary gender, comparison and governed-case labels without inventing form
@@ -127,6 +128,12 @@ identity, the legacy formatter and corrected-layer selection unchanged. Pass
 `correctedResult.corrected` explicitly to display an independently selected
 corrected result. Unsupported future code values throw instead of guessing a
 student-facing interpretation.
+
+The browser adds a separate [reading-order control](browser-input.md#dictionary-frequency-order).
+Its default dictionary-frequency order is a presentation choice; `presentAnalysis`,
+the API, CLI, original text and structured browser output retain their original
+order. Browser labels such as `3rd conj` likewise do not change this API's
+`third conj.` term or the immutable `student-v1` result contract.
 
 ## CLI
 

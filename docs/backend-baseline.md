@@ -10,8 +10,9 @@ backend version constant; matching, parsing, formatting, diagnostics and data
 remain byte-identical to the fully tested checkpoint. The manifest records both
 the qualification identities and release source hashes.
 
-`npm run verify` checks the frozen source/data/adapter hashes and then runs all
-36 regression groups. A backend change requires a new reviewed baseline and
+`npm run verify` checks the frozen source/data/adapter hashes and then runs the
+regression suite. The release qualified 36 groups; later frontend tests extend
+that suite without changing the frozen backend. A backend change requires a new reviewed baseline and
 appropriate comparison against this release; do not rewrite this immutable tag
 or its published archives. Frontend work may continue independently.
 

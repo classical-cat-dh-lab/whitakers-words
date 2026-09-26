@@ -1,5 +1,8 @@
 # Browser lookup and offline use
 
+This guide describes the current frontend preview, pending review for a 0.3.1
+beta release. The published 0.3.0 beta retains its earlier interface.
+
 The default **Latin lookup** accepts a word, phrase or sentence. Press Enter or
 Return to look it up; Shift+Enter inserts a newline. A **Look up** button supports
 touch input. Composition events do not submit unfinished input. On a narrow touch
@@ -37,9 +40,15 @@ forms and explanatory rows and closes the previously open word. Repeated words
 remain separate occurrences in source order. Enter or Space operates a focused
 summary. English lookup keeps its dictionary entries expanded.
 
+Principal parts are bold. Grammatical labels and form lines are indented to
+separate them from dictionary headings. **Back to top**, below the reading
+results and above additional information, returns to the page title.
+
 **Display options** offers unchecked-by-default controls for **Original text**,
 **Structured data**, **Lookup notes** and **Validation tools**. These controls
-also update the current results. Lookup failures remain visible even when their
+also update the current results. Checking an option reveals a closed panel;
+select its heading to expand it. Unchecking hides and closes the panel. Lookup
+notes appear in their own panel. Lookup failures remain visible even when their
 technical diagnostics are hidden. The checkboxes reset when the page is reloaded.
 Numbered reading labels use **1st decl**, **1st and 2nd decl**, **3rd conj**, and
 the corresponding other ordinals. Expanded meanings remain available as hints.
@@ -49,6 +58,30 @@ The original dictionary uses slashes between alternatives within its meanings.
 The reading view puts those alternatives on separate lines. It preserves their
 order and words; raw meanings and legacy output retain the original punctuation.
 This display does not assign new sense numbers or claim editorial correction.
+
+## Dictionary frequency order
+
+Latin lookup defaults to **Dictionary frequency**. Entries use the frequency
+code of their dictionary record, not the frequency of an inflection rule:
+**A** (very frequent), **B** (frequent), **C** (common), **D** (less frequent),
+**E** (uncommon), then **F** (very rare). These are the original dictionary's
+relative labels, not measured probabilities or a prediction about the sentence.
+For example, `cornu` puts the A-rated *cornu* (horn) before the C-rated *cornus*
+(cornel tree). The label beside each entry makes this ordering visible.
+
+Ties preserve original WORDS order. Unspecified frequency (**X**) and special
+evidence categories (**I**, inscriptions; **M**, graffiti; **N**, chiefly Pliny)
+follow ranked entries in their existing order; they are not treated as lower
+frequency bands. Explanatory rows delimit interpretation groups, so sorting never
+moves an entry across an affix, compound or heuristic explanation. Form rows stay
+attached to their entry. Sentence tokens and repeated occurrences keep their
+input order; English lookup keeps its native ranking.
+
+Select **Original WORDS order** to restore source order in the reading view.
+Original text and structured data always retain source order regardless of this
+control. The display does not restore candidates already trimmed by WORDS or
+discard any returned alternative. See the
+[pinned original frequency definitions](https://github.com/mk270/whitakers-words/blob/1f2f0fb0867a896d7b9284a03d615ed635d6f992/src/latin_utils/latin_utils-inflections_package.ads#L858-L881).
 
 ## Offline and mobile
 

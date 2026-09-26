@@ -5,6 +5,16 @@ function terms(tokens,compact=false){
   const line=element('span',undefined,'reader-terms');
   tokens.forEach((original,i)=>{const token=compactTerm(original);if(i)line.append(document.createTextNode(compact?' ':' · '));const word=element(token.text===token.full?'span':'abbr',token.text);if(token.text!==token.full)word.title=token.full;line.append(word);});return line;
 }
+function entryLabels(item,className){
+  const labels=element('span',undefined,className);labels.append(terms(item.labels));
+  if(item.frequency){
+    if(item.labels.length)labels.append(document.createTextNode(' · '));
+    const frequency=element('span',item.frequency.label,'reader-frequency');
+    frequency.title=item.frequency.rank===null?'Not ranked on the dictionary’s A–F frequency scale':'Original dictionary frequency: '+item.frequency.code;
+    labels.append(frequency);
+  }
+  return labels;
+}
 function tokenSummary(token,language){
   const summary=element('summary',undefined,'reader-summary');
   const surface=element('span',token.surface,'reader-surface');surface.lang=language==='latin'?'la':'en';summary.append(surface);
@@ -13,7 +23,7 @@ function tokenSummary(token,language){
     if(item.kind!=='entry')continue;
     const row=element('span',undefined,'reader-preview-entry');
     const title=element('span',item.title,'reader-principal-parts');title.lang='la';row.append(title);
-    if(item.labels.length){const labels=element('span',undefined,'reader-preview-labels');labels.append(terms(item.labels));row.append(labels);}
+    if(item.labels.length||item.frequency)row.append(entryLabels(item,'reader-preview-labels'));
     entries.append(row);
   }
   if(token.status==='legacy-error')entries.append(element('span','Processing stopped','reader-error'));
@@ -24,7 +34,6 @@ function tokenSummary(token,language){
 export function renderReader(root,result,{failed=false}={}){
   const fragment=document.createDocumentFragment();
   const batch=result.language==='latin'&&result.tokens.length>1,panels=[];
-  for(const note of result.notes)fragment.append(element('p',note,failed?'reader-notice reader-error lookup-note':'reader-notice lookup-note'));
   if(!result.tokens.length)fragment.append(element('p',failed?'Processing stopped before a completed analysis was available.':'No Latin word forms were found in this input.'));
   if(batch)fragment.append(element('p','Select a word to see its meanings and forms.','reader-guide'));
   for(const token of result.tokens){
@@ -38,7 +47,7 @@ export function renderReader(root,result,{failed=false}={}){
     for(const item of token.items){
       const article=element('article',undefined,item.kind==='entry'?'reader-entry':'reader-explanation');
       const heading=element('h4',item.title);if(item.kind==='entry')heading.lang='la';article.append(heading);
-      if(item.labels.length){const line=element('p',undefined,'reader-labels');line.append(terms(item.labels));article.append(line);}
+      if(item.labels.length||item.frequency){const line=element('p',undefined,'reader-labels');line.append(entryLabels(item,'reader-label-content'));article.append(line);}
       if(item.forms.length){
         const list=element('ul',undefined,'reader-forms');
         for(const form of item.forms){const row=element('li');row.append(terms(form.terms,true));for(const note of form.notes)row.append(element('span',' — '+note,'reader-form-note'));list.append(row);}article.append(list);
@@ -47,10 +56,21 @@ export function renderReader(root,result,{failed=false}={}){
       if(item.details.length){const details=element('details');details.append(element('summary',item.kind==='entry'?'Word details':'Original note'));const definition=element('dl');for(const detail of item.details){definition.append(element('dt',detail.label),element('dd',detail.value));}details.append(definition);article.append(details);}
       content.append(article);
     }
-    for(const note of token.notes)content.append(element('p',note,'reader-profile-note lookup-note'));
     if(batch)section.append(content);
     fragment.append(section);
   }
+  root.replaceChildren(fragment);
+}
+export function renderLookupNotes(root,result){
+  const fragment=document.createDocumentFragment();
+  for(const note of result.notes)fragment.append(element('p',note));
+  for(const token of result.tokens){
+    if(!token.notes.length)continue;
+    const section=element('section');section.append(element('h4',token.surface));
+    for(const note of token.notes)section.append(element('p',note));
+    fragment.append(section);
+  }
+  if(!fragment.childNodes.length)fragment.append(element('p','No lookup notes for this result.'));
   root.replaceChildren(fragment);
 }
 export function renderAbbreviations(root){

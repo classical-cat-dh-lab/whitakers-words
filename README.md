@@ -7,8 +7,9 @@ behavior and freezes the verified backend baseline. It includes the accepted
 0.2.1 browser interface, offline use and saved night mode.
 
 The current source includes a frontend preview on that frozen backend: compact
-header controls, single-word reading, collapsed passage results and optional
-technical output. This preview has not replaced the published beta.
+header controls, collapsed passage results, dictionary-frequency ordering,
+clearer principal parts and optional expandable technical output. This preview
+is pending review for 0.3.1 beta and has not replaced the published beta.
 
 A preservation of William Whitaker's WORDS in TypeScript, compiled to JavaScript
 ESM: Latin analysis, English gloss lookup, a structured API, a CLI and a small
@@ -57,7 +58,7 @@ node cli/main.mjs --english wild
 npm run serve
 ```
 
-Open `http://127.0.0.1:4173/browser/` for the validation harness. Build and tests
+Open `http://127.0.0.1:4173/browser/` for the dictionary development page. Build and tests
 work offline: TypeScript 6.0.3 and all runtime data are vendored and hash-checked.
 No `npm install` is required. Use `npm run site` then `npm run preview` to build
 and preview the offline website. Serve `site/` over HTTPS (or localhost); opening

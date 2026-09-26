@@ -30,6 +30,7 @@ flowchart LR
 | `src/reader.ts`, `src/terminology.ts` | Pure student view, contextual class names and shared abbreviation registry |
 | `browser/render-reader.mjs` | DOM rendering of the reading view and terminology table |
 | `browser/notation.mjs` | Compact browser labels and glossary projection; preserves frozen engine and reader results |
+| `browser/reading-order.mjs` | Optional dictionary-frequency ordering within Latin interpretation groups; preserves source records and form grouping |
 | `node/`, `cli/`, `browser/` | File loading, command-line IO and same-origin Worker transport |
 
 The core has no network, filesystem, terminal, database or ambient-configuration
@@ -62,13 +63,19 @@ row and preserve one-based source line numbers. Comments are not lexical records
 
 ## Product boundaries
 
-The browser page is a validation tool with a student reading view: input, compact
-dictionary notation, expandable legacy output, inspectable JSON and cross-runtime
-fixtures. The display layer consumes structured records, with no parsing of the
-legacy terminal output. It uses the immutable design-system 2.3.0 web resource
-subset recorded in `browser/design-system.lock.json`. It has no persistence,
-telemetry, external fonts or complete dictionary UI. The server binds only to
-loopback and serves an explicit set of product directories.
+The browser is a reading dictionary: single-word lookup, a collapsed passage
+view and optional offline use. Technical output and validation fixtures are
+opt-in, expandable panels. The display layer consumes structured records, with
+no parsing of the legacy terminal output. Latin entries default to the original
+dictionary's frequency bands; source order remains selectable. This ordering
+does not alter library results, JSON, legacy output or the frozen reader API.
+
+The application uses the immutable design-system 2.3.0 web resource subset
+recorded in `browser/design-system.lock.json`. Cache Storage holds a verified
+offline bundle; IndexedDB stores its small state records and the theme preference.
+There is no telemetry or external font request. The local development server
+binds only to loopback and serves an explicit set of product directories;
+production hosting serves static files, with all analysis performed on-device.
 
 Future consumers should use the versioned WORDS contract, not treat its resolved
 codes or glosses as the schema or linguistic authority of a new Latin analyzer.
