@@ -21,18 +21,21 @@ function updateInputPrompt(){
   $('#input-help').textContent=english?'Enter / Return to look up an English word.':mode==='latin'?'Enter / Return to look up · Shift + Enter for a new line. Macrons are welcome.':'Original WORDS input rules: macrons are not removed and may split words. Use Latin lookup for text with macrons. Enter / Return to look up.';
 }
 $('#mode').addEventListener('change',updateInputPrompt);updateInputPrompt();
-$('#new-lookup').addEventListener('click',event=>{event.preventDefault();$('#input').focus();$('#input').select();$('#input').scrollIntoView({block:'center'});});
+$('#new-lookup').addEventListener('click',()=>{
+  $('#input').value='';currentReading=undefined;$('#results').hidden=true;
+  for(const id of ['reader-output','legacy-output','json-output','notes-output'])$('#'+id).replaceChildren();
+  for(const panel of document.querySelectorAll('#results details'))panel.open=false;
+  $('#status').textContent='Ready to look up.';$('#input').focus();$('#input').scrollIntoView({block:'center'});
+});
 $('#back-to-top').addEventListener('click',event=>{event.preventDefault();$('#page-title').focus({preventScroll:true});window.scrollTo({top:0,behavior:'instant'});});
 function renderCurrentReading(preserveOpen=false){
   const openIndex=preserveOpen?[...document.querySelectorAll('.reader-accordion')].findIndex(panel=>panel.open):-1;
   const {view,analysis}=currentReading;
-  renderReader($('#reader-output'),orderReading(view,analysis,$('#result-order').value),{failed:analysis.status==='legacy-error'});
+  renderReader($('#reader-output'),orderReading(view,analysis,$('#original-order').checked?'original':'frequency'),{failed:analysis.status==='legacy-error'});
   if(openIndex>=0){const panel=document.querySelectorAll('.reader-accordion')[openIndex];if(panel)panel.open=true;}
-  $('#order-control').hidden=view.language!=='latin';
 }
-$('#result-order').addEventListener('change',()=>{if(currentReading)renderCurrentReading(true);});
+$('#original-order').addEventListener('change',()=>{if(currentReading)renderCurrentReading(true);});
 renderAbbreviations($('#abbreviation-table'));
-$('#abbreviations-link').addEventListener('click',()=>{$('#abbreviations').open=true;});
 function query(input,mode='legacy'){return new Promise((resolve,reject)=>{const id=++sequence;pending.set(id,{resolve,reject});worker.postMessage({id,input,mode});});}
 worker.addEventListener('message',({data})=>{
   if(data.type==='ready'){$('#status').textContent='Ready to look up.';$('#analyze').disabled=false;$('#validate').disabled=false;}
@@ -44,9 +47,9 @@ $('#input').addEventListener('keydown',event=>{
   if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing&&event.keyCode!==229){event.preventDefault();if(!$('#analyze').disabled&&$('#input').value.trim())$('#analysis-form').requestSubmit();}
 });
 $('#analysis-form').addEventListener('submit',async event=>{
-  event.preventDefault();if($('#analyze').disabled||!$('#input').value.trim())return;$('#analyze').disabled=true;$('#status').textContent='Looking up…';
+  event.preventDefault();if($('#analyze').disabled||!$('#input').value.trim())return;$('#analyze').disabled=true;$('#new-lookup').disabled=true;$('#status').textContent='Looking up…';
   try{
-    const {result,inputAdapter}=await query($('#input').value,$('#mode').value);
+    const {result,inputAdapter,milliseconds}=await query($('#input').value,$('#mode').value);
     const analysis=result.corrected??result,view=presentAnalysis(analysis);
     if(inputAdapter){
       view.tokens.forEach((token,i)=>token.surface=originalSurface(inputAdapter,analysis.tokens[i].span));
@@ -56,10 +59,10 @@ $('#analysis-form').addEventListener('submit',async event=>{
     $('#results').hidden=false;
     $('#legacy-output').textContent=analysis.legacyText||'No output.';
     $('#json-output').textContent=JSON.stringify(inputAdapter?{inputAdapter,result}:result,null,2);
-    $('#status').textContent=analysis.status==='legacy-error'?'Stopped: original WORDS encountered an error.':'Complete.';
+    $('#status').textContent=analysis.status==='legacy-error'?'Stopped: original WORDS encountered an error.':`Complete (${milliseconds<0.1?'<0.1':milliseconds.toFixed(1)} ms).`;
     if(matchMedia('(max-width: 48rem) and (pointer: coarse)').matches){$('#input').blur();$('#result-heading').focus({preventScroll:true});$('#result-heading').scrollIntoView({block:'start'});}
   }
-  catch(error){$('#status').textContent='Error: '+error.message;}finally{$('#analyze').disabled=false;}
+  catch(error){$('#status').textContent='Error: '+error.message;}finally{$('#analyze').disabled=false;$('#new-lookup').disabled=false;}
 });
 $('#validate').addEventListener('click',async()=>{
   $('#validate').disabled=true;$('#validation-results').replaceChildren();

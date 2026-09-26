@@ -25,7 +25,7 @@ a { color: var(--ds-color-link); text-decoration: underline; }
 footer a { overflow-wrap: anywhere; }
 .pass { color: var(--ds-color-success); } .fail { color: var(--ds-color-error); }
 .reader-heading {display:flex;align-items:baseline;justify-content:space-between;gap:1rem;}
-.reader-heading a {font-family:var(--ds-font-sans-ui);font-size:var(--ds-text-small);}
+.reader-heading button {font-size:var(--ds-text-small);}
 .reader-token {margin:1.5rem 0 2rem;}
 .reader-token h3 {font-size:var(--ds-text-h2);line-height:var(--ds-leading-heading);margin:.5rem 0;overflow-wrap:anywhere;}
 .reader-entry,.reader-explanation {padding:1rem 1.2rem;margin:.7rem 0;background:var(--ds-color-surface-raised);border-left:3px solid var(--ds-color-border);border-radius:.2rem;}
@@ -59,7 +59,6 @@ textarea { min-height: 6rem; }
 main { padding-left: max(1.5rem, env(safe-area-inset-left)); padding-right: max(1.5rem, env(safe-area-inset-right)); padding-bottom: max(2rem, env(safe-area-inset-bottom)); }
 .reader-entry, .reader-explanation { overflow-wrap: anywhere; min-width: 0; }
 .controls > * { max-width: 100%; }
-.reader-heading a { display: inline-flex; align-items: center; min-height: 2.75rem; }
 @media (max-width: 48rem) {
   main { padding: 1rem max(.8rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) max(.8rem, env(safe-area-inset-left)); }
   header > p { margin: .5rem 0; }
@@ -73,7 +72,6 @@ main { padding-left: max(1.5rem, env(safe-area-inset-left)); padding-right: max(
 }
 
 .reader-heading { flex-wrap: wrap; }
-.reader-links { display: flex; flex-wrap: wrap; gap: .8rem; }
 #result-heading { scroll-margin-top: 1rem; }
 textarea::placeholder { color: var(--ds-color-text-muted); opacity: 1; }
 
@@ -111,8 +109,6 @@ textarea::placeholder { color: var(--ds-color-text-muted); opacity: 1; }
 .reader-labels { padding-inline-start: .9rem; }
 .reader-forms { margin-inline-start: .9rem; }
 .reader-frequency { font-style: italic; }
-.result-order { margin: 0 0 1rem; }
-.result-order select { font-size: var(--ds-text-small); max-width: 100%; }
 .result-actions { display: flex; justify-content: flex-end; margin: 1.25rem 0; }
 .back-to-top { display: inline-flex; align-items: center; min-height: 2.75rem; padding: .45rem .8rem; border: 1px solid var(--ds-color-text-primary); border-radius: .25rem; font: var(--ds-text-small)/1.4 var(--ds-font-sans-ui); }
 #notes-output { font: var(--ds-text-small)/1.6 var(--ds-font-sans-ui); }

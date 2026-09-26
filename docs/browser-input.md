@@ -7,8 +7,11 @@ The default **Latin lookup** accepts a word, phrase or sentence. Press Enter or
 Return to look it up; Shift+Enter inserts a newline. A **Look up** button supports
 touch input. Composition events do not submit unfinished input. On a narrow touch
 screen, a completed lookup dismisses the input keyboard and moves to the results.
-New lookup returns to and selects the input. Desktop keyboard focus stays in the
-input for repeated queries.
+The **New lookup** button clears the input and lookup results, then focuses the
+empty input. It retains the selected lookup mode and display options without
+reloading the dictionary. Desktop keyboard focus stays in the input for repeated
+queries. The completion status shows each lookup's Worker processing time in
+milliseconds; it excludes dictionary loading, message transfer and page rendering.
 
 ## Macron adaptation
 
@@ -44,9 +47,10 @@ Principal parts are bold. Grammatical labels and form lines are indented to
 separate them from dictionary headings. **Back to top**, below the reading
 results and above additional information, returns to the page title.
 
-**Display options** offers unchecked-by-default controls for **Original text**,
+**Display options** contains the unchecked **Original WORDS order** switch and
+unchecked-by-default controls for **Original text**,
 **Structured data**, **Lookup notes** and **Validation tools**. These controls
-also update the current results. Checking an option reveals a closed panel;
+also update the current results. Checking an information option reveals a closed panel;
 select its heading to expand it. Unchecking hides and closes the panel. Lookup
 notes appear in their own panel. Lookup failures remain visible even when their
 technical diagnostics are hidden. The checkboxes reset when the page is reloaded.
@@ -77,7 +81,8 @@ moves an entry across an affix, compound or heuristic explanation. Form rows sta
 attached to their entry. Sentence tokens and repeated occurrences keep their
 input order; English lookup keeps its native ranking.
 
-Select **Original WORDS order** to restore source order in the reading view.
+Check **Original WORDS order** inside **Display options** to restore source order
+in the reading view. Uncheck it to return to dictionary-frequency ordering.
 Original text and structured data always retain source order regardless of this
 control. The display does not restore candidates already trimmed by WORDS or
 discard any returned alternative. See the

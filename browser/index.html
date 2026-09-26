@@ -55,7 +55,8 @@
       </div>
       <details class="display-options">
         <summary>Display options</summary>
-        <fieldset><legend>Additional information</legend>
+        <fieldset><legend>Result display</legend>
+          <label title="Use the original result order for Latin lookup instead of dictionary frequency."><input type="checkbox" id="original-order" aria-controls="reader-output"> Original WORDS order</label>
           <label><input type="checkbox" id="show-legacy" aria-controls="legacy-panel"> Original text</label>
           <label><input type="checkbox" id="show-json" aria-controls="json-panel"> Structured data</label>
           <label><input type="checkbox" id="show-notes" aria-controls="notes-panel"> Lookup notes</label>
@@ -65,8 +66,7 @@
       <p id="status" role="status" aria-live="polite">Loading dictionary…</p>
     </form>
     <section id="results" aria-labelledby="result-heading" hidden>
-      <div class="reader-heading"><h2 id="result-heading" tabindex="-1">Results</h2><div class="reader-links"><a id="new-lookup" href="#input">New lookup</a><a id="abbreviations-link" href="#abbreviations">Abbreviations</a></div></div>
-      <div id="order-control" class="result-order controls"><label for="result-order">Order</label><select id="result-order"><option value="frequency">Dictionary frequency</option><option value="original">Original WORDS order</option></select></div>
+      <div class="reader-heading"><h2 id="result-heading" tabindex="-1">Results</h2><button type="button" id="new-lookup">New lookup</button></div>
       <div id="reader-output"></div>
       <div class="result-actions"><a id="back-to-top" class="back-to-top" href="#page-title">Back to top ↑</a></div>
       <details id="legacy-panel" class="technical-output" hidden><summary>Original-style text output</summary><p>The same lookup in the original program’s text layout.</p><pre id="legacy-output" tabindex="0"></pre></details>
