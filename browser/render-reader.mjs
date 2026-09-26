@@ -11,7 +11,7 @@ export function renderReader(root,result){
   if(!result.tokens.length)fragment.append(element('p','No Latin word forms were found in this input.'));
   for(const token of result.tokens){
     const section=element('section',undefined,'reader-token');section.append(element('h3',token.surface));
-    if(!token.items.length)section.append(element('p',result.language==='english'?'No matching dictionary entries.':'No analysis found by WORDS.','reader-unknown'));
+    if(!token.items.length)section.append(element('p',token.status==='legacy-error'?'Original WORDS stopped while processing this input; no completed analysis is available.':result.language==='english'?'No matching dictionary entries.':'No analysis found by WORDS.','reader-unknown'));
     for(const item of token.items){
       const article=element('article',undefined,item.kind==='entry'?'reader-entry':'reader-explanation');
       const heading=element('h4',item.title);if(item.kind==='entry')heading.lang='la';article.append(heading);

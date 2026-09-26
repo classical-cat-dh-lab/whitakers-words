@@ -1,6 +1,6 @@
 export const SNAPSHOT = 'words-mk270-1f2f0fb' as const;
 export const PROFILE = 'upstream-tests-v1' as const;
-export const VERSION = '0.2.1-alpha.1' as const;
+export const VERSION = '0.3.0-beta.1' as const;
 export const DATA_IDENTITY = Object.freeze({ commit: '1f2f0fb0867a896d7b9284a03d615ed635d6f992', sourceArchiveSha256: '9fae6c316fb299bbb27f7512d405ee03edecaeb82867a8134a7804677c6c0182', dictionaryFormsSha256: '3e6b20033e6cd894586f89e16352b071a1f3ef0e017de21d0d1c1d4eb0fbe218', englishIndexSha256: '7750aad0435854489aa4374055b58a6db8c270bca7eab130ecf602633b5fa13d' });
 export const POS = ['X', 'N', 'PRON', 'PACK', 'ADJ', 'NUM', 'ADV', 'V', 'VPAR', 'SUPINE', 'PREP', 'CONJ', 'INTERJ', 'TACKON', 'PREFIX', 'SUFFIX'] as const;
 export type PartOfSpeech = typeof POS[number];

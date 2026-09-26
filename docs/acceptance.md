@@ -1,6 +1,40 @@
-# Fixed-wordlist acceptance
+# Backend acceptance — 0.3 beta
 
-The 0.2 candidate compares the complete four-profile version 1.0.0 of
+Qualified on 2026-09-26 against the pinned WORDS 1.99.0 reference, using the
+existing `upstream-tests-v1` profile. The 0.3 backend is frozen; processing a
+classical-text corpus is deferred to a later iteration.
+
+| Check | Result |
+|---|---|
+| Complete Latin replay | 4,144,877 inputs; 4,144,873 matching normal outputs |
+| Original native failures | Both reproduced: `pilarium`, `pilarivm`; diagnostic output and exit status retained |
+| Comparator exclusions | 2: empty console input and the `!` developer menu |
+| Differences/regressions introduced | 0 / 0 against the preceding repaired checkpoint |
+| Original 0.2 normal differences | All 109,001 remain resolved |
+| English index and probes | 24,000/24,000 match; 23,808 distinct nonempty index spellings plus 192 POS/trim/input probes |
+| English failure observations | 5 native overflow outcomes preserved within the 24,000 comparisons |
+| Native capacity states | 10/10 match, including 80/81 and 249/250/251 boundaries |
+| Latin sequences/options | 512/512 sessions across 16 profiles match |
+| Portable regression tests | 36/36 groups pass; the frozen backend hashes are also checked |
+| Fresh native controls | 96 normal inputs, forward/reverse order, and both original native errors verified in two builds |
+
+A matching native failure is not a successful analysis. Normal output equality
+uses the established prompt/trailing-whitespace normalization and preserves
+internal blank lines, order, multiplicity and explanations. Original dictionary
+content and linguistic errors remain unchanged; the corrected layer is empty.
+
+Beta indicates preliminary engineering reliability within this measured scope.
+It does not establish equivalence for every input or option combination,
+philological correctness, completed classical-text corpus testing or physical
+iOS installation qualification. Native interactive menus, filesystem side effects
+and host-resource failures remain outside the analysis-body API contract.
+
+See the [frozen backend manifest](backend-baseline.md),
+[compatibility details](compatibility.md) and [release notes](release-0.3.md).
+
+## Historical 0.2 fixed-wordlist acceptance
+
+The historical 0.2 candidate compares the complete four-profile version 1.0.0 of
 [classical-lexical-test-data](https://github.com/classical-cat-dh-lab/classical-lexical-test-data).
 This is a dictionary-input corpus, not classical prose or adjudicated answers.
 

@@ -1,6 +1,6 @@
-# First-stage compatibility qualification
+# Compatibility qualification — 0.3 beta
 
-Qualified on 2026-09-19 against `words-mk270-1f2f0fb`, using the exact
+Initial baseline qualified on 2026-09-19 against `words-mk270-1f2f0fb`, using the exact
 `upstream-tests-v1` profile. The reference program is WORDS 1.99.0 from the
 maintained mk270 lineage, not a reconstruction of historical 1.97FC.
 
@@ -35,6 +35,10 @@ forms are deduplicated. This is broad feature coverage, not every possible stem,
 rule, affix combination or malformed input. Exact corpus hashes are in
 `tests/compatibility/manifest.json`.
 
+The 0.3 beta designation recognizes preliminary engineering reliability after
+the complete comparisons below. The [backend baseline](backend-baseline.md) is
+frozen; full classical-text corpus work remains deferred.
+
 ## Comparison contract
 
 The 21 raw Ada observations remain byte-for-byte evidence. The TypeScript
@@ -51,7 +55,7 @@ extends the frozen baseline and records newly exposed compatibility differences.
 The old finite baseline remains passing; its success is not universal equivalence.
 [Browser macron adaptation](browser-input.md) is separate from the legacy profile.
 
-The local 0.3 storage/reader checkpoint replays all **4,144,877** frozen inputs.
+The 0.3 storage/reader checkpoint replays all **4,144,877** frozen inputs.
 All **4,144,873 comparable normal outputs match**, with zero regressions and no
 new exceptions. This resolves all 510 differences in the preceding source-audit
 checkpoint, including its two trimming-marker regressions, and all 109,001 output
@@ -73,9 +77,7 @@ The two original native-error inputs remain errors in the source algorithm.
 They now return explicit `legacy-error` results with the original diagnostic
 body; CLI stdout, empty stderr and exit code 0 reproduce the native outer handler.
 These are classified separately from successful normal analyses. Empty input and
-`!` remain limitations of the original wordlist console comparator. This local
-checkpoint does not establish universal exceptional-path equivalence and has not
-been published as a release. See [the result contract](api.md).
+`!` remain limitations of the original wordlist console comparator. The 0.3 beta qualification does not establish universal exceptional-path equivalence. See [the result contract](api.md).
 
 ## Observed legacy behavior retained
 
@@ -99,7 +101,7 @@ request order. These finite profiles do not qualify every option/input combinati
 The complete **4,144,877-query** Latin replay after these repairs retains all
 **4,144,873 normal matches** and both original native failure outcomes, with no
 new differences or port failures. The two original comparator exclusions remain
-separate. This capacity checkpoint is local and has not been released.
+separate. This result is the frozen 0.3 beta backend baseline.
 
 - Unique entries retain the original null part initialization (`X`), even when
   their parse quality is a noun, pronoun or verb. Citation artifacts remain.
@@ -134,7 +136,7 @@ separate. This capacity checkpoint is local and has not been released.
 
 ## Limits and next qualification work
 
-The first-stage deliverables are operational. This is an experimental alpha,
+The first-stage deliverables are operational. This is a beta release,
 not a claim of complete equivalence for every possible WORDS input or philological
 correctness. The qualified profile uses only the canonical general dictionary;
 local/special dictionaries, editing modes, interactive menus, persistent option
@@ -153,5 +155,5 @@ invocation modes.
 
 Future linguistic changes must use a reviewed deviation with evidence and tests.
 Full classical-author corpus comparison and stress testing remain future work.
-The website alpha does not establish those claims. Release citation metadata is
+The beta designation does not establish those claims. Release citation metadata is
 maintained in [CITATION.cff](../CITATION.cff).

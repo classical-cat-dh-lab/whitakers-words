@@ -1,10 +1,10 @@
 cff-version: 1.2.0
-message: "If you cite this experimental software, use the metadata below."
+message: "If you cite this beta software, use the metadata below."
 type: software
 title: "Whitaker's Words — TypeScript preservation"
-version: "0.2.1-alpha.1"
-date-released: "2026-09-25"
-doi: "10.5281/zenodo.22951075"
+version: "0.3.0-beta.1"
+date-released: "2026-09-26"
+doi: "10.5281/zenodo.22970444"
 url: "https://words.latingreek.org/"
 repository-code: "https://github.com/classical-cat-dh-lab/whitakers-words"
 license: AGPL-3.0-only
