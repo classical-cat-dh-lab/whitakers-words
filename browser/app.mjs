@@ -1,7 +1,8 @@
 import {originalSurface} from './input.mjs';
 import {presentAnalysis} from '../dist/reader.js';
-import {renderReader,renderAbbreviations,renderLookupNotes} from './render-reader.mjs';
+import {renderReader,renderLookupNotes} from './render-reader.mjs';
 import {orderReading} from './reading-order.mjs';
+import {passageSegments,renderPassage} from './passage.mjs';
 const worker=new Worker(new URL('./worker.mjs',import.meta.url),{type:'module'});
 const $=selector=>document.querySelector(selector),pending=new Map();let sequence=0;
 let currentReading;
@@ -10,7 +11,15 @@ function updateDisplayOptions(){
     const target=$('#'+panel);target.hidden=!$('#show-'+option).checked;
     if(target.hidden)target.open=false;
   }
+  const passage=currentReading?.view.language==='latin'&&currentReading.view.tokens.length>1;
+  const mode=document.querySelector('[name="result-view"]:checked').value;
+  $('#passage-view').hidden=!passage||mode==='list';
+  $('#reader-output').hidden=passage&&mode==='text';
 }
+function updateConnection(){
+  $('#connection-status').textContent=(navigator.onLine?'Online':'Offline')+' · On-device lookup';
+}
+window.addEventListener('online',updateConnection);window.addEventListener('offline',updateConnection);updateConnection();
 for(const checkbox of document.querySelectorAll('.display-options input'))checkbox.addEventListener('change',updateDisplayOptions);
 updateDisplayOptions();
 function updateInputPrompt(){
@@ -18,24 +27,27 @@ function updateInputPrompt(){
   $('label[for="input"]').textContent=english?'English word':'Latin word, phrase or sentence';
   $('#input').lang=english?'en':'la';
   $('#input').placeholder=english?'Type an English word, then press Enter / Return.':'Type Latin here, then press Enter / Return.';
-  $('#input-help').textContent=english?'Enter / Return to look up an English word.':mode==='latin'?'Enter / Return to look up · Shift + Enter for a new line. Macrons are welcome.':'Original WORDS input rules: macrons are not removed and may split words. Use Latin lookup for text with macrons. Enter / Return to look up.';
+  $('#input-help').textContent=english?'Enter / Return to look up an English word.':mode==='latin'?'Enter / Return to look up · Shift + Enter / Return for a new line.':'Original WORDS input rules: macrons are not removed and may split words. Use Latin lookup for text with macrons. Enter / Return to look up.';
 }
 $('#mode').addEventListener('change',updateInputPrompt);updateInputPrompt();
-$('#new-lookup').addEventListener('click',()=>{
+$('#clear-input').addEventListener('click',()=>{
   $('#input').value='';currentReading=undefined;$('#results').hidden=true;
-  for(const id of ['reader-output','legacy-output','json-output','notes-output'])$('#'+id).replaceChildren();
+  for(const id of ['reader-output','passage-text','passage-detail','legacy-output','json-output','notes-output'])$('#'+id).replaceChildren();
   for(const panel of document.querySelectorAll('#results details'))panel.open=false;
-  $('#status').textContent='Ready to look up.';$('#input').focus();$('#input').scrollIntoView({block:'center'});
+  updateDisplayOptions();if(!$('#analyze').disabled)$('#status').textContent='Ready to look up.';$('#input').focus();$('#input').scrollIntoView({block:'center'});
 });
 $('#back-to-top').addEventListener('click',event=>{event.preventDefault();$('#page-title').focus({preventScroll:true});window.scrollTo({top:0,behavior:'instant'});});
 function renderCurrentReading(preserveOpen=false){
   const openIndex=preserveOpen?[...document.querySelectorAll('.reader-accordion')].findIndex(panel=>panel.open):-1;
   const {view,analysis}=currentReading;
-  renderReader($('#reader-output'),orderReading(view,analysis,$('#original-order').checked?'original':'frequency'),{failed:analysis.status==='legacy-error'});
+  const ordered=orderReading(view,analysis,$('#original-order').checked?'original':'frequency');
+  renderReader($('#reader-output'),ordered,{failed:analysis.status==='legacy-error'});
+  if(view.language==='latin'&&view.tokens.length>1)renderPassage($('#passage-text'),$('#passage-detail'),currentReading.segments,ordered,currentReading.selected,index=>{currentReading.selected=index;});
+  else{$('#passage-text').replaceChildren();$('#passage-detail').replaceChildren();}
+  updateDisplayOptions();
   if(openIndex>=0){const panel=document.querySelectorAll('.reader-accordion')[openIndex];if(panel)panel.open=true;}
 }
 $('#original-order').addEventListener('change',()=>{if(currentReading)renderCurrentReading(true);});
-renderAbbreviations($('#abbreviation-table'));
 function query(input,mode='legacy'){return new Promise((resolve,reject)=>{const id=++sequence;pending.set(id,{resolve,reject});worker.postMessage({id,input,mode});});}
 worker.addEventListener('message',({data})=>{
   if(data.type==='ready'){$('#status').textContent='Ready to look up.';$('#analyze').disabled=false;$('#validate').disabled=false;}
@@ -47,22 +59,23 @@ $('#input').addEventListener('keydown',event=>{
   if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing&&event.keyCode!==229){event.preventDefault();if(!$('#analyze').disabled&&$('#input').value.trim())$('#analysis-form').requestSubmit();}
 });
 $('#analysis-form').addEventListener('submit',async event=>{
-  event.preventDefault();if($('#analyze').disabled||!$('#input').value.trim())return;$('#analyze').disabled=true;$('#new-lookup').disabled=true;$('#status').textContent='Looking up…';
+  event.preventDefault();if($('#analyze').disabled||!$('#input').value.trim())return;$('#analyze').disabled=true;$('#clear-input').disabled=true;$('#status').textContent='Looking up…';
   try{
-    const {result,inputAdapter,milliseconds}=await query($('#input').value,$('#mode').value);
+    const original=$('#input').value;
+    const {result,inputAdapter,milliseconds}=await query(original,$('#mode').value);
     const analysis=result.corrected??result,view=presentAnalysis(analysis);
     if(inputAdapter){
       view.tokens.forEach((token,i)=>token.surface=originalSurface(inputAdapter,analysis.tokens[i].span));
       if(inputAdapter.lookup!==inputAdapter.original)view.notes.unshift('Macrons are ignored for lookup; the reading view retains your original spelling.');
     }
-    currentReading={analysis,view};renderCurrentReading();renderLookupNotes($('#notes-output'),view);
+    currentReading={analysis,view,selected:0,segments:view.language==='latin'?passageSegments(original,analysis.tokens,inputAdapter):[]};renderCurrentReading();renderLookupNotes($('#notes-output'),view);
     $('#results').hidden=false;
     $('#legacy-output').textContent=analysis.legacyText||'No output.';
     $('#json-output').textContent=JSON.stringify(inputAdapter?{inputAdapter,result}:result,null,2);
     $('#status').textContent=analysis.status==='legacy-error'?'Stopped: original WORDS encountered an error.':`Complete (${milliseconds<0.1?'<0.1':milliseconds.toFixed(1)} ms).`;
     if(matchMedia('(max-width: 48rem) and (pointer: coarse)').matches){$('#input').blur();$('#result-heading').focus({preventScroll:true});$('#result-heading').scrollIntoView({block:'start'});}
   }
-  catch(error){$('#status').textContent='Error: '+error.message;}finally{$('#analyze').disabled=false;$('#new-lookup').disabled=false;}
+  catch(error){$('#status').textContent='Error: '+error.message;}finally{$('#analyze').disabled=false;$('#clear-input').disabled=false;}
 });
 $('#validate').addEventListener('click',async()=>{
   $('#validate').disabled=true;$('#validation-results').replaceChildren();

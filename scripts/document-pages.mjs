@@ -138,6 +138,7 @@ export async function documentPages(root, version) {
   }
   pages.set('docs/source.html', Buffer.from(page('Source and documentation', `<h1>Source and documentation</h1>
 <p>Whitaker’s Words ${escape(version)} is an independent TypeScript preservation of William Whitaker’s WORDS. Analysis runs on your device.</p>
+<p>Start with <a href="acceptance.html">About this beta and tested scope</a>, <a href="compatibility.html">Compatibility</a> or <a href="abbreviations.html">Abbreviations and terminology</a>.</p>
 <p><a href="/downloads/whitakers-words-${escape(version)}-source.tar.gz" download>Download the complete source archive (${escape(version)})</a></p>
 <p>The archive includes the implementation, dictionary data, build tools, tests and documentation for this version. See <a href="building.html">Building and reproducing the baseline</a> for instructions.</p>
 <p>Original implementation and tooling are provided under <a href="license.html">AGPL-3.0-only</a>; preserved WORDS material retains its <a href="original-notice.html">original notice</a>.</p>

@@ -1,16 +1,19 @@
 # Browser lookup and offline use
 
-This guide describes the 0.3.1 beta browser interface on the frozen 0.3.0 engine.
+This guide describes the 0.3.2 beta browser interface on the frozen 0.3.0 engine.
 
 The default **Latin lookup** accepts a word, phrase or sentence. Press Enter or
-Return to look it up; Shift+Enter inserts a newline. A **Look up** button supports
+Return to look it up; Shift + Enter / Return inserts a newline. A **Look up** button supports
 touch input. Composition events do not submit unfinished input. On a narrow touch
 screen, a completed lookup dismisses the input keyboard and moves to the results.
-The **New lookup** button clears the input and lookup results, then focuses the
-empty input. It retains the selected lookup mode and display options without
+The **Clear input** button clears the input and lookup results, then focuses the
+empty input. It sits beside **Look up** and retains the selected lookup mode and display options without
 reloading the dictionary. Desktop keyboard focus stays in the input for repeated
 queries. The completion status shows each lookup's Worker processing time in
 milliseconds; it excludes dictionary loading, message transfer and page rendering.
+Beside Display options, **Online / Offline** reports the browser connection state;
+**On-device lookup** identifies where analysis runs in either state. A network
+connection indicator does not guarantee that the update server is reachable.
 
 ## Macron adaptation
 
@@ -34,17 +37,29 @@ the browser adapter. This input convenience is not a linguistic correction.
 
 ## Reading meanings
 
-A single analyzed word opens with its full reading view. A Latin passage with
-multiple analyzed tokens starts with every word collapsed. Each summary retains
-the supplied spelling, all returned dictionary headings or principal parts, and
-part-of-speech and inflection labels. Selecting one word reveals its meanings,
-forms and explanatory rows and closes the previously open word. Repeated words
-remain separate occurrences in source order. Enter or Space operates a focused
-summary. English lookup keeps its dictionary entries expanded.
+A Latin passage shows the original text above the complete word list. Select a
+word in the text to show its entries immediately below; selecting another word
+replaces that detail without another query, page reload or change of keyboard
+focus. Spelling, whitespace, line breaks, punctuation and repeated occurrences
+are retained. Only spans returned by WORDS are selectable; unsupported characters
+and any unprocessed remainder stay visible as plain text.
 
-Principal parts are bold. Grammatical labels and form lines are indented to
-separate them from dictionary headings. **Back to top**, below the reading
-results and above additional information, returns to the page title.
+**Display options → Passage view** offers **Text + list** (the default), **Text
+only** and **List only**. The view applies immediately and survives Clear input;
+it resets on reload. A single word and English lookup use expanded entries in
+all three settings. Long passages scroll inside their text area.
+
+The list starts collapsed. Each summary shows only the original word and its
+principal parts. Identical principal-part headings appear once in that summary;
+opening it retains every separate candidate, form and explanation. Opening
+another list word closes the previous one. Enter or Space operates focused words
+and summaries.
+
+Expanded entries present principal parts, fixed grammatical labels, English
+meanings, then **Possible forms**. Additional source metadata stays under
+**Word details**. Principal parts are bold. **Back to top** returns to the page
+title. The separate [abbreviations and terminology](abbreviations.md) page is
+linked from the footer and included in the offline bundle.
 
 **Display options** contains the unchecked **Original WORDS order** switch and
 unchecked-by-default controls for **Original text**,
@@ -91,7 +106,7 @@ discard any returned alternative. See the
 
 **Save offline**, beside **Night mode**, downloads the complete application and dictionary, checks
 every file and starts a fresh saved analyzer before declaring success. Only then
-does the progress panel disappear and the same button become **Update**.
+does the progress panel disappear and the same button become **Check for updates**.
 The initial page needs no download panel; **Offline help** in the footer opens
 the installation guidance and saved status. A newly verified version offers
 **Reload with update**. Errors or progress remain visible when attention is needed.
@@ -126,9 +141,15 @@ Page addresses remain the same across releases; older versioned page links redir
 to the corresponding permanent page. Each loaded page uses its own immutable
 application and dictionary resources.
 
-After **Save offline**, the header offers **Update**. When a newer release is
-found on opening, refocusing or reconnecting, the saved app shows a notice.
-Choose **Update** to download it. Every file is checked and a sample analysis is
+After **Save offline**, the header offers **Check for updates**. It reads the
+latest release manifest and checks the saved files. An intact current version
+shows **Up to date** without downloading any runtime files. A newer bundle found
+on opening, refocusing, reconnecting or a manual check changes the action to
+**Download update**. A manual check never starts a new-version download by itself.
+Unchanged dictionary, engine and font files are reused only after length and
+SHA-256 verification. Missing or damaged files are downloaded again. During the
+first upgrade from an older release, its older download implementation still
+applies; reuse begins once the 0.3.2 offline worker is installed. Every file is checked and a sample analysis is
 run before **Reload** becomes available. Your current input and results remain
 until you choose to reload. A failed or cancelled download preserves the complete
 saved version; already open tabs continue using their own resources.

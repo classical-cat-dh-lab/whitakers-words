@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light">
   <title>Whitaker’s Words · Latin dictionary</title>
-  <meta name="description" content="A preserved Latin dictionary and analyzer with compact student notation and optional offline use.">
+  <meta name="description" content="Look up Latin words, principal parts, English meanings and grammatical forms with Whitaker’s Words. Read passages word by word, online or offline.">
   <meta name="theme-color" content="#F4F5F0">
   <link rel="icon" type="image/svg+xml" href="icon.svg">
   <link rel="apple-touch-icon" href="icon-192.png">
@@ -31,8 +31,8 @@
         </div>
       </div>
       <p id="theme-status" class="preference-status" role="status" hidden></p>
-      <div class="title-row"><h1 id="page-title" tabindex="-1">Whitaker’s Words</h1><span class="beta-badge">beta</span></div>
-      <p class="tagline">A Latin dictionary for reading. Look up a word or explore a passage.</p>
+      <div class="title-row"><h1 id="page-title" tabindex="-1">Whitaker’s Words</h1><span class="beta-badge">0.3.2 beta</span></div>
+      <p class="tagline">Latin dictionary, principal parts and English meanings. Read passages word by word, online or offline.</p>
     </header>
     <section id="offline" aria-label="Offline use" hidden>
       <div class="controls">
@@ -47,15 +47,22 @@
     <form id="analysis-form">
       <label for="input">Latin word, phrase or sentence</label>
       <textarea id="input" name="input" rows="2" spellcheck="false" autocapitalize="none" autocorrect="off" enterkeyhint="search" aria-describedby="input-help" lang="la" placeholder="Type Latin here, then press Enter / Return."></textarea>
-      <p id="input-help">Enter / Return to look up · Shift + Enter for a new line. Macrons are welcome.</p>
+      <p id="input-help">Enter / Return to look up · Shift + Enter / Return for a new line.</p>
       <div class="controls">
         <label for="mode">Mode</label>
         <select id="mode"><option value="latin">Latin lookup</option><option value="english">English lookup</option><option value="legacy">Latin (original input rules)</option></select>
         <button type="submit" id="analyze" disabled>Look up</button>
+        <button type="button" id="clear-input">Clear input</button>
       </div>
+      <div class="display-bar">
       <details class="display-options">
         <summary>Display options</summary>
-        <fieldset><legend>Result display</legend>
+        <fieldset><legend>Passage view</legend>
+          <label><input type="radio" name="result-view" value="both" checked aria-controls="passage-view reader-output"> Text + list</label>
+          <label><input type="radio" name="result-view" value="text" aria-controls="passage-view reader-output"> Text only</label>
+          <label><input type="radio" name="result-view" value="list" aria-controls="passage-view reader-output"> List only</label>
+        </fieldset>
+        <fieldset><legend>Additional display options</legend>
           <label title="Use the original result order for Latin lookup instead of dictionary frequency."><input type="checkbox" id="original-order" aria-controls="reader-output"> Original WORDS order</label>
           <label><input type="checkbox" id="show-legacy" aria-controls="legacy-panel"> Original text</label>
           <label><input type="checkbox" id="show-json" aria-controls="json-panel"> Structured data</label>
@@ -63,19 +70,24 @@
           <label><input type="checkbox" id="show-validation" aria-controls="validation"> Validation tools</label>
         </fieldset>
       </details>
-      <p id="status" role="status" aria-live="polite">Loading dictionary…</p>
+      <div class="lookup-status" role="status" aria-live="polite"><span id="status">Loading dictionary…</span> <span id="connection-status" title="Online / Offline describes your browser’s connection. All lookups run on this device."></span></div>
+      </div>
     </form>
     <section id="results" aria-labelledby="result-heading" hidden>
-      <div class="reader-heading"><h2 id="result-heading" tabindex="-1">Results</h2><button type="button" id="new-lookup">New lookup</button></div>
+      <div class="reader-heading"><h2 id="result-heading" tabindex="-1">Results</h2></div>
+      <section id="passage-view" aria-label="Passage reader" hidden>
+        <p class="reader-guide">Select a word in your text to see its dictionary entries below.</p>
+        <div id="passage-text" lang="la"></div>
+        <section id="passage-detail" aria-label="Selected word" aria-live="polite"></section>
+      </section>
       <div id="reader-output"></div>
       <div class="result-actions"><a id="back-to-top" class="back-to-top" href="#page-title">Back to top ↑</a></div>
       <details id="legacy-panel" class="technical-output" hidden><summary>Original-style text output</summary><p>The same lookup in the original program’s text layout.</p><pre id="legacy-output" tabindex="0"></pre></details>
       <details id="json-panel" class="technical-output" hidden><summary>Structured result</summary><pre id="json-output" tabindex="0"></pre></details>
       <details id="notes-panel" class="technical-output" hidden><summary>Lookup notes</summary><div id="notes-output"></div></details>
     </section>
-    <details id="abbreviations"><summary>Abbreviations and terminology</summary><p>Compact dictionary notation for students. Meanings apply in the categories shown; the underlying WORDS analyses are preserved.</p><div id="abbreviation-table" class="table-scroll" tabindex="0" role="region" aria-label="Abbreviations table"></div></details>
     <details id="validation" class="technical-output" hidden><summary>Validation tools</summary><button type="button" id="validate" disabled>Run validation cases</button><ol id="validation-results"></ol></details>
-    <footer><p>All lookups run on your device. Your text stays with you.</p><p><a id="offline-help-link" href="#offline-help">Offline help</a> · <a href="../docs/acceptance.html">About this beta &amp; tested scope</a> · <a href="../docs/compatibility.html">Compatibility</a></p><p>WORDS and its dictionary: William Whitaker. TypeScript preservation: © 2026 Xinjie Fang / Classical Cat Digital Humanities Lab. This is an independent project.</p><p><a href="../docs/original-notice.html">Original notice</a> · <a href="../docs/license.html">AGPL-3.0-only · No warranty</a> · <a href="../docs/source.html">Corresponding source</a></p></footer>
+    <footer><nav aria-label="Help and documentation"><a id="offline-help-link" href="#offline-help">Offline help</a><a href="../docs/abbreviations.html">Abbreviations &amp; terminology</a><a href="../docs/source.html">About, source &amp; licenses</a></nav><p>All lookups run on your device. Your text stays with you.</p><p>WORDS and its dictionary: William Whitaker. © 2026 Xinjie Fang / Classical Cat Digital Humanities Lab. Independent preservation · AGPL-3.0-only · No warranty.</p></footer>
   </main>
 </body>
 </html>

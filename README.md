@@ -1,10 +1,11 @@
 # Whitaker's Words — TypeScript preservation
 
-**0.3.1-beta.1 · Beta** — [Open the dictionary](https://words.latingreek.org/).
+**0.3.2-beta.1 · Beta candidate** — [Open the dictionary](https://words.latingreek.org/).
 
-The [0.3.1 beta release](docs/release-0.3.1.md) improves the reading interface:
-compact header controls, collapsed passage results, dictionary-frequency ordering,
-clearer principal parts and optional expandable technical output. The verified
+The [0.3.2 beta candidate](docs/release-0.3.2.md) adds a clickable passage reader,
+compact principal-part summaries, selectable result views and update checks that
+avoid downloading an intact current dictionary again. The latest published
+release remains [0.3.1 beta](docs/release-0.3.1.md). The verified
 [0.3.0 backend](docs/backend-baseline.md) and original dictionary remain frozen.
 
 The dictionary and help pages use stable addresses for bookmarks and sharing.
@@ -19,7 +20,7 @@ on the user's device. There is no runtime service or database server.
 Choose **Save offline** to download and verify the complete
 dictionary and application. It then works without a connection. App installation
 is optional; clearing the website's data removes its saved offline files. After
-saving, the download panel becomes a compact Update control. Enter a word, phrase
+saving, the download panel becomes a compact Check for updates control. Enter a word, phrase
 or sentence and press Enter / Return; macrons are ignored for lookup while your
 original spelling remains visible. [Browser and mobile guide](docs/browser-input.md).
 
@@ -73,7 +74,7 @@ No npm package is published.
   comparison, complete 0.3 counts and historical 0.2 results.
 - [API and CLI](docs/api.md): result types, spans, provenance, options and errors.
 - [Student abbreviations](docs/abbreviations.md): the implemented, reviewable
-  terminology table, also available inside the browser page.
+  terminology table, also available as a separate offline help page.
 - [Compatibility report](docs/compatibility.md): full wordlist, English and boundary qualification;
   all 21 legacy cases, including the five original upstream groups and 751 input
   fragments; browser parity and explicit qualification limits.

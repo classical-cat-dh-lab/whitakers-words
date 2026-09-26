@@ -46,12 +46,24 @@ async function save(send) {
     const response = await fetch('/release.json', {cache: 'no-store', signal: job.abort.signal});
     if (!response.ok) throw new Error('Connect to the internet to download the offline files.');
     const manifest = validateManifest(await response.json());
+    const saved = await state();
+    if (saved.active?.manifest.id === manifest.id && await healthy(saved.active)) return {candidate: manifest, unchanged: true};
     job.cache = CACHE_PREFIX + manifest.id + '-' + crypto.randomUUID();
     const cache = await caches.open(job.cache);
     let bytes = 0;
     for (const file of manifest.files) {
       if (job.abort.signal.aborted) throw new DOMException('Cancelled', 'AbortError');
-      const incoming = await fetch(file.url, {cache: 'no-store', signal: job.abort.signal});
+      // Reuse only verified bytes at the same logical path. Frontend releases
+      // should not download an unchanged dictionary or fonts again.
+      let incoming;
+      for (const bundle of [saved.active, saved.previous]) {
+        if (!bundle) continue;
+        const previous = bundle.manifest.files.find(old => old.url.slice(bundle.manifest.base.length) === file.url.slice(manifest.base.length) && old.bytes === file.bytes && old.sha256 === file.sha256);
+        if (!previous) continue;
+        try { incoming = await verifyResponse(await (await caches.open(bundle.cache)).match(previous.url), file); break; }
+        catch { /* A missing or damaged cached file must be downloaded. */ }
+      }
+      incoming ??= await fetch(file.url, {cache: 'no-store', signal: job.abort.signal});
       await verifyResponse(incoming, file);
       await cache.put(file.url, localResponse(incoming));
       bytes += file.bytes;
@@ -72,6 +84,7 @@ async function save(send) {
 
 async function confirm(id) {
   const current = await state();
+  if (current.active?.manifest.id === id && await healthy(current.active)) return inspect();
   if (current.pending?.manifest.id !== id || !await healthy(current.pending)) throw new Error('The downloaded files must be checked again.');
   await state(latest => {
     if (latest.pending?.cache !== current.pending.cache) return latest;

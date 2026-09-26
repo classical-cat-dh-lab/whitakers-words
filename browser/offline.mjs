@@ -58,7 +58,7 @@ async function sample(candidate) {
 async function refresh() {
   const status = await call('status');
   update = status.pending ?? (status.ready && status.active.id !== runningId && (!manifest || status.active.id === manifest.id) ? status.active : null);
-  const available = manifest && manifest.id !== runningId && manifest.id !== status.active?.id;
+  const available = status.ready && manifest && manifest.id !== status.active.id;
   const savedDifferent = status.ready && status.active.id !== runningId;
   panel.classList.toggle('offline-ready', Boolean(status.ready));
   panel.classList.remove('offline-notice');
@@ -68,12 +68,12 @@ async function refresh() {
   reloadButton.hidden = !update;
   if (status.ready) {
     message.textContent = `Ready offline · ${status.active.version}. ${persistence}`;
-    saveButton.textContent = 'Update';
-    saveButton.title = 'Check for updates and verify saved files';
+    saveButton.textContent = available ? 'Download update' : 'Check for updates';
+    saveButton.title = available ? 'Download and verify the new version' : 'Check the latest version without downloading the dictionary again';
     saveButton.hidden = Boolean(update);
     if (update) message.textContent += ' An update is verified and ready. Reload when convenient.';
-    else if (available) message.textContent += ' A new version is available. Choose Update to download and verify it; your current lookup will stay open.';
-    else if (savedDifferent) message.textContent += ' This page and your saved copy differ. Choose Update to save the current version.';
+    else if (available) message.textContent += ' A new version is available. Choose Download update to save it; your current lookup will stay open.';
+    else if (savedDifferent) message.textContent += ' This page and your saved copy differ. Check for updates to find the latest version.';
   } else {
     saveButton.hidden = false;
     message.textContent = status.active ? 'Saved files are incomplete. Reconnect and save again to repair them.' : 'Save the complete dictionary to use it without an internet connection.';
@@ -115,9 +115,23 @@ async function checkForUpdates() {
 saveButton.addEventListener('click', async () => {
   panel.hidden = false;
   panel.classList.add('offline-notice');
-  saveButton.disabled = true; cancelButton.hidden = false; progress.hidden = false; progress.value = 0;
+  const downloading = saveButton.textContent === 'Download update';
+  saveButton.disabled = true; progress.value = 0;
+  message.textContent = 'Checking for updates…';
   document.querySelector('#offline-close').hidden = true;
   try {
+    const response = await fetch('/release.json', {cache: 'no-store'});
+    if (!response.ok) throw new Error('Connect to the internet to check for updates. Your saved dictionary is unchanged.');
+    manifest = validateManifest(await response.json()); lastCheck = Date.now();
+    const before = await refresh();
+    if (update || (before.ready && before.active.id === manifest.id)) {
+      if (!update) message.textContent = `Up to date · ${manifest.version}. Your saved dictionary is ready offline.`;
+      panel.hidden = false;
+      return;
+    }
+    // A manual check discovers updates without starting an unexpected download.
+    if (before.ready && !downloading) { panel.hidden = false; return; }
+    panel.hidden = false; cancelButton.hidden = false; progress.hidden = false;
     const persistent = await navigator.storage?.persist?.().catch(() => false);
     persistence = persistent ? 'Persistent storage granted.' : 'Your browser may reclaim saved storage.';
     const result = await call('save', {}, ({bytes, total}) => {
@@ -130,7 +144,7 @@ saveButton.addEventListener('click', async () => {
     manifest = result.candidate;
     const status = await refresh();
     if (status.ready && status.active.id === runningId) await takeControl(runningId);
-  } catch (error) { panel.classList.add('offline-notice'); message.textContent = error.message; }
+  } catch (error) { panel.hidden = false; panel.classList.add('offline-notice'); message.textContent = error instanceof TypeError ? 'Cannot check for updates. Reconnect and try again; your saved dictionary is unchanged.' : error.message; }
   finally { saveButton.disabled = false; cancelButton.hidden = true; progress.hidden = true; document.querySelector('#offline-close').hidden = false; }
 });
 cancelButton.addEventListener('click', () => call('cancel').catch(error => { message.textContent = error.message; }));

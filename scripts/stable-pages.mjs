@@ -9,6 +9,9 @@ export function publishPage(source, path, base) {
   const canonical = publicPath(path);
   if (!canonical) throw new Error('Unknown public page: ' + path);
   const location = ORIGIN + base + path;
+  const version = base.split('/')[2].replace(/-[a-f0-9]{12}$/, '');
+  const badge = version.replace(/-(alpha|beta|rc)(?:\.\d+)?$/, ' $1').replace(/\.0$/, '');
+  source = source.replace(/(<span class="beta-badge">)[^<]*(<\/span>)/, (_, start, end) => start + badge + end);
   const html = source.replace(/\b(href|src)="([^"]+)"/g, (attribute, name, value) => {
     if (value.startsWith('#') || /^(?:https?:|data:|mailto:)/.test(value)) return attribute;
     const url = new URL(value, location);

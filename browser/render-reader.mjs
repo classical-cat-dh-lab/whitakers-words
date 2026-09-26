@@ -18,17 +18,17 @@ function entryLabels(item,className){
 function tokenSummary(token,language){
   const summary=element('summary',undefined,'reader-summary');
   const surface=element('span',token.surface,'reader-surface');surface.lang=language==='latin'?'la':'en';summary.append(surface);
-  const entries=element('span',undefined,'reader-preview');
+  const entries=element('span',undefined,'reader-preview'),titles=new Set();
   for(const item of token.items){
-    if(item.kind!=='entry')continue;
+    if(item.kind!=='entry'||titles.has(item.title))continue;
+    titles.add(item.title);
     const row=element('span',undefined,'reader-preview-entry');
     const title=element('span',item.title,'reader-principal-parts');title.lang='la';row.append(title);
-    if(item.labels.length||item.frequency)row.append(entryLabels(item,'reader-preview-labels'));
     entries.append(row);
   }
   if(token.status==='legacy-error')entries.append(element('span','Processing stopped','reader-error'));
   else if(!token.items.length)entries.append(element('span','No match','reader-unknown'));
-  else if(!entries.childNodes.length)entries.append(element('span',token.items.map(item=>item.title).join(' · '),'reader-preview-labels'));
+  else if(!entries.childNodes.length)entries.append(element('span','See WORDS notes','reader-preview-labels'));
   summary.append(entries);return summary;
 }
 export function renderReader(root,result,{failed=false}={}){
@@ -43,23 +43,27 @@ export function renderReader(root,result,{failed=false}={}){
       section.addEventListener('toggle',()=>{if(section.open)for(const other of panels)if(other!==section)other.open=false;});
     }else{const heading=element('h3',token.surface);heading.lang=result.language==='latin'?'la':'en';section.append(heading);}
     const content=batch?element('div',undefined,'reader-expanded'):section;
-    if(!token.items.length)section.append(element('p',token.status==='legacy-error'?'Original WORDS stopped while processing this input; no completed analysis is available.':result.language==='english'?'No matching dictionary entries.':'No analysis found by WORDS.','reader-unknown'));
-    for(const item of token.items){
-      const article=element('article',undefined,item.kind==='entry'?'reader-entry':'reader-explanation');
-      const heading=element('h4',item.title);if(item.kind==='entry')heading.lang='la';article.append(heading);
-      if(item.labels.length||item.frequency){const line=element('p',undefined,'reader-labels');line.append(entryLabels(item,'reader-label-content'));article.append(line);}
-      if(item.forms.length){
-        const list=element('ul',undefined,'reader-forms');
-        for(const form of item.forms){const row=element('li');row.append(terms(form.terms,true));for(const note of form.notes)row.append(element('span',' — '+note,'reader-form-note'));list.append(row);}article.append(list);
-      }
-      if(item.meaning){const meaning=element('p',undefined,'reader-meaning');meaningLines(item.meaning).forEach((line,i)=>{if(i)meaning.append(document.createElement('br'));meaning.append(document.createTextNode(line));});article.append(meaning);}
-      if(item.details.length){const details=element('details');details.append(element('summary',item.kind==='entry'?'Word details':'Original note'));const definition=element('dl');for(const detail of item.details){definition.append(element('dt',detail.label),element('dd',detail.value));}details.append(definition);article.append(details);}
-      content.append(article);
-    }
+    renderTokenContent(content,token,result.language);
     if(batch)section.append(content);
     fragment.append(section);
   }
   root.replaceChildren(fragment);
+}
+export function renderTokenContent(content,token,language){
+    if(!token.items.length)content.append(element('p',token.status==='legacy-error'?'Original WORDS stopped while processing this input; no completed analysis is available.':language==='english'?'No matching dictionary entries.':'No analysis found by WORDS.','reader-unknown'));
+    for(const item of token.items){
+      const article=element('article',undefined,item.kind==='entry'?'reader-entry':'reader-explanation');
+      const heading=element('h4',item.title);if(item.kind==='entry')heading.lang='la';article.append(heading);
+      if(item.labels.length||item.frequency){const line=element('p',undefined,'reader-labels');line.append(entryLabels(item,'reader-label-content'));article.append(line);}
+      if(item.meaning){const meaning=element('p',undefined,'reader-meaning');meaningLines(item.meaning).forEach((line,i)=>{if(i)meaning.append(document.createElement('br'));meaning.append(document.createTextNode(line));});article.append(meaning);}
+      if(item.forms.length){
+        article.append(element('p','Possible forms','reader-forms-heading'));
+        const list=element('ul',undefined,'reader-forms');
+        for(const form of item.forms){const row=element('li');row.append(terms(form.terms,true));for(const note of form.notes)row.append(element('span',' — '+note,'reader-form-note'));list.append(row);}article.append(list);
+      }
+      if(item.details.length){const details=element('details');details.append(element('summary',item.kind==='entry'?'Word details':'Original note'));const definition=element('dl');for(const detail of item.details){definition.append(element('dt',detail.label),element('dd',detail.value));}details.append(definition);article.append(details);}
+      content.append(article);
+    }
 }
 export function renderLookupNotes(root,result){
   const fragment=document.createDocumentFragment();
