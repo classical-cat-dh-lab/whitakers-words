@@ -29,6 +29,22 @@ the browser adapter. This input convenience is not a linguistic correction.
 
 ## Reading meanings
 
+A single analyzed word opens with its full reading view. A Latin passage with
+multiple analyzed tokens starts with every word collapsed. Each summary retains
+the supplied spelling, all returned dictionary headings or principal parts, and
+part-of-speech and inflection labels. Selecting one word reveals its meanings,
+forms and explanatory rows and closes the previously open word. Repeated words
+remain separate occurrences in source order. Enter or Space operates a focused
+summary. English lookup keeps its dictionary entries expanded.
+
+**Display options** offers unchecked-by-default controls for **Original text**,
+**Structured data**, **Lookup notes** and **Validation tools**. These controls
+also update the current results. Lookup failures remain visible even when their
+technical diagnostics are hidden. The checkboxes reset when the page is reloaded.
+Numbered reading labels use **1st decl**, **1st and 2nd decl**, **3rd conj**, and
+the corresponding other ordinals. Expanded meanings remain available as hints.
+This browser notation does not modify the frozen structured results or engine.
+
 The original dictionary uses slashes between alternatives within its meanings.
 The reading view puts those alternatives on separate lines. It preserves their
 order and words; raw meanings and legacy output retain the original punctuation.
@@ -36,10 +52,11 @@ This display does not assign new sense numbers or claim editorial correction.
 
 ## Offline and mobile
 
-**Save for offline use** downloads the complete application and dictionary, checks
+**Save offline**, beside **Night mode**, downloads the complete application and dictionary, checks
 every file and starts a fresh saved analyzer before declaring success. Only then
-does the download panel disappear and **Update** move into the header beside
-**Night mode**. A newly verified version offers
+does the progress panel disappear and the same button become **Update**.
+The initial page needs no download panel; **Offline help** in the footer opens
+the installation guidance and saved status. A newly verified version offers
 **Reload with update**. Errors or progress remain visible when attention is needed.
 A missing or incomplete cache restores the save/repair invitation.
 

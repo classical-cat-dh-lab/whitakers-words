@@ -29,6 +29,7 @@ flowchart LR
 | `src/index.ts`, `src/model.ts` | Source-loading API, typed morphology, spans and result identity |
 | `src/reader.ts`, `src/terminology.ts` | Pure student view, contextual class names and shared abbreviation registry |
 | `browser/render-reader.mjs` | DOM rendering of the reading view and terminology table |
+| `browser/notation.mjs` | Compact browser labels and glossary projection; preserves frozen engine and reader results |
 | `node/`, `cli/`, `browser/` | File loading, command-line IO and same-origin Worker transport |
 
 The core has no network, filesystem, terminal, database or ambient-configuration

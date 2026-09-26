@@ -16,14 +16,14 @@ maintained mk270 lineage, not a reconstruction of historical 1.97FC.
 | Robustness | Checksum corruption, invalid options, UTF-16 spans, legacy Unicode splitting, long input, compounds, corrected isolation and repeated calls pass |
 | Student reading view | All 3,953 inputs retain every candidate and explanatory row in order, without mutating the legacy result; all source class combinations and all 39,336 dictionary entries have display mappings |
 
-`npm run verify` runs the offline build and thirty-six test groups: the original
+`npm run verify` runs the offline build and thirty-seven test groups: the original
 nine engine/adapter groups, four student-display groups and three offline-storage
 groups, plus two browser-input/comparison-contract groups and two documentation
 rendering/preservation groups, plus two search-state and request-isolation groups,
 and one source-audit option/width group, plus three parse-storage, runtime-surface
 and native-addon-reader groups, and five exceptional-session, termination, CLI
 and native-capacity groups, plus five dictionary/inflection-capacity,
-sequence/option and full-English-index groups.
+sequence/option and full-English-index groups, and one browser-notation isolation group.
 The search-state fixtures preserve fresh native observations for failed attempts,
 affix fallback, distinct dictionary/affix spelling comparisons and transformed
 part-of-speech checks. The website also passes bounded Chromium/WebKit offline checks and eight

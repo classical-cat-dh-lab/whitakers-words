@@ -4,6 +4,16 @@ const panel = document.querySelector('#offline'), message = document.querySelect
 const saveButton = document.querySelector('#offline-save'), cancelButton = document.querySelector('#offline-cancel');
 const reloadButton = document.querySelector('#offline-reload'), progress = document.querySelector('#offline-progress');
 let worker, manifest, installPrompt, persistence = '', update;
+let helpOpen = false;
+const controls = document.querySelector('#offline-controls');
+document.querySelector('#offline-help-link').addEventListener('click', () => {
+  helpOpen = true; panel.hidden = false;
+  document.querySelector('#offline-help').hidden = false;
+  document.querySelector('#offline-help').open = true;
+});
+document.querySelector('#offline-close').addEventListener('click', () => {
+  helpOpen = false; panel.hidden = true;
+});
 const megabytes = bytes => (bytes / 1024 / 1024).toFixed(1) + ' MB';
 
 function call(action, extra = {}, onProgress) {
@@ -49,12 +59,9 @@ async function refresh() {
   update = status.pending;
   panel.classList.toggle('offline-ready', Boolean(status.ready));
   panel.classList.remove('offline-notice');
-  const controls = document.querySelector('#offline-controls');
-  if (status.ready) document.querySelector('#header-tools').prepend(controls);
-  else panel.prepend(controls);
-  panel.hidden = Boolean(status.ready) && !update;
-  document.querySelector('#offline-help').hidden = Boolean(status.ready);
-  document.querySelector('#install-app').hidden = Boolean(status.ready) || !installPrompt;
+  panel.hidden = !(update || (status.active && !status.ready) || helpOpen);
+  document.querySelector('#offline-help').hidden = false;
+  document.querySelector('#install-app').hidden = !installPrompt;
   reloadButton.hidden = !update;
   if (status.ready) {
     message.textContent = `Ready offline · ${status.active.version}. ${persistence}`;
@@ -66,7 +73,8 @@ async function refresh() {
   } else {
     saveButton.hidden = false;
     message.textContent = status.active ? 'Saved files are incomplete. Reconnect and save again to repair them.' : 'Save the complete dictionary to use it without an internet connection.';
-    saveButton.textContent = manifest ? `Save for offline use (${megabytes(manifest.bytes)})` : 'Save for offline use';
+    saveButton.textContent = 'Save offline';
+    saveButton.title = manifest ? `Save the complete dictionary (${megabytes(manifest.bytes)})` : 'Save the complete dictionary for offline use';
   }
   return status;
 }
@@ -75,6 +83,7 @@ saveButton.addEventListener('click', async () => {
   panel.hidden = false;
   panel.classList.add('offline-notice');
   saveButton.disabled = true; cancelButton.hidden = false; progress.hidden = false; progress.value = 0;
+  document.querySelector('#offline-close').hidden = true;
   try {
     const persistent = await navigator.storage?.persist?.().catch(() => false);
     persistence = persistent ? 'Persistent storage granted.' : 'Your browser may reclaim saved storage.';
@@ -88,7 +97,7 @@ saveButton.addEventListener('click', async () => {
     manifest = result.candidate;
     await refresh();
   } catch (error) { panel.classList.add('offline-notice'); message.textContent = error.message; }
-  finally { saveButton.disabled = false; cancelButton.hidden = true; progress.hidden = true; }
+  finally { saveButton.disabled = false; cancelButton.hidden = true; progress.hidden = true; document.querySelector('#offline-close').hidden = false; }
 });
 cancelButton.addEventListener('click', () => call('cancel').catch(error => { message.textContent = error.message; }));
 reloadButton.addEventListener('click', async () => {
@@ -104,7 +113,7 @@ reloadButton.addEventListener('click', async () => {
 
 window.addEventListener('beforeinstallprompt', event => {
   event.preventDefault(); installPrompt = event;
-  document.querySelector('#install-app').hidden = panel.classList.contains('offline-ready');
+  document.querySelector('#install-app').hidden = false;
 });
 document.querySelector('#install-app').addEventListener('click', async () => {
   await installPrompt?.prompt(); installPrompt = null;
@@ -112,10 +121,10 @@ document.querySelector('#install-app').addEventListener('click', async () => {
 });
 
 async function start() {
-  if (!('serviceWorker' in navigator) || !isSecureContext) return;
+  if (!('serviceWorker' in navigator) || !isSecureContext) { message.textContent = 'Offline saving is unavailable in this browser. Online lookup still works.'; return; }
   // The development harness remains usable without generating an offline site.
-  if (!location.pathname.startsWith('/releases/')) return;
-  panel.hidden = false;
+  if (!location.pathname.startsWith('/releases/')) { message.textContent = 'Offline saving is available in the exported website.'; return; }
+  controls.hidden = false;
   try {
     await navigator.serviceWorker.register('/sw.js', {type: 'module', scope: '/', updateViaCache: 'none'});
     const registration = await navigator.serviceWorker.ready;
@@ -128,6 +137,6 @@ async function start() {
       if (response.ok) manifest = validateManifest(await response.json());
     } catch { /* Cached operation needs no live manifest. */ }
     await refresh(); saveButton.disabled = false;
-  } catch { message.textContent = 'Offline storage is unavailable in this browser session. Online analysis still works.'; }
+  } catch { controls.hidden = true; panel.hidden = false; message.textContent = 'Offline storage is unavailable in this browser session. Online lookup still works.'; }
 }
 start();

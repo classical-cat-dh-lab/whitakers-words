@@ -5,6 +5,7 @@ import {gunzipSync} from 'node:zlib';
 import {createNodeAnalyzer} from '../node/index.mjs';
 import {presentAnalysis,inflectionPattern} from '../dist/reader.js';
 import {ABBREVIATIONS} from '../dist/terminology.js';
+import {READING_ABBREVIATIONS} from '../browser/notation.mjs';
 import {readDataset} from '../node/data.mjs';
 const analyzer=await createNodeAnalyzer();
 const text=forms=>forms.map(f=>f.terms.map(t=>t.text).join(' '));
@@ -36,5 +37,5 @@ test('the reader preserves every candidate and explanatory row in all 3,953 refe
 test('the reviewable abbreviation table matches the live terminology registry',async()=>{
   const document=await readFile(new URL('../docs/abbreviations.md',import.meta.url),'utf8');
   assert.equal(new Set(ABBREVIATIONS.map(t=>t.id)).size,ABBREVIATIONS.length);
-  for(const t of ABBREVIATIONS)assert(document.includes(`| ${t.category} | ${t.text} | ${t.full} |`));
+  for(const t of READING_ABBREVIATIONS)assert(document.includes(`| ${t.category} | ${t.text} | ${t.full} |`));
 });

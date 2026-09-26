@@ -21,23 +21,24 @@
   <main>
     <header>
       <div class="header-row">
-        <p class="eyebrow">Preservation / resurrection</p>
+        <p class="eyebrow">Classical Cat DH Lab</p>
         <div id="header-tools" class="header-tools" aria-label="Page settings">
+          <div id="offline-controls" class="controls" hidden>
+            <button type="button" id="offline-save" disabled>Save offline</button>
+            <button type="button" id="offline-reload" hidden>Reload with update</button>
+          </div>
           <button type="button" id="theme-toggle" aria-pressed="false">Night mode</button>
         </div>
       </div>
       <p id="theme-status" class="preference-status" role="status" hidden></p>
-      <h1>Whitaker’s Words</h1>
-      <p>A preserved Latin dictionary and analyzer, with a reading view for students.</p>
-      <p class="release-note">0.3 beta · Backend baseline verified and frozen.</p>
-    <p class="release-note">4,144,873 normal Latin outputs match the original WORDS; 2 original errors are reproduced and 2 comparison limits remain. All 24,000 English checks match. Full-text corpus testing is pending. <a href="../docs/acceptance.html">Tested scope</a>.</p>
+      <div class="title-row"><h1>Whitaker’s Words</h1><span class="beta-badge">beta</span></div>
+      <p class="tagline">A Latin dictionary for reading. Look up a word or explore a passage.</p>
     </header>
     <section id="offline" aria-label="Offline use" hidden>
-      <div id="offline-controls" class="controls">
-        <button type="button" id="offline-save" disabled>Save for offline use</button>
+      <div class="controls">
         <button type="button" id="offline-cancel" hidden>Cancel download</button>
-        <button type="button" id="offline-reload" hidden>Reload with update</button>
         <button type="button" id="install-app" hidden>Install app</button>
+        <button type="button" id="offline-close">Close</button>
       </div>
       <progress id="offline-progress" aria-label="Offline download progress" hidden></progress>
       <p id="offline-status" role="status" aria-live="polite">Checking offline availability…</p>
@@ -52,17 +53,26 @@
         <select id="mode"><option value="latin">Latin lookup</option><option value="english">English lookup</option><option value="legacy">Latin (original input rules)</option></select>
         <button type="submit" id="analyze" disabled>Look up</button>
       </div>
-      <p id="status" role="status" aria-live="polite">Loading and verifying local data…</p>
+      <details class="display-options">
+        <summary>Display options</summary>
+        <fieldset><legend>Additional information</legend>
+          <label><input type="checkbox" id="show-legacy" aria-controls="legacy-panel"> Original text</label>
+          <label><input type="checkbox" id="show-json" aria-controls="json-panel"> Structured data</label>
+          <label><input type="checkbox" id="show-notes" aria-controls="reader-output"> Lookup notes</label>
+          <label><input type="checkbox" id="show-validation" aria-controls="validation"> Validation tools</label>
+        </fieldset>
+      </details>
+      <p id="status" role="status" aria-live="polite">Loading dictionary…</p>
     </form>
-    <section aria-labelledby="result-heading">
-      <div class="reader-heading"><h2 id="result-heading" tabindex="-1">Analysis</h2><div class="reader-links"><a id="new-lookup" href="#input">New lookup</a><a id="abbreviations-link" href="#abbreviations">Abbreviations</a></div></div>
-      <div id="reader-output"><p>The first result will appear here.</p></div>
-      <details><summary>Original-style text output</summary><p>The same lookup in the original program’s text layout. This is a display format, not a separate or more accurate analysis.</p><pre id="legacy-output" tabindex="0"></pre></details>
-      <details><summary>Structured result</summary><pre id="json-output" tabindex="0"></pre></details>
+    <section id="results" aria-labelledby="result-heading" hidden>
+      <div class="reader-heading"><h2 id="result-heading" tabindex="-1">Results</h2><div class="reader-links"><a id="new-lookup" href="#input">New lookup</a><a id="abbreviations-link" href="#abbreviations">Abbreviations</a></div></div>
+      <div id="reader-output" class="hide-lookup-notes"></div>
+      <section id="legacy-panel" class="technical-output" hidden><h3>Original-style text output</h3><p>The same lookup in the original program’s text layout.</p><pre id="legacy-output" tabindex="0"></pre></section>
+      <section id="json-panel" class="technical-output" hidden><h3>Structured result</h3><pre id="json-output" tabindex="0"></pre></section>
     </section>
     <details id="abbreviations"><summary>Abbreviations and terminology</summary><p>Compact dictionary notation for students. Meanings apply in the categories shown; the underlying WORDS analyses are preserved.</p><div id="abbreviation-table" class="table-scroll" tabindex="0" role="region" aria-label="Abbreviations table"></div></details>
-    <details id="validation"><summary>Validation</summary><button type="button" id="validate" disabled>Run validation cases</button><ol id="validation-results"></ol></details>
-    <footer><p>Snapshot <code>words-mk270-1f2f0fb</code> · WORDS 1.99.0 lineage</p><p>The legacy profile targets original behavior, including errors; see the compatibility scope for tested behavior and remaining limits. No linguistic corrections are enabled. All analysis runs on your device; entered text is not sent to a server.</p><p>WORDS and its dictionary: William Whitaker. TypeScript preservation: © 2026 Xinjie Fang / Classical Cat Digital Humanities Lab. This is an independent project.</p><p><a href="../docs/compatibility.html">Compatibility scope</a> · <a href="../docs/original-notice.html">Original notice</a> · <a href="../docs/license.html">AGPL-3.0-only · No warranty</a> · <a href="../docs/source.html">Corresponding source</a></p></footer>
+    <section id="validation" class="technical-output" aria-label="Validation tools" hidden><h2>Validation</h2><button type="button" id="validate" disabled>Run validation cases</button><ol id="validation-results"></ol></section>
+    <footer><p>All lookups run on your device. Your text stays with you.</p><p><a id="offline-help-link" href="#offline-help">Offline help</a> · <a href="../docs/acceptance.html">About this beta &amp; tested scope</a> · <a href="../docs/compatibility.html">Compatibility</a></p><p>WORDS and its dictionary: William Whitaker. TypeScript preservation: © 2026 Xinjie Fang / Classical Cat Digital Humanities Lab. This is an independent project.</p><p><a href="../docs/original-notice.html">Original notice</a> · <a href="../docs/license.html">AGPL-3.0-only · No warranty</a> · <a href="../docs/source.html">Corresponding source</a></p></footer>
   </main>
 </body>
 </html>

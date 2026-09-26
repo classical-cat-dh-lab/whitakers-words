@@ -71,18 +71,18 @@ Indicative **indic.**, imperative **imper.**, imperfect **impf.**, and impersona
 | Pronoun type | interrog. | interrogative |
 | Pronoun type | indef. | indefinite |
 | Pronoun type | adjectival | adjectival use |
-| Inflection pattern | decl. | declension |
-| Inflection pattern | conj. | conjugation (in a numbered inflection pattern) |
+| Inflection pattern | decl | declension |
+| Inflection pattern | conj | conjugation (in a numbered inflection pattern) |
 | Inflection pattern | indecl. | indeclinable |
 | Inflection pattern | abbr. | abbreviation |
 
 ## Numeric legacy classes
 
-Inflection classes are described contextually: **third conj.**, **second decl.;
-neuter pattern**, **first and second decl.**, or **irregular: sum-type**, for
+Inflection classes are described contextually: **3rd conj**, **2nd decl;
+neuter pattern**, **1st and 2nd decl**, or **irregular: sum-type**, for
 example. They are not printed as internal numeric pairs. Greek, mixed, contracted
 and defective patterns retain descriptions supported by the frozen source.
-“Conj.” after an ordinal means conjugation; as a standalone part-of-speech label,
+“conj” after an ordinal means conjugation; as a standalone part-of-speech label,
 “conj.” means conjunction. Supine and positive degree are left in full.
 
 An unspecified field is written out, not rendered as X. A nonfinite form has no

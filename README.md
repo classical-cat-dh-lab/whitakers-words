@@ -6,12 +6,16 @@ The [0.3 beta release](docs/release-0.3.md) restores the original Ada execution
 behavior and freezes the verified backend baseline. It includes the accepted
 0.2.1 browser interface, offline use and saved night mode.
 
+The current source includes a frontend preview on that frozen backend: compact
+header controls, single-word reading, collapsed passage results and optional
+technical output. This preview has not replaced the published beta.
+
 A preservation of William Whitaker's WORDS in TypeScript, compiled to JavaScript
 ESM: Latin analysis, English gloss lookup, a structured API, a CLI and a small
 browser application with dictionary notation for students. Analysis runs entirely
 on the user's device. There is no runtime service or database server.
 
-Choose **Save for offline use** on the website to download and verify the complete
+Choose **Save offline** in the preview to download and verify the complete
 dictionary and application. It then works without a connection. App installation
 is optional; clearing the website's data removes its saved offline files. After
 saving, the download panel becomes a compact Update control. Enter a word, phrase

@@ -3,6 +3,14 @@ import {presentAnalysis} from '../dist/reader.js';
 import {renderReader,renderAbbreviations} from './render-reader.mjs';
 const worker=new Worker(new URL('./worker.mjs',import.meta.url),{type:'module'});
 const $=selector=>document.querySelector(selector),pending=new Map();let sequence=0;
+function updateDisplayOptions(){
+  $('#legacy-panel').hidden=!$('#show-legacy').checked;
+  $('#json-panel').hidden=!$('#show-json').checked;
+  $('#validation').hidden=!$('#show-validation').checked;
+  $('#reader-output').classList.toggle('hide-lookup-notes',!$('#show-notes').checked);
+}
+for(const checkbox of document.querySelectorAll('.display-options input'))checkbox.addEventListener('change',updateDisplayOptions);
+updateDisplayOptions();
 function updateInputPrompt(){
   const mode=$('#mode').value,english=mode==='english';
   $('label[for="input"]').textContent=english?'English word':'Latin word, phrase or sentence';
@@ -16,7 +24,7 @@ renderAbbreviations($('#abbreviation-table'));
 $('#abbreviations-link').addEventListener('click',()=>{$('#abbreviations').open=true;});
 function query(input,mode='legacy'){return new Promise((resolve,reject)=>{const id=++sequence;pending.set(id,{resolve,reject});worker.postMessage({id,input,mode});});}
 worker.addEventListener('message',({data})=>{
-  if(data.type==='ready'){$('#status').textContent=`Data verified. Ready (${Math.round(data.loadMilliseconds)} ms to load).`;$('#analyze').disabled=false;$('#validate').disabled=false;}
+  if(data.type==='ready'){$('#status').textContent='Ready to look up.';$('#analyze').disabled=false;$('#validate').disabled=false;}
   if(data.type==='error'){$('#status').textContent='Error: '+data.message;pending.get(data.id)?.reject(new Error(data.message));pending.delete(data.id);}
   if(data.type==='result'){pending.get(data.id)?.resolve(data);pending.delete(data.id);}
 });
@@ -25,12 +33,25 @@ $('#input').addEventListener('keydown',event=>{
   if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing&&event.keyCode!==229){event.preventDefault();if(!$('#analyze').disabled&&$('#input').value.trim())$('#analysis-form').requestSubmit();}
 });
 $('#analysis-form').addEventListener('submit',async event=>{
-  event.preventDefault();if($('#analyze').disabled||!$('#input').value.trim())return;$('#analyze').disabled=true;$('#status').textContent='Analyzing…';
-  try{const {result,milliseconds,inputAdapter}=await query($('#input').value,$('#mode').value);const analysis=result.corrected??result;const view=presentAnalysis(analysis);if(inputAdapter){view.tokens.forEach((token,i)=>token.surface=originalSurface(inputAdapter,analysis.tokens[i].span));if(inputAdapter.lookup!==inputAdapter.original)view.notes.unshift('Macrons are ignored for lookup; your original spelling is shown below.');}renderReader($('#reader-output'),view);$('#legacy-output').textContent=analysis.legacyText||'No Latin tokens.';$('#json-output').textContent=JSON.stringify(inputAdapter?{inputAdapter,result}:result,null,2);$('#status').textContent=analysis.status==='legacy-error'?'Stopped: original WORDS encountered an error.':`Complete (${milliseconds.toFixed(1)} ms).`;if(matchMedia('(max-width: 48rem) and (pointer: coarse)').matches){$('#input').blur();$('#result-heading').focus({preventScroll:true});$('#result-heading').scrollIntoView({block:'start'});}}
+  event.preventDefault();if($('#analyze').disabled||!$('#input').value.trim())return;$('#analyze').disabled=true;$('#status').textContent='Looking up…';
+  try{
+    const {result,inputAdapter}=await query($('#input').value,$('#mode').value);
+    const analysis=result.corrected??result,view=presentAnalysis(analysis);
+    if(inputAdapter){
+      view.tokens.forEach((token,i)=>token.surface=originalSurface(inputAdapter,analysis.tokens[i].span));
+      if(inputAdapter.lookup!==inputAdapter.original)view.notes.unshift('Macrons are ignored for lookup; your original spelling is shown below.');
+    }
+    renderReader($('#reader-output'),view,{failed:analysis.status==='legacy-error'});
+    $('#results').hidden=false;
+    $('#legacy-output').textContent=analysis.legacyText||'No output.';
+    $('#json-output').textContent=JSON.stringify(inputAdapter?{inputAdapter,result}:result,null,2);
+    $('#status').textContent=analysis.status==='legacy-error'?'Stopped: original WORDS encountered an error.':'Complete.';
+    if(matchMedia('(max-width: 48rem) and (pointer: coarse)').matches){$('#input').blur();$('#result-heading').focus({preventScroll:true});$('#result-heading').scrollIntoView({block:'start'});}
+  }
   catch(error){$('#status').textContent='Error: '+error.message;}finally{$('#analyze').disabled=false;}
 });
 $('#validate').addEventListener('click',async()=>{
-  $('#validate').disabled=true;$('#validation').open=true;$('#validation-results').replaceChildren();
+  $('#validate').disabled=true;$('#validation-results').replaceChildren();
   try{
     const response=await fetch('./validation-cases.json');if(!response.ok)throw new Error('Cannot load validation cases');const cases=await response.json();let passed=0;
     for(const c of cases){const {result}=await query(c.input,c.mode);const actual=JSON.stringify(result),digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(actual))),x=>x.toString(16).padStart(2,'0')).join('');const ok=digest===c.sha256;passed+=Number(ok);const item=document.createElement('li');item.textContent=`${ok?'PASS':'FAIL'} — ${c.label}`;item.className=ok?'pass':'fail';$('#validation-results').append(item);}

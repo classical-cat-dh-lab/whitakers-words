@@ -18,7 +18,7 @@ summary { cursor: pointer; padding: .6rem 0; }
 footer { font-size: var(--ds-text-small); margin-top: 3rem; border-top: 1px solid var(--ds-color-border); padding-top: 1rem; }
 a { color: var(--ds-color-link); text-decoration: underline; }
 [hidden] { display: none !important; }
-.release-note, #offline { font-family: var(--ds-font-sans-ui); font-size: var(--ds-text-small); }
+#offline { font-family: var(--ds-font-sans-ui); font-size: var(--ds-text-small); }
 #offline { border: 1px solid var(--ds-color-border); border-radius: .4rem; padding: 1rem 1.5rem; margin: 1.5rem 0; }
 #offline p { margin: .7rem 0; }
 #offline-progress { display: block; width: 100%; margin-top: .8rem; accent-color: var(--ds-color-action-primary); }
@@ -76,6 +76,51 @@ main { padding-left: max(1.5rem, env(safe-area-inset-left)); padding-right: max(
 .reader-links { display: flex; flex-wrap: wrap; gap: .8rem; }
 #result-heading { scroll-margin-top: 1rem; }
 textarea::placeholder { color: var(--ds-color-text-muted); opacity: 1; }
+
+/* Keep the lookup and its reading results at the center of the page. */
+.title-row { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; margin-top: .75rem; }
+.title-row h1 { margin: 0; }
+.beta-badge { font: var(--ds-text-small)/1 var(--ds-font-sans-ui); border: 1px solid var(--ds-color-border); border-radius: .25rem; padding: .35rem .5rem; }
+.tagline { margin: .65rem 0 0; }
+.header-row .eyebrow { margin: 0; }
+#analysis-form { margin: 1.5rem 0; }
+#status { font-size: var(--ds-text-small); margin: .8rem 0 0; }
+.display-options { margin-top: .75rem; font: var(--ds-text-small)/1.5 var(--ds-font-sans-ui); }
+.display-options summary { width: fit-content; min-height: 2.75rem; }
+.display-options fieldset { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; border: 0; padding: .25rem 0 0; margin: 0; }
+.display-options legend { padding: .25rem 0; }
+.display-options label { display: inline-flex; align-items: center; gap: .5rem; min-height: 2.75rem; cursor: pointer; }
+.display-options input { width: 1.1rem; height: 1.1rem; margin: 0; accent-color: var(--ds-color-action-primary); }
+.hide-lookup-notes .lookup-note { display: none; }
+.technical-output { margin-top: 1.5rem; }
+.technical-output h3 { font-size: var(--ds-text-h4); }
+.reader-guide { font: var(--ds-text-small)/1.5 var(--ds-font-sans-ui); margin: .25rem 0 1rem; }
+.reader-accordion { margin: 0; border-top: 1px solid var(--ds-color-border); }
+.reader-accordion:last-child { border-bottom: 1px solid var(--ds-color-border); }
+.reader-summary { display: grid; grid-template-columns: minmax(5rem, .8fr) minmax(0, 3fr) 1.5rem; gap: .75rem 1rem; align-items: baseline; padding: 1rem .5rem; list-style: none; }
+.reader-summary::-webkit-details-marker { display: none; }
+.reader-summary::after { content: '+'; font: 1.25rem/1.5 var(--ds-font-sans-ui); text-align: center; }
+.reader-accordion[open] > .reader-summary::after { content: '−'; }
+.reader-summary:hover { background: var(--ds-color-surface-raised); }
+.reader-surface { font: 600 var(--ds-text-h4)/1.4 var(--ds-font-serif-classical); overflow-wrap: anywhere; }
+.reader-preview { min-width: 0; }
+.reader-preview-entry { display: block; }
+.reader-preview-entry + .reader-preview-entry { margin-top: .5rem; }
+.reader-principal-parts { display: block; font: var(--ds-text-body)/1.5 var(--ds-font-serif-classical); overflow-wrap: anywhere; }
+.reader-preview-labels { display: block; font: var(--ds-text-small)/1.5 var(--ds-font-sans-ui); overflow-wrap: anywhere; }
+.reader-preview .reader-unknown { display: block; margin: 0; }
+.reader-expanded { padding: 0 .5rem .5rem; }
+.reader-error { color: var(--ds-color-error); }
+@media (max-width: 48rem) {
+  .title-row { gap: .5rem; }
+  .title-row h1 { font-size: clamp(1.85rem, 5.5vw, 2.5rem); }
+  #analysis-form { margin: 1rem 0; }
+  .reader-summary { grid-template-columns: minmax(0, 1fr) 1.25rem; gap: .35rem .5rem; padding: .85rem .25rem; }
+  .reader-surface { grid-column: 1; }
+  .reader-preview { grid-column: 1; grid-row: 2; }
+  .reader-summary::after { grid-column: 2; grid-row: 1; }
+  .reader-expanded { padding-inline: 0; }
+}
 
 .document-page { max-width: var(--ds-container-prose); }
 .document-page .header-row { font-family: var(--ds-font-sans-ui); }
