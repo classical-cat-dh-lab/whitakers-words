@@ -145,7 +145,7 @@ The same setting applies to the dictionary and its documentation, survives a
 restart, and works offline. If browser storage is unavailable, the switch still
 works for the open page and explains that the choice could not be saved.
 
-The local 0.3.3 night palette uses charcoal surfaces, softened chalk text, muted
+The 0.3.3 night palette uses charcoal surfaces, softened chalk text, muted
 ochre headings and dark green-earth controls. It is designed for low-light reading;
 adjust the device's screen brightness to the room as well. Light mode is unchanged.
 

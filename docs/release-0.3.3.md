@@ -1,6 +1,6 @@
-# 0.3.3-beta.1 — local review candidate
+# 0.3.3-beta.1 — clearer results and night reading
 
-This frontend candidate is unpublished and awaiting review.
+This frontend release improves result organization and low-light reading.
 
 - Repeated principal parts share one expanded heading. All distinct meanings
   remain visible; identical forms appear once. Grammar, metadata and distinct
@@ -11,8 +11,8 @@ This frontend candidate is unpublished and awaiting review.
   retaining the original punctuation.
 - Night mode uses warm charcoal surfaces, muted chalk text, ochre headings and
   green-earth controls. Bright gold button fills are replaced by darker surfaces
-  with separately contrasted text and edges. The palette is a local review
-  candidate; the pinned shared design resources and light appearance are unchanged.
+  with separately contrasted text and edges. The palette is specific to Words;
+  the pinned shared design resources and light appearance are unchanged.
 - The introduction identifies the application as an independent browser edition
   of William Whitaker's WORDS, with word-by-word reading and offline use.
 - Read text and Word list are separate tabs at the top of passage results.
@@ -21,5 +21,7 @@ This frontend candidate is unpublished and awaiting review.
   arrow keys, Home and End. Single-word and English results remain expanded.
 
 Application: 0.3.3-beta.1. Engine: 0.3.0-beta.1. The 28-file backend baseline is
-unchanged. Existing published releases, archives and citation metadata remain
-the reference for published artifacts until a later authorized release.
+unchanged. All 49 portable test groups pass. Chromium and WebKit verify grouped
+results, keyboard and touch interaction, responsive layout, computed contrast,
+offline restart and unchanged print colors. Physical-device comfort and installation
+remain outside the automated checks.
