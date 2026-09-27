@@ -54,14 +54,21 @@ export function renderTokenContent(content,token,language){
     for(const item of token.items){
       const article=element('article',undefined,item.kind==='entry'?'reader-entry':'reader-explanation');
       const heading=element('h4',item.title);if(item.kind==='entry')heading.lang='la';article.append(heading);
-      if(item.labels.length||item.frequency){const line=element('p',undefined,'reader-labels');line.append(entryLabels(item,'reader-label-content'));article.append(line);}
-      if(item.meaning){const meaning=element('p',undefined,'reader-meaning');meaningLines(item.meaning).forEach((line,i)=>{if(i)meaning.append(document.createElement('br'));meaning.append(document.createTextNode(line));});article.append(meaning);}
-      if(item.forms.length){
-        article.append(element('p','Possible forms','reader-forms-heading'));
+      for(const section of item.sections??[item]){
+      const body=element('div',undefined,'reader-sense-group');
+      if(section.labels.length||section.frequency){const line=element('p',undefined,'reader-labels');line.append(entryLabels(section,'reader-label-content'));body.append(line);}
+      const meanings=(section.meanings??[section.meaning]).filter(Boolean);
+      const meaningList=meanings.length>1?element('ul',undefined,'reader-meanings'):body;
+      for(const text of meanings){const meaning=element(meanings.length>1?'li':'p',undefined,'reader-meaning');meaningLines(text).forEach((line,i)=>{if(i)meaning.append(document.createElement('br'));meaning.append(document.createTextNode(line));});meaningList.append(meaning);}
+      if(meanings.length>1)body.append(meaningList);
+      if(section.forms.length){
+        body.append(element('p','Possible forms','reader-forms-heading'));
         const list=element('ul',undefined,'reader-forms');
-        for(const form of item.forms){const row=element('li');row.append(terms(form.terms,true));for(const note of form.notes)row.append(element('span',' — '+note,'reader-form-note'));list.append(row);}article.append(list);
+        for(const form of section.forms){const row=element('li');row.append(terms(form.terms,true));for(const note of form.notes)row.append(element('span',' — '+note,'reader-form-note'));list.append(row);}body.append(list);
       }
-      if(item.details.length){const details=element('details');details.append(element('summary',item.kind==='entry'?'Word details':'Original note'));const definition=element('dl');for(const detail of item.details){definition.append(element('dt',detail.label),element('dd',detail.value));}details.append(definition);article.append(details);}
+      if(section.details.length){const details=element('details');details.append(element('summary',item.kind==='entry'?'Word details':'Original note'));const definition=element('dl');for(const detail of section.details){definition.append(element('dt',detail.label),element('dd',detail.value));}details.append(definition);body.append(details);}
+      article.append(body);
+      }
       content.append(article);
     }
 }

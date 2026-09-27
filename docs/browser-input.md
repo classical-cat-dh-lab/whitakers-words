@@ -1,6 +1,6 @@
 # Browser lookup and offline use
 
-This guide describes the 0.3.2 beta browser interface on the frozen 0.3.0 engine.
+This guide describes the 0.3.3 beta browser interface on the frozen 0.3.0 engine.
 
 The default **Latin lookup** accepts a word, phrase or sentence. Press Enter or
 Return to look it up; Shift + Enter / Return inserts a newline. A **Look up** button supports
@@ -11,7 +11,7 @@ empty input. It sits beside **Look up** and retains the selected lookup mode and
 reloading the dictionary. Desktop keyboard focus stays in the input for repeated
 queries. The completion status shows each lookup's Worker processing time in
 milliseconds; it excludes dictionary loading, message transfer and page rendering.
-Beside Display options, **Online / Offline** reports the browser connection state;
+Above Display options, **Online / Offline** reports the browser connection state;
 **On-device lookup** identifies where analysis runs in either state. A network
 connection indicator does not guarantee that the update server is reachable.
 
@@ -37,21 +37,24 @@ the browser adapter. This input convenience is not a linguistic correction.
 
 ## Reading meanings
 
-A Latin passage shows the original text above the complete word list. Select a
+A Latin passage opens in **Read text**. Select a
 word in the text to show its entries immediately below; selecting another word
 replaces that detail without another query, page reload or change of keyboard
 focus. Spelling, whitespace, line breaks, punctuation and repeated occurrences
 are retained. Only spans returned by WORDS are selectable; unsupported characters
 and any unprocessed remainder stay visible as plain text.
 
-**Display options → Passage view** offers **Text + list** (the default), **Text
-only** and **List only**. The view applies immediately and survives Clear input;
-it resets on reload. A single word and English lookup use expanded entries in
-all three settings. Long passages scroll inside their text area.
+The **Read text / Word list** tabs above the results show one view at a time.
+The selected word appears in a labeled area below the passage; the complete word
+list appears only in its own tab. Switching tabs retains the selected occurrence,
+passage scroll position and expanded list word without another lookup. Arrow keys,
+Home and End select tabs from the keyboard. The view choice survives Clear input
+and resets to Read text on reload. A single word and English lookup show expanded
+entries without tabs. Long passages scroll inside their text area.
 
 The list starts collapsed. Each summary shows only the original word and its
 principal parts. Identical principal-part headings appear once in that summary;
-opening it retains every separate candidate, form and explanation. Opening
+opening it retains every meaning, distinct form and explanation. Opening
 another list word closes the previous one. Enter or Space operates focused words
 and summaries.
 
@@ -61,6 +64,15 @@ meanings, then **Possible forms**. Additional source metadata stays under
 regular weight and an inset to distinguish them from the input word. **Back to top**
 returns to the page title. The separate [abbreviations and terminology](abbreviations.md) page is
 linked from the footer and included in the offline bundle.
+
+Repeated principal parts share one heading within each interpretation group.
+For example, `magnus` has three source meaning records: the reader keeps all
+three as separate bullets and shows their identical grammatical forms once.
+Equal headings do not establish that records are the same lexeme. Different
+grammatical labels, metadata or meaning-to-form associations remain separate
+within the group; affix and spelling explanations still delimit groups. Exact
+duplicate meanings/forms share display space without changing the underlying
+records. Original text and structured data retain the full engine output.
 
 **Display options** contains the unchecked **Original WORDS order** switch and
 unchecked-by-default controls for **Original text**,
@@ -96,8 +108,10 @@ moves an entry across an affix, compound or heuristic explanation. Form rows sta
 attached to their entry. Sentence tokens and repeated occurrences keep their
 input order; English lookup keeps its native ranking.
 
-Check **Original WORDS order** inside **Display options** to restore source order
-in the reading view. Uncheck it to return to dictionary-frequency ordering.
+Check **Original WORDS order** inside **Display options** to order principal-parts
+groups by their first source occurrence. Uncheck it to return to dictionary-frequency
+ordering. Group order follows the first member in the selected ordering; each
+member's frequency and source metadata stay attached to its meanings and forms.
 Original text and structured data always retain source order regardless of this
 control. The display does not restore candidates already trimmed by WORDS or
 discard any returned alternative. See the

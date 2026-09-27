@@ -31,7 +31,7 @@
         </div>
       </div>
       <p id="theme-status" class="preference-status" role="status" hidden></p>
-      <div class="title-row"><h1 id="page-title" tabindex="-1">Whitaker’s Words</h1><span class="beta-badge">0.3.2 beta</span></div>
+      <div class="title-row"><h1 id="page-title" tabindex="-1">Whitaker’s Words</h1><span class="beta-badge">0.3.3 beta</span></div>
       <p class="tagline">Latin dictionary, principal parts and English meanings. Read passages word by word, online or offline.</p>
     </header>
     <section id="offline" aria-label="Offline use" hidden>
@@ -54,31 +54,31 @@
         <button type="submit" id="analyze" disabled>Look up</button>
         <button type="button" id="clear-input">Clear input</button>
       </div>
-      <div class="display-bar">
+      <div class="lookup-status" role="status" aria-live="polite"><span id="status">Loading dictionary…</span> <span id="connection-status" title="Online / Offline describes your browser’s connection. All lookups run on this device."></span></div>
       <details class="display-options">
         <summary>Display options</summary>
-        <fieldset><legend>Passage view</legend>
-          <label><input type="radio" name="result-view" value="both" checked aria-controls="passage-view reader-output"> Text + list</label>
-          <label><input type="radio" name="result-view" value="text" aria-controls="passage-view reader-output"> Text only</label>
-          <label><input type="radio" name="result-view" value="list" aria-controls="passage-view reader-output"> List only</label>
-        </fieldset>
         <fieldset><legend>Additional display options</legend>
-          <label title="Use the original result order for Latin lookup instead of dictionary frequency."><input type="checkbox" id="original-order" aria-controls="reader-output"> Original WORDS order</label>
+          <label title="Order principal-parts groups by their first appearance in WORDS instead of dictionary frequency."><input type="checkbox" id="original-order" aria-controls="reader-output passage-detail"> Original WORDS order</label>
           <label><input type="checkbox" id="show-legacy" aria-controls="legacy-panel"> Original text</label>
           <label><input type="checkbox" id="show-json" aria-controls="json-panel"> Structured data</label>
           <label><input type="checkbox" id="show-notes" aria-controls="notes-panel"> Lookup notes</label>
           <label><input type="checkbox" id="show-validation" aria-controls="validation"> Validation tools</label>
         </fieldset>
       </details>
-      <div class="lookup-status" role="status" aria-live="polite"><span id="status">Loading dictionary…</span> <span id="connection-status" title="Online / Offline describes your browser’s connection. All lookups run on this device."></span></div>
-      </div>
     </form>
     <section id="results" aria-labelledby="result-heading" hidden>
       <div class="reader-heading"><h2 id="result-heading" tabindex="-1">Results</h2></div>
-      <section id="passage-view" aria-label="Passage reader" hidden>
+      <div id="result-view-tabs" role="tablist" aria-label="Result view" hidden>
+        <button type="button" id="view-text" role="tab" data-view="text" aria-selected="true" aria-controls="passage-view">Read text</button>
+        <button type="button" id="view-list" role="tab" data-view="list" aria-selected="false" aria-controls="reader-output" tabindex="-1">Word list</button>
+      </div>
+      <section id="passage-view" role="tabpanel" aria-labelledby="view-text" hidden>
         <p class="reader-guide">Select a word in your text to see its dictionary entries below.</p>
         <div id="passage-text" lang="la"></div>
-        <section id="passage-detail" aria-label="Selected word" aria-live="polite"></section>
+        <div class="selected-word">
+          <p class="selected-word-label">Selected word</p>
+          <section id="passage-detail" aria-label="Selected word" aria-live="polite"></section>
+        </div>
       </section>
       <div id="reader-output"></div>
       <div class="result-actions"><a id="back-to-top" class="back-to-top" href="#page-title">Back to top ↑</a></div>

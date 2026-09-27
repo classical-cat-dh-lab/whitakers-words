@@ -1,10 +1,10 @@
 # Whitaker's Words — TypeScript preservation
 
-**0.3.2-beta.1 · Beta** — [Open the dictionary](https://words.latingreek.org/).
+**0.3.3-beta.1 · Local review candidate** — [Published dictionary](https://words.latingreek.org/).
 
-The [0.3.2 beta release](docs/release-0.3.2.md) adds a clickable passage reader,
-compact principal-part summaries, selectable result views and update checks that
-avoid downloading an intact current dictionary again. The verified
+The [0.3.3 beta candidate](docs/release-0.3.3.md) groups repeated principal parts,
+separates text reading from the word list, and keeps lookup status above Display
+options. It is awaiting local review and has not been published. The verified
 [0.3.0 backend](docs/backend-baseline.md) and original dictionary remain frozen.
 
 The dictionary and help pages use stable addresses for bookmarks and sharing.
