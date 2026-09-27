@@ -85,9 +85,10 @@ Numbered reading labels use **1st decl**, **1st and 2nd decl**, **3rd conj**, an
 the corresponding other ordinals. Expanded meanings remain available as hints.
 This browser notation does not modify the frozen structured results or engine.
 
-The original dictionary uses slashes between alternatives within its meanings.
-The reading view puts those alternatives on separate lines. It preserves their
-order and words; raw meanings and legacy output retain the original punctuation.
+The original dictionary keeps closely related alternatives together with slashes
+and separates broader meaning groups with semicolons. The reading view keeps
+slash-separated alternatives inline and starts a new line after each semicolon,
+retaining the original punctuation. Raw meanings and legacy output are unchanged.
 This display does not assign new sense numbers or claim editorial correction.
 
 ## Dictionary frequency order
@@ -143,6 +144,10 @@ switches the theme manually; IndexedDB saves the choice on this browser/device.
 The same setting applies to the dictionary and its documentation, survives a
 restart, and works offline. If browser storage is unavailable, the switch still
 works for the open page and explains that the choice could not be saved.
+
+The local 0.3.3 night palette uses charcoal surfaces, softened chalk text, muted
+ochre headings and dark green-earth controls. It is designed for low-light reading;
+adjust the device's screen brightness to the room as well. Light mode is unchanged.
 
 Footer links open formatted HTML pages with return navigation. These documents,
 including the original WORDS notice and full AGPL license, are included in the

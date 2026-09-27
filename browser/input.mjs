@@ -17,8 +17,8 @@ export function originalSurface(prepared, span) {
   const first = prepared.spans[span.start], last = prepared.spans[span.end - 1];
   return first && last ? prepared.original.slice(first.start, last.end) : '';
 }
-// Slashes are inherited alternatives, not layout markup. Display each on its own
-// line, retaining every word and the untouched meaning in the structured output.
+// Keep slash-separated alternatives together. Semicolons delimit reading lines;
+// retain the original punctuation and leave structured meanings untouched.
 export function meaningLines(meaning) {
-  return meaning.split('/').map(part => part.trim());
+  return meaning.split(/(?<=;)/u).map(part => part.trim()).filter(Boolean);
 }

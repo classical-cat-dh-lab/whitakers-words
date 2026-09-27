@@ -105,6 +105,7 @@ function page(title, body) {
   <link rel="stylesheet" href="../browser/resources/design-system/2.3.0/dist/tokens.css">
   <link rel="stylesheet" href="../browser/resources/design-system/2.3.0/dist/fonts.css">
   <link rel="stylesheet" href="../browser/style.css">
+  <link rel="stylesheet" href="../browser/night-theme.css">
   <script type="module" src="../browser/theme.mjs"></script>
 </head>
 <body><main class="document-page">
