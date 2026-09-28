@@ -33,7 +33,7 @@
         </div>
       </div>
       <p id="theme-status" class="preference-status" role="status" hidden></p>
-      <div class="title-row"><h1 id="page-title" tabindex="-1">Whitaker’s Words</h1><span class="beta-badge">0.3.3 beta</span></div>
+      <div class="title-row"><h1 id="page-title" tabindex="-1">Whitaker’s Words</h1><span class="version-badge">1.0</span></div>
       <p class="tagline">An independent browser edition of William Whitaker’s WORDS. Latin meanings and morphology, word by word—even offline.</p>
     </header>
     <section id="offline" aria-label="Offline use" hidden>
@@ -48,8 +48,10 @@
     </section>
     <form id="analysis-form">
       <label for="input">Latin word, phrase or sentence</label>
-      <textarea id="input" name="input" rows="2" spellcheck="false" autocapitalize="none" autocorrect="off" enterkeyhint="search" aria-describedby="input-help" lang="la" placeholder="Type Latin here, then press Enter / Return."></textarea>
+      <textarea id="input" name="input" rows="2" spellcheck="false" autocapitalize="none" autocorrect="off" enterkeyhint="search" aria-describedby="input-help input-limit input-error" lang="la" placeholder="Type Latin here, then press Enter / Return."></textarea>
       <p id="input-help">Enter / Return to look up · Shift + Enter / Return for a new line.</p>
+      <p id="input-limit" class="reader-guide">Up to 2,000 words and 20,000 characters per lookup.</p>
+      <p id="input-error" class="reader-error" role="alert" hidden>This text was not submitted. Split it into passages of at most 2,000 words and 20,000 characters. Your full input and previous results are retained.</p>
       <div class="controls">
         <label for="mode">Mode</label>
         <select id="mode"><option value="latin">Latin lookup</option><option value="english">English lookup</option><option value="legacy">Latin (original input rules)</option></select>

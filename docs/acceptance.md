@@ -1,3 +1,7 @@
+# Release acceptance — 1.0
+
+The stable [1.0 release](release-1.0.md) finalizes the [qualified legacy checkpoint](legacy-checkpoint.md). Its [release manifest](legacy-release.json) changes only the checkpoint engine version constant. The final audit and release scope supersede the historical 0.3/0.2 qualification sections below.
+
 # Backend acceptance — 0.3 beta
 
 Qualified on 2026-09-26 against the pinned WORDS 1.99.0 reference, using the

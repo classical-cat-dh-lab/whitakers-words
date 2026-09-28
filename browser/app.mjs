@@ -5,6 +5,7 @@ import {orderReading} from './reading-order.mjs';
 import {groupReading} from './group-reading.mjs';
 import {passageSegments,renderPassage} from './passage.mjs';
 import {createAnalyzerClient} from './analyzer-client.mjs';
+import {withinInputLimit} from './input-limit.mjs';
 const $=selector=>document.querySelector(selector);
 let analyzerState='loading', lookupRunning=false, validationRunning=false, validationAbort;
 function updateAnalyzerControls(){
@@ -68,7 +69,12 @@ function updateInputPrompt(){
   $('#input-help').textContent=english?'Enter / Return to look up an English word.':mode==='latin'?'Enter / Return to look up · Shift + Enter / Return for a new line.':'Original WORDS input rules: macrons are not removed and may split words. Use Latin lookup for text with macrons. Enter / Return to look up.';
 }
 $('#mode').addEventListener('change',updateInputPrompt);updateInputPrompt();
+function clearInputError(){
+  $('#input-error').hidden=true;$('#input').removeAttribute('aria-invalid');
+}
+$('#input').addEventListener('input',clearInputError);
 $('#clear-input').addEventListener('click',()=>{
+  clearInputError();
   $('#input').value='';currentReading=undefined;$('#results').hidden=true;
   for(const id of ['reader-output','passage-text','passage-detail','legacy-output','json-output','notes-output'])$('#'+id).replaceChildren();
   for(const panel of document.querySelectorAll('#results details'))panel.open=false;
@@ -90,7 +96,11 @@ $('#input').addEventListener('keydown',event=>{
   if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing&&event.keyCode!==229){event.preventDefault();if(!$('#analyze').disabled&&$('#input').value.trim())$('#analysis-form').requestSubmit();}
 });
 $('#analysis-form').addEventListener('submit',async event=>{
-  event.preventDefault();if($('#analyze').disabled||!$('#input').value.trim())return;lookupRunning=true;updateAnalyzerControls();$('#status').textContent='Looking up…';
+  event.preventDefault();if($('#analyze').disabled)return;
+  if(!withinInputLimit($('#input').value)){
+    $('#input-error').hidden=false;$('#input').setAttribute('aria-invalid','true');$('#input').focus();return;
+  }
+  clearInputError();if(!$('#input').value.trim())return;lookupRunning=true;updateAnalyzerControls();$('#status').textContent='Looking up…';
   try{
     const original=$('#input').value;
     const {result,inputAdapter,milliseconds}=await query(original,$('#mode').value);

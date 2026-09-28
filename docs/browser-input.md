@@ -2,6 +2,13 @@
 
 This guide describes the browser interface on the frozen legacy engine.
 
+Each browser lookup accepts at most **2,000 words and 20,000 characters**.
+If either limit is exceeded, the text is not submitted: split it into shorter
+passages and try again. Your input is never truncated, and previous results remain
+available. Punctuation-separated words count separately; combining marks remain
+attached to their word. Characters are counted as Unicode code points. This
+browser safeguard does not change the analysis library or CLI input behavior.
+
 The default **Latin lookup** accepts a word, phrase or sentence. Press Enter or
 Return to look it up; Shift + Enter / Return inserts a newline. A **Look up** button supports
 touch input. Composition events do not submit unfinished input. On a narrow touch

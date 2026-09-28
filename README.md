@@ -1,17 +1,13 @@
 # Whitaker's Words — TypeScript preservation
 
-**0.3.3-beta.1 · Beta** — [Published dictionary](https://words.latingreek.org/).
+**1.0.0 · Stable release** — [Published dictionary](https://words.latingreek.org/).
 
-This working branch also contains the unreleased
-[final legacy backend checkpoint](docs/legacy-checkpoint.md), engine
-`1.0.0-rc.1`. It restores Ada's English inline-comment behavior and prepares the
-final v1 frontend iteration. The published 0.3.3 release is unchanged.
-
-The [0.3.3 beta release](docs/release-0.3.3.md) groups repeated principal parts,
-separates text reading from the word list, and keeps lookup status above Display
-options. It preserves slash-separated meanings, breaks after semicolons and adds
-a quieter night palette. The verified
-[0.3.0 backend](docs/backend-baseline.md) and original dictionary remain frozen.
+The [1.0 release](docs/release-1.0.md) completes the behavior-preserving port of
+the pinned WORDS analysis engine within its declared API/CLI contract. The
+[qualified legacy checkpoint](docs/legacy-checkpoint.md) is finalized as engine
+`1.0.0`; its [release manifest](docs/legacy-release.json) freezes the source and
+data. Browser recovery, offline updates, theme startup and long-input safeguards
+are complete. Original scholarly content and native errors remain preserved.
 
 The dictionary and help pages use stable addresses for bookmarks and sharing.
 Runtime resources remain isolated by release. Offline updates are downloaded,
@@ -35,10 +31,9 @@ separate. All 24,000 English observations match, along with ten native capacity
 states and 512 Latin option sessions. There are no unexplained differences or
 regressions in these tests. See [backend acceptance](docs/acceptance.md).
 
-Beta marks preliminary engineering reliability. Full classical-text corpus
-comparison and broad stress testing remain pending; these measurements do not
-establish universal equivalence or linguistic correctness. The
-[backend baseline](docs/backend-baseline.md) is frozen for later corpus work.
+The preservation milestone is complete within the declared scope. Full classical-text
+corpus comparison remains deferred; these measurements do not establish universal
+equivalence or linguistic correctness. The v1 legacy backend is frozen.
 
 The canonical reference is **WORDS 1.99.0**, commit
 `1f2f0fb0867a896d7b9284a03d615ed635d6f992` of
@@ -48,7 +43,7 @@ analyzer. The legacy profile targets original behavior, including linguistic
 errors and quirks; [tested behavior and remaining limits](docs/acceptance.md) are
 recorded explicitly. The corrected layer is empty.
 
-Archived release: [0.3.3-beta.1 — DOI: 10.5281/zenodo.23000377](https://doi.org/10.5281/zenodo.23000377).
+Archived release: [1.0.0 — DOI: 10.5281/zenodo.23020269](https://doi.org/10.5281/zenodo.23020269).
 The archive preserves the exact release files; citation metadata is also available
 in [CITATION.cff](CITATION.cff).
 
@@ -70,7 +65,7 @@ No `npm install` is required. Use `npm run site` then `npm run preview` to build
 and preview the offline website. Serve `site/` over HTTPS (or localhost); opening
 files directly does not support modules or Service Workers. Download the frozen
 source and ready-to-host website from the
-[0.3.3-beta.1 release](https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v0.3.3-beta.1).
+[1.0.0 release](https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v1.0.0).
 No npm package is published.
 
 ## Verification and documentation

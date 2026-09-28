@@ -82,7 +82,7 @@ textarea::placeholder { color: var(--ds-color-text-muted); opacity: 1; }
 /* Keep the lookup and its reading results at the center of the page. */
 .title-row { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; margin-top: .75rem; }
 .title-row h1 { margin: 0; }
-.beta-badge { font: var(--ds-text-small)/1 var(--ds-font-sans-ui); border: 1px solid var(--ds-color-border); border-radius: .25rem; padding: .35rem .5rem; }
+.version-badge { font: var(--ds-text-small)/1 var(--ds-font-sans-ui); border: 1px solid var(--ds-color-border); border-radius: .25rem; padding: .35rem .5rem; }
 .tagline { margin: .65rem 0 0; }
 .header-row .eyebrow { margin: 0; }
 #analysis-form { margin: 1.5rem 0; }

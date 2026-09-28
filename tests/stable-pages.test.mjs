@@ -11,6 +11,8 @@ test('stable pages retain release-pinned resources at root and document URLs', a
   const root = fileURLToPath(new URL('../', import.meta.url));
   const pages = await documentPages(root, '0.3.1-beta.1');
   pages.set('browser/index.html', await readFile(root + '/browser/index.html'));
+  const stable=publishPage(pages.get('browser/index.html').toString(),'browser/index.html','/releases/1.0.0-0123456789ab/');
+  assert.match(stable,/<span class="version-badge">1\.0<\/span>/);
   for (const [path, bytes] of pages) {
     const html = publishPage(bytes.toString(), path, base), canonical = publicPath(path);
     assert.ok(html.includes(`rel="canonical" href="https://words.latingreek.org${canonical}"`));

@@ -1,7 +1,7 @@
 # Frozen backend baseline — 0.3 beta
 
-This is the immutable published predecessor. The active unreleased v1 candidate
-is recorded separately in [the final legacy checkpoint](legacy-checkpoint.md).
+This is the immutable published predecessor. The stable v1 successor
+is recorded separately in [the release notes](release-1.0.md).
 Its verification retains this manifest byte for byte and checks the explicitly
 declared successor hashes; the historical release is not rewritten.
 

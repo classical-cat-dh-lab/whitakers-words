@@ -1,8 +1,8 @@
 # Final legacy engine checkpoint
 
-The unreleased backend checkpoint is `words-legacy-1.0.0-rc.1`, qualified on
-2026-09-28. The application release remains 0.3.3 beta; this checkpoint prepares
-the final frontend iteration and eventual v1.0 release. It is not a published v1.0.
+This historical pre-release document records the backend checkpoint `words-legacy-1.0.0-rc.1`, qualified on
+2026-09-28. It was qualified before frontend completion. The stable successor is
+[version 1.0](release-1.0.md); this document retains the checkpoint evidence.
 The [checkpoint manifest](legacy-checkpoint.json) fixes the source/data/adapter
 hashes and the predecessor manifest. The original
 [0.3.0 baseline](backend-baseline.md), signed tag and archives remain immutable.
