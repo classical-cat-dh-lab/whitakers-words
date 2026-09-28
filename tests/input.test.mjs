@@ -20,6 +20,7 @@ test('reading lines preserve all alternatives and the comparator preserves order
   assert.deepEqual(meaningLines('large/great/big; much; powerful'),['large/great/big;','much;','powerful']);
   assert.deepEqual(meaningLines('word/phrase'),['word/phrase']);
   assert.deepEqual(meaningLines(''),[]);
+  assert.deepEqual(meaningLines('; first;;\nsecond; \n'),[';','first;',';','second;']);
   assert.notEqual(comparisonView('a\n\nb'),comparisonView('a\nb'));
   assert.equal(adapterLimit('@file'),'interactive-command');assert.equal(adapterLimit('amātus est'),null);
 });

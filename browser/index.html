@@ -7,6 +7,7 @@
   <title>Whitaker’s Words · Latin dictionary</title>
   <meta name="description" content="An independent browser edition of William Whitaker’s WORDS. Latin meanings and morphology, word by word—even offline.">
   <meta name="theme-color" content="#F4F5F0">
+  <script src="theme-init.js"></script>
   <link rel="icon" type="image/svg+xml" href="icon.svg">
   <link rel="apple-touch-icon" href="icon-192.png">
   <link rel="manifest" href="manifest.webmanifest">
@@ -54,6 +55,8 @@
         <select id="mode"><option value="latin">Latin lookup</option><option value="english">English lookup</option><option value="legacy">Latin (original input rules)</option></select>
         <button type="submit" id="analyze" disabled>Look up</button>
         <button type="button" id="clear-input">Clear input</button>
+        <button type="button" id="cancel-lookup" hidden>Stop analysis</button>
+        <button type="button" id="retry-analyzer" hidden>Reload dictionary</button>
       </div>
       <div class="lookup-status" role="status" aria-live="polite"><span id="status">Loading dictionary…</span> <span id="connection-status" title="Online / Offline describes your browser’s connection. All lookups run on this device."></span></div>
       <details class="display-options">
@@ -87,7 +90,7 @@
       <details id="json-panel" class="technical-output" hidden><summary>Structured result</summary><pre id="json-output" tabindex="0"></pre></details>
       <details id="notes-panel" class="technical-output" hidden><summary>Lookup notes</summary><div id="notes-output"></div></details>
     </section>
-    <details id="validation" class="technical-output" hidden><summary>Validation tools</summary><button type="button" id="validate" disabled>Run validation cases</button><ol id="validation-results"></ol></details>
+    <details id="validation" class="technical-output" hidden><summary>Validation tools</summary><button type="button" id="validate" disabled>Run validation cases</button><p id="validation-status" role="status"></p><ol id="validation-results"></ol></details>
     <footer><nav aria-label="Help and documentation"><a id="offline-help-link" href="#offline-help">Offline help</a><a href="../docs/abbreviations.html">Abbreviations &amp; terminology</a><a href="../docs/source.html">About, source &amp; licenses</a></nav><p>All lookups run on your device. Your text stays with you.</p><p>WORDS and its dictionary: William Whitaker. © 2026 Xinjie Fang / Classical Cat Digital Humanities Lab. Independent preservation · AGPL-3.0-only · No warranty.</p></footer>
   </main>
 </body>

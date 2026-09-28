@@ -38,12 +38,16 @@ export function renderReader(root,result,{failed=false}={}){
   if(batch)fragment.append(element('p','Select a word to see its meanings and forms.','reader-guide'));
   for(const token of result.tokens){
     const section=element(batch?'details':'section',undefined,batch?'reader-token reader-accordion':'reader-token');
+    const content=batch?element('div',undefined,'reader-expanded'):section;
     if(batch){
       section.append(tokenSummary(token,result.language));panels.push(section);
-      section.addEventListener('toggle',()=>{if(section.open)for(const other of panels)if(other!==section)other.open=false;});
+      section.addEventListener('toggle',()=>{
+        if(!section.open)return;
+        if(!content.childNodes.length)renderTokenContent(content,token,result.language);
+        for(const other of panels)if(other!==section)other.open=false;
+      });
     }else{const heading=element('h3',token.surface);heading.lang=result.language==='latin'?'la':'en';section.append(heading);}
-    const content=batch?element('div',undefined,'reader-expanded'):section;
-    renderTokenContent(content,token,result.language);
+    if(!batch)renderTokenContent(content,token,result.language);
     if(batch)section.append(content);
     fragment.append(section);
   }

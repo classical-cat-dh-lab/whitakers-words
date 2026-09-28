@@ -5,7 +5,7 @@ const saveButton = document.querySelector('#offline-save'), cancelButton = docum
 const reloadButton = document.querySelector('#offline-reload'), progress = document.querySelector('#offline-progress');
 let worker, registration, manifest, installPrompt, persistence = '', update, lastCheck = 0;
 const runningId = document.querySelector('meta[name="words-release"]')?.content;
-let helpOpen = false;
+let helpOpen = false, saveJob;
 const controls = document.querySelector('#offline-controls');
 document.querySelector('#offline-help-link').addEventListener('click', () => {
   helpOpen = true; panel.hidden = false;
@@ -17,18 +17,45 @@ document.querySelector('#offline-close').addEventListener('click', () => {
 });
 const megabytes = bytes => (bytes / 1024 / 1024).toFixed(1) + ' MB';
 
-function call(action, extra = {}, onProgress, target = worker) {
+async function latestManifest() {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 30000);
+  try {
+    const response = await fetch('/release.json', {cache: 'no-store', signal: controller.signal});
+    if (!response.ok) throw new Error('Connect to the internet to check for updates. Your saved dictionary is unchanged.');
+    return validateManifest(await response.json());
+  } catch (error) {
+    if (error.name === 'AbortError') throw new Error('The update check timed out. Reconnect and retry; your saved dictionary is unchanged.');
+    throw error;
+  } finally { clearTimeout(timer); }
+}
+
+function call(action, extra = {}, onProgress, target = worker, timeout = 180000) {
   return new Promise((resolve, reject) => {
-    const channel = new MessageChannel();
-    const timer = setTimeout(() => { channel.port1.close(); reject(new Error('The offline operation was interrupted. Please retry.')); }, 180000);
+    const channel = new MessageChannel(); let timer, settled = false;
+    const close = () => { settled = true; clearTimeout(timer); channel.port1.close(); };
+    const arm = () => {
+      clearTimeout(timer);
+      timer = setTimeout(async () => {
+        close();
+        if (action === 'save') {
+          try { await call('cancel', {jobId: extra.jobId}, undefined, target, 15000); }
+          catch { reject(new Error('The download could not be stopped. Reload this page before trying again.')); return; }
+        }
+        reject(new Error('The offline operation stopped responding. Please retry.'));
+      }, timeout);
+    };
     channel.port1.onmessage = ({data}) => {
-      if (data.progress) onProgress?.(data.progress);
+      if (settled) return;
+      if (data.progress) { arm(); onProgress?.(data.progress); }
       if (data.done) {
-        clearTimeout(timer); channel.port1.close();
+        close();
         if (data.error) reject(new Error(data.error)); else resolve(data.result);
       }
     };
-    target.postMessage({action, ...extra}, [channel.port2]);
+    arm();
+    try { target.postMessage({action, ...extra}, [channel.port2]); }
+    catch (error) { close(); reject(error); }
   });
 }
 
@@ -106,9 +133,9 @@ async function checkForUpdates() {
   if (!worker || saveButton.disabled || Date.now() - lastCheck < 60000) return;
   lastCheck = Date.now();
   try {
-    const response = await fetch('/release.json', {cache: 'no-store'});
-    if (response.ok) manifest = validateManifest(await response.json());
+    manifest = await latestManifest();
     await refresh();
+    await call('cleanup');
   } catch { /* The selected offline version remains usable. */ }
 }
 
@@ -120,9 +147,7 @@ saveButton.addEventListener('click', async () => {
   message.textContent = 'Checking for updates…';
   document.querySelector('#offline-close').hidden = true;
   try {
-    const response = await fetch('/release.json', {cache: 'no-store'});
-    if (!response.ok) throw new Error('Connect to the internet to check for updates. Your saved dictionary is unchanged.');
-    manifest = validateManifest(await response.json()); lastCheck = Date.now();
+    manifest = await latestManifest(); lastCheck = Date.now();
     const before = await refresh();
     if (update || (before.ready && before.active.id === manifest.id)) {
       if (!update) message.textContent = `Up to date · ${manifest.version}. Your saved dictionary is ready offline.`;
@@ -132,22 +157,27 @@ saveButton.addEventListener('click', async () => {
     // A manual check discovers updates without starting an unexpected download.
     if (before.ready && !downloading) { panel.hidden = false; return; }
     panel.hidden = false; cancelButton.hidden = false; progress.hidden = false;
-    const persistent = await navigator.storage?.persist?.().catch(() => false);
-    persistence = persistent ? 'Persistent storage granted.' : 'Your browser may reclaim saved storage.';
-    const result = await call('save', {}, ({bytes, total}) => {
+    // Firefox may wait for a storage-permission decision. Saving must not wait
+    // for an optional persistence grant; Cache Storage works without it.
+    persistence = 'Your browser may reclaim saved storage.';
+    navigator.storage?.persist?.().then(granted => {
+      if (granted) persistence = 'Persistent storage granted.';
+    }).catch(() => {});
+    saveJob = crypto.randomUUID?.() ?? Array.from(crypto.getRandomValues(new Uint32Array(4))).join('-');
+    const result = await call('save', {jobId: saveJob}, ({bytes, total}) => {
       progress.max = total; progress.value = bytes;
       message.textContent = `Saving and checking files: ${megabytes(bytes)} / ${megabytes(total)}.`;
     });
     cancelButton.hidden = true; message.textContent = 'Checking the saved analyzer…';
     await sample(result.candidate);
-    await call('confirm', {id: result.candidate.id});
+    await call('confirm', {id: result.candidate.id, jobId: saveJob});
     manifest = result.candidate;
     const status = await refresh();
     if (status.ready && status.active.id === runningId) await takeControl(runningId);
-  } catch (error) { panel.hidden = false; panel.classList.add('offline-notice'); message.textContent = error instanceof TypeError ? 'Cannot check for updates. Reconnect and try again; your saved dictionary is unchanged.' : error.message; }
-  finally { saveButton.disabled = false; cancelButton.hidden = true; progress.hidden = true; document.querySelector('#offline-close').hidden = false; }
+  } catch (error) { if (saveJob) await call('discard', {jobId: saveJob}).catch(() => {}); panel.hidden = false; panel.classList.add('offline-notice'); message.textContent = error instanceof TypeError ? 'Cannot check for updates. Reconnect and try again; your saved dictionary is unchanged.' : error.message; }
+  finally { saveJob = undefined; saveButton.disabled = false; cancelButton.disabled = false; cancelButton.hidden = true; progress.hidden = true; document.querySelector('#offline-close').hidden = false; call('cleanup').catch(() => {}); }
 });
-cancelButton.addEventListener('click', () => call('cancel').catch(error => { message.textContent = error.message; }));
+cancelButton.addEventListener('click', () => { cancelButton.disabled = true; message.textContent = 'Cancelling download…'; call('cancel', {jobId: saveJob}).catch(error => { message.textContent = error.message; cancelButton.disabled = false; }); });
 reloadButton.addEventListener('click', async () => {
   reloadButton.disabled = true;
   try {
@@ -189,12 +219,12 @@ async function start() {
     if (await navigator.storage?.persisted?.()) persistence = 'Persistent storage granted.';
     else persistence = 'Your browser may reclaim saved storage.';
     try {
-      const response = await fetch('/release.json', {cache: 'no-store'});
-      if (response.ok) manifest = validateManifest(await response.json());
+      manifest = await latestManifest();
     } catch { /* Cached operation needs no live manifest. */ }
     const status = await refresh();
     if (status.ready && status.active.id === runningId) await takeControl(runningId);
     saveButton.disabled = false;
+    call('cleanup').catch(() => {});
     lastCheck = Date.now();
     window.addEventListener('online', () => { lastCheck = 0; checkForUpdates(); });
     window.addEventListener('focus', checkForUpdates);

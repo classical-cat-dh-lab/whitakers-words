@@ -39,10 +39,13 @@ function unavailable() {
   status.textContent = 'Your browser could not save this preference. Night mode still works on this page.';
 }
 
-apply('light');
-preference().then(theme => {
-  if (!changed && theme === 'dark') apply('dark');
+apply(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
+(window.wordsThemeReady ?? preference().then(theme => ({theme}))).then(saved => {
+  if (!changed) apply(saved.theme === 'dark' ? 'dark' : 'light');
+  if (saved.unavailable) unavailable();
 }).catch(unavailable);
+// Attach a handler even when bootstrap supplies the initial preference.
+database.catch(() => {});
 
 toggle.addEventListener('click', () => {
   changed = true;

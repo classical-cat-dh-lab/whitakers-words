@@ -20,7 +20,7 @@ async function add(path) {
     for (const name of (await readdir(full)).sort()) await add(path + '/' + name);
   } else files.set(path, await readFile(full));
 }
-for (const file of ['index.html', 'app.mjs', 'input.mjs', 'passage.mjs', 'notation.mjs', 'reading-order.mjs', 'group-reading.mjs', 'navigation.mjs', 'worker.mjs', 'render-reader.mjs', 'offline.mjs', 'offline-core.mjs', 'theme.mjs', 'style.css', 'night-theme.css', 'validation-cases.json', 'icon.svg', 'manifest.webmanifest']) await add('browser/' + file);
+for (const file of ['index.html', 'app.mjs', 'analyzer-client.mjs', 'input.mjs', 'passage.mjs', 'notation.mjs', 'reading-order.mjs', 'group-reading.mjs', 'navigation.mjs', 'worker.mjs', 'render-reader.mjs', 'offline.mjs', 'offline-core.mjs', 'theme-init.js', 'theme.mjs', 'style.css', 'night-theme.css', 'validation-cases.json', 'icon.svg', 'manifest.webmanifest']) await add('browser/' + file);
 await add('browser/resources');
 for (const file of (await readdir(resolve(root, 'dist'))).filter(f => f.endsWith('.js')).sort()) await add('dist/' + file);
 for (const file of ['legacy/DICTLINE.GEN', 'legacy/INFLECTS.LAT', 'legacy/ADDONS.LAT', 'legacy/UNIQUES.LAT', 'dictionary-forms.tsv', 'english-index.tsv']) await add('data/' + file);

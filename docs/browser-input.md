@@ -1,6 +1,6 @@
 # Browser lookup and offline use
 
-This guide describes the 0.3.3 beta browser interface on the frozen 0.3.0 engine.
+This guide describes the browser interface on the frozen legacy engine.
 
 The default **Latin lookup** accepts a word, phrase or sentence. Press Enter or
 Return to look it up; Shift + Enter / Return inserts a newline. A **Look up** button supports
@@ -14,6 +14,12 @@ milliseconds; it excludes dictionary loading, message transfer and page renderin
 Above Display options, **Online / Offline** reports the browser connection state;
 **On-device lookup** identifies where analysis runs in either state. A network
 connection indicator does not guarantee that the update server is reachable.
+
+If the analyzer fails to load or stops unexpectedly, **Reload dictionary** starts
+a fresh analyzer without reloading the page. **Stop analysis** cancels current
+analysis and validation; reload the dictionary before another lookup. Dictionary
+initialization has a one-minute deadline. Validation tools have their own status
+line, so finishing validation does not replace a lookup's completion message.
 
 ## Macron adaptation
 
@@ -57,6 +63,9 @@ principal parts. Identical principal-part headings appear once in that summary;
 opening it retains every meaning, distinct form and explanation. Opening
 another list word closes the previous one. Enter or Space operates focused words
 and summaries.
+Details are built when first opened. Structured data, original text and lookup
+notes are also built only when their panels are opened; all returned information
+remains available. This reduces initial page work for long passages.
 
 Expanded entries present principal parts, fixed grammatical labels, English
 meanings, then **Possible forms**. Additional source metadata stays under
@@ -128,6 +137,11 @@ the installation guidance and saved status. A newly verified version offers
 **Reload with update**. Errors or progress remain visible when attention is needed.
 A missing or incomplete cache restores the save/repair invitation.
 
+An update check times out after 30 seconds. Downloads may take longer than three
+minutes while data continues arriving; three minutes without progress cancels the
+job. Failed or cancelled jobs discard their incomplete files before a retry.
+An optional persistent-storage permission request does not delay saving.
+
 On iPhone or iPad, Safari's Share menu provides Add to Home Screen. Open the saved
 Home Screen app and save its dictionary there as well; an installed icon alone
 is not evidence that all resources are cached. Clearing site data removes the
@@ -144,6 +158,9 @@ switches the theme manually; IndexedDB saves the choice on this browser/device.
 The same setting applies to the dictionary and its documentation, survives a
 restart, and works offline. If browser storage is unavailable, the switch still
 works for the open page and explains that the choice could not be saved.
+The preference is read before showing page content to avoid a light flash when
+night mode was saved. A blocked preference read falls back within 1.5 seconds.
+IndexedDB remains the only preference store.
 
 The 0.3.3 night palette uses charcoal surfaces, softened chalk text, muted
 ochre headings and dark green-earth controls. It is designed for low-light reading;
@@ -173,6 +190,29 @@ applies; reuse begins once the 0.3.2 offline worker is installed. Every file is 
 run before **Reload** becomes available. Your current input and results remain
 until you choose to reload. A failed or cancelled download preserves the complete
 saved version; already open tabs continue using their own resources.
+
+Obsolete application caches are reclaimed after downloads and update checks.
+The selected release, its previous release, a pending candidate and releases
+needed by open tabs are retained. Cleanup waits when an older or sleeping tab
+cannot identify its release. Close old tabs and revisit the app to allow cleanup.
+Queries do not add results to the offline cache. File integrity is checked again
+when the saved installation is inspected or used for navigation.
+
+## Browser support
+
+Use a maintained Chrome, Safari, Firefox or Edge browser. The interface targets
+desktop and laptop computers, phones and tablets on macOS, Windows, iOS/iPadOS
+and Android. Responsive layouts and browser-engine tests do not substitute for
+testing each operating system and installed-app environment.
+
+Basic lookup needs JavaScript modules, module Workers and current JavaScript
+collection/string APIs. Offline use additionally needs Service Workers, Cache
+Storage, IndexedDB and Web Crypto in a secure context. Private modes or browser
+storage restrictions may disable offline saving while online lookup still works.
+Older browsers are supported where these capabilities are available; obsolete
+browsers lacking module Workers cannot run the analyzer. Updating the browser is
+recommended when dictionary loading fails repeatedly. Back to top uses ordinary
+coordinate scrolling without requiring a newer scroll-behavior value.
 
 The app installs only when you choose to use your browser's installation feature.
 Clearing site data removes the offline installation. The browser may reclaim

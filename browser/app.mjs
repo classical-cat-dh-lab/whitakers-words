@@ -4,9 +4,31 @@ import {renderReader,renderLookupNotes} from './render-reader.mjs';
 import {orderReading} from './reading-order.mjs';
 import {groupReading} from './group-reading.mjs';
 import {passageSegments,renderPassage} from './passage.mjs';
-const worker=new Worker(new URL('./worker.mjs',import.meta.url),{type:'module'});
-const $=selector=>document.querySelector(selector),pending=new Map();let sequence=0;
+import {createAnalyzerClient} from './analyzer-client.mjs';
+const $=selector=>document.querySelector(selector);
+let analyzerState='loading', lookupRunning=false, validationRunning=false, validationAbort;
+function updateAnalyzerControls(){
+  $('#analyze').disabled=analyzerState!=='ready'||lookupRunning;
+  $('#validate').disabled=analyzerState!=='ready'||validationRunning;
+  $('#clear-input').disabled=lookupRunning;
+  $('#retry-analyzer').hidden=analyzerState!=='failed';
+  $('#cancel-lookup').hidden=!(lookupRunning||validationRunning);
+}
+const client=createAnalyzerClient({
+  createWorker:()=>new Worker(new URL('./worker.mjs',import.meta.url),{type:'module'}),
+  onState:(state,message)=>{analyzerState=state;$('#status').textContent=state==='ready'?'Ready to look up.':state==='loading'?'Loading dictionary…':message+' Use Reload dictionary to try again.';updateAnalyzerControls();}
+});
+$('#retry-analyzer').addEventListener('click',()=>client.start());
+$('#cancel-lookup').addEventListener('click',()=>{validationAbort?.abort();client.stop('Analysis stopped.');});
+const query=(input,mode)=>client.query(input,mode);
 let currentReading, resultView='text';
+function renderTechnicalOutput(){
+  if(!currentReading)return;
+  if($('#json-panel').open&&!$('#json-output').textContent)$('#json-output').textContent=JSON.stringify(currentReading.structured,null,2);
+  if($('#legacy-panel').open&&!$('#legacy-output').textContent)$('#legacy-output').textContent=currentReading.analysis.legacyText||'No output.';
+  if($('#notes-panel').open&&!$('#notes-output').childNodes.length)renderLookupNotes($('#notes-output'),currentReading.view);
+}
+for(const id of ['json-panel','legacy-panel','notes-panel'])$('#'+id).addEventListener('toggle',renderTechnicalOutput);
 function updateDisplayOptions(){
   for(const [option,panel] of [['legacy','legacy-panel'],['json','json-panel'],['notes','notes-panel'],['validation','validation']]){
     const target=$('#'+panel);target.hidden=!$('#show-'+option).checked;
@@ -52,7 +74,7 @@ $('#clear-input').addEventListener('click',()=>{
   for(const panel of document.querySelectorAll('#results details'))panel.open=false;
   updateDisplayOptions();if(!$('#analyze').disabled)$('#status').textContent='Ready to look up.';$('#input').focus();$('#input').scrollIntoView({block:'center'});
 });
-$('#back-to-top').addEventListener('click',event=>{event.preventDefault();$('#page-title').focus({preventScroll:true});window.scrollTo({top:0,behavior:'instant'});});
+$('#back-to-top').addEventListener('click',event=>{event.preventDefault();$('#page-title').focus({preventScroll:true});window.scrollTo(0,0);});
 function renderCurrentReading(preserveOpen=false){
   const openIndex=preserveOpen?[...document.querySelectorAll('.reader-accordion')].findIndex(panel=>panel.open):-1;
   const {view,analysis}=currentReading;
@@ -64,18 +86,11 @@ function renderCurrentReading(preserveOpen=false){
   if(openIndex>=0){const panel=document.querySelectorAll('.reader-accordion')[openIndex];if(panel)panel.open=true;}
 }
 $('#original-order').addEventListener('change',()=>{if(currentReading)renderCurrentReading(true);});
-function query(input,mode='legacy'){return new Promise((resolve,reject)=>{const id=++sequence;pending.set(id,{resolve,reject});worker.postMessage({id,input,mode});});}
-worker.addEventListener('message',({data})=>{
-  if(data.type==='ready'){$('#status').textContent='Ready to look up.';$('#analyze').disabled=false;$('#validate').disabled=false;}
-  if(data.type==='error'){$('#status').textContent='Error: '+data.message;pending.get(data.id)?.reject(new Error(data.message));pending.delete(data.id);}
-  if(data.type==='result'){pending.get(data.id)?.resolve(data);pending.delete(data.id);}
-});
-worker.addEventListener('error',error=>{$('#status').textContent='Worker error: '+error.message;for(const p of pending.values())p.reject(error);pending.clear();});
 $('#input').addEventListener('keydown',event=>{
   if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing&&event.keyCode!==229){event.preventDefault();if(!$('#analyze').disabled&&$('#input').value.trim())$('#analysis-form').requestSubmit();}
 });
 $('#analysis-form').addEventListener('submit',async event=>{
-  event.preventDefault();if($('#analyze').disabled||!$('#input').value.trim())return;$('#analyze').disabled=true;$('#clear-input').disabled=true;$('#status').textContent='Looking up…';
+  event.preventDefault();if($('#analyze').disabled||!$('#input').value.trim())return;lookupRunning=true;updateAnalyzerControls();$('#status').textContent='Looking up…';
   try{
     const original=$('#input').value;
     const {result,inputAdapter,milliseconds}=await query(original,$('#mode').value);
@@ -84,20 +99,23 @@ $('#analysis-form').addEventListener('submit',async event=>{
       view.tokens.forEach((token,i)=>token.surface=originalSurface(inputAdapter,analysis.tokens[i].span));
       if(inputAdapter.lookup!==inputAdapter.original)view.notes.unshift('Macrons are ignored for lookup; the reading view retains your original spelling.');
     }
-    currentReading={analysis,view,selected:0,segments:view.language==='latin'?passageSegments(original,analysis.tokens,inputAdapter):[]};renderCurrentReading();renderLookupNotes($('#notes-output'),view);
+    currentReading={analysis,view,structured:inputAdapter?{inputAdapter,result}:result,selected:0,segments:view.language==='latin'?passageSegments(original,analysis.tokens,inputAdapter):[]};renderCurrentReading();
     $('#results').hidden=false;
-    $('#legacy-output').textContent=analysis.legacyText||'No output.';
-    $('#json-output').textContent=JSON.stringify(inputAdapter?{inputAdapter,result}:result,null,2);
+    for(const id of ['legacy-output','json-output','notes-output'])$('#'+id).replaceChildren();
+    renderTechnicalOutput();
     $('#status').textContent=analysis.status==='legacy-error'?'Stopped: original WORDS encountered an error.':`Complete (${milliseconds<0.1?'<0.1':milliseconds.toFixed(1)} ms).`;
     if(matchMedia('(max-width: 48rem) and (pointer: coarse)').matches){$('#input').blur();$('#result-heading').focus({preventScroll:true});$('#result-heading').scrollIntoView({block:'start'});}
   }
-  catch(error){$('#status').textContent='Error: '+error.message;}finally{$('#analyze').disabled=false;$('#clear-input').disabled=false;}
+  catch(error){if(analyzerState!=='failed')$('#status').textContent='Error: '+error.message;}finally{lookupRunning=false;updateAnalyzerControls();}
 });
 $('#validate').addEventListener('click',async()=>{
-  $('#validate').disabled=true;$('#validation-results').replaceChildren();
+  validationAbort=new AbortController();
+  validationRunning=true;updateAnalyzerControls();$('#validation-results').replaceChildren();$('#validation-status').textContent='Checking validation cases…';
   try{
-    const response=await fetch(new URL('./validation-cases.json',import.meta.url));if(!response.ok)throw new Error('Cannot load validation cases');const cases=await response.json();let passed=0;
+    const response=await fetch(new URL('./validation-cases.json',import.meta.url),{signal:validationAbort.signal});if(!response.ok)throw new Error('Cannot load validation cases');const cases=await response.json();let passed=0;
     for(const c of cases){const {result}=await query(c.input,c.mode);const actual=JSON.stringify(result),digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(actual))),x=>x.toString(16).padStart(2,'0')).join('');const ok=digest===c.sha256;passed+=Number(ok);const item=document.createElement('li');item.textContent=`${ok?'PASS':'FAIL'} — ${c.label}`;item.className=ok?'pass':'fail';$('#validation-results').append(item);}
-    $('#status').textContent=`Validation: ${passed}/${cases.length} match the Node structured results.`;
-  }catch(error){$('#status').textContent='Error: '+error.message;}finally{$('#validate').disabled=false;}
+    $('#validation-status').textContent=`Validation: ${passed}/${cases.length} match the Node structured results.`;
+  }catch(error){$('#validation-status').textContent=error.name==='AbortError'?'Validation stopped.':'Error: '+error.message;}finally{validationAbort=undefined;validationRunning=false;updateAnalyzerControls();}
 });
+
+client.start();

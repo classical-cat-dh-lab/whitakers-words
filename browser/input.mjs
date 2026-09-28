@@ -20,5 +20,5 @@ export function originalSurface(prepared, span) {
 // Keep slash-separated alternatives together. Semicolons delimit reading lines;
 // retain the original punctuation and leave structured meanings untouched.
 export function meaningLines(meaning) {
-  return meaning.split(/(?<=;)/u).map(part => part.trim()).filter(Boolean);
+  return (meaning.match(/[^;]*;|[^;]+$/gu) ?? []).map(part => part.trim()).filter(Boolean);
 }
