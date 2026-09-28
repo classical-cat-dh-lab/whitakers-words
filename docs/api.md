@@ -76,7 +76,9 @@ where the selected source has disabled its original handling.
 
 ## English and corrected layers
 
-`lookupEnglish(input, partOfSpeech = 'X', trim = true)` uses the first ASCII word,
+`lookupEnglish(input, partOfSpeech = 'X', trim = true)` applies native inline-comment
+preprocessing: `--` after column one ends the searchable text; a leading `--`
+is deliberately retained. It then uses the first ASCII word,
 applies the native `QV`/`qv` to `QU`/`qu` conversion, then limits the lookup to
 24 characters. Input without an ASCII word produces no legacy output. It returns entry/index
 provenance, total hit count, visible hits and legacy text. Default trimming shows
@@ -88,6 +90,13 @@ count), `trimmed: false`, no hits, and the original three diagnostic lines in
 `diagnostics` and `legacyText`. `legacyFailure` records `stage: english-search`
 and `exitCode: 0`. CLI and JSONL termination follow the same failure contract as
 Latin analysis. A later independent call remains usable.
+
+This API represents one English lookup, not an interactive English session.
+POS is the explicit second argument; it is not parsed from trailing query text.
+Multiple lines or more than 2,500 bytes do not create further English lookups.
+The native console can perform several reads for such input, so that transport
+behavior is outside the single-lookup comparison. Latin `analyze` retains the
+separate session behavior described above.
 
 `applyCorrectedLayer(legacy, selectedDeviations = [])` returns separate `legacy`
 and `corrected` values plus the selected layer ID. Currently the registry is empty:

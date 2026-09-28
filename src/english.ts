@@ -4,7 +4,10 @@ import type { Dataset } from './data.js';
 export function searchEnglish(data: Dataset, input: string, partOfSpeech: PartOfSpeech = 'X', trim = true): EnglishResult {
     if (typeof input !== 'string' || !POS.includes(partOfSpeech) || typeof trim !== 'boolean')
         throw new TypeError('Invalid English lookup request');
-    const lookup = (input.match(/[a-zA-Z]+/g)?.[0] ?? '').replaceAll('QV', 'QU').replaceAll('qv', 'qu').slice(0, 24).toLowerCase(), hits: EnglishIndexRow[] = [];
+    // Parse.Analyse_Line applies String_Before_Dash before selecting its first
+    // word in either language. A double dash in column one is deliberately kept.
+    const dash = input.indexOf('--'), text = dash > 0 ? input.slice(0, dash + 1) : input;
+    const lookup = (text.match(/[a-zA-Z]+/g)?.[0] ?? '').replaceAll('QV', 'QU').replaceAll('qv', 'qu').slice(0, 24).toLowerCase(), hits: EnglishIndexRow[] = [];
     const index = data.english;
     let left = 0, right = index.length - 1, j = Math.floor((left + right) / 2), first = true, second = true;
     let overflow = false;

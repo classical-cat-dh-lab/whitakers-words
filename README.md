@@ -2,6 +2,11 @@
 
 **0.3.3-beta.1 · Beta** — [Published dictionary](https://words.latingreek.org/).
 
+This working branch also contains the unreleased
+[final legacy backend checkpoint](docs/legacy-checkpoint.md), engine
+`1.0.0-rc.1`. It restores Ada's English inline-comment behavior and prepares the
+final v1 frontend iteration. The published 0.3.3 release is unchanged.
+
 The [0.3.3 beta release](docs/release-0.3.3.md) groups repeated principal parts,
 separates text reading from the word list, and keeps lookup status above Display
 options. It preserves slash-separated meanings, breaks after semicolons and adds

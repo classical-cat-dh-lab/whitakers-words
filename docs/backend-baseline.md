@@ -1,5 +1,10 @@
 # Frozen backend baseline — 0.3 beta
 
+This is the immutable published predecessor. The active unreleased v1 candidate
+is recorded separately in [the final legacy checkpoint](legacy-checkpoint.md).
+Its verification retains this manifest byte for byte and checks the explicitly
+declared successor hashes; the historical release is not rewritten.
+
 The backend baseline is `words-0.3.0-beta.1`. Its source and data hashes are recorded
 in the [machine-readable manifest](backend-baseline.json). The signed release tag
 `v0.3.0-beta.1` fixes the complete product tree and archive contents.
@@ -10,7 +15,7 @@ backend version constant; matching, parsing, formatting, diagnostics and data
 remain byte-identical to the fully tested checkpoint. The manifest records both
 the qualification identities and release source hashes.
 
-`npm run verify` checks the frozen source/data/adapter hashes and then runs the
+At this release, `npm run verify` checked the frozen source/data/adapter hashes and then ran the
 regression suite. The release qualified 36 groups; later frontend tests extend
 that suite without changing the frozen backend. A backend change requires a new reviewed baseline and
 appropriate comparison against this release; do not rewrite this immutable tag

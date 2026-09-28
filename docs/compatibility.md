@@ -1,4 +1,11 @@
-# Compatibility qualification — 0.3 beta
+# Compatibility qualification
+
+The current unreleased candidate has passed the
+[final legacy checkpoint](legacy-checkpoint.md): complete Latin replay, fresh
+24,000-case English comparison, 4,096 option combinations, 2,048 ordered sessions
+and input boundaries. It repairs English inline-comment preprocessing while
+preserving Ada's column-one exception. The measured 0.3 history below remains
+the predecessor evidence; no v1.0 release is implied.
 
 Initial baseline qualified on 2026-09-19 against `words-mk270-1f2f0fb`, using the exact
 `upstream-tests-v1` profile. The reference program is WORDS 1.99.0 from the

@@ -4,6 +4,7 @@ import {resolve} from 'node:path';
 const escape = text => text.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const metadataPages = new Map([
   ['backend-baseline.json', 'backend-baseline-data.html'],
+  ['legacy-checkpoint.json', 'legacy-checkpoint-data.html'],
   ['../CITATION.cff', 'citation.html'],
   ['../legacy.lock.json', 'legacy-lock.html'],
   ['../toolchains.lock.json', 'toolchains-lock.html'],
