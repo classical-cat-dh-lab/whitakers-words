@@ -23,15 +23,27 @@ records. Unsupported characters or unprocessed text remain visible as plain text
 
 ## English lookup
 
-Version 1.0.1 looks up **one English word at a time** in the original English gloss
-index. A multiword submission searches only its first ASCII word. It does not
-translate sentences or provide the Latin mode's clickable passage view.
+The working tree adds English passages to **Read text** and **Word list**, with
+the same selection controls as Latin. This change is not yet released; published
+version 1.0.1 searches only the first word of an English submission.
+
+Each word is looked up separately in the original English gloss index. Spelling,
+punctuation, line breaks and repeated occurrences remain visible. A word such as
+`the` with no match displays **No matching dictionary entries**; it does not block
+later words. A native error is also shown only for its affected word. This is word
+lookup, not sentence translation. Apostrophes stay within a word; unsupported
+spellings, including contractions and non-ASCII letters, show no match rather
+than silently searching an ASCII prefix. Hyphens separate words.
 
 Search uses the supplied spelling without singular/plural expansion. For example,
 `dogs` and `dog` have different results; try the singular separately. Common words
 such as `the` can have no match because this is a reverse index of Latin glosses,
 not a complete English dictionary. Original ranking and the six-entry display
-limit apply. These limitations are retained in engine 1.0.0.
+limit apply separately to each word. Engine 1.0.0 remains unchanged; the library
+and CLI retain their original single-word input behavior. **Structured data**
+contains an `english-passage-v1` wrapper with the submitted text, occurrence spans
+and each unchanged engine result. **Original text** concatenates those outputs
+in occurrence order.
 
 ## Display options
 

@@ -6,6 +6,7 @@ import {groupReading} from './group-reading.mjs';
 import {passageSegments,renderPassage} from './passage.mjs';
 import {createAnalyzerClient} from './analyzer-client.mjs';
 import {withinInputLimit} from './input-limit.mjs';
+import {presentEnglishPassage} from './english-passage.mjs';
 const $=selector=>document.querySelector(selector);
 let analyzerState='loading', lookupRunning=false, validationRunning=false, validationAbort;
 function updateAnalyzerControls(){
@@ -35,7 +36,7 @@ function updateDisplayOptions(){
     const target=$('#'+panel);target.hidden=!$('#show-'+option).checked;
     if(target.hidden)target.open=false;
   }
-  const passage=currentReading?.view.language==='latin'&&currentReading.view.tokens.length>1;
+  const passage=currentReading?.view.tokens.length>1;
   $('#result-view-tabs').hidden=!passage;
   $('#passage-view').hidden=!passage||resultView==='list';
   $('#reader-output').hidden=passage&&resultView==='text';
@@ -63,10 +64,10 @@ for(const checkbox of document.querySelectorAll('.display-options input'))checkb
 updateDisplayOptions();
 function updateInputPrompt(){
   const mode=$('#mode').value,english=mode==='english';
-  $('label[for="input"]').textContent=english?'English word':'Latin word, phrase or sentence';
+  $('label[for="input"]').textContent=english?'English word, phrase or sentence':'Latin word, phrase or sentence';
   $('#input').lang=english?'en':'la';
-  $('#input').placeholder=english?'Type an English word, then press Enter / Return.':'Type Latin here, then press Enter / Return.';
-  $('#input-help').textContent=english?'Enter / Return to look up one English word.':'Enter / Return to look up · Shift + Enter / Return for a new line.';
+  $('#input').placeholder=english?'Type English here, then press Enter / Return.':'Type Latin here, then press Enter / Return.';
+  $('#input-help').textContent='Enter / Return to look up · Shift + Enter / Return for a new line.';
 }
 $('#mode').addEventListener('change',updateInputPrompt);updateInputPrompt();
 function clearInputError(){
@@ -86,7 +87,7 @@ function renderCurrentReading(preserveOpen=false){
   const {view,analysis}=currentReading;
   const ordered=groupReading(orderReading(view,analysis,$('#original-order').checked?'original':'frequency'));
   renderReader($('#reader-output'),ordered,{failed:analysis.status==='legacy-error'});
-  if(view.language==='latin'&&view.tokens.length>1)renderPassage($('#passage-text'),$('#passage-detail'),currentReading.segments,ordered,currentReading.selected,index=>{currentReading.selected=index;});
+  if(view.tokens.length>1)renderPassage($('#passage-text'),$('#passage-detail'),currentReading.segments,ordered,currentReading.selected,index=>{currentReading.selected=index;});
   else{$('#passage-text').replaceChildren();$('#passage-detail').replaceChildren();}
   updateDisplayOptions();
   if(openIndex>=0){const panel=document.querySelectorAll('.reader-accordion')[openIndex];if(panel)panel.open=true;}
@@ -103,17 +104,18 @@ $('#analysis-form').addEventListener('submit',async event=>{
   clearInputError();if(!$('#input').value.trim())return;lookupRunning=true;updateAnalyzerControls();$('#status').textContent='Looking up…';
   try{
     const original=$('#input').value;
-    const {result,inputAdapter,milliseconds}=await query(original,$('#mode').value);
-    const analysis=result.corrected??result,view=presentAnalysis(analysis);
+    const mode=$('#mode').value==='english'?'english-text':$('#mode').value;
+    const {result,inputAdapter,milliseconds}=await query(original,mode);
+    const analysis=result.corrected??result,view=mode==='english-text'?presentEnglishPassage(analysis):presentAnalysis(analysis);
     if(inputAdapter){
       view.tokens.forEach((token,i)=>token.surface=originalSurface(inputAdapter,analysis.tokens[i].span));
       if(inputAdapter.lookup!==inputAdapter.original)view.notes.unshift('Macrons are ignored for lookup; the reading view retains your original spelling.');
     }
-    currentReading={analysis,view,structured:inputAdapter?{inputAdapter,result}:result,selected:0,segments:view.language==='latin'?passageSegments(original,analysis.tokens,inputAdapter):[]};renderCurrentReading();
+    currentReading={analysis,view,structured:inputAdapter?{inputAdapter,result}:result,selected:0,segments:passageSegments(original,analysis.tokens,inputAdapter)};renderCurrentReading();
     $('#results').hidden=false;
     for(const id of ['legacy-output','json-output','notes-output'])$('#'+id).replaceChildren();
     renderTechnicalOutput();
-    $('#status').textContent=analysis.status==='legacy-error'?'Stopped: original WORDS encountered an error.':`Complete (${milliseconds<0.1?'<0.1':milliseconds.toFixed(1)} ms).`;
+    $('#status').textContent=analysis.status==='legacy-error'?'Stopped: original WORDS encountered an error.':`Complete (${milliseconds<0.1?'<0.1':milliseconds.toFixed(1)} ms).`+(analysis.failures?` Original WORDS could not complete ${analysis.failures} word lookup${analysis.failures===1?'':'s'}; other results are available.`:'');
     if(matchMedia('(max-width: 48rem) and (pointer: coarse)').matches){$('#input').blur();$('#result-heading').focus({preventScroll:true});$('#result-heading').scrollIntoView({block:'start'});}
   }
   catch(error){if(analyzerState!=='failed')$('#status').textContent='Error: '+error.message;}finally{lookupRunning=false;updateAnalyzerControls();}

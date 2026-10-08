@@ -17,17 +17,18 @@ export function passageSegments(original,tokens,adapter){
 
 export function renderPassage(textRoot,detailRoot,segments,reading,selected=0,onSelect=()=>{}){
   const fragment=document.createDocumentFragment(),buttons=[];
+  const language=reading.language==='english'?'en':'la';textRoot.lang=language;
   function select(index){
     const token=reading.tokens[index];
     for(const button of buttons)button.setAttribute('aria-pressed',String(Number(button.dataset.tokenIndex)===index));
-    const heading=document.createElement('h3');heading.lang='la';heading.textContent=token.surface;
+    const heading=document.createElement('h3');heading.lang=language;heading.textContent=token.surface;
     detailRoot.replaceChildren(heading);renderTokenContent(detailRoot,token,reading.language);
     onSelect(index);
   }
   for(const segment of segments){
     if(segment.index===undefined){fragment.append(document.createTextNode(segment.text));continue;}
     const button=document.createElement('button');button.type='button';button.className='passage-word';
-    button.lang='la';button.textContent=segment.text;button.dataset.tokenIndex=segment.index;
+    button.lang=language;button.textContent=segment.text;button.dataset.tokenIndex=segment.index;
     button.setAttribute('aria-controls',detailRoot.id);button.setAttribute('aria-pressed','false');
     button.addEventListener('click',()=>select(segment.index));buttons.push(button);fragment.append(button);
   }

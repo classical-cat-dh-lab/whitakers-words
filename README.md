@@ -8,8 +8,9 @@ to JavaScript ESM. Latin morphology and English gloss lookup run entirely on you
 device, through a browser dictionary, library or CLI. There is no query server.
 
 The browser accepts Latin words and passages, retains your spelling, and lets you
-select individual words to inspect their entries. English currently looks up one
-word at a time without singular/plural expansion. Choose **Save offline** before
+select individual words to inspect their entries. The working tree also supports
+English passages in the same reading views (not yet released). English lookup
+does not yet expand singular/plural forms. Choose **Save offline** before
 disconnecting. [Browser guide](docs/browser-input.md) ·
 [Offline help](docs/offline-help.md) · [Terminology](docs/abbreviations.md).
 

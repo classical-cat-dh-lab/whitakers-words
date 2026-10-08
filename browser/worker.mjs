@@ -1,4 +1,5 @@
 import {prepareLatinInput} from './input.mjs';
+import {lookupEnglishPassage} from './english-passage.mjs';
 import {createAnalyzer,applyCorrectedLayer} from '../dist/index.js';
 const files={dictionary:'legacy/DICTLINE.GEN',inflections:'legacy/INFLECTS.LAT',addons:'legacy/ADDONS.LAT',uniques:'legacy/UNIQUES.LAT',dictionaryForms:'dictionary-forms.tsv',englishIndex:'english-index.tsv'};
 const ready=(async()=>{
@@ -12,7 +13,7 @@ self.addEventListener('message',async({data})=>{
   try{
     const analyzer=await ready,start=performance.now();
     const inputAdapter=data.mode==='latin'?prepareLatinInput(data.input):undefined;
-    const result=data.mode==='english'?analyzer.lookupEnglish(data.input):analyzer.analyze(inputAdapter?.lookup??data.input);
+    const result=data.mode==='english-text'?lookupEnglishPassage(analyzer,data.input):data.mode==='english'?analyzer.lookupEnglish(data.input):analyzer.analyze(inputAdapter?.lookup??data.input);
     self.postMessage({type:'result',id:data.id,inputAdapter,result:data.mode==='corrected'?applyCorrectedLayer(result):result,milliseconds:performance.now()-start});
   }catch(error){self.postMessage({type:'error',id:data.id,message:error.message});}
 });

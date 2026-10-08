@@ -33,8 +33,8 @@ function tokenSummary(token,language){
 }
 export function renderReader(root,result,{failed=false}={}){
   const fragment=document.createDocumentFragment();
-  const batch=result.language==='latin'&&result.tokens.length>1,panels=[];
-  if(!result.tokens.length)fragment.append(element('p',failed?'Processing stopped before a completed analysis was available.':'No Latin word forms were found in this input.'));
+  const batch=result.tokens.length>1,panels=[];
+  if(!result.tokens.length)fragment.append(element('p',failed?'Processing stopped before a completed analysis was available.':result.language==='english'?'No English words were found in this input.':'No Latin word forms were found in this input.'));
   if(batch)fragment.append(element('p','Select a word to see its meanings and forms.','reader-guide'));
   for(const token of result.tokens){
     const section=element(batch?'details':'section',undefined,batch?'reader-token reader-accordion':'reader-token');
