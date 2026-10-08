@@ -1,99 +1,66 @@
 # Whitaker's Words — TypeScript preservation
 
-**1.0.0 · Stable release** — [Published dictionary](https://words.latingreek.org/).
+**Application 1.0.1 · Engine 1.0.0 · Stable** —
+[Open the dictionary](https://words.latingreek.org/).
 
-The [1.0 release](docs/release-1.0.md) completes the behavior-preserving port of
-the pinned WORDS analysis engine within its declared API/CLI contract. The
-[qualified legacy checkpoint](docs/legacy-checkpoint.md) is finalized as engine
-`1.0.0`; its [release manifest](docs/legacy-release.json) freezes the source and
-data. Browser recovery, offline updates, theme startup and long-input safeguards
-are complete. Original scholarly content and native errors remain preserved.
+An independent preservation of William Whitaker's WORDS in TypeScript compiled
+to JavaScript ESM. Latin morphology and English gloss lookup run entirely on your
+device, through a browser dictionary, library or CLI. There is no query server.
 
-The dictionary and help pages use stable addresses for bookmarks and sharing.
-Runtime resources remain isolated by release. Offline updates are downloaded,
-checked and tested before you choose to reload; an open lookup is never interrupted.
+The browser accepts Latin words and passages, retains your spelling, and lets you
+select individual words to inspect their entries. English currently looks up one
+word at a time without singular/plural expansion. Choose **Save offline** before
+disconnecting. [Browser guide](docs/browser-input.md) ·
+[Offline help](docs/offline-help.md) · [Terminology](docs/abbreviations.md).
 
-A preservation of William Whitaker's WORDS in TypeScript, compiled to JavaScript
-ESM: Latin analysis, English gloss lookup, a structured API, a CLI and a small
-browser application with dictionary notation for students. Analysis runs entirely
-on the user's device. There is no runtime service or database server.
-
-Choose **Save offline** to download and verify the complete
-dictionary and application. It then works without a connection. App installation
-is optional; clearing the website's data removes its saved offline files. After
-saving, the download panel becomes a compact Check for updates control. Enter a word, phrase
-or sentence and press Enter / Return; macrons are ignored for lookup while your
-original spelling remains visible. [Browser and mobile guide](docs/browser-input.md).
-
-The complete 4,144,877-query Latin replay retains 4,144,873 matching normal
-outputs, reproduces two original native errors, and keeps two comparator limits
-separate. All 24,000 English observations match, along with ten native capacity
-states and 512 Latin option sessions. There are no unexplained differences or
-regressions in these tests. See [backend acceptance](docs/acceptance.md).
-
-The preservation milestone is complete within the declared scope. Full classical-text
-corpus comparison remains deferred; these measurements do not establish universal
-equivalence or linguistic correctness. The v1 legacy backend is frozen.
-
-The canonical reference is **WORDS 1.99.0**, commit
-`1f2f0fb0867a896d7b9284a03d615ed635d6f992` of
+[Version 1.0.1](docs/release-1.0.1.md) simplifies documentation, opens Offline help
+in a separate tab, and removes the redundant original-input browser mode.
+It retains the frozen **1.0.0 engine** and data. The upstream reference is
+**WORDS 1.99.0**, commit `1f2f0fb0867a896d7b9284a03d615ed635d6f992` of
 [mk270/whitakers-words](https://github.com/mk270/whitakers-words).
-This is an independent preservation project, separate from designing a new Latin
-analyzer. The legacy profile targets original behavior, including linguistic
-errors and quirks; [tested behavior and remaining limits](docs/acceptance.md) are
-recorded explicitly. The corrected layer is empty.
-
-Archived release: [1.0.0 — DOI: 10.5281/zenodo.23020269](https://doi.org/10.5281/zenodo.23020269).
-The archive preserves the exact release files; citation metadata is also available
-in [CITATION.cff](CITATION.cff).
+Original scholarly content and native errors remain preserved.
 
 ## Run locally
 
-With Node.js 22 or later (verified locally on 26.7.0):
+With Node.js 22 or later:
 
 ```sh
 npm run verify
 node cli/main.mjs --legacy rem acu tetigisti
-node cli/main.mjs amatus est
 node cli/main.mjs --english wild
-npm run serve
+npm run site
+npm run preview
 ```
 
-Open `http://127.0.0.1:4173/browser/` for the dictionary development page. Build and tests
-work offline: TypeScript 6.0.3 and all runtime data are vendored and hash-checked.
-No `npm install` is required. Use `npm run site` then `npm run preview` to build
-and preview the offline website. Serve `site/` over HTTPS (or localhost); opening
-files directly does not support modules or Service Workers. Download the frozen
-source and ready-to-host website from the
-[1.0.0 release](https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v1.0.0).
-No npm package is published.
+Open `http://127.0.0.1:4173/`. Builds and tests work offline using vendored
+TypeScript 6.0.3 and hash-checked data; no `npm install` is required. Deploy the
+generated `site/` directory over HTTPS. For source development, `npm run serve`
+opens the dictionary at `http://127.0.0.1:4173/browser/`.
 
-## Verification and documentation
+[GitHub 1.0.1](https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v1.0.1)
+provides complete source, the ready-to-host site, a manifest and checksums.
+No npm package is published. The
+[Zenodo 1.0.0 archive](https://zenodo.org/records/23020269) preserves the engine
+milestone; this application patch has no new DOI.
 
-- [Full fixed-wordlist acceptance](docs/acceptance.md): reproducible Ada/TypeScript
-  comparison, complete 0.3 counts and historical 0.2 results.
-- [API and CLI](docs/api.md): result types, spans, provenance, options and errors.
-- [Student abbreviations](docs/abbreviations.md): the implemented, reviewable
-  terminology table, also available as a separate offline help page.
-- [Compatibility report](docs/compatibility.md): full wordlist, English and boundary qualification;
-  all 21 legacy cases, including the five original upstream groups and 751 input
-  fragments; browser parity and explicit qualification limits.
-- [Build and data reproduction](docs/building.md): portable ESM build and optional
-  independent Ada reference rebuild.
-- [Legacy contract](docs/legacy-contract.md) and [corrected layers](deviations/README.md).
-- [Architecture](docs/architecture.md); historical local measurements in
-  [performance.json](docs/performance.json) are not full-corpus benchmarks.
-- [Original baseline](docs/baseline.md): raw executable observations and provenance.
+## Engineering documentation
+
+- [API and CLI](docs/api.md): types, spans, profiles, provenance and errors.
+- [Build and reproduction](docs/building.md): portable build and optional Ada reference.
+- [Architecture](docs/architecture.md): modules, data and offline resources.
+- [Compatibility](docs/compatibility.md): final qualification and known limitations.
+- [Engine manifest](docs/legacy-release.json): frozen source/data hashes.
 
 ## Attribution and licenses
 
-William Whitaker created WORDS and its dictionary. The preserved source, data and
-adapted algorithms retain [Whitaker's notice](licenses/whitaker.txt). The full
-unmodified source archive is in `vendor/legacy/`. Original implementation and
-tooling are licensed under [AGPL-3.0-only](LICENSE); original documentation is
-licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+William Whitaker created WORDS and its dictionary. Preserved source, data and
+adapted algorithms retain [Whitaker's notice](licenses/whitaker.txt). The original
+source archive is included in `vendor/legacy/`.
+
+This project's TypeScript implementation and tooling are © 2026 Xinjie Fang /
+Classical Cat Digital Humanities Lab, licensed under [AGPL-3.0-only](LICENSE).
+Original project documentation is [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 TypeScript retains its [license](licenses/typescript.txt) and
-[third-party notices](licenses/typescript-third-party.txt). Browser fonts retain
-the notices in `browser/resources/design-system/2.3.0/fonts/licenses/`.
-See [CITATION.cff](CITATION.cff) for project citation metadata. No official successor
-status or new scholarly authority is asserted.
+[third-party notices](licenses/typescript-third-party.txt); fonts retain the notices
+in `browser/resources/design-system/2.3.0/fonts/licenses/`.
+[CITATION.cff](CITATION.cff) identifies the current application release.

@@ -1,166 +1,77 @@
-# Compatibility qualification
+# Compatibility and tested scope
 
-The [stable 1.0 release](release-1.0.md) finalizes the [legacy checkpoint](legacy-checkpoint.md): complete Latin replay, fresh 24,000-case English comparison, 4,096 option combinations, 2,048 ordered sessions and input boundaries. The historical sections below retain their original qualification scope.
+The application uses the frozen **engine 1.0.0**, a behavior-preserving port of
+WORDS 1.99.0 at commit `1f2f0fb0867a896d7b9284a03d615ed635d6f992`.
+[Version 1.0.1](release-1.0.1.md) changes documentation and browser controls only.
+The [engine release manifest](legacy-release.json) still fixes all 28 engine,
+data and adapter paths. The comparison profile is `upstream-tests-v1`.
 
-Initial baseline qualified on 2026-09-19 against `words-mk270-1f2f0fb`, using the exact
-`upstream-tests-v1` profile. The reference program is WORDS 1.99.0 from the
-maintained mk270 lineage, not a reconstruction of historical 1.97FC.
+## Engine qualification
 
-| Evidence | Result |
+| Check | Recorded result |
 |---|---|
-| Original Ada source and four text data files | Hash-locked and unmodified |
-| Original upstream regression groups | All five pass |
-| Frozen executable baseline | All 21 cases reproduce raw stdout/stderr and process state |
-| TypeScript against that baseline | All 751 input fragments match, including all five groups |
-| Additional frozen Ada observations | All 3,953 inputs match; no remaining differences in this corpus |
-| Runtime adapters | CLI/API equality tests; browser Worker matches eight complete Node JSON hashes |
-| Derived data reproducibility | Both complete tables match across two independent native build directories |
-| Robustness | Checksum corruption, invalid options, UTF-16 spans, legacy Unicode splitting, long input, compounds, corrected isolation and repeated calls pass |
-| Student reading view | All 3,953 inputs retain every candidate and explanatory row in order, without mutating the legacy result; all source class combinations and all 39,336 dictionary entries have display mappings |
+| Complete Latin replay | 4,144,877 inputs; 4,144,873 matching normal outputs |
+| Native Latin errors | 2 matching failures: `pilarium`, `pilarivm` |
+| Console comparator exclusions | 2: empty input and the `!` developer menu |
+| Unexplained differences and regressions | 0 |
+| English index and input probes | 24,000 matching observations, including 5 native failure outcomes |
+| Boolean option combinations | 4,096 |
+| Ordered sessions | 2,048 |
+| Input and failure boundaries | 454 comparable sessions match; 2 single-lookup boundaries recorded separately |
+| Original executable fixtures | 21 raw cases, including the five upstream regression groups |
+| Expanded portable corpus | 3,953 frozen observations |
 
-`npm run verify` runs the offline build, frozen backend hash check and portable
-regression suite. The released 0.3.0 beta passed 36 groups covering the engine,
-adapters, reader, offline storage, input, documents, search state and native
-exception/capacity behavior. The 0.3.1 frontend release passes 43 groups: the original 36 plus compact
-notation, three dictionary-order checks and three stable-page/manifest checks. The ordering checks retain
-every candidate, form and explanation across the 3,953-input reference corpus,
-preserve equal-band order and keep nonordinal frequency categories distinct.
-The search-state fixtures preserve fresh native observations for failed attempts,
-affix fallback, distinct dictionary/affix spelling comparisons and transformed
-part-of-speech checks. The 0.3.1 website passes bounded Chromium/WebKit
-qualification for eight complete browser-to-Node JSON comparisons, explicit
-upgrades, old-tab coexistence, cold offline restart, interrupted/corrupt downloads,
-cache repair, stable help pages and touch/viewport behavior. Physical mobile-device
-installation and full classical-author corpora remain outside this qualification. The
-expanded corpus contains Aeneid vocabulary, all unique forms, available examples
-derived from the source inflection rules and explicit fallback probes. Repeated
-forms are deduplicated. This is broad feature coverage, not every possible stem,
-rule, affix combination or malformed input. Exact corpus hashes are in
-`tests/compatibility/manifest.json`.
-
-The 0.3 beta designation recognizes preliminary engineering reliability after
-the complete comparisons below. The [backend baseline](backend-baseline.md) is
-frozen; full classical-text corpus work remains deferred.
+These are the final 1.0 engine results, retained by the immutable manifests and
+fixtures. Application patch tests are described in their own release notes.
+Matching failures are not successful lookups, and matching unknown results do not
+measure dictionary coverage. Historical 0.2 differences were resolved before
+stable 1.0; they are not current failures.
 
 ## Comparison contract
 
-The 21 raw Ada observations remain byte-for-byte evidence. The TypeScript
-comparison removes terminal prompts and whitespace around each frame, then trims
-trailing whitespace/CR on each output line. It retains internal blank lines,
-candidate multiplicity, order, morphology, flags, citations, meanings, explanatory
-text, unknown results and trimming markers. It never compares an unordered set.
-The CLI intentionally omits the startup banner and interactive command interpreter.
-The browser's selectable dictionary-frequency order is outside this raw-output
-contract. The library reader and original text/JSON retain their source order;
-the browser reorders complete entries only within uninterrupted interpretation
-groups. See [browser ordering](browser-input.md#dictionary-frequency-order).
+Reference comparisons remove terminal prompts and frame-edge/trailing whitespace
+under the declared runner. They preserve internal blank lines, token order,
+candidate multiplicity, morphology, meanings, flags, explanations and errors.
+The 21 raw baseline fixtures separately retain exact stdout, stderr and process
+state. Expected fixtures are not replaced by outputs of this port.
 
-## Expanded qualification
+Browser macron adaptation, grouping and dictionary-frequency ordering operate
+outside the legacy engine contract. Original text and structured data retain
+engine results. See the [browser guide](browser-input.md), [API and CLI](api.md),
+[build instructions](building.md) and [legacy contract](legacy-contract.md).
 
-The 0.2 candidate includes [full fixed-wordlist acceptance](acceptance.md), which
-extends the frozen baseline and records newly exposed compatibility differences.
-The old finite baseline remains passing; its success is not universal equivalence.
-[Browser macron adaptation](browser-input.md) is separate from the legacy profile.
+## Retained behavior and limits
 
-The 0.3 storage/reader checkpoint replays all **4,144,877** frozen inputs.
-All **4,144,873 comparable normal outputs match**, with zero regressions and no
-new exceptions. This resolves all 510 differences in the preceding source-audit
-checkpoint, including its two trimming-marker regressions, and all 109,001 output
-differences in the original 0.2 baseline. The earlier 240 input/option fixtures
-remain passing; another 180 cases across six option profiles and all 343 effective
-native addon fix/connection fields are now retained as regression observations.
+- Dictionary content, linguistic judgments, native ranking, trimming and failures
+  remain as inherited. No scholarly corrections are active.
+- English searches one ASCII word, without singular/plural normalization. More
+  than 500 accepted English hits reproduces the native error; normal display is
+  limited to six entries unless an API caller requests untrimmed results.
+- The legacy engine splits non-ASCII input and retains native console chunking,
+  line-atomic failures, buffer limits and exceptional-session behavior within the
+  declared API profile. The browser separately adapts Latin macrons.
+- Native terminal menus, file commands, local/special dictionary installation,
+  host filesystem failures and resource exhaustion are outside the analysis API.
+- Full classical-text corpus comparison, universal input equivalence and
+  philological correctness are not established by these finite tests.
 
-The following local repair restores native line-atomic analysis and exceptional
-termination. All 222 input/option session cases match two native builds, compared
-with 68 before the repair. These include 105 native failures and controls for
-blank reads, 2,500-byte boundaries, same-line and preceding-line output, case,
-punctuation, compounds and Unicode. Six synthetic states injected at the native
-grouping caller verify 12/13 forms, 40/41 groups and 99/100 parse slots. The native
-grouping routine itself is unchanged in this probe. The final 100th nominal/verb
-record can fail because Ada evaluates the next array access even after the active
-range ends.
+`npm run verify` checks source/data locks, the frozen backend and the portable
+regression suite. The [1.0 release record](release-1.0.md) identifies its browser,
+recovery, offline and migration coverage. Automated browser testing does not
+claim physical-device installation testing.
 
-The two original native-error inputs remain errors in the source algorithm.
-They now return explicit `legacy-error` results with the original diagnostic
-body; CLI stdout, empty stderr and exit code 0 reproduce the native outer handler.
-These are classified separately from successful normal analyses. Empty input and
-`!` remain limitations of the original wordlist console comparator. The 0.3 beta qualification does not establish universal exceptional-path equivalence. See [the result contract](api.md).
+## Reproduce the full wordlist comparison
 
-## Observed legacy behavior retained
+With the pinned Ada reference and an immutable
+[classical-lexical-test-data](https://github.com/classical-cat-dh-lab/classical-lexical-test-data)
+release containing its manifest and four gzip lists:
 
-The subsequent capacity review qualifies ten synthetic native caller states:
-dictionary candidates at 80/81, inflections at 249/250/251, reduced records at
-250/252, and QU processing at 249/250/251. It preserves failing-write timing,
-the retained 81st candidate count, and the QU/PACK read beyond a full 250-slot
-array while searching for its null sentinel. All ten states match, compared with
-six before this repair. These are injected caller/table states in an isolated
-native copy; the original matching routines are unchanged.
+```sh
+node --max-old-space-size=8192 scripts/acceptance.mjs \
+  --data /path/to/data --oracle /path/to/oracle --out /path/to/results --workers 6
+```
 
-All **23,808 nonempty distinct English index spellings**, plus 192 POS/trim/input
-probes, match both native builds: **24,000/24,000**, versus 23,963 before repair,
-with no regressions. Five observations intentionally reproduce the original
-500-hit overflow; they are failure outcomes, not successful lookups. The other
-resolved observations cover native QV conversion and input with no ASCII word.
-Another **512 Latin sessions across 16 option profiles** match both native builds,
-including combined settings and multiline sequences. Portable tests also reverse
-request order. These finite profiles do not qualify every option/input combination.
-
-The complete **4,144,877-query** Latin replay after these repairs retains all
-**4,144,873 normal matches** and both original native failure outcomes, with no
-new differences or port failures. The two original comparator exclusions remain
-separate. This result is the frozen 0.3 beta backend baseline.
-
-- Unique entries retain the original null part initialization (`X`), even when
-  their parse quality is a noun, pronoun or verb. Citation artifacts remain.
-- A precomposed macron splits ASCII lookup fragments differently from its NFD
-  form; no implicit diacritic folding or i/j/u/v modernization is added.
-- The order of the original linked inflection list affects which duplicate
-  survives. Reading the text in the opposite order changes visible results.
-- Explanatory rows affect fallback control: inserting a trick/syncope marker can
-  suppress further affix searches. This is reproduced, including unknown results.
-- Rejected attempts can leave dictionary candidates for the subsequent
-  `Do_Only_Fixes` pass. That state and the shared reduced stem are request-local
-  and retained at native pass boundaries, including the original stem-length
-  reduction and empty QU/PACK search behavior. Syncope suppression is scoped to
-  the native stages. Affix
-  comparison folds u/v only; dictionary matching also folds i/j. Prefix checks
-  use the part of speech after any suffix transformation.
-- Shared parse buffers retain inactive slots after pruning or rollback; later
-  passes can expose them. Mutating loops use the original Ada range bounds.
-- Analysis completes for every word in a native input line before ordinary
-  results for that line are printed. A failure discards that pending line, retains
-  previously completed lines and terminates subsequent processing. Two blank
-  native reads also end a session; prompt width after one blank read affects
-  unknown-word alignment even when the prompt itself is omitted.
-- Addon reading preserves the native comment buffer's retained tail. In the frozen
-  data, this gives the ordinary adjective `cumque` tackon an unusable effective
-  spelling. The portable reader reproduces that original defect without changing
-  the source data or adding a lexical exception.
-- PACK/enclitic duplicate groups, the adjective-to-adverb fallback, period-sensitive
-  abbreviations and compound display behavior retain their original irregularities.
-- Original data, meanings, frequency labels and heuristic suggestions are retained
-  regardless of modern linguistic expectations. No corrected deviations are active.
-
-## Limits and next qualification work
-
-The first-stage deliverables are operational. This is a beta release,
-not a claim of complete equivalence for every possible WORDS input or philological
-correctness. The qualified profile uses only the canonical general dictionary;
-local/special dictionaries, editing modes, interactive menus, persistent option
-files and historical platform-specific side effects are not implemented adapters.
-
-Custom option combinations, unqualified original buffer/exception paths, additional
-cross-platform runtimes and broader affix cross-products remain release
-qualification work. Nondefault options are explicitly labeled `custom`, not
-silently presented as the frozen profile. Native file hash differences do not
-change the canonical portable data; see [reference boundaries](building.md).
-Host memory exhaustion, storage-error retries, native file-system failures and
-platform-specific exception-information strings are not reproduced by the API.
-The CLI exposes the analysis body through its own documented arguments and stdin
-protocol; it is not a clone of native interactive menus or native command-line
-invocation modes.
-
-Future linguistic changes must use a reviewed deviation with evidence and tests.
-Full classical-author corpus comparison and stress testing remain future work.
-The beta designation does not establish those claims. Release citation metadata is
-maintained in [CITATION.cff](../CITATION.cff).
+The runner verifies input identities and preserves per-profile membership,
+ordered output hashes, differences, failures and resumable checkpoints. Reuse
+requires the same engine, input and runner identities. A zero process exit means
+the run completed; its comparison counters determine the result.

@@ -122,14 +122,16 @@ function page(title, body) {
 }
 
 export async function documentPages(root, version) {
-  const pages = new Map(), documents = [];
+  const pages = new Map(), history = [];
   for (const name of (await readdir(resolve(root, 'docs'))).filter(name => name.endsWith('.md')).sort()) {
     const source = await readFile(resolve(root, 'docs', name), 'utf8');
     const title = /^# (.+)$/m.exec(source)?.[1];
     if (!title) throw new Error('Document needs a title: ' + name);
     const target = name.replace(/\.md$/, '.html');
-    pages.set('docs/' + target, Buffer.from(page(title, renderMarkdown(source))));
-    documents.push(`<li><a href="${target}">${escape(title)}</a></li>`);
+    const historical = /^(?:release-0\.|baseline\.|backend-baseline\.|legacy-checkpoint\.)/.test(name);
+    const notice = historical ? `<p><strong>Historical reference.</strong> This page describes an earlier checkpoint. See <a href="release-1.0.1.html">the current application release</a> and <a href="compatibility.html">current engine qualification</a>.</p>` : '';
+    pages.set('docs/' + target, Buffer.from(page(title, notice + renderMarkdown(source))));
+    if (historical) history.push(`<li><a href="${target}">${escape(title)}</a></li>`);
   }
   for (const [file, target] of metadataPages) {
     const source = await readFile(resolve(root, 'docs', file), 'utf8');
@@ -140,12 +142,28 @@ export async function documentPages(root, version) {
   for (const [file, target, title] of [['licenses/whitaker.txt', 'original-notice', 'Original WORDS notice'], ['LICENSE', 'license', 'GNU Affero General Public License']]) {
     pages.set(`docs/${target}.html`, Buffer.from(page(title, `<h1>${title}</h1>${renderNotice(await readFile(resolve(root, file), 'utf8'))}`)));
   }
+  const notices = [];
+  for (const [file, title] of [['licenses/typescript.txt', 'TypeScript license'], ['licenses/typescript-third-party.txt', 'TypeScript third-party notices']]) {
+    notices.push(`<h2>${title}</h2>${renderNotice(await readFile(resolve(root, file), 'utf8'))}`);
+  }
+  const fontRoot = 'browser/resources/design-system/2.3.0/fonts/licenses';
+  for (const file of (await readdir(resolve(root, fontRoot))).sort()) {
+    const title = escape(file.replace(/^OFL-|\.(txt|pdf)$/g, ''));
+    if (file.endsWith('.txt')) notices.push(`<h2>${title}</h2>${renderNotice(await readFile(resolve(root, fontRoot, file), 'utf8'))}`);
+    else notices.push(`<h2>${title}</h2><p><a href="../${fontRoot}/${escape(file)}" download>Original license (PDF)</a></p>`);
+  }
+  pages.set('docs/third-party.html', Buffer.from(page('Third-party licenses', '<h1>Third-party licenses</h1>' + notices.join('\n'))));
   pages.set('docs/source.html', Buffer.from(page('Source and documentation', `<h1>Source and documentation</h1>
-<p>Whitaker’s Words ${escape(version)} is an independent TypeScript preservation of William Whitaker’s WORDS. Analysis runs on your device.</p>
-<p>Start with <a href="release-1.0.html">About version 1.0</a>, <a href="acceptance.html">Tested scope</a>, <a href="compatibility.html">Compatibility</a> or <a href="abbreviations.html">Abbreviations and terminology</a>.</p>
+<p>Application <strong>${escape(version)}</strong> uses frozen <strong>engine 1.0.0</strong>, preserving upstream WORDS <strong>1.99.0</strong>. These version numbers identify different components. Analysis runs on your device.</p>
+<h2>Using the dictionary</h2><ul><li><a href="browser-input.html">Browser guide</a></li><li><a href="offline-help.html">Offline help and installation</a></li><li><a href="abbreviations.html">Abbreviations and terminology</a></li></ul>
+<h2>Release and source</h2>
+<p><a href="release-1.0.1.html">What changed in ${escape(version)}</a> · <a href="release-1.0.html">The 1.0 engine milestone</a> · <a href="citation.html">Citation metadata</a></p>
 <p><a href="/downloads/whitakers-words-${escape(version)}-source.tar.gz" download>Download the complete source archive (${escape(version)})</a></p>
-<p>The archive includes the implementation, dictionary data, build tools, tests and documentation for this version. See <a href="building.html">Building and reproducing the baseline</a> for instructions.</p>
-<p>Original implementation and tooling are provided under <a href="license.html">AGPL-3.0-only</a>; preserved WORDS material retains its <a href="original-notice.html">original notice</a>.</p>
-<h2>Documentation</h2><ul>${documents.join('')}</ul>`)));
+<p>The archive includes implementation, dictionary data, build tools, tests and documentation. <a href="https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v${escape(version)}">GitHub release ${escape(version)}</a> provides the source and ready-to-host website. Downloads require a connection.</p>
+<h2>Engineering</h2><ul><li><a href="api.html">API and CLI</a></li><li><a href="building.html">Build and data reproduction</a></li><li><a href="architecture.html">Architecture</a></li><li><a href="compatibility.html">Compatibility and tested scope</a></li><li><a href="legacy-release-data.html">Frozen engine manifest</a></li></ul>
+<h2>Attribution and licenses</h2>
+<p>William Whitaker created WORDS and its dictionary. The preserved source, data and adapted algorithms retain <a href="original-notice.html">Whitaker’s original notice</a>.</p>
+<p>This project’s TypeScript implementation and tooling are © 2026 Xinjie Fang / Classical Cat Digital Humanities Lab, under <a href="license.html">AGPL-3.0-only</a>. Original project documentation is <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="third-party.html">TypeScript and font licenses</a> retain their separate terms.</p>
+<details><summary>Historical releases and reference records</summary><p>These pages describe their named checkpoints; their earlier limitations and test counts are historical.</p><ul>${history.join('')}</ul></details>`)));
   return pages;
 }

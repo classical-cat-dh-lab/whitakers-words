@@ -21,7 +21,10 @@ test('stable pages retain release-pinned resources at root and document URLs', a
       assert.ok(/^(?:\/|#|https?:)/.test(target), path + ': document-relative resource ' + target);
       if (attribute === 'src') assert.ok(target.startsWith(base), path + ': unpinned script');
     }
-    for (const [, target] of html.matchAll(/<a\b[^>]*href="([^"]+)"/g)) assert.ok(!target.startsWith('/releases/'), path + ': internal bundle in a navigation link');
+    for (const [anchor, target] of html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>/g)) {
+      if (/\bdownload\b/.test(anchor)) continue;
+      assert.ok(!target.startsWith('/releases/'), path + ': internal bundle in a navigation link');
+    }
   }
 });
 

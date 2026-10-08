@@ -2,11 +2,11 @@ cff-version: 1.2.0
 message: "If you cite this software, use the metadata below."
 type: software
 title: "Whitaker's Words — TypeScript preservation"
-version: "1.0.0"
-date-released: "2026-09-29"
-doi: "10.5281/zenodo.23020269"
+version: "1.0.1"
+date-released: "2026-10-08"
 url: "https://words.latingreek.org/"
 repository-code: "https://github.com/classical-cat-dh-lab/whitakers-words"
+repository-artifact: "https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v1.0.1"
 license: AGPL-3.0-only
 authors:
   - family-names: Fang

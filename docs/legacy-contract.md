@@ -31,8 +31,9 @@ declared normalized view, but must retain ordering, multiplicity, token boundari
 and error states. Never use a global set of output lines as a conformance claim.
 Distinguish startup/terminal protocol from linguistic results explicitly.
 
-The first delivery includes an analysis library, structured API, CLI and minimal
-browser validation harness. A complete dictionary UI is outside that delivery.
+The released product includes the analysis library, structured API, CLI and
+offline browser dictionary. Browser presentation is versioned independently of
+the frozen engine; see [current compatibility](compatibility.md).
 
 ## Corrected layer
 

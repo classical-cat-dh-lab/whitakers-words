@@ -5,15 +5,10 @@ const saveButton = document.querySelector('#offline-save'), cancelButton = docum
 const reloadButton = document.querySelector('#offline-reload'), progress = document.querySelector('#offline-progress');
 let worker, registration, manifest, installPrompt, persistence = '', update, lastCheck = 0;
 const runningId = document.querySelector('meta[name="words-release"]')?.content;
-let helpOpen = false, saveJob;
+let saveJob;
 const controls = document.querySelector('#offline-controls');
-document.querySelector('#offline-help-link').addEventListener('click', () => {
-  helpOpen = true; panel.hidden = false;
-  document.querySelector('#offline-help').hidden = false;
-  document.querySelector('#offline-help').open = true;
-});
 document.querySelector('#offline-close').addEventListener('click', () => {
-  helpOpen = false; panel.hidden = true;
+  panel.hidden = true;
 });
 const megabytes = bytes => (bytes / 1024 / 1024).toFixed(1) + ' MB';
 
@@ -89,8 +84,7 @@ async function refresh() {
   const savedDifferent = status.ready && status.active.id !== runningId;
   panel.classList.toggle('offline-ready', Boolean(status.ready));
   panel.classList.remove('offline-notice');
-  panel.hidden = !(update || available || savedDifferent || (status.active && !status.ready) || helpOpen);
-  document.querySelector('#offline-help').hidden = false;
+  panel.hidden = !(update || available || savedDifferent || (status.active && !status.ready));
   document.querySelector('#install-app').hidden = !installPrompt;
   reloadButton.hidden = !update;
   if (status.ready) {

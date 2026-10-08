@@ -33,7 +33,7 @@
         </div>
       </div>
       <p id="theme-status" class="preference-status" role="status" hidden></p>
-      <div class="title-row"><h1 id="page-title" tabindex="-1">Whitaker’s Words</h1><span class="version-badge">1.0</span></div>
+      <div class="title-row"><h1 id="page-title" tabindex="-1">Whitaker’s Words</h1><span class="version-badge">1.0.1</span></div>
       <p class="tagline">An independent browser edition of William Whitaker’s WORDS. Latin meanings and morphology, word by word—even offline.</p>
     </header>
     <section id="offline" aria-label="Offline use" hidden>
@@ -44,7 +44,7 @@
       </div>
       <progress id="offline-progress" aria-label="Offline download progress" hidden></progress>
       <p id="offline-status" role="status" aria-live="polite">Checking offline availability…</p>
-      <details id="offline-help"><summary>Offline use and installation</summary><p>Save the files here before disconnecting. On iPhone or iPad, open this site in Safari and use Share → Add to Home Screen. Open it from the Home Screen and save the dictionary there too. Other browsers may offer Install app. Installing an icon alone does not save the dictionary. Clearing this website’s data removes its offline files; reconnect and save them again.</p></details>
+      <p><a href="../docs/offline-help.html" target="_blank" rel="noopener">Offline use and installation (opens a new tab)</a></p>
     </section>
     <form id="analysis-form">
       <label for="input">Latin word, phrase or sentence</label>
@@ -54,7 +54,7 @@
       <p id="input-error" class="reader-error" role="alert" hidden>This text was not submitted. Split it into passages of at most 2,000 words and 20,000 characters. Your full input and previous results are retained.</p>
       <div class="controls">
         <label for="mode">Mode</label>
-        <select id="mode"><option value="latin">Latin lookup</option><option value="english">English lookup</option><option value="legacy">Latin (original input rules)</option></select>
+        <select id="mode"><option value="latin">Latin lookup</option><option value="english">English lookup</option></select>
         <button type="submit" id="analyze" disabled>Look up</button>
         <button type="button" id="clear-input">Clear input</button>
         <button type="button" id="cancel-lookup" hidden>Stop analysis</button>
@@ -93,7 +93,7 @@
       <details id="notes-panel" class="technical-output" hidden><summary>Lookup notes</summary><div id="notes-output"></div></details>
     </section>
     <details id="validation" class="technical-output" hidden><summary>Validation tools</summary><button type="button" id="validate" disabled>Run validation cases</button><p id="validation-status" role="status"></p><ol id="validation-results"></ol></details>
-    <footer><nav aria-label="Help and documentation"><a id="offline-help-link" href="#offline-help">Offline help</a><a href="../docs/abbreviations.html">Abbreviations &amp; terminology</a><a href="../docs/source.html">About, source &amp; licenses</a></nav><p>All lookups run on your device. Your text stays with you.</p><p>WORDS and its dictionary: William Whitaker. © 2026 Xinjie Fang / Classical Cat Digital Humanities Lab. Independent preservation · AGPL-3.0-only · No warranty.</p></footer>
+    <footer><nav aria-label="Help and documentation"><a id="offline-help-link" href="../docs/offline-help.html" target="_blank" rel="noopener" aria-label="Offline help (opens a new tab)">Offline help</a><a href="../docs/abbreviations.html">Abbreviations &amp; terminology</a><a href="../docs/source.html">About, source &amp; licenses</a></nav><p>All lookups run on your device. Your text stays with you.</p><p>WORDS and its dictionary: William Whitaker. TypeScript implementation © 2026 Xinjie Fang / Classical Cat Digital Humanities Lab. Independent preservation · AGPL-3.0-only · No warranty.</p></footer>
   </main>
 </body>
 </html>

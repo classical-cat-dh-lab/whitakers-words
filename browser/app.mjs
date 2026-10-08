@@ -66,7 +66,7 @@ function updateInputPrompt(){
   $('label[for="input"]').textContent=english?'English word':'Latin word, phrase or sentence';
   $('#input').lang=english?'en':'la';
   $('#input').placeholder=english?'Type an English word, then press Enter / Return.':'Type Latin here, then press Enter / Return.';
-  $('#input-help').textContent=english?'Enter / Return to look up an English word.':mode==='latin'?'Enter / Return to look up · Shift + Enter / Return for a new line.':'Original WORDS input rules: macrons are not removed and may split words. Use Latin lookup for text with macrons. Enter / Return to look up.';
+  $('#input-help').textContent=english?'Enter / Return to look up one English word.':'Enter / Return to look up · Shift + Enter / Return for a new line.';
 }
 $('#mode').addEventListener('change',updateInputPrompt);updateInputPrompt();
 function clearInputError(){
