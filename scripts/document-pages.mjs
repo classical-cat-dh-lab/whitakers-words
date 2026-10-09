@@ -128,8 +128,8 @@ export async function documentPages(root, version) {
     const title = /^# (.+)$/m.exec(source)?.[1];
     if (!title) throw new Error('Document needs a title: ' + name);
     const target = name.replace(/\.md$/, '.html');
-    const historical = /^(?:release-0\.|baseline\.|backend-baseline\.|legacy-checkpoint\.)/.test(name);
-    const notice = historical ? `<p><strong>Historical reference.</strong> This page describes an earlier checkpoint. See <a href="release-1.0.1.html">the current application release</a> and <a href="compatibility.html">current engine qualification</a>.</p>` : '';
+    const historical = /^(?:baseline\.|backend-baseline\.|legacy-checkpoint\.)/.test(name) || name.startsWith('release-') && name !== `release-${version}.md` && name !== 'release-1.0.md';
+    const notice = historical ? `<p><strong>Historical reference.</strong> This page describes an earlier checkpoint. See <a href="release-${escape(version)}.html">the current application release</a> and <a href="compatibility.html">current engine qualification</a>.</p>` : '';
     pages.set('docs/' + target, Buffer.from(page(title, notice + renderMarkdown(source))));
     if (historical) history.push(`<li><a href="${target}">${escape(title)}</a></li>`);
   }
@@ -157,7 +157,7 @@ export async function documentPages(root, version) {
 <p>Application <strong>${escape(version)}</strong> uses frozen <strong>engine 1.0.0</strong>, preserving upstream WORDS <strong>1.99.0</strong>. These version numbers identify different components. Analysis runs on your device.</p>
 <h2>Using the dictionary</h2><ul><li><a href="browser-input.html">Browser guide</a></li><li><a href="offline-help.html">Offline help and installation</a></li><li><a href="abbreviations.html">Abbreviations and terminology</a></li></ul>
 <h2>Release and source</h2>
-<p><a href="release-1.0.1.html">What changed in ${escape(version)}</a> · <a href="release-1.0.html">The 1.0 engine milestone</a> · <a href="citation.html">Citation metadata</a></p>
+<p><a href="release-${escape(version)}.html">What changed in ${escape(version)}</a> · <a href="release-1.0.html">The 1.0 engine milestone</a> · <a href="citation.html">Citation metadata</a></p>
 <p><a href="/downloads/whitakers-words-${escape(version)}-source.tar.gz" download>Download the complete source archive (${escape(version)})</a></p>
 <p>The archive includes implementation, dictionary data, build tools, tests and documentation. <a href="https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v${escape(version)}">GitHub release ${escape(version)}</a> provides the source and ready-to-host website. Downloads require a connection.</p>
 <h2>Engineering</h2><ul><li><a href="api.html">API and CLI</a></li><li><a href="building.html">Build and data reproduction</a></li><li><a href="architecture.html">Architecture</a></li><li><a href="compatibility.html">Compatibility and tested scope</a></li><li><a href="legacy-release-data.html">Frozen engine manifest</a></li></ul>

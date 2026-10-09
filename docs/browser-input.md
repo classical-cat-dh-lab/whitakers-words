@@ -23,9 +23,8 @@ records. Unsupported characters or unprocessed text remain visible as plain text
 
 ## English lookup
 
-The working tree adds English passages to **Read text** and **Word list**, with
-the same selection controls as Latin. This change is not yet released; published
-version 1.0.1 searches only the first word of an English submission.
+English passages use **Read text** and **Word list**, with the same selection
+controls as Latin. This browser behavior is available from version 1.0.2.
 
 Each word is looked up separately in the original English gloss index. Spelling,
 punctuation, line breaks and repeated occurrences remain visible. A word such as

@@ -2,7 +2,7 @@
 
 The application uses the frozen **engine 1.0.0**, a behavior-preserving port of
 WORDS 1.99.0 at commit `1f2f0fb0867a896d7b9284a03d615ed635d6f992`.
-[Version 1.0.1](release-1.0.1.md) changes documentation and browser controls only.
+[Version 1.0.2](release-1.0.2.md) adds English passage lookup in the browser.
 The [engine release manifest](legacy-release.json) still fixes all 28 engine,
 data and adapter paths. The comparison profile is `upstream-tests-v1`.
 
@@ -35,8 +35,8 @@ candidate multiplicity, morphology, meanings, flags, explanations and errors.
 The 21 raw baseline fixtures separately retain exact stdout, stderr and process
 state. Expected fixtures are not replaced by outputs of this port.
 
-Browser macron adaptation, grouping and dictionary-frequency ordering operate
-outside the legacy engine contract. Original text and structured data retain
+Browser macron adaptation, English passage batching, grouping and dictionary-frequency
+ordering operate outside the legacy engine contract. Original text and structured data retain
 engine results. See the [browser guide](browser-input.md), [API and CLI](api.md),
 [build instructions](building.md) and [legacy contract](legacy-contract.md).
 
@@ -44,9 +44,11 @@ engine results. See the [browser guide](browser-input.md), [API and CLI](api.md)
 
 - Dictionary content, linguistic judgments, native ranking, trimming and failures
   remain as inherited. No scholarly corrections are active.
-- English searches one ASCII word, without singular/plural normalization. More
+- Each English engine call searches one ASCII word, without singular/plural normalization. More
   than 500 accepted English hits reproduces the native error; normal display is
-  limited to six entries unless an API caller requests untrimmed results.
+  limited to six entries unless an API caller requests untrimmed results. The
+  browser calls this unchanged engine separately for each word in a passage;
+  an unknown word or native error does not prevent later words from being queried.
 - The legacy engine splits non-ASCII input and retains native console chunking,
   line-atomic failures, buffer limits and exceptional-session behavior within the
   declared API profile. The browser separately adapts Latin macrons.

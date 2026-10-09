@@ -1,6 +1,6 @@
 # Release verification
 
-The current [1.0.1 application release](release-1.0.1.md) uses the unchanged
+The current [1.0.2 application release](release-1.0.2.md) uses the unchanged
 [stable 1.0 engine](release-1.0.md). [Compatibility and tested scope](compatibility.md)
 is the single current account of engine qualification, limits and reproduction.
 

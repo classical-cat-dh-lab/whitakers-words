@@ -12,7 +12,11 @@ test('hosted notices preserve every word and documentation links resolve within 
     const source = await readFile(new URL('../' + path, import.meta.url), 'utf8');
     assert.equal(plain(renderNotice(source)), source.replace(/\s+/g, ' ').trim());
   }
-  const pages = await documentPages(root, '0.2.1-alpha.1');
+  const {version}=JSON.parse(await readFile(new URL('../package.json',import.meta.url)));
+  const pages = await documentPages(root, version);
+  assert.ok(pages.get('docs/source.html').toString().includes(`href="release-${version}.html"`));
+  assert.equal(pages.get(`docs/release-${version}.html`).toString().includes('Historical reference.'),false);
+  assert.ok(pages.get('docs/release-1.0.1.html').toString().includes('Historical reference.'));
   for (const [path, bytes] of pages) {
     const html = bytes.toString();
     for (const match of html.matchAll(/href="([^"]+)"/g)) {

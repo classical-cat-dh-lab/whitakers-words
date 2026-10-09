@@ -1,21 +1,20 @@
 # Whitaker's Words — TypeScript preservation
 
-**Application 1.0.1 · Engine 1.0.0 · Stable** —
+**Application 1.0.2 · Engine 1.0.0 · Stable** —
 [Open the dictionary](https://words.latingreek.org/).
 
 An independent preservation of William Whitaker's WORDS in TypeScript compiled
 to JavaScript ESM. Latin morphology and English gloss lookup run entirely on your
 device, through a browser dictionary, library or CLI. There is no query server.
 
-The browser accepts Latin words and passages, retains your spelling, and lets you
-select individual words to inspect their entries. The working tree also supports
-English passages in the same reading views (not yet released). English lookup
-does not yet expand singular/plural forms. Choose **Save offline** before
+The browser accepts Latin and English words and passages, retains your spelling,
+and lets you select individual words to inspect their entries. English lookup
+does not expand singular/plural forms. Choose **Save offline** before
 disconnecting. [Browser guide](docs/browser-input.md) ·
 [Offline help](docs/offline-help.md) · [Terminology](docs/abbreviations.md).
 
-[Version 1.0.1](docs/release-1.0.1.md) simplifies documentation, opens Offline help
-in a separate tab, and removes the redundant original-input browser mode.
+[Version 1.0.2](docs/release-1.0.2.md) gives English passages the same clickable
+reading and word-list views as Latin, with independent results for each word.
 It retains the frozen **1.0.0 engine** and data. The upstream reference is
 **WORDS 1.99.0**, commit `1f2f0fb0867a896d7b9284a03d615ed635d6f992` of
 [mk270/whitakers-words](https://github.com/mk270/whitakers-words).
@@ -38,7 +37,7 @@ TypeScript 6.0.3 and hash-checked data; no `npm install` is required. Deploy the
 generated `site/` directory over HTTPS. For source development, `npm run serve`
 opens the dictionary at `http://127.0.0.1:4173/browser/`.
 
-[GitHub 1.0.1](https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v1.0.1)
+[GitHub 1.0.2](https://github.com/classical-cat-dh-lab/whitakers-words/releases/tag/v1.0.2)
 provides complete source, the ready-to-host site, a manifest and checksums.
 No npm package is published. The
 [Zenodo 1.0.0 archive](https://zenodo.org/records/23020269) preserves the engine
