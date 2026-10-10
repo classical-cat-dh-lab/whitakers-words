@@ -87,13 +87,14 @@ async function refresh() {
   panel.hidden = !(update || available || savedDifferent || (status.active && !status.ready));
   document.querySelector('#install-app').hidden = !installPrompt;
   reloadButton.hidden = !update;
+  reloadButton.textContent = update ? `Reload to use ${update.version}` : 'Reload with update';
   if (status.ready) {
     message.textContent = `Ready offline · ${status.active.version}. ${persistence}`;
     saveButton.textContent = available ? 'Download update' : 'Check for updates';
     saveButton.title = available ? 'Download and verify the new version' : 'Check the latest version without downloading the dictionary again';
     saveButton.hidden = Boolean(update);
-    if (update) message.textContent += ' An update is verified and ready. Reload when convenient.';
-    else if (available) message.textContent += ' A new version is available. Choose Download update to save it; your current lookup will stay open.';
+    if (update) message.textContent = `Version ${update.version} is verified and ready. Reload to use it. Saved version: ${status.active.version}. ${persistence}`;
+    else if (available) message.textContent = `Version ${manifest.version} is available. Choose Download update to save it; your current lookup will stay open. Saved version: ${status.active.version}. ${persistence}`;
     else if (savedDifferent) message.textContent += ' This page and your saved copy differ. Check for updates to find the latest version.';
   } else {
     saveButton.hidden = false;
@@ -162,7 +163,7 @@ saveButton.addEventListener('click', async () => {
       progress.max = total; progress.value = bytes;
       message.textContent = `Saving and checking files: ${megabytes(bytes)} / ${megabytes(total)}.`;
     });
-    cancelButton.hidden = true; message.textContent = 'Checking the saved analyzer…';
+    cancelButton.hidden = true; message.textContent = `Checking the saved analyzer for version ${result.candidate.version}…`;
     await sample(result.candidate);
     await call('confirm', {id: result.candidate.id, jobId: saveJob});
     manifest = result.candidate;
